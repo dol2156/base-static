@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ko" data-env="development">
+  <head>
+    <script src="/pub_tool/include.js"></script>
+    <script>
+      Include('/pages/common/head.html');
+    </script>
+  </head>
+  <body>
+    <script src="/data_sitemap.js"></script>
+    <main>
+      <section>pages/sitemap.html</section>
+      <script tpl="46d8dd6a" type="text/x-handlebars-template">
+        {{#LOOP 10}}
+          <div>
+            <div>index : {{index}}</div>
+            <div>number : {{number}}</div>
+            <div>digit : {{digit}}</div>
+          </div>
+        {{/LOOP}}
+      </script>
+      <script>
+        console.log(`Handlebars.convert == `, Handlebars.convert);
+        Handlebars.render('46d8dd6a');
+        Handlebars.render('/hbs/btn/Btn_1.hbs');
+      </script>
+    </main>
+  </body>
+</html>

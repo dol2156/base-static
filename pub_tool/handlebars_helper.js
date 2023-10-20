@@ -4,9 +4,8 @@ Handlebars.logger.level = 'debug';
  *
  * @param path
  * @param render_data
- * @constructor
  */
-const Include = (path, render_data) => {
+Handlebars.write = (path, render_data) => {
   if (typeof render_data === 'undefined') render_data = {};
   render_data = Object.assign({ window }, render_data);
   const filename = path.replace(/^.*[\\\/]/, '').replace(/\.[^/.]+$/, '');
@@ -27,62 +26,10 @@ const Include = (path, render_data) => {
   el_script.remove();
 };
 
-/**
- * 페이지 컨텐츠 Write
- * @constructor
- */
-const LoadPage = () => {
-  Include(`/hbs/page/${PageName}.hbs`, { window });
-};
-
-const WritePageToFile = () => {
-  document.currentScript.remove();
-  if (!PageName) return;
-
-  if (PageName.indexOf('_pub_') > -1) {
-    //_pub 페이지는 빌드 하지 않음.
-    return;
-  }
-
-  saveThisDocument(document.body.innerHTML);
-
-  function saveThisDocument(body_str, callback) {
-    const fetch_url = `http://localhost:${PORT_NUMBER}/save`;
-
-    fetch(fetch_url, {
-      method: 'POST',
-      // headers: {
-      //   'Content-Type': 'application/json',
-      // },
-      body: JSON.stringify({
-        name: PageName,
-        body_str: body_str,
-      }),
-    })
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          throw Error(`${response.status} | ${response.statusText}`);
-        }
-      })
-      .then((data) => {
-        // console.log(`data == `, data);
-        const { msg, file } = data;
-        if (msg == 'SUCCESS') {
-          const c_label = 'Bundle Complete';
-          const c_label_style = 'border:1px solid black; background:#333; color:chartreuse; padding:0.25em 0.5em; font-size:12px; font-weight:bold;';
-          const c_value = file;
-          const c_value_style = 'border:1px solid black; background:#ffffd4; color:#333; padding:0.25em 0.5em; font-size:12px; border-left:none;';
-          console.log(`%c${c_label}%c${c_value}`, c_label_style, c_value_style);
-          if (callback) callback();
-        }
-      })
-      .catch((reason) => {
-        console.log(reason);
-      });
-  }
-};
+Handlebars.render = (template_script_tag_object, render_data = {}) => {
+  console.log(`template_script_tag_object == `, template_script_tag_object);
+  console.log(this);
+}
 
 /**
  * 동기 HTML 로드
@@ -120,53 +67,6 @@ Handlebars.loadHtml = (path, convert) => {
   if (convert) html_str = convert(html_str);
 
   return html_str;
-};
-
-/**
- *
- * @param json_url
- * @param callback
- */
-Handlebars.loadJson = (json_url, callback) => {
-  fetch(json_url)
-    .then((response) => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        throw Error(`${response.status} | ${response.statusText}`);
-      }
-    })
-    .then((data) => {
-      if (callback) callback(data);
-    })
-    .catch((reason) => {
-      console.log(reason);
-    });
-};
-
-/**
- * short uid 반환
- * @returns {string}
- */
-Handlebars.uid = () => {
-  var firstPart = (Math.random() * 46656) | 0;
-  var secondPart = (Math.random() * 46656) | 0;
-  firstPart = ('000' + firstPart.toString(36)).slice(-3);
-  secondPart = ('000' + secondPart.toString(36)).slice(-3);
-  return firstPart + secondPart;
-};
-
-/**
- * uuid 반환
- * @returns {string}
- */
-Handlebars.uuid = () => {
-  // UUID v4 generator in JavaScript (RFC4122 compliant)
-  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-    var r = (Math.random() * 16) | 0,
-      v = c == 'x' ? r : (r & 3) | 8;
-    return v.toString(16);
-  });
 };
 
 /************************************************
