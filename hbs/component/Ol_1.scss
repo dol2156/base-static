@@ -1,0 +1,13 @@
+.Ol_1 {
+  --p-left: 1em;
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: inherit;
+  width: calc(100% - var(--p-left));
+  list-style: auto;
+  margin-left: var(--p-left);
+  li + li {
+    margin-top: 0.5em;
+  }
+}

@@ -1,0 +1,215 @@
+<div id='page'>
+  {{!--prettier-ignore--}}
+  <style>
+    main > section{ margin-bottom:50px; }
+    main input{ border:1px solid #ddd; width:50%; }
+  </style>
+  <main>
+    {{!CONTENTS}}
+    <div class='H1'>flatpickr</div>
+    <section>
+      <div class='H2'>Basic</div>
+      <input id='inp-d3267227' type='text' />
+      {{!--prettier-ignore--}}
+      <script>
+        (() => {
+          const el_inp = document.querySelector(`#inp-d3267227`);
+          flatpickr(el_inp, {});
+        })()
+      </script>
+    </section>
+    <section>
+      <div class='H2'>DateTime</div>
+      <input id='inp-1e8273f6' type='text' />
+      {{!--prettier-ignore--}}
+      <script>
+        (() => {
+          const el_inp = document.querySelector(`#inp-1e8273f6`);
+          flatpickr(el_inp, {
+            enableTime: true,
+            dateFormat: "Y-m-d H:i",
+          });
+        })()
+      </script>
+    </section>
+    <section>
+      <div class='H2'>Human-friendly Dates</div>
+      <input id='inp-f30fefc3' type='text' />
+      {{!--prettier-ignore--}}
+      <script>
+        (() => {
+          const el_inp = document.querySelector(`#inp-f30fefc3`);
+          flatpickr(el_inp, {
+            altInput: true,
+            altFormat: "F j, Y",
+            dateFormat: "Y-m-d",
+          });
+        })()
+      </script>
+    </section>
+    <section>
+      <div class='H2'>minDate and maxDate</div>
+      <div class='H3'>minDate: "2020-01"</div>
+      <input id='inp-281b306e' type='text' />
+      {{!--prettier-ignore--}}
+      <script>
+        (() => {
+          const el_inp = document.querySelector(`#inp-281b306e`);
+          flatpickr(el_inp, {
+            minDate: "2020-01",
+          });
+        })()
+      </script>
+    </section>
+    <section>
+      <div class='H3'>maxDate: "2023-10-30"</div>
+      <input id='inp-3b82801d' type='text' />
+      {{!--prettier-ignore--}}
+      <script>
+        (() => {
+          const el_inp = document.querySelector(`#inp-3b82801d`);
+          flatpickr(el_inp, {
+            maxDate: "2023-10-30",
+          });
+        })()
+      </script>
+    </section>
+    <section>
+      <div class='H3'>minDate: "today", maxDate: new Date().fp_incr(14)</div>
+      <input id='inp-4f911bf1' type='text' />
+      {{!--prettier-ignore--}}
+      <script>
+        (() => {
+          const el_inp = document.querySelector(`#inp-4f911bf1`);
+          flatpickr(el_inp, {
+            minDate: "today",
+            maxDate: new Date().fp_incr(14) // 14 days from now
+          });
+        })()
+      </script>
+    </section>
+    <section>
+      <div class='H2'>Disabling dates</div>
+      <div class='H3'>Disabling specific date</div>
+      <input id='inp-ac59b422' type='text' />
+      {{!--prettier-ignore--}}
+      <script>
+        (() => {
+          const el_inp = document.querySelector(`#inp-ac59b422`);
+          flatpickr(el_inp, {
+            disable: ["2023-10-30", "2023-10-21", "2023-10-08"],
+          });
+        })()
+      </script>
+    </section>
+    <section>
+      <div class='H3'>Disabling a date range</div>
+      <input id='inp-a1dda77c' type='text' />
+      {{!--prettier-ignore--}}
+      <script>
+        (() => {
+          const el_inp = document.querySelector(`#inp-a1dda77c`);
+          flatpickr(el_inp, {
+            disable: [
+              {
+                from: "2023-10-01",
+                to: "2023-10-03"
+              },
+              {
+                from: "2023-10-11",
+                to: "2023-10-14"
+              }
+            ]
+          });
+        })()
+      </script>
+    </section>
+    <section>
+      <div class='H3'>Disabling dates by a function</div>
+      <input id='inp-89400eb6' type='text' />
+      {{!--prettier-ignore--}}
+      <script>
+        (() => {
+          const el_inp = document.querySelector(`#inp-89400eb6`);
+          flatpickr(el_inp, {
+            "disable": [
+              function (date) {
+                // return true to disable
+                return (date.getDay() === 0 || date.getDay() === 6);
+                
+              }
+            ]
+          });
+        })()
+      </script>
+    </section>
+    <section>
+      <div class='H2'>Disabling all dates except select few</div>
+      <div class='H3'>Enabling specific dates</div>
+      <input id='inp-9896141f' type='text' />
+      {{!--prettier-ignore--}}
+      <script>
+        (() => {
+          const el_inp = document.querySelector(`#inp-9896141f`);
+          flatpickr(el_inp, {
+            enable: ["2023-10-30", "2023-10-21", "2023-10-08"]
+          });
+        })()
+      </script>
+    </section>
+    <section>
+      <div class='H3'>Enabling range(s) of dates</div>
+      <input id='inp-3bad034d' type='text' />
+      {{!--prettier-ignore--}}
+      <script>
+        (() => {
+          const el_inp = document.querySelector(`#inp-3bad034d`);
+          flatpickr(el_inp, {
+            enable: [
+              {
+                from: "2023-10-10",
+                to: "2023-10-13"
+              },
+              {
+                from: "2023-10-20",
+                to: "2023-10-25"
+              }
+            ]
+          });
+        })()
+      </script>
+    </section>
+    <section>
+      <div class='H3'>Enabling dates by a function</div>
+      <input id='inp-6b053fdc' type='text' />
+      {{!--prettier-ignore--}}
+      <script>
+        (() => {
+          const el_inp = document.querySelector(`#inp-6b053fdc`);
+          flatpickr(el_inp, {
+            enable: [
+              function (date) {
+                // return true to enable
+                return (date.getMonth() % 2 === 0 && date.getDate() < 15);
+              }
+            ]
+          });
+        })()
+      </script>
+    </section>
+    <section>
+      <div class='H2'>Selecting multiple dates</div>
+      <input id='inp-c2129d34' type='text' />
+      {{!--prettier-ignore--}}
+      <script>
+        (() => {
+          const el_inp = document.querySelector(`#inp-c2129d34`);
+          flatpickr(el_inp, {
+            mode: "multiple",
+            dateFormat: "Y-m-d"
+          });
+        })()
+      </script>
+    </section>
+  </main>
+</div>

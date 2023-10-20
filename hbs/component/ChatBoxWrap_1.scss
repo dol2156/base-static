@@ -1,0 +1,64 @@
+.ChatBoxWrap_1 {
+  padding: 30px var(--contents-side-padding);
+
+  .C-2bfcbe05 {
+    border: 1px solid var(--primary-cultureland-red, #ff3838);
+    padding: 5px 8px;
+  }
+
+  .C-9b9728cc {
+    font-size: 11px;
+    color: #767676;
+  }
+}
+
+.ChatBox_1 {
+  margin-bottom: 26px;
+  display: flex;
+  gap: 0px;
+  flex-direction: column;
+
+  .DateArea {
+    margin-bottom: 10px;
+  }
+
+  .ContentsArea {
+    width: 300px;
+    padding: 20px;
+    border-radius: 8px;
+    color: #303030;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+
+  &.Other {
+    //padding-right: 20px;
+    align-items: flex-start;
+
+    .ContentsArea {
+      background: var(--sub-backgraound, #f4f4f4);
+      box-shadow: 0px 0px 6px 0px rgba(166, 166, 166, 0.6);
+    }
+  }
+
+  &.My {
+    //padding-left: 20px;
+    align-items: flex-end;
+
+    .ContentsArea {
+      background: var(--sub-white, #fff);
+      box-shadow: 0px 0px 6px 0px rgba(166, 166, 166, 0.6);
+    }
+  }
+
+  .C-96ae219a {
+    font-size: 10px;
+    font-weight: 400;
+  }
+
+  .C-e906e752 {
+    font-size: 14px;
+    font-weight: 600;
+  }
+}

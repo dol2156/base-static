@@ -1,0 +1,25 @@
+.LinkList_1 {
+  background-color: white;
+  border: 1px solid #ebebeb;
+  border-radius: 8px;
+
+  > ul {
+    > li {
+      a {
+        color: #303030;
+        font-size: 14px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0px;
+        height: 60px;
+        padding: 0 16px;
+      }
+    }
+
+    > li + li {
+      border-top: 1px solid #ebebeb;
+    }
+  }
+}

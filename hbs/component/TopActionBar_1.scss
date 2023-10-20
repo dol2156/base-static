@@ -1,0 +1,33 @@
+.TopActionBar_1 {
+  position: relative;
+  height: 64px;
+  background-color: var(--color1);
+  .Sec0 {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0px;
+    height: 100%;
+
+    .LeftArea {
+      padding-left: var(--contents-side-padding);
+    }
+
+    .RightArea {
+      padding-right: var(--contents-side-padding);
+    }
+  }
+  .PageTitle {
+    z-index: 0;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+  }
+}

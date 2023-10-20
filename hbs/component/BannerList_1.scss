@@ -1,0 +1,16 @@
+.BannerList_1 {
+  > ul {
+    display: inline-flex;
+    white-space: nowrap;
+    align-items: center;
+    gap: 25px;
+    overflow: auto;
+    padding-left: var(--contents-side-padding);
+    padding-right: var(--contents-side-padding);
+  }
+  .BannerImg {
+    > img {
+      border-radius: 10px;
+    }
+  }
+}

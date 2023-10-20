@@ -1,0 +1,8 @@
+<div class='RadioGroup_1'>
+  {{#EACH (ARR '컬쳐캐쉬|간편 계좌이체|신용카드|휴대폰결제|네이버페이|카카오페이')}}
+    <label>
+      <input type='radio' {{ON 0 'checked'}} {{ON 1 'disabled'}}/>
+      <div class="text1">{{obj}}</div>
+    </label>
+  {{/EACH}}
+</div>

@@ -1,0 +1,23 @@
+.Ul_1 {
+  color: inherit;
+  font-size: inherit;
+  font-weight: 400;
+  line-height: 1.25em;
+  > li {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 0px;
+    &:before {
+      content: '-';
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0px;
+      margin-right: 0.3em;
+    }
+    + li {
+      margin-top: 0.2em;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "GEO_DATA": [
+    {
+      "PLACE_NAME":"경복궁",
+      "OVERLAY_LINK": "https://www.google.com",
+      "OVERLAY_IMG":"https://gifpng.com/300x150/ffd4d4/ff4444?text=경복궁",
+      "ADDRESS_NAME":"서울 종로구 사직로 161",
+      "위도":37.579617,
+      "경도":126.977041
+    },
+    {
+      "PLACE_NAME":"카카오",
+      "OVERLAY_LINK": "https://www.google.com",
+      "OVERLAY_IMG":"https://gifpng.com/300x150/ffd4d4/ff4444?text=카카오",
+      "ADDRESS_NAME":"경기 성남시 분당구 판교역로 166 카카오 판교아지트 A동 3층",
+      "위도":37.3957122,
+      "경도":127.1105181
+    },
+    {
+      "PLACE_NAME":"서울 도봉점[직영점]",
+      "OVERLAY_LINK": "https://www.google.com",
+      "OVERLAY_IMG":"https://gifpng.com/300x150/ffd4d4/ff4444?text=서울 도봉점[직영점]",
+      "ADDRESS_NAME":"서울 중구 세종대로 110",
+      "위도":37.686201,
+      "경도":127.037428
+    }
+  ]
+}

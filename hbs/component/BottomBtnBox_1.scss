@@ -1,0 +1,20 @@
+.BottomBtnBox_1 {
+  width: 100%;
+  background: #ffffff;
+  padding: 20px;
+  box-shadow: 0px -4px 10px 0px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  > * {
+    flex: 1;
+  }
+
+  .C-274b091b {
+    color: #303030;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 18px;
+  }
+}

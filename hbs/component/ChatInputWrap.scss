@@ -1,0 +1,11 @@
+.ChatInputWrap {
+  background: var(--solid-white, #fff);
+  box-shadow: 0px -4px 10px 0px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  > .Inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0px;
+  }
+}

@@ -1,0 +1,28 @@
+.NotiItem_1 {
+  border-radius: 8px;
+  border: 1px solid var(--sub-border-1, #ebebeb);
+  background: var(--sub-white, #ffffff);
+  padding: 20px 16px;
+  &.On {
+    border-color: #ff3838;
+  }
+
+  .Txt1 {
+    color: #a6a6a6;
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  .Txt2 {
+    color: #303030;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .Txt3 {
+    color: #767676;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+  }
+}

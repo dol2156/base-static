@@ -1,0 +1,20 @@
+.TopActionBar_3 {
+  border-bottom: 1px solid #ebebeb;
+  background-color: white;
+
+  > .Inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0px;
+    padding-left: 24px;
+    padding-right: 20px;
+    height: 56px;
+  }
+
+  .PageTitle {
+    color: var(--text-color1);
+    font-size: 16px;
+    font-weight: 500;
+  }
+}

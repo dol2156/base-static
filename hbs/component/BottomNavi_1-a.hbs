@@ -1,0 +1,10 @@
+<article class='BottomNavi_1'>
+  {{#EACH (ARR '거래소 홈|쿠폰함|판매|지갑|내정보')}}
+    <button class='{{ON 0}}'>
+      <div class='Icon CenterCenter'>
+        <img style="width:24px;" src='/assets/icon/empty.svg' alt='' />
+      </div>
+      <div class='Label' style='margin-top:5px;'>{{obj}}</div>
+    </button>
+  {{/EACH}}
+</article>

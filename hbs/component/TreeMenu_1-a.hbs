@@ -1,0 +1,26 @@
+<div class='TreeMenu_1'>
+  <ul>
+    {{#LOOP 5}}
+      <li>
+        <div class="Label">
+          {{number}}
+          <img class="z-10 absolute top-1/2 -translate-y-1/2 right-[20px] [.On_&]:rotate-180 duration-300 ease-out will-change-auto" src="/assets/icon/star.svg" alt=""/>
+        </div>
+        <div class="ChildList CollapseAbleBox">
+          <ul>
+            {{#LOOP 3}}
+              <li>
+                <div class="Label">
+                  {{../number}} - {{number}}
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                </div>
+              </li>
+            {{/LOOP}}
+          </ul>
+          <img onerror="initCollapseAbleBox(this);" src=""/>
+        </div>
+      </li>
+    {{/LOOP}}
+  </ul>
+  <img onerror="initTreeMenu(this);" src=""/>
+</div>

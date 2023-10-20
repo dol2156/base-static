@@ -1,0 +1,46 @@
+.HScrollGradientBox_1 {
+  @mixin mxHShadow {
+    width: 30px;
+    height: 100%;
+    top: 0px;
+    display: block;
+    content: '';
+    position: absolute;
+    z-index: 3;
+    opacity: 1;
+    transition: opacity 300ms cubic-bezier(0.33, 1, 0.68, 1);
+    will-change: auto;
+  }
+
+  font-size: 0;
+  position: relative;
+
+  .Track {
+    width: 100%;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &:before {
+    @include mxHShadow;
+    left: 0px;
+    background: linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
+  }
+
+  &.Start:before {
+    opacity: 0;
+  }
+
+  &:after {
+    @include mxHShadow;
+    right: 0px;
+    background: linear-gradient(270deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
+  }
+
+  &.End:after {
+    opacity: 0;
+  }
+}

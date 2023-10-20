@@ -1,0 +1,237 @@
+<div id='page'>
+  {{!-- prettier-ignore --}}
+  <style>
+    .RR{ outline:1px dashed red; }
+    main > section{ margin-bottom:50px; }
+    /**/
+    .SampleList{ display:block; padding:10px; user-select:none; }
+    .SampleList > li{cursor:pointer; position:relative;display:block;padding:0.75rem 1.25rem;margin-bottom:-1px;background-color:#ffffd4;border:1px solid rgba(0, 0, 0, .125);}
+    .SampleList > li > *{ display:inline-block; }
+    .SampleList > li + li{ margin-top:4px; }
+    /**/
+    .sortable-chosen{ background-color:#ffb077!important; }
+    .sortable-ghost{ background-color:#b2f3ff!important; }
+    .filtered{ outline:1px dashed red; }
+    .my-handle{ outline:1px dashed red; }
+    /**/
+    .GridDemo{ display:grid; grid-template-columns:repeat(5, minmax(0, 1fr)); gap:10px; }
+    .GridDemo{ justify-items:center; padding:10px; }
+    .GridSquare{ cursor:pointer; display:inline-flex; aspect-ratio:1; width:100%; align-items:center; justify-content:center; background-color:#ffffd4; border:1px solid #ddd; }
+    /*.GridDemo{ font-size:0; }*/
+    /*.GridDemo > .GridSquare{ display:inline-flex; align-items:center; justify-content:center; width:100px; height:100px; background-color:#ffffd4; }*/
+    /*.GridDemo > .GridSquare{ font-size:16px; margin:10px; }*/
+  </style>
+  <main>
+    <div class='H1'>SortableJS</div>
+    <div class='H2'>Features</div>
+    <section>
+      <div class='H3'>Simple list example</div>
+      <ul id='list-c516b09c' class='SampleList'>
+        {{#LOOP 5}}
+          <li>Item {{number}}</li>
+        {{/LOOP}}
+      </ul>
+      {{!--prettier-ignore--}}
+      <script>
+        (() => {
+          const el_list = document.querySelector(`#list-c516b09c`);
+          new Sortable(el_list, {
+            animation: 150
+          });
+        })()
+      </script>
+    </section>
+    <section>
+      <div class='H3'>Shared lists</div>
+      <article class='CenterBetween'>
+        <div class='flex-1'>
+          <ul id='list-dc8c8168' class='SampleList'>
+            {{#LOOP 5}}
+              <li>Item 1-{{number}}</li>
+            {{/LOOP}}
+          </ul>
+          {{!--prettier-ignore--}}
+          <script>
+            (() => {
+              const el_list = document.querySelector(`#list-dc8c8168`);
+              new Sortable(el_list, {
+                animation: 150,
+                group: 'shared', // set both lists to same group
+              });
+            })()
+          </script>
+        </div>
+        <div class='flex-1'>
+          <ul id='list-97bb06da' class='SampleList'>
+            {{#LOOP 5}}
+              <li>Item 2-{{number}}</li>
+            {{/LOOP}}
+          </ul>
+          {{!--prettier-ignore--}}
+          <script>
+            (() => {
+              const el_list = document.querySelector(`#list-97bb06da`);
+              new Sortable(el_list, {
+                animation: 150,
+                group: 'shared', // set both lists to same group
+              });
+            })()
+          </script>
+        </div>
+      </article>
+    </section>
+    <section>
+      <div class='H3'>Cloning</div>
+      <article class='CenterBetween'>
+        <div class='flex-1'>
+          <ul id='list-324b3f62' class='SampleList'>
+            {{#LOOP 5}}
+              <li>Item 1-{{number}}</li>
+            {{/LOOP}}
+          </ul>
+          {{!--prettier-ignore--}}
+          <script>
+            (() => {
+              const el_list = document.querySelector(`#list-324b3f62`);
+              new Sortable(el_list, {
+                animation: 150,
+                group: {
+                  name: 'shared',
+                  pull: 'clone' // To clone: set pull to 'clone'
+                },
+              });
+            })()
+          </script>
+        </div>
+        <div class='flex-1'>
+          <ul id='list-c7a5b1a9' class='SampleList'>
+            {{#LOOP 5}}
+              <li>Item 2-{{number}}</li>
+            {{/LOOP}}
+          </ul>
+          {{!--prettier-ignore--}}
+          <script>
+            (() => {
+              const el_list = document.querySelector(`#list-c7a5b1a9`);
+              new Sortable(el_list, {
+                animation: 150,
+                group: {
+                  name: 'shared',
+                  pull: 'clone' // To clone: set pull to 'clone'
+                },
+              });
+            })()
+          </script>
+        </div>
+      </article>
+    </section>
+    <section>
+      <div class='H3'>Disabling Sorting</div>
+      <article class='CenterBetween'>
+        <div class='flex-1'>
+          <ul id='list-04469545' class='SampleList'>
+            {{#LOOP 5}}
+              <li>Item 1-{{number}}</li>
+            {{/LOOP}}
+          </ul>
+          {{!--prettier-ignore--}}
+          <script>
+            (() => {
+              const el_list = document.querySelector(`#list-04469545`);
+              new Sortable(el_list, {
+                animation: 150,
+                sort: false, // To disable sorting: set sort to false
+                group: {
+                  name: 'shared',
+                  pull: 'clone',
+                  put: false // Do not allow items to be put into this list
+                },
+              });
+            })()
+          </script>
+        </div>
+        <div class='flex-1'>
+          <ul id='list-51654c12' class='SampleList'>
+            {{#LOOP 5}}
+              <li>Item 2-{{number}}</li>
+            {{/LOOP}}
+          </ul>
+          {{!--prettier-ignore--}}
+          <script>
+            (() => {
+              const el_list = document.querySelector(`#list-51654c12`);
+              new Sortable(el_list, {
+                animation: 150,
+                group: {
+                  name: 'shared',
+                },
+              });
+            })()
+          </script>
+        </div>
+      </article>
+    </section>
+    <section>
+      <div class='H3'>Handle</div>
+      <ul id='list-1f650ca9' class='SampleList'>
+        {{#LOOP 5}}
+          <li>
+            <img class='my-handle' src='/assets/icon/star.svg' alt='' />
+            Item 1-{{number}}
+          </li>
+        {{/LOOP}}
+      </ul>
+      {{!--prettier-ignore--}}
+      <script>
+        (() => {
+          const el_list = document.querySelector(`#list-1f650ca9`);
+          new Sortable(el_list, {
+            animation: 150,
+            handle: '.my-handle', // handle's class
+          });
+        })()
+      </script>
+    </section>
+    <section>
+      <div class='H3'>Filter</div>
+      <ul id='list-3de18208q' class='SampleList'>
+        {{#LOOP 2}}
+          <li>
+            Item
+            {{number}}
+          </li>
+        {{/LOOP}}
+        <li class='filtered'>
+          Filtered Item
+        </li>
+        {{#LOOP 2}}
+          <li>
+            Item
+            {{number}}
+          </li>
+        {{/LOOP}}
+      </ul>
+      {{!--prettier-ignore--}}
+      <script>
+        (() => {
+          const el_list = document.querySelector(`#list-3de18208q`);
+          new Sortable(el_list, {
+            animation: 150,
+            filter: '.filtered', // 'filtered' class is not draggable
+          });
+        })()
+      </script>
+    </section>
+    <section>
+      <div class='H3'>Grid Example</div>
+      <div id='list-2d58ffb2' class='GridDemo'>
+        {{#LOOP 10}}
+          <div class='GridSquare'>Item {{number}}</div>
+        {{/LOOP}}
+      </div>
+      <script>
+        (() => { const el_list = document.querySelector(`#list-2d58ffb2`); new Sortable(el_list, { animation: 150 }); })()
+      </script>
+    </section>
+  </main>
+</div>

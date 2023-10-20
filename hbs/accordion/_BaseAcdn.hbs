@@ -1,0 +1,56 @@
+{{!-- https://github.com/michu2k/Accordion --}}
+<div class='SampleList'>
+  <article>
+    <div class="H3">Basic Accordion</div>
+    <div id='Acdn-5315f39b' class='accordion-container'>
+      {{#LOOP 5}}
+        <div class='ac'>
+          <h2 class='ac-header'>
+            <button type='button' class='ac-trigger'>
+              {{index}}
+              Lorem ipsum dolor sit amet.
+            </button>
+          </h2>
+          <div class='ac-panel'>
+            <p class='ac-text'>
+              {{index}}
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            </p>
+          </div>
+        </div>
+      {{/LOOP}}
+    </div>
+    {{!--prettier-ignore--}}
+    <script>
+      new Accordion('#Acdn-5315f39b');
+    </script>
+  </article>
+  <article>
+    <div class="H3">Multiple Accordions</div>
+    <div id='Acdn-c08f0034' class='accordion-container'>
+      {{#LOOP 5}}
+        <div class='ac'>
+          <h2 class='ac-header'>
+            <button type='button' class='ac-trigger'>
+              {{index}}
+              Lorem ipsum dolor sit amet.
+            </button>
+          </h2>
+          <div class='ac-panel'>
+            <p class='ac-text'>
+              {{index}}
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            </p>
+          </div>
+        </div>
+      {{/LOOP}}
+    </div>
+    {{!--prettier-ignore--}}
+    <script>
+      new Accordion('#Acdn-c08f0034', {
+        openOnInit: [0],
+        collapse: false,// 눌렀을때 접힘 방지
+      });
+    </script>
+  </article>
+</div>

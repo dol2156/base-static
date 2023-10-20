@@ -1,0 +1,24 @@
+.Ul_2 {
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+
+  > li {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 0px;
+    &:before {
+      content: '\2022';
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0px;
+      margin-right: 0.3em;
+    }
+    + li {
+      margin-top: 0.2em;
+    }
+  }
+}

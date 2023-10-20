@@ -1,0 +1,14 @@
+.AlertBox_2 {
+  border-radius: 6px;
+  border: 1px solid var(--sub-border-2, #e1e1e1);
+  background: var(--sub-backgraound, #ffffff);
+  padding: 16px;
+
+  .Txt1 {
+    text-align: left;
+    color: #303030;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+  }
+}

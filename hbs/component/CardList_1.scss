@@ -1,0 +1,10 @@
+.CardList_1 {
+  > ul {
+    overflow: auto;
+    padding-left: var(--contents-side-padding);
+    padding-right: var(--contents-side-padding);
+    display: inline-flex;
+    white-space: nowrap;
+    gap: 10px;
+  }
+}
