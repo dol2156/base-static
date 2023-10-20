@@ -5,17 +5,19 @@ Handlebars.logger.level = 'debug';
  * @param template_id
  * @param render_data
  */
-Handlebars.render = (template_id, render_data = {}) => {
-  const first_char = template_id.charAt(0);
+Handlebars.render = (template_id, render_data = {}, callback) => {
+  const el_tpl = document.querySelector(`[tpl="${template_id}"]`);
+  if(!el_tpl) return;
+  
+  const hbs = el_tpl.getAttribute('hbs');
   
   let html_str;
-  if(first_char == "/"){
+  if(hbs){
     // hbs 로드 방식
-    html_str = Handlebars.loadHtml(template_id);
+    html_str = Handlebars.loadHtml(hbs);
     
   }else{
     // 인라인 방식
-    const el_tpl = document.querySelector(`[tpl="${template_id}"]`);
     html_str = el_tpl.innerHTML;
   }
   
@@ -26,9 +28,10 @@ Handlebars.render = (template_id, render_data = {}) => {
   let rendered = compiled_template(render_data);
   rendered = `<!-- Handlebars.render :: ${template_id} :: START ::  -->` + rendered + `<!-- // Handlebars.render :: ${template_id} :: END ::  -->`;
 
-  const current_script = document.currentScript;
-  current_script.insertAdjacentHTML('beforebegin', rendered);
-  current_script.remove();
+  el_tpl.insertAdjacentHTML('beforebegin', rendered);
+  if(document.currentScript) document.currentScript.remove();
+  if(callback) callback();
+  el_tpl.remove();
 };
 
 /**
