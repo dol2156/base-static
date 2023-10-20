@@ -11,19 +11,26 @@
     <main>
       <section>pages/sitemap.html</section>
       <script tpl="46d8dd6a" type="text/x-handlebars-template">
-        {{#LOOP 10}}
+        {{#LOOP 5}}
           <div>
             <div>index : {{index}}</div>
             <div>number : {{number}}</div>
             <div>digit : {{digit}}</div>
           </div>
         {{/LOOP}}
+        {{INCLUDE '/hbs/btn/Btn_1.hbs'}}
       </script>
       <script>
-        console.log(`Handlebars.convert == `, Handlebars.convert);
         Handlebars.render('46d8dd6a');
-        Handlebars.render('/hbs/btn/Btn_1.hbs');
+      </script>
+      <script tpl="67dc9a54" type="text/x-handlebars-template" hbs="/hbs/btn/Btn_1.hbs"></script>
+      <script>
+        Handlebars.render('67dc9a54');
       </script>
     </main>
+    <script tpl="footer" type="text/x-handlebars-template" hbs="/hbs/layout/Footer_1-a.hbs"></script>
+    <script>
+      Handlebars.render('footer');
+    </script>
   </body>
 </html>

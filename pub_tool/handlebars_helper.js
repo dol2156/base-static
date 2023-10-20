@@ -1,35 +1,31 @@
 Handlebars.logger.level = 'debug';
 
 /**
- *
- * @param path
+ * 비동기 Handlebars 템플릿 렌더링
+ * @param template_id
  * @param render_data
  */
-Handlebars.write = (path, render_data) => {
-  if (typeof render_data === 'undefined') render_data = {};
-  render_data = Object.assign({ window }, render_data);
-  const filename = path.replace(/^.*[\\\/]/, '').replace(/\.[^/.]+$/, '');
+Handlebars.render = (template_id, render_data = {}) => {
+  let el_tpl = document.querySelector(`[tpl="${template_id}"]`);
+  const hbs = el_tpl.getAttribute('hbs');
 
-  const el_script = document.currentScript;
-
-  const html_str = Handlebars.loadHtml(path);
+  let html_str;
+  if (hbs) {
+    html_str = Handlebars.loadHtml(hbs);
+  } else {
+    html_str = el_tpl.innerHTML;
+  }
 
   //Compile the template
   const compiled_template = Handlebars.compile(html_str);
 
   //Render the data into the template
   let rendered = compiled_template(render_data);
-  rendered = `<!-- ${filename} :: START ::  -->` + rendered + `<!-- // ${filename} :: END ::  -->`;
+  rendered = `<!-- Handlebars.render :: ${template_id} :: START ::  -->` + rendered + `<!-- // Handlebars.render :: ${template_id} :: END ::  -->`;
 
-  document.write(rendered);
-
-  el_script.remove();
+  el_tpl.insertAdjacentHTML('afterend', rendered);
+  el_tpl.remove();
 };
-
-Handlebars.render = (template_script_tag_object, render_data = {}) => {
-  console.log(`template_script_tag_object == `, template_script_tag_object);
-  console.log(this);
-}
 
 /**
  * 동기 HTML 로드
@@ -72,6 +68,22 @@ Handlebars.loadHtml = (path, convert) => {
 /************************************************
  Helper Start
  *************************************************/
+
+/**
+ *
+ */
+Handlebars.registerHelper('INCLUDE', function (hbs_path, render_data = {}, options) {
+  const html_str = Handlebars.loadHtml(hbs_path);
+
+  //Compile the template
+  const compiled_template = Handlebars.compile(html_str);
+
+  //Render the data into the template
+  let rendered = compiled_template(render_data);
+  rendered = `<!-- INCLUDE :: ${hbs_path} :: START ::  -->` + rendered + `<!-- // INCLUDE :: ${hbs_path} :: END ::  -->`;
+
+  return new Handlebars.SafeString(rendered);
+});
 
 /**
  * n 회 반복
