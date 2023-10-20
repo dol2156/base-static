@@ -6,16 +6,19 @@ Handlebars.logger.level = 'debug';
  * @param render_data
  */
 Handlebars.render = (template_id, render_data = {}) => {
-  let el_tpl = document.querySelector(`[tpl="${template_id}"]`);
-  const hbs = el_tpl.getAttribute('hbs');
-
+  const first_char = template_id.charAt(0);
+  
   let html_str;
-  if (hbs) {
-    html_str = Handlebars.loadHtml(hbs);
-  } else {
+  if(first_char == "/"){
+    // hbs 로드 방식
+    html_str = Handlebars.loadHtml(template_id);
+    
+  }else{
+    // 인라인 방식
+    const el_tpl = document.querySelector(`[tpl="${template_id}"]`);
     html_str = el_tpl.innerHTML;
   }
-
+  
   //Compile the template
   const compiled_template = Handlebars.compile(html_str);
 
@@ -23,8 +26,9 @@ Handlebars.render = (template_id, render_data = {}) => {
   let rendered = compiled_template(render_data);
   rendered = `<!-- Handlebars.render :: ${template_id} :: START ::  -->` + rendered + `<!-- // Handlebars.render :: ${template_id} :: END ::  -->`;
 
-  el_tpl.insertAdjacentHTML('afterend', rendered);
-  el_tpl.remove();
+  const current_script = document.currentScript;
+  current_script.insertAdjacentHTML('beforebegin', rendered);
+  current_script.remove();
 };
 
 /**
