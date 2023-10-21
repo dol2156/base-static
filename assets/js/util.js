@@ -1,5 +1,6 @@
 const Util = {};
 
+
 /**
  * 입력되는 컬러와 대비되어 잘 보이는 색상 반환
  * @param color_hex

@@ -32,4 +32,5 @@ const Include = (path) => {
   xhttp.send();
 
   document.write(html_str);
+  document.currentScript.remove();
 };

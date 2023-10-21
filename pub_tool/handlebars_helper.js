@@ -1,37 +1,24 @@
 Handlebars.logger.level = 'debug';
 
 /**
- * 비동기 Handlebars 템플릿 렌더링
+ * 동기 방식 Handlebars 템플릿 렌더링
  * @param template_id
  * @param render_data
  */
-Handlebars.render = (template_id, render_data = {}, callback) => {
-  const el_tpl = document.querySelector(`[tpl="${template_id}"]`);
-  if(!el_tpl) return;
-  
-  const hbs = el_tpl.getAttribute('hbs');
-  
-  let html_str;
-  if(hbs){
-    // hbs 로드 방식
-    html_str = Handlebars.loadHtml(hbs);
-    
-  }else{
-    // 인라인 방식
-    html_str = el_tpl.innerHTML;
-  }
-  
+Handlebars.write = (template_path, callback) => {
+  const html_str = Handlebars.loadHtml(template_path);
+
   //Compile the template
   const compiled_template = Handlebars.compile(html_str);
 
   //Render the data into the template
-  let rendered = compiled_template(render_data);
-  rendered = `<!-- Handlebars.render :: ${template_id} :: START ::  -->` + rendered + `<!-- // Handlebars.render :: ${template_id} :: END ::  -->`;
+  let rendered = compiled_template(window);
+  // rendered = `<!-- Handlebars.render :: ${template_path} :: START ::  -->` + rendered + `<!-- // Handlebars.render :: ${template_path} :: END ::  -->`;
 
-  el_tpl.insertAdjacentHTML('beforebegin', rendered);
+  document.write(rendered);
+  if (callback) callback();
+  
   if(document.currentScript) document.currentScript.remove();
-  if(callback) callback();
-  el_tpl.remove();
 };
 
 /**
@@ -118,7 +105,7 @@ Handlebars.registerHelper('EACH', function (data_list, options) {
   if (arguments.length > 1 && data_list) {
     //console.log(data_list);
     data_list.forEach((obj, idx) => {
-      const obj_result = { obj: obj, index: idx, number: idx + 1, digit: (idx + 1).toString().padStart(2, '0') };
+      const obj_result = Object.assign(obj, { index: idx, number: idx + 1, digit: (idx + 1).toString().padStart(2, '0') })
 
       accum += options.fn(obj_result);
     });

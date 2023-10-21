@@ -1,0 +1,20 @@
+<main>
+  <section>pages/sitemap.html</section>
+  {{#LOOP 5}}
+    <div>
+      <div>index : {{index}}</div>
+    </div>
+  {{/LOOP}}
+  {{#EACH DATA_SITEMAP.data}}
+    <div>
+      {{라벨}}
+    </div>
+  {{/EACH}}
+  {{#EACH (ARR '🍎|🍍|🥝|🍇|🍈')}}
+    <div>
+      {{this}}
+    </div>
+  {{/EACH}}
+  {{INCLUDE '/hbs/btn/Btn_1.hbs'}}
+</main>
+{{INCLUDE '/hbs/layout/Footer_1-a.hbs'}}
