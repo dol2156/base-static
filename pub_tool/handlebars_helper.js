@@ -1,17 +1,5 @@
 Handlebars.logger.level = 'debug';
 
-window.addEventListener('DOMContentLoaded', (evt) => {
-  const html_str = document.body.outerHTML;
-
-  //Compile the template
-  const compiled_template = Handlebars.compile(html_str);
-
-  //Render the data into the template
-  let rendered = compiled_template({ window });
-
-  Handlebars.outerHTML(document.body, rendered);
-});
-
 /**
  * 비동기 방식 Handlebars 템플릿 렌더링
  * @param template_id
@@ -37,6 +25,20 @@ Handlebars.render = (template_id, render_data = {}, callback) => {
   rendered = `<!-- Handlebars.render :: ${tpl_path} :: START ::  -->` + rendered + `<!-- // Handlebars.render :: ${tpl_path} :: END ::  -->`;
 
   Handlebars.outerHTML(el_tpl, rendered);
+};
+
+Handlebars.write = (template_path, render_data = {}, callback) => {
+  const html_str = Handlebars.loadHtml(template_path);
+
+  //Compile the template
+  const compiled_template = Handlebars.compile(html_str);
+
+  //Render the data into the template
+  let rendered = compiled_template(Object.assign({ window }, render_data));
+  rendered = `<!-- Handlebars.write :: ${template_path} :: START ::  -->` + rendered + `<!-- // Handlebars.write :: ${template_path} :: END ::  -->`;
+
+  document.write(rendered);
+  if(document.currentScript) document.currentScript.remove();
 };
 
 Handlebars.outerHTML = (element, html) => {
@@ -102,31 +104,6 @@ Handlebars.loadHtml = (path, convert) => {
 /************************************************
  Helper Start
  *************************************************/
-
-Handlebars.registerHelper('RENDER', function (template_path, render_data, options) {
-  const html_str = Handlebars.loadHtml(template_path);
-
-  if (typeof render_data == 'string' && render_data != '') {
-    render_data = render_data.split('|');
-    const obj = {};
-    render_data.forEach((item, idx) => {
-      item = item.split('=');
-      obj[item[0]] = item[1];
-    });
-    render_data = obj;
-  } else {
-    render_data = {};
-  }
-
-  //Compile the template
-  const compiled_template = Handlebars.compile(html_str);
-
-  //Render the data into the template
-  let rendered = compiled_template(Object.assign({ window }, render_data));
-  // rendered = `<!-- RENDER :: ${template_path} :: START ::  -->` + rendered + `<!-- // RENDER :: ${template_path} :: END ::  -->`;
-
-  return new Handlebars.SafeString(rendered);
-});
 
 /**
  * n 회 반복

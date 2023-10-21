@@ -44,6 +44,8 @@
   </head>
   <body>
     <div id="Modal"></div>
-    {{RENDER '/pages/sitemap.hbs'}}
+    <script>
+      Handlebars.write(`/pages/${window.params.page}.hbs`);
+    </script>
   </body>
 </html>

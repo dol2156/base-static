@@ -43,54 +43,66 @@ Date.prototype.getToday = (between_str = '') => {
 /* // 2023-09-13 :: END :: Date */
 
 /* 2023-09-13 :: START :: HTMLElement */
-const ori_proto_method_list = Object.getOwnPropertyNames(HTMLElement.prototype);
+function CustomObject(elements) {
+  this.elements = Array.isArray(elements) ? elements : [elements];
+}
 
-/**
- * 클래스 추가
- * @param className
- * ex)
- * el_target.addClass('Focus');
- */
-HTMLElement.prototype.addClass = function (classNames) {
-  var classes = classNames.split(' ');
-  for (var i = 0; i < classes.length; i++) {
-    this.classList.add(classes[i]);
-  }
+CustomObject.prototype.addClass = function (classNames) {
+  this.elements.forEach(function (element) {
+    if (element.classList) {
+      var classes = classNames.split(' ');
+      for (var i = 0; i < classes.length; i++) {
+        element.classList.add(classes[i]);
+      }
+    }
+  });
   return this;
 };
 
-/**
- * 클래스 제거
- * @param className
- */
-HTMLElement.prototype.removeClass = function (classNames) {
-  var classes = classNames.split(' ');
-  for (var i = 0; i < classes.length; i++) {
-    this.classList.remove(classes[i]);
-  }
+CustomObject.prototype.removeClass = function (classNames) {
+  this.elements.forEach(function (element) {
+    if (element.classList) {
+      var classes = classNames.split(' ');
+      for (var i = 0; i < classes.length; i++) {
+        element.classList.remove(classes[i]);
+      }
+    }
+  });
   return this;
 };
 
-/**
- * 클래스 소유 여부 반환
- * @param className
- * @returns {boolean}
- */
-HTMLElement.prototype.hasClass = function (className) {
-  return this.classList.contains(className);
-};
-
-/**
- * 클래스 토글
- * @param classNames
- */
-HTMLElement.prototype.toggleClass = function(classNames) {
-  var classes = classNames.split(' ');
-  for (var i = 0; i < classes.length; i++) {
-    this.classList.toggle(classes[i]);
-  }
+CustomObject.prototype.toggleClass = function (classNames) {
+  this.elements.forEach(function (element) {
+    if (element.classList) {
+      var classes = classNames.split(' ');
+      for (var i = 0; i < classes.length; i++) {
+        element.classList.toggle(classes[i]);
+      }
+    }
+  });
   return this;
 };
+
+CustomObject.prototype.hasClass = function (className) {
+  let is_has = false;
+  this.elements.forEach(function (element) {
+    if (element.classList && element.classList.contains(className)) {
+      is_has = true;
+    }
+  });
+  return is_has;
+};
+
+function $$(selector) {
+  var elements = document.querySelectorAll(selector);
+
+  // If multiple elements are selected, convert NodeList to Array
+  if (elements instanceof NodeList) {
+    elements = Array.from(elements);
+  }
+
+  return new CustomObject(elements);
+}
 
 /**
  * 형제 요소 반환

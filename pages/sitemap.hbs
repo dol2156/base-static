@@ -1,4 +1,6 @@
-{{RENDER '/hbs/layout/Header_2-a.hbs'}}
+<script>
+  Handlebars.write('/hbs/layout/Header_2-a.hbs');
+</script>
 <main>
   <section>pages/sitemap.html</section>
   {{#LOOP 5}}
@@ -17,4 +19,13 @@
     </div>
   {{/EACH}}
 </main>
-{{RENDER '/hbs/layout/Footer_1-a.hbs'}}
+<script>
+  Handlebars.write('/hbs/layout/Footer_1-a.hbs');
+</script>
+{{!--prettier-ignore--}}
+<script>
+  $$('body').addClass('On');
+  $$('body').removeClass('On');
+  $$('body').toggleClass('On');
+  console.log($$('body').hasClass('On'));
+</script>
