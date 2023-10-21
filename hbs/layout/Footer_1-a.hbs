@@ -1,23 +1,7 @@
-<footer>
-  <div class='FixedBox'>
-    <div class='FixedShell Bottom'>
-      <footer class='Footer_1-a'>
-        <section>
-          {{INCLUDE '/hbs/component/BottomNavi_1-a.hbs'}}
-        </section>
-      </footer>
-    </div>
+<footer class='Footer_1-a FixedBox'>
+  <div class='FixedShell Bottom'>
+    <section>
+      <script>Handlebars.write('/hbs/component/BottomNavi_1-a.hbs')</script>
+    </section>
   </div>
-  {{!
-<footer data-only-view="MO" class="RR">
-  <div style="height: var(--footer-hei); display: flex; align-items: center; justify-content: center; gap: 0px">
-    MO Footer
-  </div>
-</footer>
-<footer data-only-view="PC" class="RR">
-  <div style="height: var(--footer-hei); display: flex; align-items: center; justify-content: center; gap: 0px">
-    PC Footer
-  </div>
-</footer>
-}}
 </footer>

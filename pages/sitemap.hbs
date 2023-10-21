@@ -1,3 +1,4 @@
+<script>Handlebars.write('/hbs/layout/Header_2-a.hbs')</script>
 <main>
   <section>pages/sitemap.html</section>
   {{#LOOP 5}}
@@ -5,7 +6,7 @@
       <div>index : {{index}}</div>
     </div>
   {{/LOOP}}
-  {{#EACH DATA_SITEMAP.data}}
+  {{#EACH window.DATA_SITEMAP}}
     <div>
       {{라벨}}
     </div>
@@ -15,6 +16,31 @@
       {{this}}
     </div>
   {{/EACH}}
-  {{INCLUDE '/hbs/btn/Btn_1.hbs'}}
+  </script>
+  {{!--prettier-ignore--}}
+  <script>
+    const fetch_param = {};
+
+    const fetch_query_string = new URLSearchParams(fetch_param).toString();
+    const base_url = 'https://jsonplaceholder.typicode.com/posts';
+    const fetch_url = `${base_url}?${fetch_query_string}`;
+
+    fetch(fetch_url)
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw Error(`${response.status} | ${response.statusText}`);
+        }
+      })
+      .then(data => {
+        console.log(data);
+        Handlebars.render('fedab034');
+      })
+      .catch(reason => {
+        console.log(reason);
+      })
+  </script>
+  <script>Handlebars.write('/hbs/btn/Btn_1.hbs')</script>
 </main>
-{{INCLUDE '/hbs/layout/Footer_1-a.hbs'}}
+<script>Handlebars.write('/hbs/layout/Footer_1-a.hbs')</script>

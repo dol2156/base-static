@@ -1,3 +1,41 @@
+/**
+ * 동기 HTML 로드
+ * @param path
+ * @param convert
+ * @returns {*}
+ * @constructor
+ */
+const Include = (path) => {
+  let html_str;
+  const xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function () {
+    /*
+    readyState
+    0	UNSENT	Client has been created. open() not called yet.
+    1	OPENED	open() has been called.
+    2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+    3	LOADING	Downloading; responseText holds partial data.
+    4	DONE	The operation is complete.
+    */
+    if (this.readyState == 4) {
+      if (this.status == 200) {
+        // success
+        html_str = this.responseText;
+      } else {
+        // error
+        const msg = '404 Not Found';
+        console.log(`%c${msg}%c${path}`, 'font-family:D2Coding; border:1px solid black; background:red; color:white; padding:5px; font-size:12px;', 'font-family:D2Coding; background-color:black; border:1px solid black; border-left:none; padding:5px; color:yellow; font-size:12px;');
+      }
+    }
+  };
+  xhttp.open('GET', path, false);
+  xhttp.send();
+
+  document.write(html_str);
+  document.currentScript.remove();
+};
+
+
 Handlebars.logger.level = 'debug';
 
 /**
@@ -5,20 +43,20 @@ Handlebars.logger.level = 'debug';
  * @param template_id
  * @param render_data
  */
-Handlebars.write = (template_path, callback) => {
+Handlebars.write = (template_path, render_data = {}, callback) => {
   const html_str = Handlebars.loadHtml(template_path);
 
   //Compile the template
   const compiled_template = Handlebars.compile(html_str);
 
   //Render the data into the template
-  let rendered = compiled_template(window);
-  // rendered = `<!-- Handlebars.render :: ${template_path} :: START ::  -->` + rendered + `<!-- // Handlebars.render :: ${template_path} :: END ::  -->`;
+  let rendered = compiled_template(Object.assign({ window }, render_data));
+  rendered = `<!-- Handlebars.write :: ${template_path} :: START ::  -->` + rendered + `<!-- // Handlebars.write :: ${template_path} :: END ::  -->`;
 
   document.write(rendered);
   if (callback) callback();
-  
-  if(document.currentScript) document.currentScript.remove();
+
+  if (document.currentScript) document.currentScript.remove();
 };
 
 /**
@@ -64,22 +102,6 @@ Handlebars.loadHtml = (path, convert) => {
  *************************************************/
 
 /**
- *
- */
-Handlebars.registerHelper('INCLUDE', function (hbs_path, render_data = {}, options) {
-  const html_str = Handlebars.loadHtml(hbs_path);
-
-  //Compile the template
-  const compiled_template = Handlebars.compile(html_str);
-
-  //Render the data into the template
-  let rendered = compiled_template(render_data);
-  rendered = `<!-- INCLUDE :: ${hbs_path} :: START ::  -->` + rendered + `<!-- // INCLUDE :: ${hbs_path} :: END ::  -->`;
-
-  return new Handlebars.SafeString(rendered);
-});
-
-/**
  * n 회 반복
  * ex)
  * {{#LOOP 10}}
@@ -105,7 +127,7 @@ Handlebars.registerHelper('EACH', function (data_list, options) {
   if (arguments.length > 1 && data_list) {
     //console.log(data_list);
     data_list.forEach((obj, idx) => {
-      const obj_result = Object.assign(obj, { index: idx, number: idx + 1, digit: (idx + 1).toString().padStart(2, '0') })
+      const obj_result = Object.assign(obj, { index: idx, number: idx + 1, digit: (idx + 1).toString().padStart(2, '0') });
 
       accum += options.fn(obj_result);
     });
