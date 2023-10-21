@@ -1,3 +1,35 @@
+/* 2023-09-13 :: START :: window */
+(() => {
+  // URL 객체 생성
+  const urlObj = new URL(window.location.href);
+
+  // URLSearchParams 객체 생성
+  const params = new URLSearchParams(urlObj.search);
+
+  // 파라메터 정보를 배열로 변환 후, Object.fromEntries를 이용해 객체로 변환
+  const paramsObject = Object.fromEntries(params.entries());
+  window.params = paramsObject;
+  const c_label = 'window.params';
+  const c_label_style = 'border:1px solid black; background:skyblue; color:#333; padding:0.25em 0.5em; font-size:12px; font-weight:bold;';
+  const c_value = JSON.stringify(window.params);
+  const c_value_style = 'border:1px solid black; background:#ffffd4; color:#333; padding:0.25em 0.5em; font-size:12px; border-left:none;';
+  console.log(`%c${c_label}%c${c_value}`, c_label_style, c_value_style);
+})();
+
+/**
+ * 짧은 uid 반환
+ * @returns {string}
+ */
+window.UID = () => {
+  var firstPart = (Math.random() * 46656) | 0;
+  var secondPart = (Math.random() * 46656) | 0;
+  firstPart = ('000' + firstPart.toString(36)).slice(-3);
+  secondPart = ('000' + secondPart.toString(36)).slice(-3);
+  return firstPart + secondPart;
+};
+/* // 2023-09-13 :: END :: window */
+
+/* 2023-10-21 :: START :: LayerControl */
 const LayerControl = {};
 
 /**
@@ -26,16 +58,17 @@ LayerControl.Off = () => {
     el_layer.classList.remove(`On`);
   });
 };
+/* // 2023-10-21 :: END :: LayerControl */
 
-/**
- * Modal 셋팅
- */
-const initModal = () => {
+/* 2023-10-21 :: START :: ModalControl */
+const ModalControl = {};
+ModalControl.init = () => {
   const el_modal = document.querySelector(`#Modal`);
   el_modal.addEventListener('click', (evt) => {
     LayerControl.Off();
   });
-};
+}
+/* // 2023-10-21 :: END :: ModalControl */
 
 /**
  * 스크롤 동작이 끝나면
@@ -171,7 +204,7 @@ const initAos = () => {
 };
 
 window.addEventListener('DOMContentLoaded', (event) => {
-  initModal();
+  ModalControl.init();
   UpdateDisplay();
 
   initAos();

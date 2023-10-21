@@ -4,9 +4,8 @@ Handlebars.logger.level = 'debug';
  *
  * @param path
  * @param render_data
- * @constructor
  */
-const Include = (path, render_data) => {
+Handlebars.write = (path, render_data) => {
   if (typeof render_data === 'undefined') render_data = {};
   render_data = Object.assign({ window }, render_data);
   const filename = path.replace(/^.*[\\\/]/, '').replace(/\.[^/.]+$/, '');

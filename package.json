@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "concurrently \"npm run cp\" \"npm run chd\" \"npm run csd\" \"npm run wh\" \"npm run scss:sitemap\" \"npm run scss:global\" \"npm run sync\" \"npm run builder\" \"npm run fs\"",
+    "dev": "concurrently \"npm run fs\"",
+    "dev2": "concurrently \"npm run cp\" \"npm run chd\" \"npm run csd\" \"npm run wh\" \"npm run scss:sitemap\" \"npm run scss:global\" \"npm run sync\" \"npm run builder\" \"npm run fs\"",
     "cp": "node create_page.js",
     "chd": "node create_hbs_data.js",
     "csd": "node create_scss_data.js",
