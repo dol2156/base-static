@@ -1,3 +1,5 @@
+Handlebars.logger.level = 'debug';
+
 window.addEventListener('DOMContentLoaded', (evt) => {
   const html_str = document.body.outerHTML;
 
@@ -9,45 +11,6 @@ window.addEventListener('DOMContentLoaded', (evt) => {
 
   Handlebars.outerHTML(document.body, rendered);
 });
-
-/**
- * 동기 HTML 로드
- * @param path
- * @param convert
- * @returns {*}
- * @constructor
- */
-const Include = (path) => {
-  let html_str;
-  const xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function () {
-    /*
-    readyState
-    0	UNSENT	Client has been created. open() not called yet.
-    1	OPENED	open() has been called.
-    2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
-    3	LOADING	Downloading; responseText holds partial data.
-    4	DONE	The operation is complete.
-    */
-    if (this.readyState == 4) {
-      if (this.status == 200) {
-        // success
-        html_str = this.responseText;
-      } else {
-        // error
-        const msg = '404 Not Found';
-        console.log(`%c${msg}%c${path}`, 'font-family:D2Coding; border:1px solid black; background:red; color:white; padding:5px; font-size:12px;', 'font-family:D2Coding; background-color:black; border:1px solid black; border-left:none; padding:5px; color:yellow; font-size:12px;');
-      }
-    }
-  };
-  xhttp.open('GET', path, false);
-  xhttp.send();
-
-  document.write(html_str);
-  document.currentScript.remove();
-};
-
-Handlebars.logger.level = 'debug';
 
 /**
  * 비동기 방식 Handlebars 템플릿 렌더링
@@ -96,27 +59,6 @@ Handlebars.outerHTML = (element, html) => {
     document.head.appendChild(script);
     script.parentNode.removeChild(script);
   }
-};
-
-/**
- * 동기 방식 Handlebars 템플릿 렌더링
- * @param template_id
- * @param render_data
- */
-Handlebars.write = (template_path, render_data = {}, callback) => {
-  const html_str = Handlebars.loadHtml(template_path);
-
-  //Compile the template
-  const compiled_template = Handlebars.compile(html_str);
-
-  //Render the data into the template
-  let rendered = compiled_template(Object.assign({ window }, render_data));
-  rendered = `<!-- Handlebars.write :: ${template_path} :: START ::  -->` + rendered + `<!-- // Handlebars.write :: ${template_path} :: END ::  -->`;
-
-  document.write(rendered);
-  if (callback) callback();
-
-  if (document.currentScript) document.currentScript.remove();
 };
 
 /**
@@ -181,7 +123,7 @@ Handlebars.registerHelper('RENDER', function (template_path, render_data, option
 
   //Render the data into the template
   let rendered = compiled_template(Object.assign({ window }, render_data));
-  rendered = `<!-- Handlebars.write :: ${template_path} :: START ::  -->` + rendered + `<!-- // Handlebars.write :: ${template_path} :: END ::  -->`;
+  // rendered = `<!-- RENDER :: ${template_path} :: START ::  -->` + rendered + `<!-- // RENDER :: ${template_path} :: END ::  -->`;
 
   return new Handlebars.SafeString(rendered);
 });
