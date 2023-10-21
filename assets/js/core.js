@@ -43,88 +43,61 @@ Date.prototype.getToday = (between_str = '') => {
 /* // 2023-09-13 :: END :: Date */
 
 /* 2023-09-13 :: START :: HTMLElement */
-function CustomObject(elements) {
-  this.elements = Array.isArray(elements) ? elements : [elements];
-}
-
-CustomObject.prototype.addClass = function (classNames) {
-  this.elements.forEach(function (element) {
-    if (element.classList) {
-      var classes = classNames.split(' ');
-      for (var i = 0; i < classes.length; i++) {
-        element.classList.add(classes[i]);
-      }
-    }
-  });
-  return this;
-};
-
-CustomObject.prototype.removeClass = function (classNames) {
-  this.elements.forEach(function (element) {
-    if (element.classList) {
-      var classes = classNames.split(' ');
-      for (var i = 0; i < classes.length; i++) {
-        element.classList.remove(classes[i]);
-      }
-    }
-  });
-  return this;
-};
-
-CustomObject.prototype.toggleClass = function (classNames) {
-  this.elements.forEach(function (element) {
-    if (element.classList) {
-      var classes = classNames.split(' ');
-      for (var i = 0; i < classes.length; i++) {
-        element.classList.toggle(classes[i]);
-      }
-    }
-  });
-  return this;
-};
-
-CustomObject.prototype.hasClass = function (className) {
-  let is_has = false;
-  this.elements.forEach(function (element) {
-    if (element.classList && element.classList.contains(className)) {
-      is_has = true;
-    }
-  });
-  return is_has;
-};
-
 function $$(selector) {
   var elements = document.querySelectorAll(selector);
+  console.log(`elements == `, elements);
 
-  // If multiple elements are selected, convert NodeList to Array
-  if (elements instanceof NodeList) {
-    elements = Array.from(elements);
-  }
-
-  return new CustomObject(elements);
-}
-
-/**
- * 형제 요소 반환
- * @param selector
- * @returns {*[]}
- */
-HTMLElement.prototype.siblings = function (selector) {
-  var siblings = [];
-  var currentNode = this.parentNode.firstChild;
-
-  while (currentNode) {
-    if (currentNode.nodeType === Node.ELEMENT_NODE && currentNode !== this) {
-      if (!selector || currentNode.matches(selector)) {
-        siblings.push(currentNode);
+  elements.addClass = function (className) {
+    for (var i = 0; i < this.length; i++) {
+      if (!this[i].classList.contains(className)) {
+        this[i].classList.add(className);
       }
     }
+    return this;
+  };
 
-    currentNode = currentNode.nextSibling;
-  }
+  elements.removeClass = function (className) {
+    for (var i = 0; i < this.length; i++) {
+      if (this[i].classList.contains(className)) {
+        this[i].classList.remove(className);
+      }
+    }
+    return this;
+  };
 
-  return siblings;
-};
+  elements.hasClass = function (className) {
+    for (var i = 0; i < this.length; i++) {
+      if (this[i].classList.contains(className)) {
+        return true;
+      }
+    }
+    return false;
+  };
+
+  elements.toggleClass = function (className) {
+    for (var i = 0; i < this.length; i++) {
+      this[i].classList.toggle(className);
+    }
+    return this;
+  };
+
+  elements.siblings = function () {
+    var element = this[0];
+    var siblings = [];
+    var sibling = element.parentNode.firstChild;
+
+    while (sibling) {
+      if (sibling.nodeType === 1 && sibling !== element) {
+        siblings.push(sibling);
+      }
+      sibling = sibling.nextSibling;
+    }
+
+    return siblings;
+  };
+
+  return elements;
+}
 
 /**
  *

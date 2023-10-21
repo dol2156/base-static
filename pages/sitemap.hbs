@@ -24,8 +24,7 @@
 </script>
 {{!--prettier-ignore--}}
 <script>
-  $$('body').addClass('On');
-  $$('body').removeClass('On');
-  $$('body').toggleClass('On');
-  console.log($$('body').hasClass('On'));
+  window.addEventListener('DOMContentLoaded', (evt) => {
+    console.log($$('#Modal').siblings());
+  });
 </script>
