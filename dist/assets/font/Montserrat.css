@@ -1,9 +1,0 @@
-/* https://github.com/cosmicmocha/Montserrat */
-@font-face {
-  font-family: 'Montserrat';
-  src: url('Montserrat-VF.woff2') format('woff');
-  font-display: block;
-}
-.Montserrat {
-  font-family: 'Montserrat', sans-serif;
-}
