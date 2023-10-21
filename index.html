@@ -41,5 +41,9 @@
   </head>
   <body>
     <div id="Modal"></div>
+    <script>
+      const page_name = window.params.page;
+      Handlebars.write(`/hbs/page/${page_name}.hbs`);
+    </script>
   </body>
 </html>

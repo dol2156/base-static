@@ -17,7 +17,7 @@
           <input style='display:inline-block; width:100%; outline:none; border:none;' readonly type='text' value='{{obj.name}}' onclick='this.select();' />
         </div>
         <br />
-        <script>Include('{{obj.path}}');</script>
+        <script>Handlebars.write('{{obj.path}}');</script>
       </section>
     {{/EACH}}
   </main>
