@@ -1,3 +1,15 @@
+window.addEventListener('DOMContentLoaded', (evt) => {
+  const html_str = document.body.outerHTML;
+
+  //Compile the template
+  const compiled_template = Handlebars.compile(html_str);
+
+  //Render the data into the template
+  let rendered = compiled_template({ window });
+
+  Handlebars.outerHTML(document.body, rendered);
+});
+
 /**
  * 동기 HTML 로드
  * @param path
@@ -35,8 +47,56 @@ const Include = (path) => {
   document.currentScript.remove();
 };
 
-
 Handlebars.logger.level = 'debug';
+
+/**
+ * 비동기 방식 Handlebars 템플릿 렌더링
+ * @param template_id
+ * @param render_data
+ */
+Handlebars.render = (template_id, render_data = {}, callback) => {
+  const el_tpl = document.querySelector(template_id);
+  if (!el_tpl) return;
+
+  const tpl_path = el_tpl.getAttribute('tpl');
+  let html_str;
+  if (tpl_path) {
+    html_str = Handlebars.loadHtml(tpl_path);
+  } else {
+    html_str = el_tpl.innerHTML;
+  }
+
+  //Compile the template
+  const compiled_template = Handlebars.compile(html_str);
+
+  //Render the data into the template
+  let rendered = compiled_template(Object.assign({ window }, render_data));
+  rendered = `<!-- Handlebars.render :: ${tpl_path} :: START ::  -->` + rendered + `<!-- // Handlebars.render :: ${tpl_path} :: END ::  -->`;
+
+  Handlebars.outerHTML(el_tpl, rendered);
+};
+
+Handlebars.outerHTML = (element, html) => {
+  // Set the new HTML
+  element.outerHTML = html;
+
+  // Create a temporary div to hold the new HTML
+  var tempDiv = document.createElement('div');
+  tempDiv.innerHTML = html;
+
+  // Find and execute scripts
+  var scripts = tempDiv.getElementsByTagName('script');
+  for (var i = 0; i < scripts.length; i++) {
+    var script = document.createElement('script');
+    if (scripts[i].src) {
+      script.src = scripts[i].src;
+    } else {
+      script.text = scripts[i].innerText;
+    }
+    document.head.appendChild(script);
+    script.parentNode.removeChild(script);
+  }
+};
 
 /**
  * 동기 방식 Handlebars 템플릿 렌더링
@@ -100,6 +160,31 @@ Handlebars.loadHtml = (path, convert) => {
 /************************************************
  Helper Start
  *************************************************/
+
+Handlebars.registerHelper('RENDER', function (template_path, render_data, options) {
+  const html_str = Handlebars.loadHtml(template_path);
+
+  if (typeof render_data == 'string' && render_data != '') {
+    render_data = render_data.split('|');
+    const obj = {};
+    render_data.forEach((item, idx) => {
+      item = item.split('=');
+      obj[item[0]] = item[1];
+    });
+    render_data = obj;
+  } else {
+    render_data = {};
+  }
+
+  //Compile the template
+  const compiled_template = Handlebars.compile(html_str);
+
+  //Render the data into the template
+  let rendered = compiled_template(Object.assign({ window }, render_data));
+  rendered = `<!-- Handlebars.write :: ${template_path} :: START ::  -->` + rendered + `<!-- // Handlebars.write :: ${template_path} :: END ::  -->`;
+
+  return new Handlebars.SafeString(rendered);
+});
 
 /**
  * n 회 반복
