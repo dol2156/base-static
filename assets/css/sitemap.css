@@ -53,8 +53,11 @@ html {
 #Sitemap > ul > li a[href].On {
   background-color: pink;
 }
-#Sitemap > ul > li a[href] .Link {
+#Sitemap > ul > li a[href] .PageName {
   color: #ff8352;
+}
+#Sitemap > ul > li a[href] .Link {
+  color: #25ba00;
 }
 #Sitemap > ul > li ul {
   padding-left: 20px;
