@@ -14,12 +14,12 @@ const initInputUi = (trigger) => {
   });
 
   el_inp.addEventListener('focus', (evt) => {
-    el_target.addClass('Focus');
+    el_target.classList.add('Focus');
     el_target.focus();
   });
 
   el_inp.addEventListener('blur', (evt) => {
-    el_target.removeClass('Focus');
+    el_target.classList.remove('Focus');
     el_target.blur();
   });
 
@@ -41,9 +41,9 @@ const initInputUi = (trigger) => {
     const value = el_inp.value;
 
     if (!value) {
-      el_target.removeClass('HasValue');
+      el_target.classList.remove('HasValue');
     } else {
-      el_target.addClass('HasValue');
+      el_target.classList.add('HasValue');
     }
   }
 };
@@ -136,12 +136,12 @@ const initAutoCompleteBox = (id) => {
         item.style = 'display: flex; justify-content: space-between;';
         // Modify Results Item Content
         item.innerHTML = `
-      <span style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">
-        ${data.match}
-      </span>
-      <span style="display: flex; align-items: center; font-size: 13px; font-weight: 100; text-transform: uppercase; color: rgba(0,0,0,.2);">
-        ${data.key}
-      </span>`;
+          <span style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">
+            ${data.match}
+          </span>
+          <span style="display: flex; align-items: center; font-size: 13px; font-weight: 100; text-transform: uppercase; color: rgba(0,0,0,.2);">
+            ${data.key}
+          </span>`;
       },
       highlight: true,
     },
@@ -235,9 +235,9 @@ const initWheelDownHScrollWrap = (trigger) => {
       const k = left;
 
       if (k <= 0) {
-        el_child.addClass('On');
+        el_child.classList.add('On');
       } else {
-        el_child.removeClass('On');
+        el_child.classList.remove('On');
       }
     });
   }
@@ -274,7 +274,7 @@ const initCollapseAbleBox = (trigger) => {
  *
  * @param trigger
  */
-const initTreeMenu = (trigger, close_other=false) => {
+const initTreeMenu = (trigger, close_other = false) => {
   if (typeof trigger === 'undefined') return;
   const el_target = trigger.parentElement;
   const el_list_label = el_target.querySelectorAll(`.Label`);
@@ -282,14 +282,14 @@ const initTreeMenu = (trigger, close_other=false) => {
     el_label.addEventListener('click', (evt) => {
       const ct = evt.currentTarget;
       const el_li = ct.closest('li');
-      
+
       // Other Deactive
       const el_list_othger_li = el_li.siblings();
       el_list_othger_li.forEach((el_other_li, idx) => {
-        if(close_other){
+        if (close_other) {
           el_other_li.removeClass('On');
           const el_child_list = el_other_li.querySelectorAll(`:scope > .ChildList`);
-          if(el_child_list){
+          if (el_child_list) {
             el_child_list.forEach((el_child, idx) => {
               el_child.removeClass('On');
             });
@@ -301,7 +301,6 @@ const initTreeMenu = (trigger, close_other=false) => {
       el_li.toggleClass('On');
       const el_child_list = el_li.querySelector(`.ChildList`);
       if (el_child_list) el_child_list.toggleClass('On');
-      
     });
   });
 };

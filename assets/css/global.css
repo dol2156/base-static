@@ -666,6 +666,7 @@ input[type=radio][data-size=Lg] + .LabalUi {
 /**
  * 마우스 인터렉션 상태에 따라 아이콘을 변경하는 버튼에 포함되는 믹스인
  */
+/**/
 .Btn_1 {
   display: inline-flex;
   align-items: center;
@@ -704,6 +705,214 @@ input[type=radio][data-size=Lg] + .LabalUi {
 }
 .Btn_1.On .Active, .Btn_1:active .Active {
   display: block;
+}
+
+/**/
+.Btn_2 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 5px;
+  height: 36px;
+  gap: 2px;
+  background-color: #4f46e5;
+}
+.Btn_2:hover {
+  background-color: #6366f1;
+}
+.Btn_2 .Hover {
+  display: none;
+}
+.Btn_2 .Active {
+  display: none;
+}
+.Btn_2 .Default {
+  display: block;
+}
+.Btn_2:hover .Default {
+  display: none;
+}
+.Btn_2:hover .Active {
+  display: none;
+}
+.Btn_2:hover .Hover {
+  display: block;
+}
+.Btn_2.On .Default, .Btn_2:active .Default {
+  display: none;
+}
+.Btn_2.On .Hover, .Btn_2:active .Hover {
+  display: none;
+}
+.Btn_2.On .Active, .Btn_2:active .Active {
+  display: block;
+}
+
+/**/
+.AutoCompleteBox_1 {
+  position: relative;
+  border: 1px solid #ebebeb;
+  border-radius: 8px;
+  background-color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0px;
+  /* 2023-09-05 :: START :: TEST */
+  /* // 2023-09-05 :: END :: TEST */
+}
+.AutoCompleteBox_1 .autoComplete_wrapper > ul[hidden], .AutoCompleteBox_1 .autoComplete_wrapper > ul:empty {
+  /*opacity:1!important;*/
+  /*transform:none!important;*/
+}
+.AutoCompleteBox_1 .autoComplete_wrapper {
+  position: static;
+  outline: 1px dashed red;
+  flex: 1;
+}
+.AutoCompleteBox_1 .autoComplete_wrapper > input {
+  width: 100%;
+  height: 48px;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  padding: 0px !important;
+  font-size: 14px !important;
+  color: #303030 !important;
+}
+.AutoCompleteBox_1 .autoComplete_wrapper > input::placeholder {
+  color: #a6a6a6 !important;
+  font-size: 14px !important;
+  padding: 0 !important;
+}
+.AutoCompleteBox_1 .autoComplete_wrapper > ul > li {
+  margin: 5px;
+  padding: 10px;
+}
+.AutoCompleteBox_1 .autoComplete_wrapper .no_result {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.AutoCompleteBox_1 .autoComplete_wrapper .ResultCountInfo {
+  /*display:none;*/
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.AutoCompleteBox_1 button {
+  outline: 1px dashed red;
+  width: 30px;
+}
+.AutoCompleteBox_1 .BtnRemoveInputValue {
+  visibility: hidden;
+}
+.AutoCompleteBox_1.HasValue .BtnRemoveInputValue {
+  visibility: visible;
+}
+
+/**/
+.Badge_1 {
+  border-radius: 14px;
+  border-width: 1px;
+  border-style: solid;
+  padding: 0px 10px;
+  height: 26px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0px;
+  font-size: 12px;
+  font-weight: 600;
+  border-color: #767676;
+  color: #767676;
+}
+.Badge_1.Theme_1 {
+  border-color: #4168f6;
+  color: #4168f6;
+}
+
+/**/
+.DescBox_1 {
+  width: 100%;
+  text-align: center;
+  border-radius: 8px;
+  background: #f4f4f4;
+  padding: 12px 10px;
+  font-weight: 400;
+  color: var(--text-color1);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+/**/
+.DescBox_2 {
+  border-radius: 6px;
+  border: 1px solid var(--sub-border-2, #e1e1e1);
+  background: var(--sub-backgraound, #ffffff);
+  padding: 16px;
+}
+.DescBox_2 .Txt1 {
+  text-align: left;
+  color: #303030;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+/**/
+.DescList_1 {
+  color: inherit;
+  font-size: inherit;
+  font-weight: 400;
+  line-height: 1.25em;
+}
+.DescList_1 > li {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 0px;
+}
+.DescList_1 > li:before {
+  content: "-";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0px;
+  margin-right: 0.3em;
+}
+.DescList_1 > li + li {
+  margin-top: 0.2em;
+}
+
+/**/
+.DescList_2 {
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+.DescList_2 > li {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 0px;
+}
+.DescList_2 > li:before {
+  content: "•";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0px;
+  margin-right: 0.3em;
+}
+.DescList_2 > li + li {
+  margin-top: 0.2em;
 }
 
 page-title {

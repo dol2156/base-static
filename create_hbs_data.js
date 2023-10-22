@@ -17,4 +17,4 @@ files.forEach((f, idx) => {
 arr = _.groupBy(arr, 'folder_name');
 
 const file_txt = `var HBS_DATA = ${JSON.stringify(arr)};`;
-FileUtil.writeFile('./pub_tool/HBS_DATA.js', file_txt);
+FileUtil.writeFile('./assets/data/HBS_DATA.js', file_txt);

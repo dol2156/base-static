@@ -2,16 +2,18 @@
   {{!--prettier-ignore--}}
   <style>
     main > section{
-      margin-top:50px;
       margin-bottom:50px;
     }
   </style>
   <main>
     <div class='H1'>Button</div>
-    <section>
-      <script>
-        Handlebars.write('/hbs/button/Btn_1.hbs');
-      </script>
-    </section>
+    {{#EACH window.HBS_DATA.button}}
+      <section>
+        <div class='H2'>/{{obj.path}}</div>
+        <script>
+          Handlebars.write('/{{obj.path}}');
+        </script>
+      </section>
+    {{/EACH}}
   </main>
 </div>

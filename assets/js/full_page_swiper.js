@@ -38,10 +38,10 @@ const initFullPageSwiper = (swiper_id) => {
 
     // 첫화면 진입때만 애니메이션 작동 안하게
     const el_first_active_slide = swiper.slides[0];
-    if (el_first_active_slide.hasClass('swiper-slide-active')) {
-      el_first_active_slide.addClass('FirstPlay');
+    if (el_first_active_slide.classList.contains('swiper-slide-active')) {
+      el_first_active_slide.classList.add('FirstPlay');
       setTimeout(() => {
-        el_first_active_slide.removeClass('FirstPlay');
+        el_first_active_slide.classList.remove('FirstPlay');
       }, 1000);
     }
   });
