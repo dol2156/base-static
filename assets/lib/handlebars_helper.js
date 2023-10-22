@@ -405,41 +405,6 @@ Handlebars.registerHelper('SITEMAP_URL', function (page_title, page_value, optio
 
 /**
  */
-Handlebars.registerHelper('SITEMAP_ITEM', function (for_pub, options) {
-  const MENU_NAME = this.뎁스1 || this.뎁스2 || this.뎁스3;
-  const { PAGE, 진행단계 } = this;
-
-  let str;
-  if (PAGE) {
-    str = `
-    <a class='label' ${getHref()} target='_blank'>
-      <span style='color:orangered'>[ ${PAGE} ]</span>
-      ${MENU_NAME}
-    </a>
-    `;
-  } else {
-    str = `<div class='label'>${MENU_NAME}</div>`;
-  }
-
-  function getHref() {
-    if (for_pub == 'for_pub') {
-      // 퍼블리싱 작업용 사이트맵
-      if (PAGE.indexOf(`http`) > -1) {
-        return `href="${PAGE}"`;
-      } else {
-        return `href="/index.html?title=${MENU_NAME}&page=${PAGE}"`;
-      }
-    } else {
-      // 고객용 사이트맵
-      if (PAGE.indexOf(`http`) > -1) {
-        return `href="${PAGE}"`;
-      } else if (진행단계 != '완료') {
-        return '';
-      } else {
-        return `href='/html/${PAGE}.html'`;
-      }
-    }
-  }
-
-  return str;
+Handlebars.registerHelper('JSONSTR', function (obj, options) {
+  return new Handlebars.SafeString(JSON.stringify(obj));
 });

@@ -1,44 +1,41 @@
 <div id='page'>
   <main>
-    <link href='/assets/css/sitemap.css' rel='stylesheet'/>
+    <link href='/assets/css/sitemap.css' rel='stylesheet' />
     <div id='Sitemap'>
       <div class='H1'>SiteMap</div>
-      <br/>
+      <br />
       <ul>
         {{log '🔴 _pub_sitemap.hbs : 8 ==> ' window.MENU_DATA}}
         {{#EACH window.MENU_DATA}}
           <li>
-            {{#if obj.링크}}
-              <a href='https://www.google.com' target='_blank'>
-                <span class='Link'>[{{obj.링크}}]</span>
-                <span class='Label'>{{obj.라벨}}</span>
-              </a>
-            {{else}}
-              <div>
-                {{obj.라벨}}
-              </div>
-            {{/if}}
-
-            {{#EACH obj.자식}}
+            {{!--prettier-ignore--}}
+            <script>
+              Handlebars.write('/hbs/component/SitemapItem_1-a.hbs', {{JSONSTR obj}});
+            </script>
+            {{#if obj.자식}}
               <ul>
-                <li>
-                  {{#if obj.링크}}
-                    <a href='https://www.google.com' target='_blank'>
-                      <span class='Link'>[{{obj.링크}}]</span>
-                      <span class='Label'>{{obj.라벨}}</span>
-                    </a>
-                  {{else}}
-                    <div>
-                      {{obj.라벨}}
-                    </div>
+                {{#EACH obj.자식}}
+                  {{!--prettier-ignore--}}
+                  <script>
+                    Handlebars.write('/hbs/component/SitemapItem_1-a.hbs', {{JSONSTR obj}});
+                  </script>
+                  {{#if obj.자식}}
+                    <ul>
+                      {{#EACH obj.자식}}
+                        {{!--prettier-ignore--}}
+                        <script>
+                          Handlebars.write('/hbs/component/SitemapItem_1-a.hbs', {{JSONSTR obj}});
+                        </script>
+                      {{/EACH}}
+                    </ul>
                   {{/if}}
-                </li>
+                {{/EACH}}
               </ul>
-            {{/EACH}}
+            {{/if}}
           </li>
         {{/EACH}}
       </ul>
     </div>
   </main>
-  <script src="/assets/js/sitemap.js"></script>
+  <script src='/assets/js/sitemap.js'></script>
 </div>

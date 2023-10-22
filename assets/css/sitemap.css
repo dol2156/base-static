@@ -50,7 +50,7 @@ html {
 #Sitemap > ul > li a[href] .Link {
   color: #ff8352;
 }
-#Sitemap > ul > li ul li {
+#Sitemap > ul > li ul {
   padding-left: 20px;
 }
 
