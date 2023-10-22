@@ -5,13 +5,12 @@ const fiveServer = new FiveServer();
 const option = {
   useLocalIp: true,
   // host :'localhost',
-  port: 9999,
   open: true,
-  watch: ['./hbs', './assets', './pub_tool'],
+  // watch: ['./hbs', './assets', './pub_tool'],
   // wait:1000,
   // injectCss:false,
   // ignore: [/\.s[ac]ss$/i, /\.tsx?$/i],
-  ignore: ['./dist'],
+  // ignore: ['./dist'],
 };
 
 fiveServer.start(option);

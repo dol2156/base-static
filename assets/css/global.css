@@ -1957,7 +1957,7 @@ img[src=""] {
   font-size: 0.67em;
 }
 
-.Link {
+.LinkBtn {
   color: #4168f6;
   font-size: 12px;
   font-weight: 700;
@@ -1965,7 +1965,7 @@ img[src=""] {
   text-decoration: underline;
 }
 
-.Link:hover {
+.LinkBtn:hover {
   text-decoration: underline;
 }
 

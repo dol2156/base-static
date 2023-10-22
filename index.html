@@ -13,7 +13,7 @@
     <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon/favicon-512x512.png" />
     <link rel="icon" href="/assets/favicon/favicon.ico" />
     <!--Data-->
-    <script src="/assets/data/MENU_DATA.js"></script>
+    <script src="/MENU_DATA.js"></script>
     <!--Core-->
     <link href="/assets/css/global.css" rel="stylesheet" />
     <script src="/assets/lib/tailwindcss_3.3.3.min.js"></script>
@@ -43,8 +43,11 @@
   <body>
     <div id="Modal"></div>
     <script>
-      const page_name = window.params.page;
-      Handlebars.write(`/hbs/page/${page_name}.hbs`);
+      (() => {
+        let page_name = window.params.page;
+        if (!page_name) page_name = '_pub_sitemap';
+        Handlebars.write(`/hbs/page/${page_name}.hbs`);
+      })();
     </script>
   </body>
 </html>

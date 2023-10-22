@@ -3,9 +3,9 @@
 @use 'module';
 @use 'scss/form';
 /**/
-@import '/scss/font/SUIT-Variable.css';
-//@import '/font/Pretendard.css';
-@import '/scss/font/Montserrat.css';
+@import '/assets/font/SUIT-Variable.css';
+//@import '/assets/font/Pretendard.css';
+@import '/assets/font/Montserrat.css';
 page-title {
   display: none;
 }
@@ -83,14 +83,14 @@ img[src=''] {
   font-weight: 600;
   font-size: 0.67em;
 }
-.Link {
+.LinkBtn {
   color: #4168f6;
   font-size: 12px;
   font-weight: 700;
   line-height: 18px;
   text-decoration: underline;
 }
-.Link:hover {
+.LinkBtn:hover {
   text-decoration: underline;
 }
 /**/
