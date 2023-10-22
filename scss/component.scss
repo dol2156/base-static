@@ -1,0 +1,55 @@
+/**
+ * 마우스 인터렉션 상태에 따라 아이콘을 변경하는 버튼에 포함되는 믹스인
+ */
+@mixin imgChangeAbleBtnByState {
+  .Hover {
+    display: none;
+  }
+  .Active {
+    display: none;
+  }
+  .Default {
+    display: block;
+  }
+  
+  &:hover {
+    .Default {
+      display: none;
+    }
+    .Active {
+      display: none;
+    }
+    .Hover {
+      display: block;
+    }
+  }
+  
+  &.On,
+  &:active {
+    .Default {
+      display: none;
+    }
+    .Hover {
+      display: none;
+    }
+    .Active {
+      display: block;
+    }
+  }
+}
+
+.Btn_1 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  font-size: 14px;
+  font-weight: 500;
+
+  color: #767676;
+  &:hover {
+    color: #333;
+  }
+
+  @include imgChangeAbleBtnByState;
+}

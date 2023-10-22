@@ -30,11 +30,10 @@ Handlebars.write = (path, render_data) => {
 /**
  * 동기 HTML 로드
  * @param path
- * @param convert
  * @returns {*}
  * @constructor
  */
-Handlebars.loadHtml = (path, convert) => {
+Handlebars.loadHtml = (path) => {
   let html_str;
   const xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
@@ -52,15 +51,14 @@ Handlebars.loadHtml = (path, convert) => {
         html_str = this.responseText;
       } else {
         // error
-        const msg = '404 Not Found';
+        const msg = `<div class="flex flex-row items-center justify-center gap-[0] w-full h-full fixed">404 Not Found : ${path}</div>`;
         console.log(`%c${msg}%c${path}`, 'font-family:D2Coding; border:1px solid black; background:red; color:white; padding:5px; font-size:12px;', 'font-family:D2Coding; background-color:black; border:1px solid black; border-left:none; padding:5px; color:yellow; font-size:12px;');
+        html_str = msg;
       }
     }
   };
   xhttp.open('GET', path, false);
   xhttp.send();
-
-  if (convert) html_str = convert(html_str);
 
   return html_str;
 };
