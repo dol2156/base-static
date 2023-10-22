@@ -22,6 +22,9 @@ html {
 #Sitemap {
   padding: 30px;
 }
+#Sitemap li + li {
+  margin-top: 4px;
+}
 #Sitemap > ul {
   display: grid;
   gap: 10px;
@@ -43,6 +46,9 @@ html {
   color: dodgerblue;
   display: block;
   border-radius: 5px;
+}
+#Sitemap > ul > li a[href]:hover {
+  background-color: #fbff59;
 }
 #Sitemap > ul > li a[href].On {
   background-color: pink;

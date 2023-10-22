@@ -19,6 +19,11 @@ html {
 /**/
 #Sitemap {
   padding: 30px;
+  
+  li + li{
+    margin-top:4px;
+  }
+  
   > ul {
     display: grid;
     gap: 10px;
@@ -39,7 +44,11 @@ html {
         color: dodgerblue;
         display: block;
         border-radius: 5px;
-
+        
+        &:hover{
+          background-color:#fbff59;
+        }
+        
         &.On {
           background-color: pink;
         }
