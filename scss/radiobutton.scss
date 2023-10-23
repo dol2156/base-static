@@ -1,0 +1,20 @@
+@mixin mixinRadioButtonPublic {
+  aspect-ratio: 1;
+  appearance: none;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.RadioButton_1 {
+  @include mixinRadioButtonPublic;
+  min-width: 18px;
+
+  background-image: url(/assets/icon/basic/rdo_1.svg);
+  &:checked {
+    background-image: url(/assets/icon/basic/rdo_1_on.svg);
+  }
+  &[disabled] {
+    background-image: url(/assets/icon/basic/rdo_1_disabled.svg);
+  }
+}
