@@ -5,6 +5,10 @@
   --text-color2: #767676;
   --text-color3: #a6a6a6;
 }
+:root {
+  --form-border-color: #e1e1e1;
+  --form-placeholder-color: #a6a6a6;
+}
 .Color1 {
   color: var(--color1);
 }

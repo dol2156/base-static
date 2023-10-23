@@ -1,17 +1,13 @@
-:root {
-  --form-border-radius: 0.5em;
-  --form-border-color: #e1e1e1;
-  --form-placeholder-color: #a6a6a6;
-}
 /**/
 .FormLabel_1 {
+  cursor:pointer;
   font-size: 12px;
   font-weight: 600;
   color: #333;
 }
 /**/
 .TextInput_1 {
-  border-radius: var(--form-border-radius);
+  border-radius: 0.5em;
   height: 36px;
   font-size: 12px;
   font-weight: 400;

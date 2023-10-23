@@ -294,5 +294,30 @@ const initTreeMenu = (trigger, close_other = false) => {
     $li.toggleClass('On');
     $li.find(`> .ChildList`).toggleClass('On');
   });
+};
 
+const initSelectBox = (trigger) => {
+  if (typeof trigger === 'undefined') return;
+  const el_target = trigger.parentElement;
+  const $target = $(el_target);
+  const $select_box = $target.find('> select');
+
+  $target.on(`change`, (evt) => {
+    console.log(evt);
+    updateDisplay();
+  });
+
+  updateDisplay();
+  function updateDisplay() {
+    const selected_value = $select_box.val();
+    console.log(`selected_value == `, selected_value);
+
+    if (selected_value) {
+      $select_box.addClass('HasValue');
+    } else {
+      $select_box.removeClass('HasValue');
+    }
+
+    $select_box.attr('data-value', selected_value);
+  }
 };
