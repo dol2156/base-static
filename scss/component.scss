@@ -169,3 +169,107 @@
     }
   }
 }
+/**/
+.HScrollSnapBox_1 {
+  display: inline-flex;
+  white-space: nowrap;
+  align-items: center;
+  gap: 25px;
+  overflow: auto;
+  padding-left: var(--contents-side-padding);
+  padding-right: var(--contents-side-padding);
+
+  .BannerImg {
+    > img {
+      border-radius: 10px;
+    }
+  }
+}
+/**/
+.BottomBtnBox_1 {
+  width: 100%;
+  background: #ffffff;
+  padding: 20px;
+  box-shadow: 0px -4px 10px 0px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  > * {
+    flex: 1;
+  }
+
+  .C-274b091b {
+    color: #303030;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 18px;
+  }
+}
+/**/
+.BottomNavi_1 {
+  background-color: white;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  gap: 0;
+  box-shadow: 0px -4px 8px 0px rgba(0, 0, 0, 0.1);
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 4px;
+  padding-bottom: 3px;
+  padding-bottom: calc(3px + var(--sab, 0px));
+  button {
+    color: var(--text-color1);
+    height: 50px;
+    border-radius: 12px;
+    .Icon {
+      svg {
+        width: 24px;
+      }
+    }
+    .Label {
+      font-size: 10px;
+      font-weight: 400;
+    }
+    &.On {
+      .Label {
+        color: #ea2c2c;
+        font-weight: 600;
+      }
+    }
+  }
+}
+/**/
+.CardList_1 {
+  > ul {
+    overflow: auto;
+    padding-left: var(--contents-side-padding);
+    padding-right: var(--contents-side-padding);
+    display: inline-flex;
+    white-space: nowrap;
+    gap: 10px;
+  }
+}
+/**/
+.ChipsList_1 {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  overflow: auto;
+  padding-left: var(--contents-side-padding);
+  padding-right: var(--contents-side-padding);
+  button {
+    color: #767676;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 8px 10px;
+    border-radius: 8px;
+    background-color: white;
+    border: 1px solid #e1e1e1;
+    &.On {
+      color: white;
+      border-color: #ff3838;
+      background-color: #ff3838;
+    }
+  }
+}
