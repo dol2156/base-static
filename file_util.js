@@ -1,7 +1,6 @@
 const path = require('path');
 const fs = require('fs');
 
-// const FileUtil = require('./file_util.js');
 const FileUtil = {};
 
 /**
