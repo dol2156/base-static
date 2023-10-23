@@ -296,6 +296,10 @@ const initTreeMenu = (trigger, close_other = false) => {
   });
 };
 
+/**
+ *
+ * @param trigger
+ */
 const initSelectBox = (trigger) => {
   if (typeof trigger === 'undefined') return;
   const el_target = trigger.parentElement;
@@ -319,5 +323,46 @@ const initSelectBox = (trigger) => {
     }
 
     $select_box.attr('data-value', selected_value);
+  }
+};
+
+/**
+ *
+ * @param trigger
+ */
+const initDropdown = (trigger) => {
+  if (typeof trigger === 'undefined') return;
+  const el_target = trigger.parentElement;
+  const $target = $(el_target);
+  const $input = $target.find('input[type="hidden"]');
+  const $head = $target.find('.Head');
+  const $body = $target.find('.Body');
+  const $opt_btn_list = $body.find('.OptionBtn');
+
+  // Head Click
+  $head.on(`click`, (evt) => {
+    $target.toggleClass('On');
+  });
+
+  // Option Select
+  $opt_btn_list.on(`click`, (evt) => {
+    const $opt_btn = $(evt.currentTarget);
+    $opt_btn.addClass('Selected');
+    $opt_btn.siblings().removeClass('Selected');
+    
+    updateDisplay();
+  });
+
+  updateDisplay();
+  function updateDisplay() {
+    const $opt_btn = $body.find('.OptionBtn.Selected');
+    if($opt_btn.length < 1) return;
+    
+    const text = $opt_btn.text();
+    const value = $opt_btn.data('value');
+    $head.text(text);
+    $input.val(value);
+    
+    $target.removeClass('On');
   }
 };

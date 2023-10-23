@@ -1,18 +1,71 @@
 .Dropdown_1 {
-  position:relative;
+  --height: 34px;
+  --visible-count: 5;
+
+  user-select: none;
+  cursor: pointer;
+  position: relative;
   width: 100%;
   border: 1px solid var(--form-border-color);
   border-radius: 0.5em;
-  height: 36px;
   font-size: 12px;
   font-weight: 400;
-  padding: 0px 1em;
 
-  > select {
-    outline: 1px dashed red;
+  &.Focus {
+    border-color: var(--form-border-color);
+    box-shadow: 0px 0px 6px 0px rgba(166, 166, 166, 0.6);
+  }
+
+  > .Head {
+    padding: 0px 1em;
+    font-size: 12px;
+    height: var(--height);
+    display: flex;
+    align-items: center;
+    gap: 0px;
+    outline: none;
+    background-image: url(/assets/icon/basic/sel_1.svg);
+    background-size: 18px;
+    background-repeat: no-repeat;
+    background-position: right 1em center;
+  }
+
+  > .Body {
+    border-radius: 0.5em;
     z-index: 10;
     position: absolute;
-    top: 0px;
-    left: 0px;
+    top: calc(var(--height) + 5px);
+    left: -1px;
+    width: 100%;
+    max-height: calc(var(--height) * var(--visible-count));
+    overflow: auto;
+    background-color: white;
+    /**/
+    border: 1px solid var(--form-border-color);
+    box-sizing: content-box;
+    display: none;
+
+    > .OptionBtn {
+      padding: 0px 1em;
+      font-size: 12px;
+      height: var(--height);
+      display: flex;
+      align-items: center;
+      gap: 0px;
+      &:hover,
+      &.Selected {
+        background-color: #dfdfdf;
+      }
+    }
+  }
+
+  &.On {
+    > .Head {
+      background-image: url(/assets/icon/basic/sel_1_on.svg);
+    }
+
+    > .Body {
+      display: block;
+    }
   }
 }
