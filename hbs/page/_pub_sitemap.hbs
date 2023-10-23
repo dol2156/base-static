@@ -27,6 +27,18 @@
                             <script>
                               Handlebars.write('/hbs/etc/SitemapItem_1-a.hbs', {{JSONSTR obj}});
                             </script>
+                            {{#if obj.자식}}
+                              <ul>
+                                {{#EACH obj.자식}}
+                                  <li>
+                                    {{!--prettier-ignore--}}
+                                    <script>
+                                      Handlebars.write('/hbs/etc/SitemapItem_1-a.hbs', {{JSONSTR obj}});
+                                    </script>
+                                  </li>
+                                {{/EACH}}
+                              </ul>
+                            {{/if}}
                           </li>
                         {{/EACH}}
                       </ul>

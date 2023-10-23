@@ -687,6 +687,8 @@ strong {
   border-radius: 5px;
   height: 36px;
   gap: 2px;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
   background-color: #4f46e5;
 }
 .Btn_2:hover {

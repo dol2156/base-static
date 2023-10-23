@@ -1,0 +1,62 @@
+<div id='page'>
+  <main>
+    <link href='/assets/css/_pub.css' rel='stylesheet' />
+    <div class='H1'>Modal Control Sample</div>
+    <section>
+      <div class='SampleList'>
+        <div>
+          <button class='Btn_2' onclick='LayerControl.On(`#LayerPopup-c76a1d76`);'>Open Confirm_1.hbs</button>
+        </div>
+        <div>
+          <button class='Btn_2' onclick='LayerControl.On(`#LayerPopup-42e9435a`);'>Open SelectOption_1.hbs</button>
+        </div>
+        <div>
+          <button class='Btn_2' onclick='LayerControl.On(`#LayerPopup-1cb4cc70`);'>Open BottomSheet_1.hbs</button>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+<div id='LayerPopup-c76a1d76' class='LayerPopup'>
+  <div class='Confirm_1' style='width: 280px'>
+    <div class='Body'>
+      <div>
+        로그인이 필요한 기능입니다.
+        <br />
+        지금 로그인 하시겠습니까?
+      </div>
+    </div>
+    <div class='Foot'>
+      <article class='CenterCenter divide-x-[1px] divide-[#f4f4f4] divide-solid'>
+        <button class='flex-1 h-[36px]' onclick='LayerControl.Off();'>취소</button>
+        <button class='flex-1 h-[36px]'>로그인</button>
+      </article>
+    </div>
+  </div>
+</div>
+<div id='LayerPopup-42e9435a' class='LayerPopup'>
+  <div class='SelectOption_1 w-[302px]'>
+    <div class='Body'>
+      <div class='Title'>프로필 사진 설정</div>
+      <button class='Button'>사진 보관함</button>
+      <button class='Button'>사진찍기</button>
+      <button class='Button'>기본 이미지로 변경 </button>
+      <button class='Button' onclick='LayerControl.Off();'>취소</button>
+    </div>
+  </div>
+</div>
+<div id='LayerPopup-1cb4cc70' class='LayerPopup Bottom'>
+  <div class='BottomSheet_1 w-[360px]'>
+    <div class='Head'>
+      <button class='Handlebar'></button>
+    </div>
+    <div class='Body'>
+      <div class='BottomSheetSelectBtnList'>
+        <button class='On'>신규 등록순</button>
+        <button>할인율순</button>
+        <button>낮은 가격순</button>
+        <button>높은 가격순</button>
+      </div>
+    </div>
+  </div>
+</div>
