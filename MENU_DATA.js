@@ -185,14 +185,6 @@ var MENU_DATA = [
             자식: [],
           },
           {
-            라벨: 'iOS 스타일 셀렉트',
-            페이지명: '_pub_ios_select',
-            링크: '',
-            보임: true,
-            상태: '',
-            자식: [],
-          },
-          {
             라벨: 'Full Page Swiper',
             페이지명: '_pub_fullpage',
             링크: '',
