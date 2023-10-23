@@ -1,28 +1,15 @@
 <div id='page'>
   <main>
-    <main>
-      {{!--prettier-ignore--}}
-      <style>
-        main > section{
-          margin-top:50px;
-          margin-bottom:50px;
-        }
-      </style>
-      <div class='HBox'>
-        <div class='Inner'>
-          <div class='H1'>Select Box</div>
-          {{#EACH window.HBS_DATA.select}}
-            <section>
-              <div class='H3'>
-                <input style='display:inline-block; width:100%; outline:none; border:none;' readonly type='text' value='{{obj.path}}' onclick='this.select();' />
-              </div>
-              <br />
-              <script>Handlebars.write('{{obj.path}}');</script>
-            </section>
-          {{/EACH}}
-          {{!array: BUTTON_DATA,}}
+    <link href='/assets/css/_pub.css' rel='stylesheet' />
+    <div class='H1'>Select Box</div>
+    {{#EACH window.HBS_DATA.select}}
+      <section>
+        <div class='H3'>
+          <input style='display:inline-block; width:100%; outline:none; border:none;' readonly type='text' value='{{obj.path}}' onclick='this.select();' />
         </div>
-      </div>
-    </main>
+        <br />
+        <script>Handlebars.write('{{obj.path}}');</script>
+      </section>
+    {{/EACH}}
   </main>
 </div>

@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "concurrently \"npm run chd\" \"npm run wh\" \"npm run scss:sitemap\" \"npm run scss:global\" \"npm run fs\"",
+    "dev": "concurrently \"npm run chd\" \"npm run wh\" \"npm run scss:_pub\" \"npm run scss:sitemap\" \"npm run scss:global\" \"npm run fs\"",
     "dev2": "concurrently \"npm run cp\" \"npm run chd\" \"npm run csd\" \"npm run wh\" \"npm run scss:sitemap\" \"npm run scss:global\" \"npm run sync\" \"npm run builder\" \"npm run fs\"",
     "chd": "node create_hbs_data.js",
     "wh": "node watch_hbs.js",
+    "scss:_pub":"sass -w scss/_pub.scss assets/css/_pub.css",
     "scss:sitemap":"sass -w scss/sitemap.scss assets/css/sitemap.css",
     "scss:global":"sass -w scss/global.scss assets/css/global.css",
     "fs": "node five-server.js",

@@ -1,0 +1,13 @@
+html {
+  background-color: #ffffd4;
+}
+
+main > section {
+  margin-bottom: 50px;
+}
+
+main > section .FixedShell {
+  position: relative !important;
+}
+
+/*# sourceMappingURL=_pub.css.map */

@@ -307,14 +307,12 @@ const initSelectBox = (trigger) => {
   const $select_box = $target.find('> select');
 
   $target.on(`change`, (evt) => {
-    console.log(evt);
     updateDisplay();
   });
 
   updateDisplay();
   function updateDisplay() {
     const selected_value = $select_box.val();
-    console.log(`selected_value == `, selected_value);
 
     if (selected_value) {
       $select_box.addClass('HasValue');

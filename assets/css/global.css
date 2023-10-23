@@ -450,6 +450,7 @@ strong {
   background-size: 18px;
   background-repeat: no-repeat;
   background-position: right 1em center;
+  background-color: white;
 }
 .SelectBox_1 > select:focus {
   border-color: #a6a6a6;
@@ -629,6 +630,115 @@ strong {
 }
 .Btn_2.On .Active, .Btn_2:active .Active {
   display: block;
+}
+
+.Confirm_1 {
+  background-color: white;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  padding-top: 32px;
+  color: #303030;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+}
+.Confirm_1 .Body {
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-bottom: 32px;
+}
+.Confirm_1 .Foot {
+  border-top: 1px solid #f4f4f4;
+}
+
+.BottomSheet_1 {
+  position: relative;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  background-color: white;
+  box-shadow: 0px -4px 8px 0px rgba(0, 0, 0, 0.1);
+  width: 360px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: calc(60px + var(--sab, 0px));
+}
+.BottomSheet_1 .C-03e5c060 {
+  z-index: 10;
+  position: absolute;
+  top: -32px;
+  left: 0px;
+  width: 100%;
+  padding: 0 20px;
+}
+.BottomSheet_1 .C-03e5c060 .CloseBtn {
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 24px;
+}
+.BottomSheet_1.On {
+  bottom: 0;
+}
+.BottomSheet_1 .Handlebar {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 56px;
+}
+.BottomSheet_1 .Handlebar:before {
+  margin: 16px auto;
+  background-color: #303030;
+  border-radius: 3px;
+  width: 100%;
+  height: 3px;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0px;
+  display: block;
+  content: "";
+}
+.BottomSheet_1 .TitleBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0px;
+  color: var(--text-color1);
+  font-size: 16px;
+  font-weight: 600;
+  padding: 20px 0;
+  border-bottom: 1px solid #ebebeb;
+}
+.BottomSheet_1 .TitleBar.NoBottom {
+  border-bottom: none;
+}
+.BottomSheet_1 .ButtonBar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  color: var(--text-color1);
+  font-size: 16px;
+  font-weight: 600;
+  padding: 20px 0;
+  border-bottom: 1px solid #ebebeb;
+}
+.BottomSheet_1 .C-75f1741a {
+  text-align: center;
+  color: #000;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.BottomSheetSelectBtnList > button {
+  width: 100%;
+  height: 42px;
+  color: #a6a6a6;
+  font-size: 14px;
+  font-weight: 500;
+}
+.BottomSheetSelectBtnList > button.On {
+  color: #303030;
 }
 
 /**/
