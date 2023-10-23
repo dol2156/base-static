@@ -26,4 +26,18 @@
       <img onerror='initDropdown(this);' src='' />
     </div>
   </div>
+  {{!}}
+  <div>
+    <label class='FormLabel_1'>.Top</label>
+    <div class='Dropdown_1'>
+      <input type='hidden' />
+      <div class='Head'>선택</div>
+      <div class='Body Top'>
+        {{#LOOP 10}}
+          <div class='OptionBtn' data-value='{{number}}'>{{number}}</div>
+        {{/LOOP}}
+      </div>
+      <img onerror='initDropdown(this);' src='' />
+    </div>
+  </div>
 </div>

@@ -339,6 +339,11 @@ const initDropdown = (trigger) => {
   const $body = $target.find('.Body');
   const $opt_btn_list = $body.find('.OptionBtn');
 
+  // Outside Click
+  const outsideClick = new useOutsideClick(el_target, () => {
+    $target.removeClass('On');
+  });
+
   // Head Click
   $head.on(`click`, (evt) => {
     $target.toggleClass('On');
@@ -349,20 +354,46 @@ const initDropdown = (trigger) => {
     const $opt_btn = $(evt.currentTarget);
     $opt_btn.addClass('Selected');
     $opt_btn.siblings().removeClass('Selected');
-    
+
     updateDisplay();
   });
 
   updateDisplay();
   function updateDisplay() {
     const $opt_btn = $body.find('.OptionBtn.Selected');
-    if($opt_btn.length < 1) return;
-    
+    if ($opt_btn.length < 1) return;
+
     const text = $opt_btn.text();
     const value = $opt_btn.data('value');
     $head.text(text);
     $input.val(value);
-    
+
     $target.removeClass('On');
   }
 };
+
+/**
+ * 특정 영역 밖을 클릭 했을 때 감지하기
+ * https://gurtn.tistory.com/203
+ */
+class useOutsideClick {
+  ref = null;
+  onClickOutside = null;
+
+  constructor(ref, onClickOutside) {
+    this.ref = ref;
+    this.onClickOutside = onClickOutside;
+
+    document.addEventListener('mouseup', this.handleClickOutside);
+  }
+
+  handleClickOutside = (event) => {
+    if (this.ref && !this.ref?.contains?.(event.target)) {
+      this.onClickOutside(this);
+    }
+  };
+
+  removeClickListener = () => {
+    document.removeEventListener('mouseup', this.handleClickOutside);
+  };
+}
