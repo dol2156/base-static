@@ -222,7 +222,8 @@ const initWheelDownHScrollWrap = (trigger) => {
     const wrapHeight = scrollWidth + clientHeight - clientWidth;
     const scrollRange = scrollWidth - clientWidth;
 
-    el_target.height(wrapHeight);
+    $(el_target).height(wrapHeight);
+    $(el_inner).height(window.innerHeight);
 
     const top = el_target.getBoundingClientRect().top;
     const k = -1 * top;
@@ -232,7 +233,7 @@ const initWheelDownHScrollWrap = (trigger) => {
   function checkHScrollActive() {
     el_inner_child.forEach((el_child, idx) => {
       const left = el_child.getBoundingClientRect().left;
-      const k = left;
+      const k = left - window.innerWidth / 2;
 
       if (k <= 0) {
         el_child.classList.add('On');
