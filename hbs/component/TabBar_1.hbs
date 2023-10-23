@@ -1,10 +1,7 @@
-{{#DV}}
-  {{SAFE 'array' '1|2|3'}}
-{{/DV}}
 <div class='TabBar_1'>
-  {{#EACH (ARR array)}}
-    <button class='{{ON 0}} {{ON @root.active 'New'}}'>
-      <img class='hidden [.New>&]:block' src='/assets/icon/2307170959.svg' alt=''/>
+  {{#EACH (ARR '1|2|3')}}
+    <button class='{{ON 0}}'>
+      <img class='hidden [.On>&]:block' src='/assets/icon/new.svg' alt=''/>
       {{obj}}
     </button>
   {{/EACH}}

@@ -246,9 +246,7 @@ const initWheelDownHScrollWrap = (trigger) => {
 /**
  * CollapseAbleBox 클래스를 가진 박스를 세로로 접었다 펼쳤다 되도록 셋팅
  * On 클래스로 컨트롤
- * <div class="ChildList CollapseAbleBox On">
- *   <img onerror="initCollapseAbleBox(this);" src=""/>
- * </div>
+ * <img onerror="initCollapseAbleBox(this);" src=""/>
  */
 const initCollapseAbleBox = (trigger) => {
   if (typeof trigger === 'undefined') return;
@@ -271,36 +269,30 @@ const initCollapseAbleBox = (trigger) => {
 };
 
 /**
- *
+ * 트리메뉴 작동
+ * <img onerror="initTreeMenu(this);" src=""/>
+ * <img onerror="initTreeMenu(this, true);" src=""/>
  * @param trigger
  */
 const initTreeMenu = (trigger, close_other = false) => {
   if (typeof trigger === 'undefined') return;
   const el_target = trigger.parentElement;
-  const el_list_label = el_target.querySelectorAll(`.Label`);
-  el_list_label.forEach((el_label, idx) => {
-    el_label.addEventListener('click', (evt) => {
-      const ct = evt.currentTarget;
-      const el_li = ct.closest('li');
 
-      // Other Deactive
-      const el_list_othger_li = el_li.siblings();
-      el_list_othger_li.forEach((el_other_li, idx) => {
-        if (close_other) {
-          el_other_li.removeClass('On');
-          const el_child_list = el_other_li.querySelectorAll(`:scope > .ChildList`);
-          if (el_child_list) {
-            el_child_list.forEach((el_child, idx) => {
-              el_child.removeClass('On');
-            });
-          }
-        }
-      });
+  const $list_label = $(el_target).find('> ul > li > .Label');
+  $list_label.on(`click`, (evt) => {
+    const ct = evt.currentTarget;
+    const $li = $(ct).closest('li');
 
-      // target Active
-      el_li.toggleClass('On');
-      const el_child_list = el_li.querySelector(`.ChildList`);
-      if (el_child_list) el_child_list.toggleClass('On');
-    });
+    // Other Deactive
+    if (close_other) {
+      const $othger_li = $li.siblings();
+      $othger_li.removeClass('On');
+      $othger_li.find(`.ChildList`).removeClass('On');
+    }
+
+    // target Active
+    $li.toggleClass('On');
+    $li.find(`> .ChildList`).toggleClass('On');
   });
+
 };
