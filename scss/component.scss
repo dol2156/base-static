@@ -170,6 +170,21 @@
   }
 }
 /**/
+.DescList_3 {
+  --p-left: 1.5em;
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: inherit;
+  width: calc(100% - var(--p-left));
+  //list-style: auto;
+  list-style: hangul;
+  margin-left: var(--p-left);
+  li + li {
+    margin-top: 0.5em;
+  }
+}
+/**/
 .HScrollSnapBox_1 {
   display: inline-flex;
   white-space: nowrap;
@@ -255,7 +270,6 @@
   display: flex;
   align-items: center;
   gap: 5px;
-  overflow: auto;
   padding-left: var(--contents-side-padding);
   padding-right: var(--contents-side-padding);
   button {
@@ -270,6 +284,76 @@
       color: white;
       border-color: #ff3838;
       background-color: #ff3838;
+    }
+  }
+}
+/**/
+.Divider_1 {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  height: 6px;
+  border-bottom: 1px solid #e1e1e1;
+  background: #ebebeb;
+}
+/**/
+.DungDung_1 {
+  @keyframes UpAndDown {
+    0%,
+    100% {
+      transform: translate(0%, 0%);
+      animation-timing-function: ease-out;
+    }
+    50% {
+      transform: translate(0%, 20px);
+      animation-timing-function: ease-in;
+    }
+  }
+  > * {
+    animation: UpAndDown 1000ms infinite;
+  }
+}
+/**/
+.EmptyList_1 {
+  width: 100%;
+  padding-top: 90px;
+  padding-bottom: 90px;
+  text-align: center;
+  color: #767676;
+  line-height: 20px;
+
+  .Txt1 {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .Txt2 {
+    font-size: 12px;
+    font-weight: 400;
+  }
+}
+/**/
+.LinkList_1 {
+  background-color: white;
+  border: 1px solid #ebebeb;
+  border-radius: 8px;
+
+  > ul {
+    > li {
+      a {
+        color: #303030;
+        font-size: 14px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0px;
+        height: 60px;
+        padding: 0 16px;
+      }
+    }
+
+    > li + li {
+      border-top: 1px solid #ebebeb;
     }
   }
 }

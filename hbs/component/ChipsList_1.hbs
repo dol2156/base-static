@@ -1,5 +1,10 @@
-<div class="ChipsList_1 HideScroll">
-  {{#LOOP 20}}
-    <button class='{{ON 0}}'>Button {{number}}</button>
-  {{/LOOP}}
+<div class='HScrollGradientBox_1 w-full'>
+  <div class='Track'>
+    <div class='ChipsList_1'>
+      {{#LOOP 20}}
+        <button class='{{ON 0}}'>Button {{number}}</button>
+      {{/LOOP}}
+    </div>
+  </div>
+  <img onerror='initHScrollGradientBox(this)' src='' alt='' />
 </div>
