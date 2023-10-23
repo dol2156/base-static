@@ -113,7 +113,7 @@ var MENU_DATA = [
             자식: [],
           },
           {
-            라벨: '컴포넌트',
+            라벨: 'Component',
             페이지명: '_pub_component',
             링크: '',
             보임: true,
@@ -129,7 +129,7 @@ var MENU_DATA = [
             자식: [],
           },
           {
-            라벨: '텍스트 인풋',
+            라벨: 'Text Input',
             페이지명: '_pub_input',
             링크: '',
             보임: true,
@@ -137,7 +137,7 @@ var MENU_DATA = [
             자식: [],
           },
           {
-            라벨: '셀렉트',
+            라벨: 'Select',
             페이지명: '_pub_select',
             링크: '',
             보임: true,
@@ -145,7 +145,7 @@ var MENU_DATA = [
             자식: [],
           },
           {
-            라벨: '버튼',
+            라벨: 'Button',
             페이지명: '_pub_button',
             링크: '',
             보임: true,

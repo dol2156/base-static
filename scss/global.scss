@@ -1,6 +1,8 @@
 @use 'var';
 @use 'reset';
 @use 'form';
+@use 'header';
+@use 'footer';
 @use 'button';
 @use 'component';
 /**/
@@ -205,6 +207,10 @@ img.LoadingBg {
   align-items: flex-start;
   justify-content: center;
   gap: 10px;
+  
+  > *{
+    width:100%;
+  }
 }
 /**/
 .Grayscale {

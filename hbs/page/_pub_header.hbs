@@ -1,0 +1,22 @@
+<div id='page'>
+  {{!--prettier-ignore--}}
+  <style>
+    html{
+      background-color:#ffffd4;
+    }
+    main > section{
+      margin-bottom:50px;
+    }
+  </style>
+  <main>
+    <div class='H1'>Header</div>
+    {{#EACH window.HBS_DATA.header}}
+      <section>
+        <div class='H2'>/{{obj.path}}</div>
+        <script>
+          Handlebars.write('/{{obj.path}}');
+        </script>
+      </section>
+    {{/EACH}}
+  </main>
+</div>
