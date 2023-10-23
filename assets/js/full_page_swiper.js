@@ -65,7 +65,7 @@ const initFullPageSwiper = (swiper_id) => {
 
     const last_idx = swiper.slides.length - 1;
     const el_last_slide = swiper.slides[last_idx];
-    const ls_hei = el_last_slide.outerHeight();
+    const ls_hei = $(el_last_slide).outerHeight();
     const second_last_snap = swiper.snapGrid[last_idx - 1];
     const cal_last_snap = second_last_snap + ls_hei;
     swiper.snapGrid[last_idx] = cal_last_snap;
@@ -74,14 +74,14 @@ const initFullPageSwiper = (swiper_id) => {
   swiper.init();
 
   function setAnimateDealy() {
-    const el_swiper = swiper.el;
+    const $swiper = $(swiper.el);
 
     // 슬라이드 방향 체크해서
     // 트렌지션 객체들 딜레이 각각 설정해주기
     if (swiper.previousIndex - swiper.activeIndex > 0) {
-      el_swiper.css('--ori-top', `-50px`);
+      $swiper.css('--ori-top', `-50px`);
     } else {
-      el_swiper.css('--ori-top', `50px`);
+      $swiper.css('--ori-top', `50px`);
     }
 
     const el_slide = swiper.slides[swiper.activeIndex];
@@ -90,7 +90,7 @@ const initFullPageSwiper = (swiper_id) => {
       const el_at_list = el_dov.querySelectorAll(`.AnimateTarget`);
       el_at_list.forEach((el_at, jdx) => {
         const k = 2;
-        el_at.css('animation-delay', `${(jdx + 1) * k}00ms`);
+        $(el_at).css('animation-delay', `${(jdx + 1) * k}00ms`);
       });
     });
   }
@@ -98,6 +98,6 @@ const initFullPageSwiper = (swiper_id) => {
   function setCurrentSectionIdx() {
     const { realIndex } = swiper;
     const html = document.documentElement;
-    html.attr(`data-current-section-idx`, realIndex);
+    html.setAttribute(`data-current-section-idx`, realIndex);
   }
 };
