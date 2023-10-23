@@ -474,6 +474,24 @@ strong {
   border-color: #a6a6a6;
 }
 
+.Dropdown_1 {
+  position: relative;
+  width: 100%;
+  border: 1px solid var(--form-border-color);
+  border-radius: 0.5em;
+  height: 36px;
+  font-size: 12px;
+  font-weight: 400;
+  padding: 0px 1em;
+}
+.Dropdown_1 > select {
+  outline: 1px dashed red;
+  z-index: 10;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
 /**
  * 마우스 인터렉션 상태에 따라 아이콘을 변경하는 버튼에 포함되는 믹스인
  */

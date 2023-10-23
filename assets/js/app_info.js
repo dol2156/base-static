@@ -1,5 +1,4 @@
 window.addEventListener('DOMContentLoaded', (event) => {
-  
   const html = `
   <style>
     #AppInfo{ display:none; }
@@ -35,16 +34,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
   const init = () => {
     (() => {
-      // 번들링 결과물에서는 링크 변경
-      if (document.documentElement.dataset.env != 'development') {
-        document.querySelector(`#AppInfo > a`).setAttribute(`href`, `/html/_pub_sitemap.html`);
-      } else {
+      if (document.documentElement.dataset.env == 'development') {
         const c_label = 'env';
-        const c_label_style =
-          'border:1px solid black; background:#333; color:yellow; padding:0.25em 0.5em; font-size:12px; font-weight:bold;';
+        const c_label_style = 'border:1px solid black; background:#333; color:yellow; padding:0.25em 0.5em; font-size:12px; font-weight:bold;';
         const c_value = document.documentElement.dataset.env;
-        const c_value_style =
-          'border:1px solid black; background:#ffffd4; color:#333; padding:0.25em 0.5em; font-size:12px; border-left:none;';
+        const c_value_style = 'border:1px solid black; background:#ffffd4; color:#333; padding:0.25em 0.5em; font-size:12px; border-left:none;';
         console.log(`%c${c_label}%c${c_value}`, c_label_style, c_value_style);
       }
     })();

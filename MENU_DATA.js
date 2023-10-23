@@ -145,6 +145,14 @@ var MENU_DATA = [
             자식: [],
           },
           {
+            라벨: 'Dropdown',
+            페이지명: '_pub_dropdown',
+            링크: '',
+            보임: true,
+            상태: '',
+            자식: [],
+          },
+          {
             라벨: 'Button',
             페이지명: '_pub_button',
             링크: '',

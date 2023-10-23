@@ -14,6 +14,10 @@
   const c_value = JSON.stringify(window.params);
   const c_value_style = 'border:1px solid black; background:#ffffd4; color:#333; padding:0.25em 0.5em; font-size:12px; border-left:none;';
   console.log(`%c${c_label}%c${c_value}`, c_label_style, c_value_style);
+  
+  // 페이지 타이틀 설정
+  const title = window.params.title;
+  document.title = title;
 })();
 
 /**
