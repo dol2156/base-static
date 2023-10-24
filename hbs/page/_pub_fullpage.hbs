@@ -1,11 +1,5 @@
 <div id='Page'>
-  {{!--prettier-ignore--}}
-  <style>
-    html{ height:100%; }
-    body{ overflow:hidden; height:100%; }
-    #page{ height:100%; }
-    main{ height:100%; padding-bottom:0; }
-  </style>
+  <div class='H1 absolute z-10 w-full bg-white/50'>FullPageSwiper</div>
   <main>
     <div id='FullPageSwiper' class='swiper FullPageSwiper'>
       <div class='swiper-wrapper'>
@@ -13,7 +7,7 @@
           <section>
             <div class='Bg'>
               <video controlsList='nodownload' loop='loop' autoplay muted='muted' playsinline>
-                <source src='/assets/video/01.mp4' type='video/mp4'/>
+                <source src='/assets/video/01.mp4' type='video/mp4' />
               </video>
             </div>
             <div class='Inner'>
@@ -21,14 +15,14 @@
                 <div class='AnimateTarget'>
                   <div class='text-[#ffffff] text-[34px] font-[700] leading-[40px]'>
                     당신의 DNA에
-                    <br/>
+                    <br />
                     로그인하세요.
                   </div>
                 </div>
                 <div class='AnimateTarget mt-[22px]'>
                   <div class='text-[#ffffff] text-[16px] font-[400] leading-[24px]'>
                     제노플랜에서 당신의 세계를
-                    <br/>
+                    <br />
                     더 깊고, 더 넓게 탐험할 수 있습니다
                   </div>
                 </div>
@@ -54,7 +48,7 @@
         <div class='swiper-slide'>
           <section>
             <div class='Bg'>
-              <img src='https://picsum.photos/1920/1080.jpg?random=cd192e57' alt=''/>
+              <img src='https://picsum.photos/1920/1080.jpg?random=cd192e57' alt='' />
             </div>
             <div class='Inner'>
               <div data-only-view='MO'>
@@ -62,16 +56,16 @@
                   <div class='AnimateTarget'>
                     <div class='text-[#ffffff] text-[30px] font-[600] leading-[38px]'>
                       엠허브제너플랜이
-                      <br/>
+                      <br />
                       든든한 동반자가
-                      <br/>
+                      <br />
                       되겠습니다.
                     </div>
                   </div>
                   <div class='AnimateTarget mt-[22px]'>
                     <div class='text-[#ffffff] text-[16px] font-[400] leading-[24px]'>
                       제노플랜의
-                      <br/>
+                      <br />
                       새로운 소식을 전해드립니다.
                     </div>
                   </div>
@@ -82,14 +76,14 @@
                   <div class='AnimateTarget'>
                     <div class='text-[#ffffff] text-[50px] font-[600] leading-[62px]'>
                       엠허브제너플랜이
-                      <br/>
+                      <br />
                       든든한 동반자가 되겠습니다.
                     </div>
                   </div>
                   <div class='AnimateTarget mt-[30px]'>
                     <div class='text-[#ffffff] text-[20px] font-[400] leading-[30px]'>
                       언제나 사람과 건강을 우선으로 생각하는 기업으로
-                      <br/>
+                      <br />
                       책임을 다 할 것을 약속합니다.
                     </div>
                   </div>
@@ -111,9 +105,7 @@
     <div id='FullPageSwiper-PagenationProgressbar' class='FullPageSwiper-PagenationProgressbar hidden pc:block'></div>
   </main>
 </div>
-<script src="/assets/js/full_page_swiper.js"></script>
+<script src='/assets/js/full_page_swiper.js'></script>
 <script>
-  window.addEventListener('DOMContentLoaded', (evt) => {
-    initFullPageSwiper(`#FullPageSwiper`);
-  });
+  window.addEventListener('DOMContentLoaded', (evt) => { initFullPageSwiper(`#FullPageSwiper`); });
 </script>

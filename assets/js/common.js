@@ -33,13 +33,14 @@ window.UID = () => {
 };
 /* // 2023-09-13 :: END :: window */
 
-/* 2023-10-24 :: START :: setVh100 */
-const setVh100 = () => {
+/* 2023-10-24 :: START :: setCssVh */
+const setCssVh = () => {
   document.documentElement.style.setProperty('--vh-100', `${window.innerHeight}px`);
+  document.documentElement.style.setProperty('--vh-50', `${window.innerHeight / 2}px`);
 };
-window.addEventListener('resize', setVh100);
-setVh100();
-/* // 2023-10-24 :: END :: setVh100 */
+window.addEventListener('resize', setCssVh);
+setCssVh();
+/* // 2023-10-24 :: END :: setCssVh */
 
 /* 2023-10-21 :: START :: LayerControl */
 const LayerControl = {};
