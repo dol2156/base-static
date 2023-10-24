@@ -1425,6 +1425,24 @@ strong {
   font-size: 18px;
 }
 
+/**/
+.swiper {
+  user-select: none;
+}
+
+/**/
+.plyr__control--overlaid {
+  border-radius: 0;
+  background-image: url(/assets/icon/video_play.svg) !important;
+  background-color: transparent !important;
+  width: 50px !important;
+  height: 50px;
+}
+
+.plyr__control--overlaid > * {
+  display: none;
+}
+
 html,
 body,
 input,
@@ -1710,39 +1728,6 @@ img.LoadingBg {
   opacity: 0;
 }
 
-/******************************************
-  Library Custom
-*******************************************/
-/**/
-.swiper {
-  user-select: none;
-}
-
-/**/
-.plyr__control--overlaid {
-  border-radius: 0;
-  background-image: url(/assets/icon/video_play.svg) !important;
-  background-color: transparent !important;
-  width: 50px !important;
-  height: 50px;
-}
-
-.plyr__control--overlaid > * {
-  display: none;
-}
-
-/**/
-.KakaoMapBox .customoverlay {
-  outline: 1px dashed red;
-  min-width: 100px;
-  min-height: 100px;
-  z-index: 10;
-  position: absolute;
-  bottom: 50px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
 /**/
 .FullPageSwiper {
   --footer-hei: 500px;
@@ -1877,6 +1862,7 @@ img.LoadingBg {
   transform-origin: top;
 }
 
+/**/
 .WheelDownHScrollWrap {
   background-color: #ffffd4;
 }

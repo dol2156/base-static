@@ -1,0 +1,15 @@
+/**/
+.swiper {
+  user-select: none;
+}
+/**/
+.plyr__control--overlaid {
+  border-radius: 0;
+  background-image: url(/assets/icon/video_play.svg) !important;
+  background-color: transparent !important;
+  width: 50px !important;
+  height: 50px;
+}
+.plyr__control--overlaid > * {
+  display: none;
+}
