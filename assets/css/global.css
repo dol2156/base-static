@@ -1425,15 +1425,6 @@ strong {
   font-size: 18px;
 }
 
-page-title {
-  display: none;
-}
-
-html,
-body {
-  min-height: 100%;
-}
-
 html,
 body,
 input,
@@ -1442,10 +1433,29 @@ textarea {
   font-family: "SUIT Variable", "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-.FixedHeader {
+#Page {
+  min-height: var(--vh-100);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#Page > * {
+  outline: 1px dashed red;
+}
+#Page > main {
+  flex-grow: 1;
+}
+
+/**/
+.Sticky {
   z-index: 99;
   position: sticky;
+}
+.Sticky.Top {
   top: 0;
+}
+.Sticky.Bottom {
+  bottom: 0;
 }
 
 /**/

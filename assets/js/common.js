@@ -14,7 +14,7 @@
   const c_value = JSON.stringify(window.params);
   const c_value_style = 'border:1px solid black; background:#ffffd4; color:#333; padding:0.25em 0.5em; font-size:12px; border-left:none;';
   console.log(`%c${c_label}%c${c_value}`, c_label_style, c_value_style);
-  
+
   // 페이지 타이틀 설정
   const title = window.params.title;
   document.title = title;
@@ -32,6 +32,14 @@ window.UID = () => {
   return firstPart + secondPart;
 };
 /* // 2023-09-13 :: END :: window */
+
+/* 2023-10-24 :: START :: setVh100 */
+const setVh100 = () => {
+  document.documentElement.style.setProperty('--vh-100', `${window.innerHeight}px`);
+};
+window.addEventListener('resize', setVh100);
+setVh100();
+/* // 2023-10-24 :: END :: setVh100 */
 
 /* 2023-10-21 :: START :: LayerControl */
 const LayerControl = {};
@@ -71,7 +79,7 @@ ModalControl.init = () => {
   el_modal.addEventListener('click', (evt) => {
     LayerControl.Off();
   });
-}
+};
 /* // 2023-10-21 :: END :: ModalControl */
 
 /**

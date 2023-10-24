@@ -16,13 +16,6 @@
 @import '/assets/font/SUIT-Variable.css';
 //@import '/assets/font/Pretendard.css';
 @import '/assets/font/Montserrat.css';
-page-title {
-  display: none;
-}
-html,
-body {
-  min-height: 100%;
-}
 html,
 body,
 input,
@@ -44,10 +37,30 @@ textarea {
     'Segoe UI Symbol',
     'Noto Color Emoji';
 }
-.FixedHeader {
+#Page {
+  min-height: var(--vh-100);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  > * {
+    outline: 1px dashed red;
+  }
+
+  > main {
+    flex-grow: 1;
+  }
+}
+/**/
+.Sticky {
   z-index: 99;
   position: sticky;
-  top: 0;
+  &.Top {
+    top: 0;
+  }
+  &.Bottom {
+    bottom: 0;
+  }
 }
 /**/
 body {
@@ -214,9 +227,9 @@ img.LoadingBg {
   align-items: flex-start;
   justify-content: center;
   gap: 10px;
-  
-  > *{
-    width:100%;
+
+  > * {
+    width: 100%;
   }
 }
 /**/
