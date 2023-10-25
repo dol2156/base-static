@@ -10,7 +10,7 @@
             <li>
               {{!--prettier-ignore--}}
               <script>
-                Handlebars.write('/hbs/etc/SitemapItem_1-a.hbs', {{JSONSTR obj}});
+                Handlebars.write('/hbs/etc/SitemapItem_1-a.hbs', {{JsonToObj obj}});
               </script>
               {{#if obj.자식}}
                 <ul>
@@ -18,7 +18,7 @@
                     <li>
                       {{!--prettier-ignore--}}
                       <script>
-                        Handlebars.write('/hbs/etc/SitemapItem_1-a.hbs', {{JSONSTR obj}});
+                        Handlebars.write('/hbs/etc/SitemapItem_1-a.hbs', {{JsonToObj obj}});
                       </script>
                       {{#if obj.자식}}
                         <ul>
@@ -26,7 +26,7 @@
                             <li>
                               {{!--prettier-ignore--}}
                               <script>
-                                Handlebars.write('/hbs/etc/SitemapItem_1-a.hbs', {{JSONSTR obj}});
+                                Handlebars.write('/hbs/etc/SitemapItem_1-a.hbs', {{JsonToObj obj}});
                               </script>
                               {{#if obj.자식}}
                                 <ul>
@@ -34,7 +34,7 @@
                                     <li>
                                       {{!--prettier-ignore--}}
                                       <script>
-                                        Handlebars.write('/hbs/etc/SitemapItem_1-a.hbs', {{JSONSTR obj}});
+                                        Handlebars.write('/hbs/etc/SitemapItem_1-a.hbs', {{JsonToObj obj}});
                                       </script>
                                     </li>
                                   {{/EACH}}

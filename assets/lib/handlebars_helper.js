@@ -417,9 +417,9 @@ Handlebars.registerHelper('AND', function (var_list_str, options) {
 
 /**
  * 동기식으로 JSON 받아와서 node_name 에 할당 해줌
- * {{JSON 'LOCATION_DATA' '/assets/json/kakaomap_location.json'}}
+ * {{JsonToVar 'SampleData' '/assets/json/SampleData.json'}}
  */
-Handlebars.registerHelper('JSON', function (node_name, json_url, options) {
+Handlebars.registerHelper('JsonToVar', function (node_name, json_url, options) {
   const json = JSON.parse(Handlebars.loadHtml(json_url));
   this[node_name] = json;
 });
@@ -430,6 +430,6 @@ Handlebars.registerHelper('JSON', function (node_name, json_url, options) {
  *   Handlebars.write('/hbs/etc/SitemapItem_1-a.hbs', {{JSONSTR obj}});
  * </script>
  */
-Handlebars.registerHelper('JSONSTR', function (obj, options) {
+Handlebars.registerHelper('JsonToObj', function (obj, options) {
   return new Handlebars.SafeString(JSON.stringify(obj));
 });
