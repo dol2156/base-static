@@ -47,10 +47,11 @@
     <script>
       (() => {
         let page_name = window.params.page;
-        if (!page_name){
-          window.location.href='/index.html?title=사이트맵&page=_pub_sitemap';
-        }else{
-          Handlebars.write(`/hbs/page/${page_name}.hbs`);
+        if (!page_name) {
+          window.location.href = '/index.html?title=사이트맵&page=_pub_sitemap';
+        } else {
+          const page_path = `/hbs/page/${page_name}.hbs`;
+          Handlebars.write(page_path);
         }
       })();
     </script>

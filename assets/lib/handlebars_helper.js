@@ -9,21 +9,19 @@ Handlebars.logger.level = 'debug';
 Handlebars.write = (path, render_data) => {
   if (typeof render_data === 'undefined') render_data = {};
   render_data = Object.assign({ window }, render_data);
-  const filename = path.replace(/^.*[\\\/]/, '').replace(/\.[^/.]+$/, '');
-
+  
   const el_script = document.currentScript;
-
+  
   const html_str = Handlebars.loadHtml(path);
-
+  
   //Compile the template
   const compiled_template = Handlebars.compile(html_str);
 
   //Render the data into the template
   let rendered = compiled_template(render_data);
-  rendered = `<!-- ${filename} :: START ::  -->` + rendered + `<!-- // ${filename} :: END ::  -->`;
-
+  rendered = `<!-- ${path} :: START ::  -->` + rendered + `<!-- // ${path} :: END ::  -->`;
+  
   document.write(rendered);
-
   el_script.remove();
 };
 
@@ -34,6 +32,42 @@ Handlebars.write = (path, render_data) => {
  * @constructor
  */
 Handlebars.loadHtml = (path) => {
+  let html_str;
+  const xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function () {
+    /*
+    readyState
+    0	UNSENT	Client has been created. open() not called yet.
+    1	OPENED	open() has been called.
+    2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+    3	LOADING	Downloading; responseText holds partial data.
+    4	DONE	The operation is complete.
+    */
+    if (this.readyState == 4) {
+      if (this.status == 200) {
+        // success
+        html_str = this.responseText;
+      } else {
+        // error
+        const msg = `<div class="flex flex-row items-center justify-center gap-[0] w-full h-full fixed">404 Not Found : ${path}</div>`;
+        console.log(`%c${msg}%c${path}`, 'font-family:D2Coding; border:1px solid black; background:red; color:white; padding:5px; font-size:12px;', 'font-family:D2Coding; background-color:black; border:1px solid black; border-left:none; padding:5px; color:yellow; font-size:12px;');
+        html_str = msg;
+      }
+    }
+  };
+  xhttp.open('GET', path, false);
+  xhttp.send();
+
+  return html_str;
+};
+
+/**
+ * 동기 Javascript 로드
+ * @param path
+ * @returns {*}
+ * @constructor
+ */
+Handlebars.loadJS = (path) => {
   let html_str;
   const xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
@@ -391,17 +425,10 @@ Handlebars.registerHelper('JSON', function (node_name, json_url, options) {
 });
 
 /**
- * sitemap 에서 사용되는 URL
- */
-Handlebars.registerHelper('SITEMAP_URL', function (page_title, page_value, options) {
-  if (page_value.indexOf(`http`) > -1) {
-    return page_value;
-  } else {
-    return `/index.html?title=${page_title}&page=${page_value}`;
-  }
-});
-
-/**
+ * Object to String
+ * <script>
+ *   Handlebars.write('/hbs/etc/SitemapItem_1-a.hbs', {{JSONSTR obj}});
+ * </script>
  */
 Handlebars.registerHelper('JSONSTR', function (obj, options) {
   return new Handlebars.SafeString(JSON.stringify(obj));
