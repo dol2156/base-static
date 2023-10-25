@@ -809,6 +809,15 @@ strong {
   background-image: url(/assets/icon/basic/rdo_1_disabled.svg);
 }
 
+.ToolTip_1 {
+  text-align: left;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #e1e1e1;
+  background: #ffffff;
+  box-shadow: 2px 4px 6px 0px rgba(0, 0, 0, 0.1);
+}
+
 .Confirm_1 {
   background-color: white;
   border-top-left-radius: 8px;
