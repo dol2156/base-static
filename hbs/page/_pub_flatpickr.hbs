@@ -5,11 +5,10 @@
     main input{ border:1px solid #ddd; width:50%; }
   </style>
   <main>
-    {{!CONTENTS}}
     <div class='H1'>flatpickr</div>
     <section>
       <div class='H2'>Basic</div>
-      <input id='inp-d3267227' type='text' />
+      <input id='inp-d3267227' type='text'/>
       {{!--prettier-ignore--}}
       <script>
         (() => {
@@ -20,7 +19,7 @@
     </section>
     <section>
       <div class='H2'>DateTime</div>
-      <input id='inp-1e8273f6' type='text' />
+      <input id='inp-1e8273f6' type='text'/>
       {{!--prettier-ignore--}}
       <script>
         (() => {
@@ -34,7 +33,7 @@
     </section>
     <section>
       <div class='H2'>Human-friendly Dates</div>
-      <input id='inp-f30fefc3' type='text' />
+      <input id='inp-f30fefc3' type='text'/>
       {{!--prettier-ignore--}}
       <script>
         (() => {
@@ -50,7 +49,7 @@
     <section>
       <div class='H2'>minDate and maxDate</div>
       <div class='H3'>minDate: "2020-01"</div>
-      <input id='inp-281b306e' type='text' />
+      <input id='inp-281b306e' type='text'/>
       {{!--prettier-ignore--}}
       <script>
         (() => {
@@ -63,7 +62,7 @@
     </section>
     <section>
       <div class='H3'>maxDate: "2023-10-30"</div>
-      <input id='inp-3b82801d' type='text' />
+      <input id='inp-3b82801d' type='text'/>
       {{!--prettier-ignore--}}
       <script>
         (() => {
@@ -76,7 +75,7 @@
     </section>
     <section>
       <div class='H3'>minDate: "today", maxDate: new Date().fp_incr(14)</div>
-      <input id='inp-4f911bf1' type='text' />
+      <input id='inp-4f911bf1' type='text'/>
       {{!--prettier-ignore--}}
       <script>
         (() => {
@@ -91,7 +90,7 @@
     <section>
       <div class='H2'>Disabling dates</div>
       <div class='H3'>Disabling specific date</div>
-      <input id='inp-ac59b422' type='text' />
+      <input id='inp-ac59b422' type='text'/>
       {{!--prettier-ignore--}}
       <script>
         (() => {
@@ -104,7 +103,7 @@
     </section>
     <section>
       <div class='H3'>Disabling a date range</div>
-      <input id='inp-a1dda77c' type='text' />
+      <input id='inp-a1dda77c' type='text'/>
       {{!--prettier-ignore--}}
       <script>
         (() => {
@@ -126,7 +125,7 @@
     </section>
     <section>
       <div class='H3'>Disabling dates by a function</div>
-      <input id='inp-89400eb6' type='text' />
+      <input id='inp-89400eb6' type='text'/>
       {{!--prettier-ignore--}}
       <script>
         (() => {
@@ -136,7 +135,7 @@
               function (date) {
                 // return true to disable
                 return (date.getDay() === 0 || date.getDay() === 6);
-                
+
               }
             ]
           });
@@ -146,7 +145,7 @@
     <section>
       <div class='H2'>Disabling all dates except select few</div>
       <div class='H3'>Enabling specific dates</div>
-      <input id='inp-9896141f' type='text' />
+      <input id='inp-9896141f' type='text'/>
       {{!--prettier-ignore--}}
       <script>
         (() => {
@@ -159,7 +158,7 @@
     </section>
     <section>
       <div class='H3'>Enabling range(s) of dates</div>
-      <input id='inp-3bad034d' type='text' />
+      <input id='inp-3bad034d' type='text'/>
       {{!--prettier-ignore--}}
       <script>
         (() => {
@@ -181,7 +180,7 @@
     </section>
     <section>
       <div class='H3'>Enabling dates by a function</div>
-      <input id='inp-6b053fdc' type='text' />
+      <input id='inp-6b053fdc' type='text'/>
       {{!--prettier-ignore--}}
       <script>
         (() => {
@@ -199,14 +198,170 @@
     </section>
     <section>
       <div class='H2'>Selecting multiple dates</div>
-      <input id='inp-c2129d34' type='text' />
+      <input id='inp-c2129d34' type='text'/>
       {{!--prettier-ignore--}}
       <script>
         (() => {
           const el_inp = document.querySelector(`#inp-c2129d34`);
           flatpickr(el_inp, {
             mode: "multiple",
-            dateFormat: "Y-m-d"
+          });
+        })()
+      </script>
+    </section>
+    <section>
+      <div class='H3'>Preloading multiple dates</div>
+      <input id='inp-8f821bab' type='text'/>
+      {{!--prettier-ignore--}}
+      <script>
+        (() => {
+          const el_inp = document.querySelector(`#inp-8f821bab`);
+          flatpickr(el_inp, {
+            mode: "multiple",
+            defaultDate: ["2016-10-20", "2016-11-04"]
+          });
+        })()
+      </script>
+    </section>
+    <section>
+      <div class='H3'>Customizing the Conjunction</div>
+      <input id='inp-df77d710' type='text'/>
+      {{!--prettier-ignore--}}
+      <script>
+        (() => {
+          const el_inp = document.querySelector(`#inp-df77d710`);
+          flatpickr(el_inp, {
+            mode: "multiple",
+            conjunction: " :: "
+          });
+        })()
+      </script>
+    </section>
+    <section>
+      <div class='H2'>Range Calendar</div>
+      <input id='inp-26341835' type='text'/>
+      {{!--prettier-ignore--}}
+      <script>
+        (() => {
+          const el_inp = document.querySelector(`#inp-26341835`);
+          flatpickr(el_inp, {
+            mode: "range"
+          });
+        })()
+      </script>
+    </section>
+    <section>
+      <div class='H3'>Preloading range dates</div>
+      <input id='inp-1e992f88' type='text'/>
+      {{!--prettier-ignore--}}
+      <script>
+        (() => {
+          const el_inp = document.querySelector(`#inp-1e992f88`);
+          flatpickr(el_inp, {
+            mode: "range",
+            dateFormat: "Y-m-d",
+            defaultDate: ["2016-10-10", "2016-10-20"]
+          });
+        })()
+      </script>
+    </section>
+    <section>
+      <div class='H2'>Time Picker</div>
+      <input id='inp-9193ca72' type='text'/>
+      {{!--prettier-ignore--}}
+      <script>
+        (() => {
+          const el_inp = document.querySelector(`#inp-9193ca72`);
+          flatpickr(el_inp, {
+            enableTime: true,
+            noCalendar: true,
+            dateFormat: "H:i",
+          });
+        })()
+      </script>
+    </section>
+    <section>
+      <div class='H3'>24-hour Time Picker</div>
+      <input id='inp-4fe994f9' type='text'/>
+      {{!--prettier-ignore--}}
+      <script>
+        (() => {
+          const el_inp = document.querySelector(`#inp-4fe994f9`);
+          flatpickr(el_inp, {
+            enableTime: true,
+            noCalendar: true,
+            dateFormat: "H:i",
+            time_24hr: true
+          });
+        })()
+      </script>
+    </section>
+    <section>
+      <div class='H3'>Preloading Time</div>
+      <input id='inp-06c290be' type='text'/>
+      {{!--prettier-ignore--}}
+      <script>
+        (() => {
+          const el_inp = document.querySelector(`#inp-06c290be`);
+          flatpickr(el_inp, {
+            enableTime: true,
+            noCalendar: true,
+            dateFormat: "H:i",
+            defaultDate: "13:45"
+          });
+        })()
+      </script>
+    </section>
+    <section>
+      <div class='H2'>DateTimePicker with Limited Time Range</div>
+      <input id='inp-888a1da5' type='text'/>
+      {{!--prettier-ignore--}}
+      <script>
+        (() => {
+          const el_inp = document.querySelector(`#inp-888a1da5`);
+          flatpickr(el_inp, {
+            enableTime: true,
+            minTime: "09:00"
+          });
+        })()
+      </script>
+    </section>
+    <section>
+      <input id='inp-51bbb154' type='text'/>
+      {{!--prettier-ignore--}}
+      <script>
+        (() => {
+          const el_inp = document.querySelector(`#inp-51bbb154`);
+          flatpickr(el_inp, {
+            enableTime: true,
+            minTime: "16:00",
+            maxTime: "22:00"
+          });
+        })()
+      </script>
+    </section>
+    <section>
+      <div class='H2'>Inline Calendar</div>
+      <input id='inp-cbdb3ce9' type='text'/>
+      {{!--prettier-ignore--}}
+      <script>
+        (() => {
+          const el_inp = document.querySelector(`#inp-cbdb3ce9`);
+          flatpickr(el_inp, {
+            inline: true
+          });
+        })()
+      </script>
+    </section>
+    <section>
+      <div class='H2'>Display Week Numbers</div>
+      <input id='inp-4dfc92f5' type='text'/>
+      {{!--prettier-ignore--}}
+      <script>
+        (() => {
+          const el_inp = document.querySelector(`#inp-4dfc92f5`);
+          flatpickr(el_inp, {
+            weekNumbers: true,
           });
         })()
       </script>
