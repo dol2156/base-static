@@ -1733,9 +1733,6 @@ img[src=""] {
 
 .LinkBtn {
   color: #4168f6;
-  font-size: 12px;
-  font-weight: 700;
-  line-height: 18px;
   text-decoration: underline;
 }
 
@@ -1748,28 +1745,24 @@ img[src=""] {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 0px;
 }
 
 .CenterCenter {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0px;
 }
 
 .CenterLeft {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 0px;
 }
 
 .CenterRight {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 0px;
 }
 
 /**/
