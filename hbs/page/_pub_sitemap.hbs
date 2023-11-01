@@ -7,6 +7,8 @@
     <script>
       // 엑셀 파일 읽어서 핸들바 렌더링
       Handlebars.xlsxToJSON('/MENU_DATA.xlsx', (response) => {
+        console.table(response);
+
         Handlebars.html('#SiteMapWrap', '/hbs/etc/SiteMapWrap.hbs', response);
       });
     </script>

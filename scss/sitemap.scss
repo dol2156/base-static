@@ -72,21 +72,31 @@ html {
 #SiteMapWrap {
   outline: 1px dashed red;
   padding: 20px;
+  font-size: 14px;
+
+  .PageKey {
+    color: #ff8352;
+  }
+
   > table {
     table-layout: fixed;
     border-collapse: collapse;
     width: 100%;
     background-color: white;
+
     th,
     td {
-      border: 1px solid black;
-      padding:4px;
+      padding: 4px;
     }
     th {
       background-color: #ffffd4;
+      border: 1px solid #333;
     }
-    td{
-    
+    td {
+      border: 1px solid #ddd;
+      > a {
+        color: dodgerblue;
+      }
     }
   }
 }

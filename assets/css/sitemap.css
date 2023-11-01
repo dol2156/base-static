@@ -66,6 +66,10 @@ html {
 #SiteMapWrap {
   outline: 1px dashed red;
   padding: 20px;
+  font-size: 14px;
+}
+#SiteMapWrap .PageKey {
+  color: #ff8352;
 }
 #SiteMapWrap > table {
   table-layout: fixed;
@@ -75,11 +79,17 @@ html {
 }
 #SiteMapWrap > table th,
 #SiteMapWrap > table td {
-  border: 1px solid black;
   padding: 4px;
 }
 #SiteMapWrap > table th {
   background-color: #ffffd4;
+  border: 1px solid #333;
+}
+#SiteMapWrap > table td {
+  border: 1px solid #ddd;
+}
+#SiteMapWrap > table td > a {
+  color: dodgerblue;
 }
 
 /*# sourceMappingURL=sitemap.css.map */

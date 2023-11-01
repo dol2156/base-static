@@ -97,7 +97,8 @@ Handlebars.xlsxToJSON = function (fileUrl, callback) {
 
     // json 가공
     // 첫번째 row 를 기준으로 비어있는 값에 null 값을 넣어준다.
-    var col_len = json[0].length;
+    var first_row_data = json[0];
+    var col_len = first_row_data.length;
 
     json.forEach((obj, idx) => {
       let i = 0;
@@ -110,8 +111,24 @@ Handlebars.xlsxToJSON = function (fileUrl, callback) {
         ++i;
       }
     });
+    
+    let result_array = [];
+    // index 값 기반을 첫번째 row 의 값 기준 데이터로 변환
+    json.forEach((obj, idx) => {
+      const new_obj = {};
+      if(idx != 0){
+        // console.log(first_row_data);
+        obj.forEach((obj2, idx2) => {
+          new_obj[first_row_data[idx2]] = obj2;
+          //console.log(obj2);
+        });
+        //console.log(obj);
+        
+        result_array.push(new_obj);
+      }
+    });
 
-    callback(json);
+    callback(result_array);
   };
 
   xhr.send();

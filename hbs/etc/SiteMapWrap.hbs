@@ -1,31 +1,59 @@
 <table>
   <thead>
-    {{#EACH this}}
-      {{#if (IF index '==' 0)}}
-        <tr>
-          {{#EACH obj}}
-            {{#if (OR (IF index '==' 1) (IF index '==' 2) (IF index '==' 3))}}
-              <th>{{obj}}</th>
-            {{/if}}
-          {{/EACH}}
-          <th>URL</th>
-        </tr>
-      {{/if}}
-    {{/EACH}}
+    <tr>
+      <th>KEY</th>
+      <th>1뎁스</th>
+      <th>2뎁스</th>
+      <th>3뎁스</th>
+    </tr>
   </thead>
   <tbody>
     {{#EACH this}}
-      {{#if (IF index '!=' 0)}}
-        <tr>
-          {{#EACH obj}}
-            {{#if (OR (IF index '==' 1) (IF index '==' 2) (IF index '==' 3))}}
-              <td>{{obj}}</td>
-            {{/if}}
-          {{/EACH}}
-          <td>
-          </td>
-        </tr>
-      {{/if}}
+      <tr>
+        <td>
+          <div class="PageKey">{{obj.PAGE_KEY}}</div>
+        </td>
+        <td>
+          {{#if obj.PAGE_KEY}}
+            <a href='/index.html?title={{obj.D_1}}{{obj.D_2}}{{obj.D_3}}&page={{obj.PAGE_KEY}}' target='_blank'>
+              {{obj.D_1}}
+            </a>
+          {{else}}
+            <div>{{obj.D_1}}</div>
+          {{/if}}
+        </td>
+        <td>
+          {{#if obj.PAGE_KEY}}
+            <a href='/index.html?title={{obj.D_1}}{{obj.D_2}}{{obj.D_3}}&page={{obj.PAGE_KEY}}' target='_blank'>
+              {{obj.D_2}}
+            </a>
+          {{else}}
+            <div>{{obj.D_2}}</div>
+          {{/if}}
+        </td>
+        <td>
+          {{#if obj.PAGE_KEY}}
+            <a href='/index.html?title={{obj.D_1}}{{obj.D_2}}{{obj.D_3}}&page={{obj.PAGE_KEY}}' target='_blank'>
+              {{obj.D_3}}
+            </a>
+          {{else}}
+            <div>{{obj.D_3}}</div>
+          {{/if}}
+        </td>
+      </tr>
     {{/EACH}}
+    {{!--    {{#EACH this}}--}}
+    {{!--      {{#if (IF index '!=' 0)}}--}}
+    {{!        <tr>}}
+    {{!--          {{#EACH obj}}--}}
+    {{!--            {{#if (OR (IF index '==' 1) (IF index '==' 2) (IF index '==' 3))}}--}}
+    {{!--              <td>{{obj}}</td>--}}
+    {{!--            {{/if}}--}}
+    {{!--          {{/EACH}}--}}
+    {{!          <td>}}
+    {{!          </td>}}
+    {{!        </tr>}}
+    {{!--      {{/if}}--}}
+    {{!--    {{/EACH}}--}}
   </tbody>
 </table>
