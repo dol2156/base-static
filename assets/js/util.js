@@ -19,4 +19,3 @@ Util.getGoodColor = (color_hex) => {
   return luma < 127.5 ? 'white' : 'black';
 };
 
-

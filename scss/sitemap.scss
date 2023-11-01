@@ -58,13 +58,27 @@ html {
         }
 
         .Link {
-          color:#25ba00;
+          color: #25ba00;
         }
       }
 
       ul {
         padding-left: 20px;
       }
+    }
+  }
+}
+
+#SiteMapWrap {
+  outline: 1px dashed red;
+  padding: 20px;
+  > table {
+    table-layout: fixed;
+    border-collapse: collapse;
+    width: 100%;
+    background-color: white;
+    td {
+      border: 1px solid black;
     }
   }
 }

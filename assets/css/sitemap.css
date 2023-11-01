@@ -63,4 +63,18 @@ html {
   padding-left: 20px;
 }
 
+#SiteMapWrap {
+  outline: 1px dashed red;
+  padding: 20px;
+}
+#SiteMapWrap > table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  width: 100%;
+  background-color: white;
+}
+#SiteMapWrap > table td {
+  border: 1px solid black;
+}
+
 /*# sourceMappingURL=sitemap.css.map */

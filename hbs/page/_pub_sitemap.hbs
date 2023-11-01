@@ -1,16 +1,25 @@
 <div id='Page'>
   <main>
-    <link href='/assets/css/sitemap.css' rel='stylesheet' />
+    <link href='/assets/css/sitemap.css' rel='stylesheet'/>
     <div class='H1 Sticky Top'>SiteMap</div>
+    <div id='SiteMapWrap'></div>
+    {{!--prettier-ignore--}}
+    <script>
+      // 엑셀 파일 읽어서 핸들바 렌더링
+      Handlebars.xlsxToJSON('/MENU_DATA.xlsx', (response) => {
+        console.table(response);
+        Handlebars.html('#SiteMapWrap', '/hbs/etc/SiteMapWrap.hbs', response);
+      });
+    </script>
     <section>
       <div id='Sitemap'>
-        <br />
+        <br/>
         <ul>
           {{#EACH window.MENU_DATA}}
             <li>
               {{!--prettier-ignore--}}
               <script>
-                Handlebars.write('/hbs/etc/SitemapItem_1-a.hbs', {{JsonToObj obj}});
+                Handlebars.write('/hbs/etc/SitemapItem_1-a.hbs', {{objectToJsonStr obj}});
               </script>
               {{#if obj.자식}}
                 <ul>
@@ -18,7 +27,7 @@
                     <li>
                       {{!--prettier-ignore--}}
                       <script>
-                        Handlebars.write('/hbs/etc/SitemapItem_1-a.hbs', {{JsonToObj obj}});
+                        Handlebars.write('/hbs/etc/SitemapItem_1-a.hbs', {{objectToJsonStr obj}});
                       </script>
                       {{#if obj.자식}}
                         <ul>
@@ -26,7 +35,7 @@
                             <li>
                               {{!--prettier-ignore--}}
                               <script>
-                                Handlebars.write('/hbs/etc/SitemapItem_1-a.hbs', {{JsonToObj obj}});
+                                Handlebars.write('/hbs/etc/SitemapItem_1-a.hbs', {{objectToJsonStr obj}});
                               </script>
                               {{#if obj.자식}}
                                 <ul>
@@ -34,7 +43,7 @@
                                     <li>
                                       {{!--prettier-ignore--}}
                                       <script>
-                                        Handlebars.write('/hbs/etc/SitemapItem_1-a.hbs', {{JsonToObj obj}});
+                                        Handlebars.write('/hbs/etc/SitemapItem_1-a.hbs', {{objectToJsonStr obj}});
                                       </script>
                                     </li>
                                   {{/EACH}}

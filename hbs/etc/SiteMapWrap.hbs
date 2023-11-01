@@ -1,0 +1,13 @@
+<table>
+    <tbody>
+      {{#EACH this}}
+        <tr>
+          {{#EACH obj}}
+            {{#if (IF index '==' 0)}}
+              <td>{{obj}}</td>
+            {{/if}}
+          {{/EACH}}
+        </tr>
+      {{/EACH}}
+    </tbody>
+  </table>

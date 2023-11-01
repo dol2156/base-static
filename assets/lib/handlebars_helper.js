@@ -1,6 +1,5 @@
 Handlebars.logger.level = 'debug';
 
-
 /**
  *
  * @param path
@@ -9,20 +8,38 @@ Handlebars.logger.level = 'debug';
 Handlebars.write = (path, render_data) => {
   if (typeof render_data === 'undefined') render_data = {};
   render_data = Object.assign({ window }, render_data);
-  
+
   const el_script = document.currentScript;
-  
+
   const html_str = Handlebars.loadHtml(path);
-  
+
   //Compile the template
   const compiled_template = Handlebars.compile(html_str);
 
   //Render the data into the template
   let rendered = compiled_template(render_data);
   rendered = `<!-- ${path} :: START ::  -->` + rendered + `<!-- // ${path} :: END ::  -->`;
-  
+
   document.write(rendered);
   el_script.remove();
+};
+
+Handlebars.html = (target_element_selector, hbs_path, render_data) => {
+  if (typeof render_data === 'undefined') render_data = {};
+  
+  const $target = $(target_element_selector);
+  console.log(`$target == `, $target);
+  
+  const html_str = Handlebars.loadHtml(hbs_path);
+
+  //Compile the template
+  const compiled_template = Handlebars.compile(html_str);
+
+  //Render the data into the template
+  let rendered = compiled_template(render_data);
+  rendered = `<!-- ${hbs_path} :: START ::  -->` + rendered + `<!-- // ${hbs_path} :: END ::  -->`;
+  
+  $target.html(rendered);
 };
 
 /**
@@ -62,39 +79,42 @@ Handlebars.loadHtml = (path) => {
 };
 
 /**
- * 동기 Javascript 로드
- * @param path
- * @returns {*}
- * @constructor
+ * 비동기 xlsx 로드 후 JSON 반환
+ * @param fileUrl
+ * @param callback
  */
-Handlebars.loadJS = (path) => {
-  let html_str;
-  const xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function () {
-    /*
-    readyState
-    0	UNSENT	Client has been created. open() not called yet.
-    1	OPENED	open() has been called.
-    2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
-    3	LOADING	Downloading; responseText holds partial data.
-    4	DONE	The operation is complete.
-    */
-    if (this.readyState == 4) {
-      if (this.status == 200) {
-        // success
-        html_str = this.responseText;
-      } else {
-        // error
-        const msg = `<div class="flex flex-row items-center justify-center gap-[0] w-full h-full fixed">404 Not Found : ${path}</div>`;
-        console.log(`%c${msg}%c${path}`, 'font-family:D2Coding; border:1px solid black; background:red; color:white; padding:5px; font-size:12px;', 'font-family:D2Coding; background-color:black; border:1px solid black; border-left:none; padding:5px; color:yellow; font-size:12px;');
-        html_str = msg;
-      }
-    }
-  };
-  xhttp.open('GET', path, false);
-  xhttp.send();
+Handlebars.xlsxToJSON = function (fileUrl, callback) {
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', fileUrl, true);
+  xhr.responseType = 'arraybuffer';
 
-  return html_str;
+  xhr.onload = function (e) {
+    var arraybuffer = xhr.response;
+    var data = new Uint8Array(arraybuffer);
+    var workbook = XLSX.read(data, { type: 'array' });
+    var worksheet = workbook.Sheets[workbook.SheetNames[0]];
+    var json = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+
+    // json 가공
+    // 첫번째 row 를 기준으로 비어있는 값에 null 값을 넣어준다.
+    var col_len = json[0].length;
+
+    json.forEach((obj, idx) => {
+      let i = 0;
+      while (i < col_len) {
+        if (obj[i]) {
+          // console.log(obj[i]);
+        } else {
+          obj[i] = null;
+        }
+        ++i;
+      }
+    });
+
+    callback(json);
+  };
+
+  xhr.send();
 };
 
 /************************************************
@@ -425,11 +445,21 @@ Handlebars.registerHelper('JsonToVar', function (node_name, json_url, options) {
 });
 
 /**
+ * 동기식으로 xlsx 받아와서 node_name 에 할당 해줌
+ * {{XlsxToVar 'SampleData' '/assets/json/SampleData.json'}}
+ */
+Handlebars.registerHelper('XlsxToVar', function (node_name, xlsx_url, options) {
+  //const json = JSON.parse(Handlebars.loadHtml(xlsx_url));
+  const json = Handlebars.loadXlsx(xlsx_url);
+  this[node_name] = 'dd';
+});
+
+/**
  * Object to String
  * <script>
- *   Handlebars.write('/hbs/etc/SitemapItem_1-a.hbs', {{JSONSTR obj}});
+ *   Handlebars.write('/hbs/etc/SitemapItem_1-a.hbs', {{objectToJsonStr obj}});
  * </script>
  */
-Handlebars.registerHelper('JsonToObj', function (obj, options) {
+Handlebars.registerHelper('objectToJsonStr', function (obj, options) {
   return new Handlebars.SafeString(JSON.stringify(obj));
 });
