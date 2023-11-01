@@ -1690,12 +1690,6 @@ body.PreventScroll {
 }
 
 /**/
-main {
-  position: relative;
-  padding-bottom: 80px;
-}
-
-/**/
 img[src=""] {
   display: none;
 }

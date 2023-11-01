@@ -1,4 +1,3 @@
-@charset "UTF-8";
 html {
   background: linear-gradient(-45deg, #ee7752, #fff980, #23a6d5, #23d5ab);
   background-size: 400% 400%;
@@ -18,93 +17,46 @@ html {
     background-position: 0% 20%;
   }
 }
-/**/
-#Sitemap {
-  padding: 30px;
-}
-#Sitemap li + li {
-  margin-top: 4px;
-}
-#Sitemap > ul {
-  display: grid;
-  gap: 10px;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-  /* 1280px 이상 화면*/
-}
-@media screen and (min-width: 1280px) {
-  #Sitemap > ul {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-#Sitemap > ul > li {
-  background-color: white;
-  padding: 5px;
-  border-radius: 5px;
-  border: 2px solid black;
-}
-#Sitemap > ul > li a[href] {
-  color: dodgerblue;
-  display: block;
-  border-radius: 5px;
-}
-#Sitemap > ul > li a[href]:hover {
-  background-color: #fbff59;
-}
-#Sitemap > ul > li a[href].On {
-  background-color: pink;
-}
-#Sitemap > ul > li a[href] .PageName {
-  color: #ff8352;
-}
-#Sitemap > ul > li a[href] .Link {
-  color: #25ba00;
-}
-#Sitemap > ul > li ul {
-  padding-left: 20px;
-}
-
 #SiteMapWrap {
-  overflow: auto;
+  border-radius: 10px;
+  margin: 0 20px;
   padding: 20px;
   font-size: 14px;
+  color: white;
+  background-color: #333;
+  border: 2px solid white;
+}
+#SiteMapWrap .Row:first-child .NoLink {
+  margin-top: 0;
+}
+#SiteMapWrap .Row > a {
+  padding: 2px;
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px;
+}
+#SiteMapWrap .Row > a[href] {
+  font-size: 12px;
+}
+#SiteMapWrap .Row > a[href]:hover {
+  background-color: #ffffd4;
+}
+#SiteMapWrap .Row > a[href]:focus, #SiteMapWrap .Row > a[href]:active {
+  outline: 1px dashed red;
 }
 #SiteMapWrap .PageKey {
   color: #ff8352;
 }
-#SiteMapWrap .ExternalLink {
-  color: mediumpurple;
+#SiteMapWrap .NoLink {
+  margin-top: 30px;
 }
-#SiteMapWrap > table {
-  table-layout: fixed;
-  border-collapse: collapse;
-  width: 100%;
-  min-width: 768px;
-  background-color: white;
-  border: 2px solid #333;
-}
-#SiteMapWrap > table tr:hover {
-  background-color: #f2f2f2;
-}
-#SiteMapWrap > table th,
-#SiteMapWrap > table td {
-  padding: 4px;
-}
-#SiteMapWrap > table th {
-  font-weight: 600;
-  background-color: #ffffd4;
-  border: 1px solid #666;
-}
-#SiteMapWrap > table td {
-  border: 1px solid #ddd;
-}
-#SiteMapWrap > table td > a {
+#SiteMapWrap .Link {
   color: dodgerblue;
 }
-#SiteMapWrap > table td > a:hover {
-  text-decoration: underline;
-}
-#SiteMapWrap > table td > a:focus, #SiteMapWrap > table td > a:active {
-  outline: 1px dashed red;
+#SiteMapWrap .ExternalLink {
+  color: mediumpurple;
 }
 
 /*# sourceMappingURL=sitemap.css.map */

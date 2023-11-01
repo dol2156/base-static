@@ -1,7 +1,7 @@
 <div id='Page'>
-  <main>
+  <main class="pb-[20px]">
     <link href='/assets/css/sitemap.css' rel='stylesheet'/>
-    <div class='H1'>SiteMap</div>
+    <div class='H1 Sticky Top px-[20px]'>SiteMap</div>
     <div id='SiteMapWrap'></div>
     {{!--prettier-ignore--}}
     <script>
@@ -10,57 +10,5 @@
         Handlebars.html('#SiteMapWrap', '/hbs/etc/SiteMapWrap.hbs', response);
       });
     </script>
-    <section>
-      <div id='Sitemap'>
-        <br/>
-        <ul>
-          {{#EACH window.MENU_DATA}}
-            <li>
-              {{!--prettier-ignore--}}
-              <script>
-                Handlebars.write('/hbs/etc/SitemapItem_1-a.hbs', {{objectToJsonStr obj}});
-              </script>
-              {{#if obj.자식}}
-                <ul>
-                  {{#EACH obj.자식}}
-                    <li>
-                      {{!--prettier-ignore--}}
-                      <script>
-                        Handlebars.write('/hbs/etc/SitemapItem_1-a.hbs', {{objectToJsonStr obj}});
-                      </script>
-                      {{#if obj.자식}}
-                        <ul>
-                          {{#EACH obj.자식}}
-                            <li>
-                              {{!--prettier-ignore--}}
-                              <script>
-                                Handlebars.write('/hbs/etc/SitemapItem_1-a.hbs', {{objectToJsonStr obj}});
-                              </script>
-                              {{#if obj.자식}}
-                                <ul>
-                                  {{#EACH obj.자식}}
-                                    <li>
-                                      {{!--prettier-ignore--}}
-                                      <script>
-                                        Handlebars.write('/hbs/etc/SitemapItem_1-a.hbs', {{objectToJsonStr obj}});
-                                      </script>
-                                    </li>
-                                  {{/EACH}}
-                                </ul>
-                              {{/if}}
-                            </li>
-                          {{/EACH}}
-                        </ul>
-                      {{/if}}
-                    </li>
-                  {{/EACH}}
-                </ul>
-              {{/if}}
-            </li>
-          {{/EACH}}
-        </ul>
-      </div>
-    </section>
   </main>
-  <script src='/assets/js/sitemap.js'></script>
 </div>

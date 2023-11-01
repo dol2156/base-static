@@ -11,7 +11,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     [data-wheel-direction='down'] #AppInfo > a{ transform: translateX(-50%) translateY(0%); }
   </style>
   <div id="AppInfo">
-    <a href="/index.html?page=_pub_sitemap">
+    <a href="/index.html?title=사이트맵&page=_pub_sitemap">
       <div>
         <div data-only-view="Xs">Xs</div>
         <div data-only-view="Sm">Sm</div>

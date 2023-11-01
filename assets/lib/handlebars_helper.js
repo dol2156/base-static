@@ -253,14 +253,7 @@ Handlebars.registerHelper('MATH', function (mathematics, x) {
  * {{VAR this 'NAME' 'ksm'}}
  */
 Handlebars.registerHelper('VAR', function (object, node_name, value, options) {
-  if (value.name !== 'VAR') {
-    if (typeof object === 'object') {
-      object[node_name] = value;
-    }
-  } else {
-    // value 가 할당 되지 않았을 경우 노드명 할당
-    object[node_name] = node_name;
-  }
+  object[node_name] = value;
 });
 
 /**

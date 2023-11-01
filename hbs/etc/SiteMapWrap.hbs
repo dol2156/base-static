@@ -1,42 +1,51 @@
-<table>
-  <thead>
-    <tr>
-      <th>1뎁스</th>
-      <th>2뎁스</th>
-      <th>3뎁스</th>
-    </tr>
-  </thead>
-  <tbody>
-    {{#EACH this}}
-      <tr>
-        <td>
-          {{#if obj.PAGE_KEY}}
-            <a href='/index.html?title={{obj.D_1}}{{obj.D_2}}{{obj.D_3}}&page={{obj.PAGE_KEY}}' target='_blank'>{{obj.D_1}}</a>
-          {{else if obj.EXTERNAL_LINK}}
-            <a class="ExternalLink" href='{{obj.EXTERNAL_LINK}}' target='_blank'>{{obj.D_1}}</a>
-          {{else}}
-            <div>{{obj.D_1}}</div>
-          {{/if}}
-        </td>
-        <td>
-          {{#if obj.PAGE_KEY}}
-            <a href='/index.html?title={{obj.D_1}}{{obj.D_2}}{{obj.D_3}}&page={{obj.PAGE_KEY}}' target='_blank'>{{obj.D_2}}</a>
-          {{else if obj.EXTERNAL_LINK}}
-            <a class="ExternalLink" href='{{obj.EXTERNAL_LINK}}' target='_blank'>{{obj.D_2}}</a>
-          {{else}}
-            <div>{{obj.D_2}}</div>
-          {{/if}}
-        </td>
-        <td>
-          {{#if obj.PAGE_KEY}}
-            <a href='/index.html?title={{obj.D_1}}{{obj.D_2}}{{obj.D_3}}&page={{obj.PAGE_KEY}}' target='_blank'>{{obj.D_3}}</a>
-          {{else if obj.EXTERNAL_LINK}}
-            <a class="ExternalLink" href='{{obj.EXTERNAL_LINK}}' target='_blank'>{{obj.D_3}}</a>
-          {{else}}
-            <div>{{obj.D_3}}</div>
-          {{/if}}
-        </td>
-      </tr>
-    {{/EACH}}
-  </tbody>
-</table>
+{{#EACH this}}
+  {{log '🔴 SiteMapWrap.hbs : 11 ==> ' obj}}
+  {{#if obj.D_1}}
+    {{VAR @root '뎁스1' obj.D_1}}
+    {{VAR @root '뎁스2' null}}
+    {{VAR @root '뎁스3' null}}
+  {{/if}}
+  {{#if obj.D_2}}
+    {{VAR @root '뎁스2' obj.D_2}}
+    {{VAR @root '뎁스3' null}}
+  {{/if}}
+  {{#if obj.D_3}}
+    {{VAR @root '뎁스3' obj.D_3}}
+  {{/if}}
+
+  <div class='Row {{#if obj.D_1}}D_1{{/if}}{{#if obj.D_2}}D_2{{/if}}{{#if obj.D_3}}D_3{{/if}}'>
+    <a
+      {{#if obj.PAGE_KEY}}
+        class="Link"
+        href="/index.html?title={{obj.D_1}}{{obj.D_2}}{{obj.D_3}}&page={{obj.PAGE_KEY}}"
+      {{else if obj.EXTERNAL_LINK}}
+        class="ExternalLink"
+        href="{{obj.EXTERNAL_LINK}}"
+      {{else}}
+        class="NoLink"
+      {{/if}}
+      target="_blank"
+    >
+      {{#if obj.PAGE_KEY}}
+        <div class='PageKey'>
+          [{{obj.PAGE_KEY}}]
+        </div>
+      {{/if}}
+      {{#if @root.뎁스1}}
+        <div>
+          {{@root.뎁스1}}
+        </div>
+      {{/if}}
+      {{#if @root.뎁스2}}
+        <div>
+          | {{@root.뎁스2}}
+        </div>
+      {{/if}}
+      {{#if @root.뎁스3}}
+        <div>
+          | {{@root.뎁스3}}
+        </div>
+      {{/if}}
+    </a>
+  </div>
+{{/EACH}}
