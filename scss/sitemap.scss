@@ -77,8 +77,16 @@ html {
     border-collapse: collapse;
     width: 100%;
     background-color: white;
+    th,
     td {
       border: 1px solid black;
+      padding:4px;
+    }
+    th {
+      background-color: #ffffd4;
+    }
+    td{
+    
     }
   }
 }

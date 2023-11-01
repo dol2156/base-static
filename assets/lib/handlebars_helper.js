@@ -26,10 +26,10 @@ Handlebars.write = (path, render_data) => {
 
 Handlebars.html = (target_element_selector, hbs_path, render_data) => {
   if (typeof render_data === 'undefined') render_data = {};
-  
+
   const $target = $(target_element_selector);
   console.log(`$target == `, $target);
-  
+
   const html_str = Handlebars.loadHtml(hbs_path);
 
   //Compile the template
@@ -38,7 +38,7 @@ Handlebars.html = (target_element_selector, hbs_path, render_data) => {
   //Render the data into the template
   let rendered = compiled_template(render_data);
   rendered = `<!-- ${hbs_path} :: START ::  -->` + rendered + `<!-- // ${hbs_path} :: END ::  -->`;
-  
+
   $target.html(rendered);
 };
 
@@ -372,33 +372,25 @@ Handlebars.registerHelper('SAFE', function (node_name, value, options) {
 });
 
 /**
- * var_list_str (변수 리스트) 받아서 하나라도 true 이면 true 반환
- * {{#OR 'price1|price2|price5'}}
- *   TRUE
- * {{else}}
- *   FALSE
- * {{/OR}}
+ * 조건 중 하나라도 true 이면 true 반환
+ * {{#if (OR (IF index '==' 0) (IF index '==' 1))}}
  */
-Handlebars.registerHelper('OR', function (var_list_str, options) {
-  if (arguments.length != 2) return false;
+Handlebars.registerHelper('OR', function (options) {
   let reslut = false;
-  const var_list = var_list_str.split('|');
+  let boolean_arr = [];
+
   let i = 0;
-  let len_i = var_list.length;
+  let len_i = arguments.length - 1;
   while (i < len_i) {
-    const node_name = var_list[i];
-    const v = this[node_name];
-    if (typeof v !== 'undefined') {
-      reslut = true;
-      break;
-    }
+    boolean_arr.push(arguments[i]);
     ++i;
   }
-  if (reslut) {
-    return options.fn(this);
-  } else {
-    return options.inverse(this);
-  }
+
+  boolean_arr.forEach((obj, idx) => {
+    if (obj == true) reslut = true;
+  });
+
+  return reslut;
 });
 
 /**

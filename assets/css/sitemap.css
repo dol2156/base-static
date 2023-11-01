@@ -73,8 +73,13 @@ html {
   width: 100%;
   background-color: white;
 }
+#SiteMapWrap > table th,
 #SiteMapWrap > table td {
   border: 1px solid black;
+  padding: 4px;
+}
+#SiteMapWrap > table th {
+  background-color: #ffffd4;
 }
 
 /*# sourceMappingURL=sitemap.css.map */

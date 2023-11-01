@@ -1,13 +1,31 @@
 <table>
-    <tbody>
-      {{#EACH this}}
+  <thead>
+    {{#EACH this}}
+      {{#if (IF index '==' 0)}}
         <tr>
           {{#EACH obj}}
-            {{#if (IF index '==' 0)}}
+            {{#if (OR (IF index '==' 1) (IF index '==' 2) (IF index '==' 3))}}
+              <th>{{obj}}</th>
+            {{/if}}
+          {{/EACH}}
+          <th>URL</th>
+        </tr>
+      {{/if}}
+    {{/EACH}}
+  </thead>
+  <tbody>
+    {{#EACH this}}
+      {{#if (IF index '!=' 0)}}
+        <tr>
+          {{#EACH obj}}
+            {{#if (OR (IF index '==' 1) (IF index '==' 2) (IF index '==' 3))}}
               <td>{{obj}}</td>
             {{/if}}
           {{/EACH}}
+          <td>
+          </td>
         </tr>
-      {{/EACH}}
-    </tbody>
-  </table>
+      {{/if}}
+    {{/EACH}}
+  </tbody>
+</table>
