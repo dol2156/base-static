@@ -111,19 +111,18 @@ Handlebars.xlsxToJSON = function (fileUrl, callback) {
         ++i;
       }
     });
-    
+
     let result_array = [];
     // index 값 기반을 첫번째 row 의 값 기준 데이터로 변환
     json.forEach((obj, idx) => {
       const new_obj = {};
-      if(idx != 0){
+      if (idx != 0) {
         // console.log(first_row_data);
         obj.forEach((obj2, idx2) => {
           new_obj[first_row_data[idx2]] = obj2;
           //console.log(obj2);
         });
-        //console.log(obj);
-        
+
         result_array.push(new_obj);
       }
     });
@@ -471,4 +470,45 @@ Handlebars.registerHelper('XlsxToVar', function (node_name, xlsx_url, options) {
  */
 Handlebars.registerHelper('objectToJsonStr', function (obj, options) {
   return new Handlebars.SafeString(JSON.stringify(obj));
+});
+
+Handlebars.registerHelper('SITEMAP_MENU_TD', function (obj, options) {
+  // console.log(obj);
+
+  let td_str = `
+  ${createTd(obj.D_1, obj)}
+  ${createTd(obj.D_2, obj)}
+  ${createTd(obj.D_3, obj)}
+  `;
+
+  function createTd(value, data) {
+    let td;
+    if (value) {
+      if (data.PAGE_KEY) {
+        td = `
+        <td>
+          <a target='_blank'>${value}</a>
+        </td>
+        `;
+      } else if (data.EXTERNAL_LINK) {
+        td = `
+        <td>
+          <a class="ExternalLink" href="${data.EXTERNAL_LINK}" target='_blank'>${value}</a>
+        </td>
+        `;
+      } else {
+        td = `
+        <td>
+          <div>${value}</div>
+        </td>
+        `;
+      }
+    } else {
+      td = `<td></td>`;
+    }
+
+    return td;
+  }
+
+  return new Handlebars.SafeString(td_str);
 });

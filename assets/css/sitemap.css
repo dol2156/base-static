@@ -71,6 +71,9 @@ html {
 #SiteMapWrap .PageKey {
   color: #ff8352;
 }
+#SiteMapWrap .ExternalLink {
+  color: mediumpurple;
+}
 #SiteMapWrap > table {
   table-layout: fixed;
   border-collapse: collapse;
@@ -90,6 +93,9 @@ html {
 }
 #SiteMapWrap > table td > a {
   color: dodgerblue;
+}
+#SiteMapWrap > table td > a:hover {
+  text-decoration: underline;
 }
 
 /*# sourceMappingURL=sitemap.css.map */
