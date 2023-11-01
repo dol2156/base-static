@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="icon" href="data:," />
+    <title>test.html</title>
+    <!-- XLSX 라이브러리 스크립트 -->
+    <script src="/assets/lib/xlsx.full.min.js"></script>
+  </head>
+  <body>
+    test.html
+    <script>
+      function xlsxToJSON(fileUrl, callback) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', fileUrl, true);
+        xhr.responseType = 'arraybuffer';
+
+        xhr.onload = function (e) {
+          var arraybuffer = xhr.response;
+          var data = new Uint8Array(arraybuffer);
+          var workbook = XLSX.read(data, { type: 'array' });
+          var worksheet = workbook.Sheets[workbook.SheetNames[0]];
+          var json = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+          callback(json);
+        };
+
+        xhr.send();
+      }
+
+      // 함수 호출
+      xlsxToJSON('/MENU_DATA.xlsx', function (json) {
+        console.log(json); // 변환된 JSON 데이터 출력
+      });
+    </script>
+  </body>
+</html>
