@@ -24,11 +24,17 @@ Handlebars.write = (path, render_data) => {
   el_script.remove();
 };
 
+/**
+ * Handlebars.write 와는 다르게 뒤늦게 넣을때 씀
+ * Handlebars.html('#SiteMapWrap', '/hbs/etc/SiteMapWrap.hbs', response);
+ * @param target_element_selector
+ * @param hbs_path
+ * @param render_data
+ */
 Handlebars.html = (target_element_selector, hbs_path, render_data) => {
   if (typeof render_data === 'undefined') render_data = {};
 
   const $target = $(target_element_selector);
-  console.log(`$target == `, $target);
 
   const html_str = Handlebars.loadHtml(hbs_path);
 
@@ -453,16 +459,6 @@ Handlebars.registerHelper('JsonToVar', function (node_name, json_url, options) {
 });
 
 /**
- * 동기식으로 xlsx 받아와서 node_name 에 할당 해줌
- * {{XlsxToVar 'SampleData' '/assets/json/SampleData.json'}}
- */
-Handlebars.registerHelper('XlsxToVar', function (node_name, xlsx_url, options) {
-  //const json = JSON.parse(Handlebars.loadHtml(xlsx_url));
-  const json = Handlebars.loadXlsx(xlsx_url);
-  this[node_name] = 'dd';
-});
-
-/**
  * Object to String
  * <script>
  *   Handlebars.write('/hbs/etc/SitemapItem_1-a.hbs', {{objectToJsonStr obj}});
@@ -470,45 +466,4 @@ Handlebars.registerHelper('XlsxToVar', function (node_name, xlsx_url, options) {
  */
 Handlebars.registerHelper('objectToJsonStr', function (obj, options) {
   return new Handlebars.SafeString(JSON.stringify(obj));
-});
-
-Handlebars.registerHelper('SITEMAP_MENU_TD', function (obj, options) {
-  // console.log(obj);
-
-  let td_str = `
-  ${createTd(obj.D_1, obj)}
-  ${createTd(obj.D_2, obj)}
-  ${createTd(obj.D_3, obj)}
-  `;
-
-  function createTd(value, data) {
-    let td;
-    if (value) {
-      if (data.PAGE_KEY) {
-        td = `
-        <td>
-          <a target='_blank'>${value}</a>
-        </td>
-        `;
-      } else if (data.EXTERNAL_LINK) {
-        td = `
-        <td>
-          <a class="ExternalLink" href="${data.EXTERNAL_LINK}" target='_blank'>${value}</a>
-        </td>
-        `;
-      } else {
-        td = `
-        <td>
-          <div>${value}</div>
-        </td>
-        `;
-      }
-    } else {
-      td = `<td></td>`;
-    }
-
-    return td;
-  }
-
-  return new Handlebars.SafeString(td_str);
 });

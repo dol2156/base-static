@@ -1,7 +1,6 @@
 <table>
   <thead>
     <tr>
-      <th>KEY</th>
       <th>1뎁스</th>
       <th>2뎁스</th>
       <th>3뎁스</th>
@@ -11,9 +10,32 @@
     {{#EACH this}}
       <tr>
         <td>
-          <div class="PageKey">{{obj.PAGE_KEY}}</div>
+          {{#if obj.PAGE_KEY}}
+            <a href='/index.html?title={{obj.D_1}}{{obj.D_2}}{{obj.D_3}}&page={{obj.PAGE_KEY}}' target='_blank'>{{obj.D_1}}</a>
+          {{else if obj.EXTERNAL_LINK}}
+            <a class="ExternalLink" href='{{obj.EXTERNAL_LINK}}' target='_blank'>{{obj.D_1}}</a>
+          {{else}}
+            <div>{{obj.D_1}}</div>
+          {{/if}}
         </td>
-        {{SITEMAP_MENU_TD obj}}
+        <td>
+          {{#if obj.PAGE_KEY}}
+            <a href='/index.html?title={{obj.D_1}}{{obj.D_2}}{{obj.D_3}}&page={{obj.PAGE_KEY}}' target='_blank'>{{obj.D_2}}</a>
+          {{else if obj.EXTERNAL_LINK}}
+            <a class="ExternalLink" href='{{obj.EXTERNAL_LINK}}' target='_blank'>{{obj.D_2}}</a>
+          {{else}}
+            <div>{{obj.D_2}}</div>
+          {{/if}}
+        </td>
+        <td>
+          {{#if obj.PAGE_KEY}}
+            <a href='/index.html?title={{obj.D_1}}{{obj.D_2}}{{obj.D_3}}&page={{obj.PAGE_KEY}}' target='_blank'>{{obj.D_3}}</a>
+          {{else if obj.EXTERNAL_LINK}}
+            <a class="ExternalLink" href='{{obj.EXTERNAL_LINK}}' target='_blank'>{{obj.D_3}}</a>
+          {{else}}
+            <div>{{obj.D_3}}</div>
+          {{/if}}
+        </td>
       </tr>
     {{/EACH}}
   </tbody>
