@@ -2,12 +2,37 @@
   <main class="pb-[20px]">
     <link href='/assets/css/sitemap.css' rel='stylesheet'/>
     <div class='H1 Sticky Top px-[20px]'>SiteMap</div>
-    <div id='SiteMapWrap'></div>
+    <div id='Sitemap'></div>
     {{!--prettier-ignore--}}
     <script>
       // 엑셀 파일 읽어서 핸들바 렌더링
       Handlebars.xlsxToJSON('/MENU_DATA.xlsx', (response) => {
-        Handlebars.html('#SiteMapWrap', '/hbs/etc/SiteMapWrap.hbs', response);
+
+        let MENU_DATA = [];
+        let d1, d2, d3, d4;
+        response.forEach((obj, idx) => {
+          const {D_1, D_2, D_3, D_4} = obj;
+          if(D_1){
+            d1 = obj;
+            MENU_DATA.push(obj);
+          }
+          if(D_2){
+            d2 = obj;
+            if(!d1.CHILD) d1.CHILD = [];
+            d1.CHILD.push(d2);
+          }
+          if(D_3){
+            d3 = obj;
+            if(!d2.CHILD) d2.CHILD = [];
+            d2.CHILD.push(d3);
+          }
+          if(D_4){
+            d4 = obj;
+            if(!d3.CHILD) d3.CHILD = [];
+            d3.CHILD.push(d4);
+          }
+        });
+        Handlebars.html('#Sitemap', '/hbs/etc/SiteMapWrap.hbs', MENU_DATA);
       });
     </script>
   </main>

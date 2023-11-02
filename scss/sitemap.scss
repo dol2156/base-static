@@ -16,55 +16,80 @@ html {
     background-position: 0% 20%;
   }
 }
-#SiteMapWrap {
-  border-radius: 10px;
-  margin: 0 20px;
+/**/
+#Sitemap {
   padding: 20px;
-  font-size: 14px;
-  color: white;
-  background-color: #333;
-  border: 2px solid white;
 
-  .Row {
-    &:first-child{
-      .NoLink{
-        margin-top:0;
-      }
-    }
-    > a {
-      padding: 2px;
-      border-radius: 5px;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 5px;
+  .PageLink {
+    color: #0a7feb;
+  }
 
-      &[href] {
-        font-size:12px;
-        &:hover {
-          background-color: #ffffd4;
-        }
-        &:focus,
-        &:active {
-          outline: 1px dashed red;
-        }
-      }
-    }
+  .ExternalLink {
+    color: mediumpurple;
+  }
+
+  .NoLink {
+    padding: 0;
   }
 
   .PageKey {
     color: #ff8352;
   }
 
-  .NoLink {
-    margin-top: 30px;
+  li {
+    padding: 5px 10px;
+    
+    & + li {
+      margin-top: 4px;
+    }
   }
 
-  .Link {
-    color: dodgerblue;
-  }
+  > ul {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
 
-  .ExternalLink {
-    color: mediumpurple;
+    /* 1280px 이상 화면*/
+    @media screen and (min-width: 1280px) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    > li {
+      background-color: white;
+      border-radius: 5px;
+      border: 2px solid black;
+
+      a {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        padding: 0 10px;
+        border-radius: 3px;
+
+        /* 767px 이하 화면*/
+        @media screen and (max-width: 767px) {
+          display: block;
+        }
+
+        &[href] {
+          border: 1px solid #f2f2f2;
+
+          &:hover {
+            background-color: #fbff59;
+            border-color: gold;
+          }
+
+          &:focus,
+          &:active {
+            outline: 1px dashed red;
+            background-color: pink;
+          }
+
+          .Link {
+            color: #25ba00;
+          }
+        }
+      }
+    }
   }
 }

@@ -1,51 +1,95 @@
-{{#EACH this}}
-  {{log '🔴 SiteMapWrap.hbs : 11 ==> ' obj}}
-  {{#if obj.D_1}}
-    {{VAR @root '뎁스1' obj.D_1}}
-    {{VAR @root '뎁스2' null}}
-    {{VAR @root '뎁스3' null}}
-  {{/if}}
-  {{#if obj.D_2}}
-    {{VAR @root '뎁스2' obj.D_2}}
-    {{VAR @root '뎁스3' null}}
-  {{/if}}
-  {{#if obj.D_3}}
-    {{VAR @root '뎁스3' obj.D_3}}
-  {{/if}}
-
-  <div class='Row {{#if obj.D_1}}D_1{{/if}}{{#if obj.D_2}}D_2{{/if}}{{#if obj.D_3}}D_3{{/if}}'>
-    <a
-      {{#if obj.PAGE_KEY}}
-        class="Link"
-        href="/index.html?title={{obj.D_1}}{{obj.D_2}}{{obj.D_3}}&page={{obj.PAGE_KEY}}"
-      {{else if obj.EXTERNAL_LINK}}
-        class="ExternalLink"
-        href="{{obj.EXTERNAL_LINK}}"
-      {{else}}
-        class="NoLink"
+<ul>
+  {{#EACH this}}
+    {{log '🔴 SiteMapWrap.hbs : 2 ==> ' obj}}
+    <li>
+      <a
+        {{#if obj.PAGE_KEY}}
+          class="PageLink"
+          href="/index.html?title={{obj.D_1}}&page={{obj.PAGE_KEY}}"
+        {{else if obj.EXTERNAL_LINK}}
+          class="ExternalLink"
+          href="{{obj.EXTERNAL_LINK}}"
+        {{else}}
+          class="NoLink"
+        {{/if}}
+          target="_blank">
+        {{#if obj.PAGE_KEY}}
+          <div class="PageKey">[{{obj.PAGE_KEY}}]</div>
+        {{/if}}
+        {{obj.D_1}}
+      </a>
+      {{#if obj.CHILD}}
+        <ul>
+          {{#EACH obj.CHILD}}
+            <li>
+              <a
+                {{#if obj.PAGE_KEY}}
+                  class="PageLink"
+                  href="/index.html?title={{obj.D_2}}&page={{obj.PAGE_KEY}}"
+                {{else if obj.EXTERNAL_LINK}}
+                  class="ExternalLink"
+                  href="{{obj.EXTERNAL_LINK}}"
+                {{else}}
+                  class="NoLink"
+                {{/if}}
+                  target="_blank">
+                {{#if obj.PAGE_KEY}}
+                  <div class="PageKey">[{{obj.PAGE_KEY}}]</div>
+                {{/if}}
+                {{obj.D_2}}
+              </a>
+              {{#if obj.CHILD}}
+                <ul>
+                  {{#EACH obj.CHILD}}
+                    <li>
+                      <a
+                        {{#if obj.PAGE_KEY}}
+                          class="PageLink"
+                          href="/index.html?title={{obj.D_3}}&page={{obj.PAGE_KEY}}"
+                        {{else if obj.EXTERNAL_LINK}}
+                          class="ExternalLink"
+                          href="{{obj.EXTERNAL_LINK}}"
+                        {{else}}
+                          class="NoLink"
+                        {{/if}}
+                          target="_blank">
+                        {{#if obj.PAGE_KEY}}
+                          <div class="PageKey">[{{obj.PAGE_KEY}}]</div>
+                        {{/if}}
+                        {{obj.D_3}}
+                      </a>
+                      {{#if obj.CHILD}}
+                        <ul>
+                          {{#EACH obj.CHILD}}
+                            <li>
+                              <a
+                                {{#if obj.PAGE_KEY}}
+                                  class="PageLink"
+                                  href="/index.html?title={{obj.D_4}}&page={{obj.PAGE_KEY}}"
+                                {{else if obj.EXTERNAL_LINK}}
+                                  class="ExternalLink"
+                                  href="{{obj.EXTERNAL_LINK}}"
+                                {{else}}
+                                  class="NoLink"
+                                {{/if}}
+                                  target="_blank">
+                                {{#if obj.PAGE_KEY}}
+                                  <div class="PageKey">[{{obj.PAGE_KEY}}]</div>
+                                {{/if}}
+                                {{obj.D_4}}
+                              </a>
+                            </li>
+                          {{/EACH}}
+                        </ul>
+                      {{/if}}
+                    </li>
+                  {{/EACH}}
+                </ul>
+              {{/if}}
+            </li>
+          {{/EACH}}
+        </ul>
       {{/if}}
-      target="_blank"
-    >
-      {{#if obj.PAGE_KEY}}
-        <div class='PageKey'>
-          [{{obj.PAGE_KEY}}]
-        </div>
-      {{/if}}
-      {{#if @root.뎁스1}}
-        <div>
-          {{@root.뎁스1}}
-        </div>
-      {{/if}}
-      {{#if @root.뎁스2}}
-        <div>
-          | {{@root.뎁스2}}
-        </div>
-      {{/if}}
-      {{#if @root.뎁스3}}
-        <div>
-          | {{@root.뎁스3}}
-        </div>
-      {{/if}}
-    </a>
-  </div>
-{{/EACH}}
+    </li>
+  {{/EACH}}
+</ul>
