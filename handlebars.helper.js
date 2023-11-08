@@ -3,6 +3,27 @@ module.exports = {
     return 'BAR!';
   },
 
+  JSON : function(json_path){
+    console.log(`json_path == `, json_path);
+    const base_url = 'https://jsonplaceholder.typicode.com/posts';
+    
+    fetch(base_url)
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw Error(`${response.status} | ${response.statusText}`);
+        }
+      })
+      .then(data => {
+        console.log(data);
+      })
+      .catch(reason => {
+        console.log(reason);
+      })
+    this.KSM = "강석민";
+  },
+  
   /**
    * n 회 반복
    * ex)

@@ -28,7 +28,7 @@ app.use(livereload());
 
 // Live Reload 서버 실행
 const liveReloadServer = livereloadServer.createServer({
-  exts: ['hbs', 'html', 'css', 'js'], // 감지할 파일 확장자 지정
+  exts: ['json', 'html', 'css', 'js'], // 감지할 파일 확장자 지정
 });
 liveReloadServer.watch(__dirname); // 모든 폴더 감지
 
@@ -52,10 +52,13 @@ app.get('*', (req, res) => {
 
   if (fs.existsSync(filePath)) {
     // Handlebars.js 템플릿 렌더링
-    const view_name = requestedPath.replace(/\//gi, "");
-    
-    const globalData = require('./views/global_data.js');
-    res.render(view_name, globalData);
+    const viewName = requestedPath.replace(/\//gi, '');
+
+    // 외부 JSON 파일 읽기
+    const jsonPath = path.join(__dirname, 'assets/json/RenderData.json');
+    const renderData = JSON.parse(fs.readFileSync(jsonPath));
+
+    res.render(viewName, renderData);
   } else {
     res.send(`${filePath} : 요청하신 페이지를 찾을 수 없습니다.`);
   }
