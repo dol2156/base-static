@@ -536,3 +536,26 @@
     }
   }
 }
+/**/
+.ToggleUi {
+  width: 48px;
+  height: 28px;
+  appearance: none;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: background-image 300ms cubic-bezier(0.33, 1, 0.68, 1);
+  will-change: auto;
+  &[data-size='Lg'] {
+    width: 24px;
+  }
+  &.Style1 {
+    background-image: url(/assets/icon/basic/toggle_1.svg);
+    &:checked {
+      background-image: url(/assets/icon/basic/toggle_1_on.svg);
+    }
+    &[disabled] {
+      opacity: 0.4;
+    }
+  }
+}
