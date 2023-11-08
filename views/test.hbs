@@ -1,7 +1,15 @@
 <div id='Page'>
   {{> common/header}}
   <main>
-    <img src='https://gifpng.com/560x1315/ffd4d4/ff4444' alt='' />
+    {{log '🔴 test.hbs : 4 ==> ' this}}
+    <div>{{BAR}}</div>
+    {{#EACH (ARR '🍎|🍍|🥝|🍇|🍈')}}
+      {{log this}}
+      <div>
+        {{obj}}
+      </div>
+    {{/EACH}}
+    <img src='https://gifpng.com/560x315/ffd4d4/ff4444' alt='' />
   </main>
   {{> common/footer}}
 </div>

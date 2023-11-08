@@ -2,6 +2,7 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path');
 const exphbs = require('express-handlebars');
+const hbsHelpers = require('./handlebars.helper.js');
 const app = express();
 const port = 3000; // 변경 가능한 포트 번호
 const viewsPath = 'views';
@@ -11,15 +12,11 @@ app.engine(
   'hbs',
   exphbs.create({
     extname: 'hbs',
-    helpers: {
-      //전역 헬퍼등록
-      timeago: function () {
-        return 'timeago';
-      },
-    },
+    helpers: hbsHelpers,
   }).engine,
 );
 app.set('view engine', 'hbs');
+
 
 // 정적 파일 제공을 위한 미들웨어 설정
 app.use('/assets', express.static('assets'));
