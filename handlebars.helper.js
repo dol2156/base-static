@@ -4,6 +4,19 @@ module.exports = {
   },
 
   /**
+   * n 회 반복
+   * ex)
+   * {{#LOOP 10}}
+   *   {{index}} {{number}} {{digit}}
+   * {{/LOOP}}
+   */
+  LOOP: function (n, block) {
+    var accum = '';
+    for (var i = 0; i < n; ++i) accum += block.fn({ index: i, number: i + 1, digit: (i + 1).toString().padStart(2, '0') });
+    return accum;
+  },
+
+  /**
    * String to Array
    * EACH 와 같이 쓰임
    * {{#EACH (ARR '🍎|🍍|🥝|🍇|🍈')}}

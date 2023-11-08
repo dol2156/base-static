@@ -1,10 +1,15 @@
 <div id='Page'>
   {{> common/header}}
   <main>
-    {{log '🔴 test.hbs : 4 ==> ' this}}
+    {{#LOOP 10}}
+      <div>
+        <div>index : {{index}}</div>
+        <div>number : {{number}}</div>
+        <div>digit : {{digit}}</div>
+      </div>
+    {{/LOOP}}
     <div>{{BAR}}</div>
     {{#EACH (ARR '🍎|🍍|🥝|🍇|🍈')}}
-      {{log this}}
       <div>
         {{obj}}
       </div>

@@ -1,4 +1,6 @@
 const express = require('express');
+const livereload = require('connect-livereload');
+const livereloadServer = require('livereload');
 const fs = require('fs');
 const path = require('path');
 const exphbs = require('express-handlebars');
@@ -7,7 +9,11 @@ const app = express();
 const port = 3000; // 변경 가능한 포트 번호
 const viewsPath = 'views';
 
+// 정적 파일 제공을 위한 미들웨어 설정
+app.use('/assets', express.static('assets'));
+
 // Handlebars.js 설정
+app.set('views', path.join(__dirname, viewsPath));
 app.engine(
   'hbs',
   exphbs.create({
@@ -17,9 +23,20 @@ app.engine(
 );
 app.set('view engine', 'hbs');
 
+// Live Reload 미들웨어 추가
+app.use(livereload());
 
-// 정적 파일 제공을 위한 미들웨어 설정
-app.use('/assets', express.static('assets'));
+// Live Reload 서버 실행
+const liveReloadServer = livereloadServer.createServer({
+  exts: ['hbs', 'html', 'css', 'js'], // 감지할 파일 확장자 지정
+});
+liveReloadServer.watch(__dirname); // 모든 폴더 감지
+
+liveReloadServer.server.once('connection', () => {
+  setTimeout(() => {
+    liveReloadServer.refresh('/');
+  }, 100);
+});
 
 // 루트 경로에 대한 요청 처리
 app.get('/', (req, res) => {
@@ -34,13 +51,13 @@ app.get('*', (req, res) => {
   //console.log(`filePath == `, filePath);
 
   if (fs.existsSync(filePath)) {
-    const fileContent = fs.readFileSync(filePath, 'utf-8');
-    //console.log(`fileContent == `, fileContent);
-
     // Handlebars.js 템플릿 렌더링
-    res.render('test');
+    const view_name = requestedPath.replace(/\//gi, "");
+    
+    const globalData = require('./views/global_data.js');
+    res.render(view_name, globalData);
   } else {
-    res.send('요청하신 페이지를 찾을 수 없습니다.');
+    res.send(`${filePath} : 요청하신 페이지를 찾을 수 없습니다.`);
   }
 });
 
