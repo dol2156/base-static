@@ -46,8 +46,8 @@ liveReloadServer.server.once('connection', () => {
 
 app.get('*', (req, res) => {
   let requestedPath = req.path;
-  console.log(`requestedPath == `, requestedPath);
   if(requestedPath == "/") requestedPath = "/index";
+  //console.log(`requestedPath == `, requestedPath);
 
   const filePath = path.join(__dirname, 뷰파일폴더이름, requestedPath + '.hbs');
   //console.log(`filePath == `, filePath);

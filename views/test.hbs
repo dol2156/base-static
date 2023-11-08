@@ -1,7 +1,8 @@
 <div id='Page'>
   {{> common/header}}
   <main>
-    <div>KSM2 : {{KSM}}</div>
+    {{JSON 'SampleData' '/assets/json/SampleData.json'}}
+    <div>name : {{SampleData.name}}</div>
     {{#LOOP 10}}
       <div>
         <div>index : {{index}}</div>

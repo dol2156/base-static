@@ -1,14 +1,23 @@
+const path = require('path');
+const fs = require('fs');
 module.exports = {
   BAR: function () {
     return 'BAR!';
   },
-
-  JSON : function(json_path){
-    console.log(`json_path == `, json_path);
-    
-    this.KSM = "강석민";
-  },
   
+  /**
+   * json 파일 읽어서 @root 의 node_name 에 담아준다.
+   * {{JSON 'SampleData' '/assets/json/SampleData.json'}}
+   * @param node_name
+   * @param json_path
+   * @constructor
+   */
+  JSON: function (node_name, json_path) {
+    const jsonPath = path.join(__dirname, json_path);
+    const renderData = JSON.parse(fs.readFileSync(jsonPath));
+    this[node_name] = renderData;
+  },
+
   /**
    * n 회 반복
    * ex)
