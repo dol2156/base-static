@@ -1,0 +1,80 @@
+<html lang='ko' data-env='development'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta id='viewport' name='viewport' content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='/assets/js/viewport.js'></script>
+    <!-- Icon -->
+    <link rel='icon' href='data:,' />
+    <link rel='apple-touch-icon' sizes='180x180' href='/assets/favicon/apple-touch-icon.png' />
+    <link rel='icon' type='image/png' sizes='16x16' href='/assets/favicon/favicon-16x16.png' />
+    <link rel='icon' type='image/png' sizes='32x32' href='/assets/favicon/favicon-32x32.png' />
+    <link rel='icon' type='image/png' sizes='192x192' href='/assets/favicon/favicon-192x192.png' />
+    <link rel='icon' type='image/png' sizes='512x512' href='/assets/favicon/favicon-512x512.png' />
+    <link rel='icon' href='/assets/favicon/favicon.ico' />
+    <!-- Core Library -->
+    <script src='/assets/lib/ua-parser.min.js'></script>
+    <link href='/assets/lib/fontawesome-free-6.4.2-web/css/all.css' rel='stylesheet' />
+    <script src='/assets/lib/tailwindcss_3.3.3.min.js'></script>
+    <script src='/assets/lib/tailwindcss.config.js'></script>
+    <script src='/assets/lib/jquery-3.7.1.min.js'></script>
+    <script src='/assets/lib/handlebars.js'></script>
+    <script src='/assets/lib/handlebars_helper.js'></script>
+    <!-- Custom Setting -->
+    <link href='/assets/css/global.css' rel='stylesheet' />
+    <script src='/assets/js/app_info.js'></script>
+    <script src='/assets/js/util.js'></script>
+    <script src='/assets/js/common.js'></script>
+    <script src='/assets/js/ui_setter.js'></script>
+    <!-- UI Library -->
+    <link href='/assets/lib/swiper-bundle.min.css' rel='stylesheet' />
+    <script src='/assets/lib/swiper-bundle.min.js'></script>
+    <link href='/assets/lib/autoComplete/css/autoComplete.css' rel='stylesheet' />
+    <script src='/assets/lib/autoComplete/autoComplete.js'></script>
+    <link href='/assets/lib/accordion.min.css' rel='stylesheet' />
+    <script src='/assets/lib/accordion.min.js'></script>
+    <script src='/assets/lib/particlesjs/particles.js'></script>
+    <link href='/assets/lib/aos_3.0.0.css' rel='stylesheet' />
+    <script src='/assets/lib/aos_3.0.0.js'></script>
+    <script src='/assets/lib/Sortable.min.js'></script>
+    <link href='/assets/lib/flatpickr_v4.6.13.min.css' rel='stylesheet' />
+    <script src='/assets/lib/flatpickr_v4.6.13.min.js'></script>
+    <title>Alert 또는 Confirm</title>
+  </head>
+  <body>
+    <div id='Modal'></div>
+    <div id='Page'>
+  <main>
+    <link href='/assets/css/_pub.css' rel='stylesheet' />
+    <div class='H1 Sticky Top'>Alert & Confirm</div>
+      <section>
+        <div class='H2'>alert/Confirm_1</div>
+        <div class='Confirm_1' style='width: 280px'>
+          <div class='Body'>
+            <div>
+              로그인이 필요한 기능입니다.
+              <br />
+              지금 로그인 하시겠습니까?
+            </div>
+          </div>
+          <div class='Foot'>
+            <article class='CenterCenter divide-x-[1px] divide-[#f4f4f4] divide-solid'>
+              <button class="flex-1 h-[36px]" onclick="LayerControl.Off();">취소</button>
+              <button class="flex-1 h-[36px]">로그인</button>
+            </article>
+          </div>
+        </div>      </section>
+      <section>
+        <div class='H2'>alert/SelectOption_1</div>
+        <div class='SelectOption_1 w-[302px]'>
+          <div class='Body'>
+            <div class='Title'>프로필 사진 설정</div>
+            <button class='Button'>사진 보관함</button>
+            <button class='Button'>사진찍기</button>
+            <button class='Button'>기본 이미지로 변경 </button>
+            <button class='Button' onclick='LayerControl.Off();'>취소</button>
+          </div>
+        </div>      </section>
+  </main>
+</div>
+  </body>
+</html>
