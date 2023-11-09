@@ -64,7 +64,8 @@ app.get('*', (req, res) => {
     const renderData = JSON.parse(fs.readFileSync(jsonPath));
     renderData.HBS_DATA = hbsData;
 
-    res.render(viewName, renderData);
+    const result = res.render(viewName, renderData);
+    console.log(`result == `, result);
   } else {
     res.send(`${filePath} : 요청하신 페이지를 찾을 수 없습니다.`);
   }
