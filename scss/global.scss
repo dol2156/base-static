@@ -18,25 +18,8 @@
 //@import '/assets/font/SUIT-Variable.css';
 //@import '/assets/font/Montserrat.css';
 @import '/assets/font/Pretendard.css';
-html,
-body,
-input,
-select,
-textarea {
-  font-family:
-    'Pretendard',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    'Noto Sans',
-    sans-serif,
-    'Apple Color Emoji',
-    'Segoe UI Emoji',
-    'Segoe UI Symbol',
-    'Noto Color Emoji';
+body {
+  font-family: 'Pretendard';
 }
 #Page {
   min-height: var(--vh-100);
@@ -127,14 +110,15 @@ img[src=''] {
   justify-content: flex-end;
 }
 /**/
-.HBox{
-  padding-left:var(--contents-side-padding);
-  padding-right:var(--contents-side-padding);
-  
-  > .Inner{
-    outline:1px dashed red;
-    max-width:1217px;
-    margin-left:auto; margin-right:auto;
+.HBox {
+  padding-left: var(--contents-side-padding);
+  padding-right: var(--contents-side-padding);
+
+  > .Inner {
+    outline: 1px dashed red;
+    max-width: 1217px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 //.HBox {

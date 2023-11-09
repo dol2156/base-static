@@ -1,6 +1,10 @@
 @charset "UTF-8";
 /**/
 @import '/assets/font/Pretendard.css';
+:root[lang=ko] {
+  word-break: keep-all;
+}
+
 :root {
   --color1: #4168f6;
   --color2: #ff3838;
@@ -1674,12 +1678,8 @@ strong {
   color: yellow;
 }
 
-html,
-body,
-input,
-select,
-textarea {
-  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+body {
+  font-family: "Pretendard";
 }
 
 #Page {
