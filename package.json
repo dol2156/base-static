@@ -8,7 +8,7 @@
     "dev2": "concurrently \"npm run cp\" \"npm run chd\" \"npm run csd\" \"npm run wh\" \"npm run scss:sitemap\" \"npm run scss:global\" \"npm run sync\" \"npm run builder\" \"npm run fs\"",
     "chd": "node create_hbs_data.js",
     "wh": "node watch_hbs.js",
-    "sync":"syncdir ./assets ./dist/assets --quiet",
+    "sync": "syncdir ./assets ./dist/assets --quiet",
     "scss:_pub": "sass -w scss/_pub.scss assets/css/_pub.css",
     "scss:sitemap": "sass -w scss/sitemap.scss assets/css/sitemap.css",
     "scss:global": "sass -w scss/global.scss assets/css/global.css",
@@ -40,6 +40,7 @@
     "connect-livereload": "^0.6.1",
     "express": "^4.18.2",
     "express-handlebars": "^7.1.2",
+    "ip": "^1.1.8",
     "livereload": "^0.9.3"
   }
 }

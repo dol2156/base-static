@@ -1,3 +1,4 @@
+const ip = require('ip');
 const express = require('express');
 const livereload = require('connect-livereload');
 const livereloadServer = require('livereload');
@@ -31,7 +32,7 @@ app.use(livereload());
 // Live Reload 서버 실행
 const liveReloadServer = livereloadServer.createServer({
   exts: 변경감지할_확장자, // 감지할 파일 확장자 지정
-  exclusions:['./dist/**'],
+  exclusions: ['./dist/**'],
 });
 liveReloadServer.watch(__dirname); // 모든 폴더 감지
 
@@ -41,10 +42,9 @@ liveReloadServer.server.once('connection', () => {
   }, 100);
 });
 
-
 app.get('*', (req, res) => {
   let requestedPath = req.path;
-  
+
   // 루트 경로에 대한 요청 처리
   if (requestedPath == '/') requestedPath = '/index';
 
@@ -70,7 +70,7 @@ app.get('*', (req, res) => {
           console.error(err);
           return;
         }
-        console.log(`HTML 파일이 ${savePath}에 저장되었습니다.`);
+        //console.log(`HTML 파일이 ${savePath}에 저장되었습니다.`);
       });
       res.send(renderedHTML);
     });
@@ -79,8 +79,10 @@ app.get('*', (req, res) => {
   }
 });
 
-
 // 서버 시작
 app.listen(port, () => {
-  console.log(`서버가 http://localhost:${port} 에서 실행 중입니다.`);
+  setTimeout(() => {
+    console.log(`http://localhost:${port}`);
+    console.log(`http://${ip.address()}:${port}`);
+  }, 2000);
 });
