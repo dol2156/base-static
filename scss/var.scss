@@ -38,7 +38,7 @@
   /**/
   --body-min-wid: 360px; /* 웹사이트 최소 너비 */
   --contents-max-wid: 1920px; /* 컨텐츠 최대 너비 */
-  --contents-side-padding: 20px; /* 컨텐츠 좌우 안쪽 여백 */
+  --contents-side-padding: 16px; /* 컨텐츠 좌우 안쪽 여백 */
   /**/
   --header-hei: 50px;
   --footer-hei: 50px;
@@ -46,12 +46,6 @@
 }
 [data-env='development'] {
   --sab: 20px;
-}
-/* 1280px 이상 화면*/
-@media screen and (min-width: 1280px) {
-  :root {
-    --contents-side-padding: 60px; /* 컨텐츠 좌우 안쪽 여백 */
-  }
 }
 /**/
 .StickyBox.Sticky > .FixedShell {

@@ -1,0 +1,19 @@
+.Footer_2-a {
+  background: var(--gray-gray-10, #111);
+  color: var(--gray-gray-5, #ddd);
+
+  /* Regular/16 l 22 */
+  font-family: 'Pretendard Variable';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px; /* 137.5% */
+}
+
+.FootMenu{
+  display:flex;
+  > li{
+    outline:1px dashed red;
+    display:inline-block;
+  }
+}

@@ -89,8 +89,8 @@ app.get('*', (req, res) => {
 // 서버 시작
 app.listen(port, () => {
   setTimeout(() => {
-    console.log(`http://localhost:${port}`);
-    console.log(`http://${ip.address()}:${port}`);
+    console.log(`http://localhost:${port}/_pub_sitemap.html`);
+    console.log(`http://${ip.address()}:${port}/_pub_sitemap.html`);
   }, 2000);
 });
 

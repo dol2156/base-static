@@ -1,7 +1,6 @@
 @charset "UTF-8";
 /**/
-@import '/assets/font/SUIT-Variable.css';
-@import '/assets/font/Montserrat.css';
+@import '/assets/font/Pretendard.css';
 :root {
   --color1: #4168f6;
   --color2: #ff3838;
@@ -49,7 +48,7 @@
   /**/
   --body-min-wid: 360px; /* 웹사이트 최소 너비 */
   --contents-max-wid: 1920px; /* 컨텐츠 최대 너비 */
-  --contents-side-padding: 20px; /* 컨텐츠 좌우 안쪽 여백 */
+  --contents-side-padding: 16px; /* 컨텐츠 좌우 안쪽 여백 */
   /**/
   --header-hei: 50px;
   --footer-hei: 50px;
@@ -60,12 +59,6 @@
   --sab: 20px;
 }
 
-/* 1280px 이상 화면*/
-@media screen and (min-width: 1280px) {
-  :root {
-    --contents-side-padding: 60px; /* 컨텐츠 좌우 안쪽 여백 */
-  }
-}
 /**/
 .StickyBox.Sticky > .FixedShell {
   z-index: 99;
@@ -262,23 +255,8 @@ strong {
 
 .TopActionBar_1 {
   position: relative;
-  height: 64px;
-  background-color: var(--color1);
-}
-.TopActionBar_1 .Inner {
-  position: relative;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0px;
-  height: 100%;
-}
-.TopActionBar_1 .Inner .LeftArea {
-  padding-left: var(--contents-side-padding);
-}
-.TopActionBar_1 .Inner .RightArea {
-  padding-right: var(--contents-side-padding);
+  border-bottom: 1px solid var(--gray-gray-5, #ddd);
+  background: #fff;
 }
 .TopActionBar_1 .PageTitle {
   z-index: 0;
@@ -287,7 +265,6 @@ strong {
   left: 0px;
   width: 100%;
   height: 100%;
-  color: white;
   font-size: 16px;
   font-weight: 600;
 }
@@ -353,6 +330,25 @@ strong {
   color: var(--text-color1);
   font-size: 16px;
   font-weight: 500;
+}
+
+.Footer_2-a {
+  background: var(--gray-gray-10, #111);
+  color: var(--gray-gray-5, #ddd);
+  /* Regular/16 l 22 */
+  font-family: "Pretendard Variable";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px; /* 137.5% */
+}
+
+.FootMenu {
+  display: flex;
+}
+.FootMenu > li {
+  outline: 1px dashed red;
+  display: inline-block;
 }
 
 /**/
@@ -1673,7 +1669,7 @@ body,
 input,
 select,
 textarea {
-  font-family: "SUIT Variable", "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 #Page {
@@ -1681,9 +1677,6 @@ textarea {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-#Page > * {
-  outline: 1px dashed red;
 }
 #Page > main {
   flex-grow: 1;
@@ -1785,18 +1778,14 @@ img[src=""] {
 
 /**/
 .HBox {
-  display: grid;
-  align-items: center;
-  justify-content: center;
-  grid-template-columns: minmax(var(--body-min-wid), var(--contents-max-wid));
+  padding-left: var(--contents-side-padding);
+  padding-right: var(--contents-side-padding);
 }
 .HBox > .Inner {
-  margin-left: var(--contents-side-padding);
-  margin-right: var(--contents-side-padding);
-}
-.HBox > .Inner.NoMargin {
-  margin-left: 0;
-  margin-right: 0;
+  outline: 1px dashed red;
+  max-width: 1217px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /**/
