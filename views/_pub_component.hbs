@@ -1,0 +1,12 @@
+<div id='Page'>
+  <main>
+    <link href='/assets/css/_pub.css' rel='stylesheet' />
+    <div class='H1 Sticky Top'>Component Guide</div>
+    {{#EACH HBS_DATA.component}}
+      <section>
+        <div class='H2'>{{obj.partial}}</div>
+        {{> (lookup obj 'partial')}}
+      </section>
+    {{/EACH}}
+  </main>
+</div>

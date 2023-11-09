@@ -4,7 +4,7 @@ module.exports = {
   BAR: function () {
     return 'BAR!';
   },
-  
+
   /**
    * json 파일 읽어서 @root 의 node_name 에 담아준다.
    * {{JSON 'SampleData' '/assets/json/SampleData.json'}}
@@ -65,5 +65,18 @@ module.exports = {
       });
     }
     return accum;
+  },
+
+  /**
+   * active_index 에 해당되면 문자열 반환
+   * {{ON 0}}
+   * 또는
+   * {{ON 0 '_on'}}
+   */
+  ON: function (active_index, custom_str, options) {
+    const { index } = this;
+    if (typeof custom_str != 'string') custom_str = 'On';
+    const result = active_index === index ? custom_str : '';
+    return result;
   },
 };

@@ -2,12 +2,12 @@
   <main>
     <link href='/assets/css/_pub.css' rel='stylesheet' />
     <div class='H1 Sticky Top'>Checkbox</div>
-    {{#EACH window.HBS_DATA.checkbox}}
+    {{#EACH HBS_DATA.checkbox}}
       <section>
-        <div class='H2'>/{{obj.path}}</div>
-        <script>
-          Handlebars.write('/{{obj.path}}');
-        </script>
+        <section>
+        <div class='H2'>{{obj.partial}}</div>
+        {{> (lookup obj 'partial')}}
+      </section>
       </section>
     {{/EACH}}
   </main>
