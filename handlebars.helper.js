@@ -79,4 +79,15 @@ module.exports = {
     const result = active_index === index ? custom_str : '';
     return result;
   },
+
+  /**
+   * node_에 값이 있나 체크 후 경고
+   * {{NULL_CHECK 'id'}}
+   */
+  NULL_CHECK: function (node_name, location_info, options) {
+    const data = this[node_name];
+    if (typeof data === 'undefined') {
+      console.error(`${location_info} : ${node_name} 의 값이 지정되어 있지 않습니다.`);
+    }
+  },
 };
