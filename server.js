@@ -45,6 +45,9 @@ liveReloadServer.server.once('connection', () => {
 
 app.get('*', (req, res) => {
   let requestedPath = req.path;
+  
+  // .html 삭제
+  requestedPath = requestedPath.replace(/\.html/gi, "");
 
   // 루트 경로에 대한 요청 처리
   if (requestedPath == '/') requestedPath = '/index';
