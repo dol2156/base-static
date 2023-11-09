@@ -38,18 +38,28 @@
     <script src='/assets/lib/Sortable.min.js'></script>
     <link href='/assets/lib/flatpickr_v4.6.13.min.css' rel='stylesheet' />
     <script src='/assets/lib/flatpickr_v4.6.13.min.js'></script>
-    <title>테스트</title>
+    <title>Wheel Down Horizontal Scroll</title>
   </head>
   <body>
     <div id='Modal'></div>
     <div id='Page'>
+  <div class="H1 Sticky Top">Wheel Down Horizontal Scroll</div>
   <main>
-    <ul class='divide-y-[10px] divide-[red] divide-solid'>
-      <li class='bg-amber-300'>a</li>
-      <li class='bg-amber-300'>a</li>
-      <li class='bg-amber-300'>a</li>
-      <li class='bg-amber-300'>a</li>
-    </ul>
+    <link href='/assets/css/_pub.css' rel='stylesheet' />
+    <section>
+      <img style='width:100%;' src='https://gifpng.com/1024x768/44d4d4/444444' alt='' />
+    </section>
+    <section class='WheelDownHScrollWrap'>
+      <article class='Inner' style='position:sticky; top:0;'>
+        <div>First Div</div>
+        <div>Second Div</div>
+        <div>Third Div</div>
+      </article>
+      <img onerror='initWheelDownHScrollWrap(this)' src='' />
+    </section>
+    <section>
+      <img style='width:100%;' src='https://gifpng.com/1024x3024/ffd4d4/ff4444' alt='' />
+    </section>
   </main>
 </div>
   </body>

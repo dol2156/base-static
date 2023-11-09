@@ -1,23 +1,10 @@
 <div id='Page'>
-  {{> button/Btn_1}}
-  {{> common/header}}
   <main>
-    {{JSON 'SampleData' '/assets/json/SampleData.json'}}
-    <div>name : {{SampleData.name}}</div>
-    {{#LOOP 10}}
-      <div>
-        <div>index : {{index}}</div>
-        <div>number : {{number}}</div>
-        <div>digit : {{digit}}</div>
-      </div>
-    {{/LOOP}}
-    <div>{{BAR}}</div>
-    {{#EACH (ARR '🍎|🍍|🥝|🍇|🍈')}}
-      <div>
-        {{obj}}
-      </div>
-    {{/EACH}}
-    <img src='https://gifpng.com/560x315/ffd4d4/ff4444' alt='' />
+    <ul class='divide-y-[10px] divide-[red] divide-solid'>
+      <li class='bg-amber-300'>a</li>
+      <li class='bg-amber-300'>a</li>
+      <li class='bg-amber-300'>a</li>
+      <li class='bg-amber-300'>a</li>
+    </ul>
   </main>
-  {{> common/footer}}
 </div>
