@@ -2,11 +2,12 @@ const express = require('express');
 const livereload = require('connect-livereload');
 const livereloadServer = require('livereload');
 const fs = require('fs');
+const FileUtil = require('./file_util.js');
 const path = require('path');
 const exphbs = require('express-handlebars');
 const hbsHelpers = require('./handlebars.helper.js');
 const app = express();
-const port = 3000; // 변경 가능한 포트 번호
+const port = 8080; // 변경 가능한 포트 번호
 const 뷰파일폴더이름 = 'views';
 const 변경감지할_확장자 = ['hbs', 'html', 'css', 'js', 'svg', 'png', 'jpg', 'json'];
 
@@ -46,7 +47,7 @@ liveReloadServer.server.once('connection', () => {
 
 app.get('*', (req, res) => {
   let requestedPath = req.path;
-  if(requestedPath == "/") requestedPath = "/index";
+  if (requestedPath == '/') requestedPath = '/index';
   //console.log(`requestedPath == `, requestedPath);
 
   const filePath = path.join(__dirname, 뷰파일폴더이름, requestedPath + '.hbs');
@@ -56,16 +57,15 @@ app.get('*', (req, res) => {
     // Handlebars.js 템플릿 렌더링
     const viewName = requestedPath.replace(/\//gi, '');
 
-    // 
+    //
     const hbsData = require(path.join(__dirname, 'assets/data/HBS_DATA.js'));
-    
+
     // 외부 JSON 파일 읽기
     const jsonPath = path.join(__dirname, 'assets/json/RenderData.json');
     const renderData = JSON.parse(fs.readFileSync(jsonPath));
     renderData.HBS_DATA = hbsData;
 
-    const result = res.render(viewName, renderData);
-    console.log(`result == `, result);
+    res.render(viewName, renderData);
   } else {
     res.send(`${filePath} : 요청하신 페이지를 찾을 수 없습니다.`);
   }
@@ -75,3 +75,5 @@ app.get('*', (req, res) => {
 app.listen(port, () => {
   console.log(`서버가 http://localhost:${port} 에서 실행 중입니다.`);
 });
+
+module.exports = app;
