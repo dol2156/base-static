@@ -1,4 +1,3 @@
-const ip = require('ip');
 const express = require('express');
 const livereload = require('connect-livereload');
 const livereloadServer = require('livereload');
@@ -8,9 +7,13 @@ const path = require('path');
 const exphbs = require('express-handlebars');
 const hbsHelpers = require('./handlebars.helper.js');
 const app = express();
+const XLSX = require('xlsx');
+const ip = require('ip');
 const port = 3000; // 변경 가능한 포트 번호
 const 뷰파일폴더이름 = 'views';
 const 변경감지할_확장자 = ['hbs', 'css', 'js', 'svg', 'png', 'jpg', 'json'];
+
+
 
 // 정적 파일 제공을 위한 미들웨어 설정
 app.use('/assets', express.static('assets'));
@@ -53,10 +56,12 @@ app.get('*', (req, res) => {
   if (fs.existsSync(filePath)) {
     const viewName = requestedPath.replace(/\//gi, '');
 
+    const menuData = getMenuData();
     const hbsData = require(path.join(__dirname, 'assets/data/HBS_DATA.js'));
 
     const jsonPath = path.join(__dirname, 'assets/json/RenderData.json');
     const renderData = JSON.parse(fs.readFileSync(jsonPath));
+    renderData.MENU_DATA = menuData;
     renderData.HBS_DATA = hbsData;
 
     res.render(viewName, renderData, (err, renderedHTML) => {
@@ -86,3 +91,35 @@ app.listen(port, () => {
     console.log(`http://${ip.address()}:${port}`);
   }, 2000);
 });
+
+function getMenuData() {
+  const workbook = XLSX.readFile('MENU_DATA.xlsx');
+  const worksheet = workbook.Sheets[workbook.SheetNames[0]];
+  const jsonData = XLSX.utils.sheet_to_json(worksheet);
+  let result = [];
+  let d1, d2, d3, d4;
+  jsonData.forEach((obj, idx) => {
+    const { D_1, D_2, D_3, D_4 } = obj;
+    if (D_1) {
+      d1 = obj;
+      result.push(obj);
+    }
+    if (D_2) {
+      d2 = obj;
+      if (!d1.CHILD) d1.CHILD = [];
+      d1.CHILD.push(d2);
+    }
+    if (D_3) {
+      d3 = obj;
+      if (!d2.CHILD) d2.CHILD = [];
+      d2.CHILD.push(d3);
+    }
+    if (D_4) {
+      d4 = obj;
+      if (!d3.CHILD) d3.CHILD = [];
+      d3.CHILD.push(d4);
+    }
+  });
+  
+  return result;
+}

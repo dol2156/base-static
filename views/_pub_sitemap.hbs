@@ -1,0 +1,87 @@
+<div id='Page'>
+  <main class="pb-[20px]">
+    <link href='/assets/css/sitemap.css' rel='stylesheet'/>
+    <div class='H1 Sticky Top px-[20px]'>SiteMap</div>
+    <div id='Sitemap'>
+      <ul>
+        {{#EACH MENU_DATA}}
+          <li>
+            {{> etc/SiteMapLink}}
+            {{#if obj.CHILD}}
+              <ul>
+                {{#EACH obj.CHILD}}
+                  <li>
+                    <a
+                      {{#if obj.PAGE_KEY}}
+                        class="PageLink"
+                        href="/{{obj.PAGE_KEY}}"
+                      {{else if obj.EXTERNAL_LINK}}
+                        class="ExternalLink"
+                        href="{{obj.EXTERNAL_LINK}}"
+                      {{else}}
+                        class="NoLink"
+                      {{/if}}
+                        target="_blank">
+                      {{#if obj.PAGE_KEY}}
+                        <div class="PageKey">[{{obj.PAGE_KEY}}]</div>
+                      {{/if}}
+                      {{obj.D_2}}
+                    </a>
+                    {{#if obj.CHILD}}
+                      <ul>
+                        {{#EACH obj.CHILD}}
+                          <li>
+                            <a
+                              {{#if obj.PAGE_KEY}}
+                                class="PageLink"
+                                href="/{{obj.PAGE_KEY}}"
+                              {{else if obj.EXTERNAL_LINK}}
+                                class="ExternalLink"
+                                href="{{obj.EXTERNAL_LINK}}"
+                              {{else}}
+                                class="NoLink"
+                              {{/if}}
+                                target="_blank">
+                              {{#if obj.PAGE_KEY}}
+                                <div class="PageKey">[{{obj.PAGE_KEY}}]</div>
+                              {{/if}}
+                              {{obj.D_3}}
+                            </a>
+                            {{#if obj.CHILD}}
+                              <ul>
+                                {{#EACH obj.CHILD}}
+                                  <li>
+                                    <a
+                                      {{#if obj.PAGE_KEY}}
+                                        class="PageLink"
+                                        href="/{{obj.PAGE_KEY}}"
+                                      {{else if obj.EXTERNAL_LINK}}
+                                        class="ExternalLink"
+                                        href="{{obj.EXTERNAL_LINK}}"
+                                      {{else}}
+                                        class="NoLink"
+                                      {{/if}}
+                                        target="_blank">
+                                      {{#if obj.PAGE_KEY}}
+                                        <div class="PageKey">[{{obj.PAGE_KEY}}]</div>
+                                      {{/if}}
+                                      {{obj.D_4}}
+                                    </a>
+                                  </li>
+                                {{/EACH}}
+                              </ul>
+                            {{/if}}
+                          </li>
+                        {{/EACH}}
+                      </ul>
+                    {{/if}}
+                  </li>
+                {{/EACH}}
+              </ul>
+            {{/if}}
+          </li>
+        {{/EACH}}
+      </ul>
+    </div>
+  </main>
+</div>

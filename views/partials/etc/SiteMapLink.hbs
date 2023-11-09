@@ -1,0 +1,17 @@
+{{log '🔴 SiteMapLink.hbs : 1 ==> ' this}}
+<a
+  {{#if obj.PAGE_KEY}}
+    class="PageLink"
+    href="/{{obj.PAGE_KEY}}"
+  {{else if obj.EXTERNAL_LINK}}
+    class="ExternalLink"
+    href="{{obj.EXTERNAL_LINK}}"
+  {{else}}
+    class="NoLink"
+  {{/if}}
+    target="_blank">
+  {{#if obj.PAGE_KEY}}
+    <div class="PageKey">[{{obj.PAGE_KEY}}]</div>
+  {{/if}}
+  {{obj.D_1}}
+</a>
