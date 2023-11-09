@@ -10,10 +10,21 @@
   line-height: 22px; /* 137.5% */
 }
 
-.FootMenu{
-  display:flex;
-  > li{
-    outline:1px dashed red;
-    display:inline-block;
+.FootMenu {
+  display: flex;
+  > li {
+    position: relative;
+    display: inline-block;
   }
+}
+
+.FootMenu_2 {
+  color: var(--gray-gray-1, #f9f9f9);
+
+  /* Bold/16 l 22 */
+  font-family: Pretendard Variable;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22px; /* 137.5% */
 }
