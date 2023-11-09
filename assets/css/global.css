@@ -1435,6 +1435,30 @@ strong {
 }
 
 /**/
+.ToggleUi {
+  width: 48px;
+  height: 28px;
+  appearance: none;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: background-image 300ms cubic-bezier(0.33, 1, 0.68, 1);
+  will-change: auto;
+}
+.ToggleUi[data-size=Lg] {
+  width: 24px;
+}
+.ToggleUi.Style1 {
+  background-image: url(/assets/icon/basic/toggle_1.svg);
+}
+.ToggleUi.Style1:checked {
+  background-image: url(/assets/icon/basic/toggle_1_on.svg);
+}
+.ToggleUi.Style1[disabled] {
+  opacity: 0.4;
+}
+
+/**/
 .plyr__control--overlaid {
   outline: 1px dashed red;
   border-radius: 0;
