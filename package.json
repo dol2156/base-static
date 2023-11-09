@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "concurrently \"npm run chd\" \"npm run wh\" \"npm run scss:_pub\" \"npm run scss:sitemap\" \"npm run scss:global\" \"npm run fs\"",
+    "dev": "concurrently \"npm run chd\" \"npm run wh\" \"npm run scss:_pub\" \"npm run scss:sitemap\" \"npm run scss:global\" \"node server.js\"",
+    "dev3": "concurrently \"npm run chd\" \"npm run wh\" \"npm run scss:_pub\" \"npm run scss:sitemap\" \"npm run scss:global\" \"npm run fs\"",
     "dev2": "concurrently \"npm run cp\" \"npm run chd\" \"npm run csd\" \"npm run wh\" \"npm run scss:sitemap\" \"npm run scss:global\" \"npm run sync\" \"npm run builder\" \"npm run fs\"",
     "chd": "node create_hbs_data.js",
     "wh": "node watch_hbs.js",

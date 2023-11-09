@@ -56,9 +56,13 @@ app.get('*', (req, res) => {
     // Handlebars.js 템플릿 렌더링
     const viewName = requestedPath.replace(/\//gi, '');
 
+    // 
+    const hbsData = require(path.join(__dirname, 'assets/data/HBS_DATA.js'));
+    
     // 외부 JSON 파일 읽기
     const jsonPath = path.join(__dirname, 'assets/json/RenderData.json');
     const renderData = JSON.parse(fs.readFileSync(jsonPath));
+    renderData.HBS_DATA = hbsData;
 
     res.render(viewName, renderData);
   } else {
