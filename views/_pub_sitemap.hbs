@@ -11,62 +11,17 @@
               <ul>
                 {{#EACH obj.CHILD}}
                   <li>
-                    <a
-                      {{#if obj.PAGE_KEY}}
-                        class="PageLink"
-                        href="/{{obj.PAGE_KEY}}"
-                      {{else if obj.EXTERNAL_LINK}}
-                        class="ExternalLink"
-                        href="{{obj.EXTERNAL_LINK}}"
-                      {{else}}
-                        class="NoLink"
-                      {{/if}}
-                        target="_blank">
-                      {{#if obj.PAGE_KEY}}
-                        <div class="PageKey">[{{obj.PAGE_KEY}}]</div>
-                      {{/if}}
-                      {{obj.D_2}}
-                    </a>
+                    {{> etc/SiteMapLink}}
                     {{#if obj.CHILD}}
                       <ul>
                         {{#EACH obj.CHILD}}
                           <li>
-                            <a
-                              {{#if obj.PAGE_KEY}}
-                                class="PageLink"
-                                href="/{{obj.PAGE_KEY}}"
-                              {{else if obj.EXTERNAL_LINK}}
-                                class="ExternalLink"
-                                href="{{obj.EXTERNAL_LINK}}"
-                              {{else}}
-                                class="NoLink"
-                              {{/if}}
-                                target="_blank">
-                              {{#if obj.PAGE_KEY}}
-                                <div class="PageKey">[{{obj.PAGE_KEY}}]</div>
-                              {{/if}}
-                              {{obj.D_3}}
-                            </a>
+                            {{> etc/SiteMapLink}}
                             {{#if obj.CHILD}}
                               <ul>
                                 {{#EACH obj.CHILD}}
                                   <li>
-                                    <a
-                                      {{#if obj.PAGE_KEY}}
-                                        class="PageLink"
-                                        href="/{{obj.PAGE_KEY}}"
-                                      {{else if obj.EXTERNAL_LINK}}
-                                        class="ExternalLink"
-                                        href="{{obj.EXTERNAL_LINK}}"
-                                      {{else}}
-                                        class="NoLink"
-                                      {{/if}}
-                                        target="_blank">
-                                      {{#if obj.PAGE_KEY}}
-                                        <div class="PageKey">[{{obj.PAGE_KEY}}]</div>
-                                      {{/if}}
-                                      {{obj.D_4}}
-                                    </a>
+                                    {{> etc/SiteMapLink}}
                                   </li>
                                 {{/EACH}}
                               </ul>
