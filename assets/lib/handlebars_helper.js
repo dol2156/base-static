@@ -1,15 +1,62 @@
 Handlebars.logger.level = 'debug';
 
+Handlebars.renderByJson = (json_path, tpl_id) => {
+  let render_data = {};
+  
+  $.ajax({
+    url: json_path,
+    method: 'GET',
+    dataType: 'json',
+    cache: false,
+    async: true,
+    timeout: 60 * 1000,
+    success: function (response, status, xhr) {
+      //console.log("AJAX success : " + url);
+      render_data = response;
 
-Handlebars.render = (render_template_selector, render_data) => {
-  const html_str = '';
+      $.ajax({
+        url: `/assets/template/${tpl_id}.hbs`,
+        method: 'GET',
+        dataType: 'html',
+        cache: false,
+        async: true,
+        timeout: 60 * 1000,
+        success: function (response, status, xhr) {
+          //console.log("AJAX success : " + url);
+          if(response) render(response);
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+          console.log('AJAX error : ' + url);
+          console.log('status : ' + jqXHR.status);
+          console.log('textStatus : ' + textStatus);
+        },
+        complete: function (jqXHR, textStatus) {
+          //console.log("AJAX complete : " + url);
+        },
+      });
+      
+    },
+    error: function (jqXHR, textStatus, errorThrown) {
+      console.log('AJAX error : ' + json_path);
+      console.log('status : ' + jqXHR.status);
+      console.log('textStatus : ' + textStatus);
+    },
+    complete: function (jqXHR, textStatus) {
+      //console.log("AJAX complete : " + url);
+    },
+  });
 
-  //Compile the template
-  const compiled_template = Handlebars.compile(html_str);
+  function render(tpl_str) {
+    //Compile the template
+    const compiled_template = Handlebars.compile(tpl_str);
 
-  //Render the data into the template
-  let rendered = compiled_template(render_data);
-}
+    //Render the data into the template
+    let rendered = compiled_template(render_data);
+    rendered = `<!-- ${tpl_id} :: START ::  -->` + rendered + `<!-- // ${tpl_id} :: END ::  -->`;
+    
+    $(`#${tpl_id}`).replaceWith(rendered);
+  }
+};
 
 /**
  * n 회 반복
@@ -33,9 +80,9 @@ Handlebars.registerHelper('LOOP', function (n, block) {
  * {{/EACH}}
  */
 Handlebars.registerHelper('EACH', function (data_list, options) {
+  
   let accum = '';
   if (arguments.length > 1 && data_list) {
-    //console.log(data_list);
     data_list.forEach((obj, idx) => {
       const obj_result = { obj: obj, index: idx, number: idx + 1, digit: (idx + 1).toString().padStart(2, '0') };
 

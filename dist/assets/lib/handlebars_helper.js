@@ -1,5 +1,42 @@
 Handlebars.logger.level = 'debug';
 
+Handlebars.renderByJson = (json_path, tpl_id) => {
+  $.ajax({
+    url: json_path,
+    method: 'GET',
+    dataType: 'json',
+    cache: false,
+    async: true,
+    timeout: 60 * 1000,
+    success: function (response, status, xhr) {
+      //console.log("AJAX success : " + url);
+
+      const html_str = $(tpl_id).html();
+      if (!html_str) return;
+
+      //Compile the template
+      const compiled_template = Handlebars.compile(html_str);
+
+      const render_data = {
+        firstname: 'Yehuda',
+        lastname: 'Katz',
+      };
+      //Render the data into the template
+      let rendered = compiled_template(render_data);
+      console.log(`rendered == `, rendered);
+      
+    },
+    error: function (jqXHR, textStatus, errorThrown) {
+      console.log('AJAX error : ' + json_path);
+      console.log('status : ' + jqXHR.status);
+      console.log('textStatus : ' + textStatus);
+    },
+    complete: function (jqXHR, textStatus) {
+      //console.log("AJAX complete : " + url);
+    },
+  });
+};
+
 /**
  * n 회 반복
  * ex)
