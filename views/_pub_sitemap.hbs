@@ -1,12 +1,22 @@
 <div id='Page'>
   <main class="pb-[20px]">
     <link href='/assets/css/sitemap.css' rel='stylesheet'/>
-    <div class='H1 Sticky Top px-[20px]'>SiteMap</div>
-    <section class="HBox">
+    <div class='H1 Sticky Top px-[20px]'>
+      <article class="CenterLeft gap-2">
+        SiteMap
+        <span class="hidden [[data-env='development']_&]:block">Development</span>
+        <span class="hidden [[data-env='production']_&]:block">Production</span>
+      </article>
+    </div>
+    <section class="HBox hidden [[data-env='development']_&]:block">
       <div class="Inner">
-        <article class="CenterBetween">
+        <article class="CenterRight gap-[10px]">
           <div>
-            {{!--LEFT--}}
+            <article class="CenterLeft bg-black text-white text-[14px] font-[400] p-[5px_10px] rounded-md">
+              <div id="CurrentCnt">Current</div>
+              /
+              <div id="TotalCnt">Total</div>
+            </article>
           </div>
           <div>
             <button id="BuildHtml" class="Btn_1">BUILD</button>
@@ -23,12 +33,13 @@
                       const href = $(this).attr('href');
                       href_list.push(href);
                     });
+                    $(`#TotalCnt`).text(href_list.length);
                     openAndClosePopup();
                   });
 
                   function openAndClosePopup() {
                     const href = href_list.pop();
-                    console.log(`href_list == `, href_list);
+                    $(`#CurrentCnt`).text(href_list.length);
                     if (!href) return;
 
                     // 새 창 열기

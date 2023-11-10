@@ -74,9 +74,16 @@ app.get('*', (req, res) => {
         console.error(err);
         return;
       }
+      
+      // 정렬
       renderedHTML = beautify_html(renderedHTML);
+      
+      // env 변경
+      let productionHTML = renderedHTML.replace(/data-env='development'/gi, `data-env='production'`);
+      
+      
       const savePath = path.join(__dirname, 'dist', viewName + '.html');
-      fs.writeFile(savePath, renderedHTML, (err) => {
+      fs.writeFile(savePath, productionHTML, (err) => {
         if (err) {
           console.error(err);
           return;
