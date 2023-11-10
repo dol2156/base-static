@@ -11,7 +11,7 @@
               </video>
             </div>
             <div class='Inner'>
-              <div class='text-center' data-only-view='MO'>
+              <div class='text-center AnimateWrap hidden max-pc:block'>
                 <div class='AnimateTarget'>
                   <div class='text-[#ffffff] text-[34px] font-[700] leading-[40px]'>
                     당신의 DNA에
@@ -27,7 +27,7 @@
                   </div>
                 </div>
               </div>
-              <div class='text-center' data-only-view='PC'>
+              <div class='text-center AnimateWrap hidden pc:block'>
                 <div class='AnimateTarget'>
                   <div class='text-[#ffffff] text-[60px] font-[700] leading-[60px]'>
                     당신의 DNA에 로그인하세요.
@@ -40,7 +40,7 @@
                 </div>
               </div>
               <div class='MouseIcon hidden pc:block'>
-                <script>Handlebars.write('/hbs/component/DungDung_1.hbs');</script>
+                {{> component/DungDung_1}}
               </div>
             </div>
           </section>
@@ -51,7 +51,7 @@
               <img src='https://picsum.photos/1920/1080.jpg?random=cd192e57' alt='' />
             </div>
             <div class='Inner'>
-              <div data-only-view='MO'>
+              <div class="AnimateWrap hidden max-pc:block">
                 <article>
                   <div class='AnimateTarget'>
                     <div class='text-[#ffffff] text-[30px] font-[600] leading-[38px]'>
@@ -67,7 +67,7 @@
                   </div>
                 </article>
               </div>
-              <div data-only-view='PC'>
+              <div class="AnimateWrap hidden pc:block">
                 <article class='w-[640px]'>
                   <div class='AnimateTarget'>
                     <div class='text-[#ffffff] text-[50px] font-[600] leading-[62px]'>
@@ -84,7 +84,7 @@
                 </article>
               </div>
               <div class='MouseIcon hidden pc:block'>
-                <script>Handlebars.write('/hbs/component/DungDung_1.hbs');</script>
+                {{> component/DungDung_1}}
               </div>
             </div>
           </section>

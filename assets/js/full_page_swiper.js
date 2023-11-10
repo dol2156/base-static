@@ -85,7 +85,7 @@ const initFullPageSwiper = (swiper_id) => {
     }
 
     const el_slide = swiper.slides[swiper.activeIndex];
-    const el_dov_list = el_slide.querySelectorAll(`[data-only-view]`);
+    const el_dov_list = el_slide.querySelectorAll(`.AnimateWrap`);
     el_dov_list.forEach((el_dov, idx) => {
       const el_at_list = el_dov.querySelectorAll(`.AnimateTarget`);
       el_at_list.forEach((el_at, jdx) => {
