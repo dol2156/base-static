@@ -642,48 +642,15 @@ strong {
 
 /**/
 .Btn_2 {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 14px;
-  font-weight: 600;
-  border-radius: 5px;
-  height: 36px;
-  gap: 2px;
-  padding-left: 0.5em;
-  padding-right: 0.5em;
-  background-color: #4f46e5;
-}
-.Btn_2:hover {
-  background-color: #6366f1;
-}
-.Btn_2 .Hover {
-  display: none;
-}
-.Btn_2 .Active {
-  display: none;
-}
-.Btn_2 .Default {
-  display: block;
-}
-.Btn_2:hover .Default {
-  display: none;
-}
-.Btn_2:hover .Active {
-  display: none;
-}
-.Btn_2:hover .Hover {
-  display: block;
-}
-.Btn_2.On .Default, .Btn_2:active .Default {
-  display: none;
-}
-.Btn_2.On .Hover, .Btn_2:active .Hover {
-  display: none;
-}
-.Btn_2.On .Active, .Btn_2:active .Active {
-  display: block;
+  height: 46px;
+  padding: 0 28px;
+  border-radius: 8px;
+  background-color: white;
+  border: 1px solid var(--gray-gray-9, #333);
+  color: #111;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
 }
 
 /**/
