@@ -98,10 +98,6 @@ app.listen(port, () => {
   }, 2000);
 });
 
-function buildHTML(){
-
-}
-
 function getMenuData(viewName) {
   const workbook = XLSX.readFile('MENU_DATA.xlsx');
   const worksheet = workbook.Sheets[workbook.SheetNames[0]];

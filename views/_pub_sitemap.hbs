@@ -10,6 +10,43 @@
           </div>
           <div>
             <button id="BuildHtml" class="Btn_1">BUILD</button>
+            <script>
+              (() => {
+                $('#BuildHtml').on(`click`, (evt) => {
+                  buildHtml();
+                });
+
+                function buildHtml() {
+                  let href_list = [];
+                  $(function () {
+                    $(`#Sitemap a[href].PageLink`).each(function (i) {
+                      const href = $(this).attr('href');
+                      href_list.push(href);
+                    });
+                    openAndClosePopup();
+                  });
+
+                  function openAndClosePopup() {
+                    const href = href_list.pop();
+                    console.log(`href_list == `, href_list);
+                    if (!href) return;
+
+                    // 새 창 열기
+                    const popup = window.open(href, href, `width=${200}, height=${200}`);
+
+                    // 로딩 완료 이벤트 감지
+                    popup.addEventListener('load', function () {
+                      // 일정 시간 후에 새 창 닫기
+                      setTimeout(function () {
+                        popup.close();
+                        openAndClosePopup();
+                      }, 100); // 여기서 2000은 새 창이 열린 후 대기 시간을 밀리초 단위로 나타냅니다. 필요에 따라 조정하십시오.
+                    });
+                  }
+                }
+
+              })()
+            </script>
           </div>
         </article>
       </div>

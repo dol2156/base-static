@@ -1,5 +1,6 @@
 <html lang='ko' data-env='development'>
-  <head>
+
+<head>
     <meta charset='UTF-8' />
     <meta id='viewport' name='viewport' content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no' />
     <script src='/assets/js/viewport.js'></script>
@@ -39,16 +40,17 @@
     <link href='/assets/lib/flatpickr_v4.6.13.min.css' rel='stylesheet' />
     <script src='/assets/lib/flatpickr_v4.6.13.min.js'></script>
     <title>CSS Scroll Snap</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <div id='Modal'></div>
     <div id='Page'>
-  <main>
-    <link href='/assets/css/_pub.css' rel='stylesheet' />
-    <style>
-      /**/
-      /*Scroll snap 속성*/
-      /*
+        <main>
+            <link href='/assets/css/_pub.css' rel='stylesheet' />
+            <style>
+                /**/
+                /*Scroll snap 속성*/
+                /*
       1. scroll-snap-type : 동작 방식 : none | [ x | y | block | inline | both ] | [ mandatory | proximity ]
       x: 수평(가로) 축으로 snap position 지정
       y: 수직(세로) 축으로 snap position 지정
@@ -56,179 +58,180 @@
       inline: inline 축으로 지정
       both: 두 축의 위치를 개별적으로 스냅.
       */
-      /**/
-      /* 
+                /**/
+                /* 
       2. scroll-snap-align: 정렬 방식 : [ none | start | end | center ]
       none: 스냅하지 않음.
       proximity: 스크롤 위치가 스냅 위치에 가까워지면 자연스럽게 스냅
       mandatory: 스크롤 위치가 스냅 위치와 정확히 일치해야만 스냅
       */
-      /*3. scroll-padding*/
-      /*4. scroll-margin*/
+                /*3. scroll-padding*/
+                /*4. scroll-margin*/
 
-      /* 부모 스크롤 스냅 컨테이너 */
-      .scroll-container{
-        outline:1px dashed red;
-        overflow:auto;
-      }
-    </style>
-    <div class='H1 Sticky Top'>Scroll Snap</div>
-    <br />
-    <div class='H2'>
-      <div>scroll-snap-type:y mandatory;</div>
-      <div>scroll-snap-align:center;</div>
+                /* 부모 스크롤 스냅 컨테이너 */
+                .scroll-container {
+                    outline: 1px dashed red;
+                    overflow: auto;
+                }
+            </style>
+            <div class='H1 Sticky Top'>Scroll Snap</div>
+            <br />
+            <div class='H2'>
+                <div>scroll-snap-type:y mandatory;</div>
+                <div>scroll-snap-align:center;</div>
+            </div>
+            <section>
+                <div class='scroll-container' style='height:300px; scroll-snap-type:y mandatory;'>
+                    <div class='scroll-area' style='scroll-snap-align:center;'>
+                        <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=1' alt='' />
+                    </div>
+                    <div class='scroll-area' style='scroll-snap-align:center;'>
+                        <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=2' alt='' />
+                    </div>
+                    <div class='scroll-area' style='scroll-snap-align:center;'>
+                        <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=3' alt='' />
+                    </div>
+                    <div class='scroll-area' style='scroll-snap-align:center;'>
+                        <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=4' alt='' />
+                    </div>
+                    <div class='scroll-area' style='scroll-snap-align:center;'>
+                        <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=5' alt='' />
+                    </div>
+                    <div class='scroll-area' style='scroll-snap-align:center;'>
+                        <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=6' alt='' />
+                    </div>
+                    <div class='scroll-area' style='scroll-snap-align:center;'>
+                        <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=7' alt='' />
+                    </div>
+                    <div class='scroll-area' style='scroll-snap-align:center;'>
+                        <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=8' alt='' />
+                    </div>
+                    <div class='scroll-area' style='scroll-snap-align:center;'>
+                        <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=9' alt='' />
+                    </div>
+                    <div class='scroll-area' style='scroll-snap-align:center;'>
+                        <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=10' alt='' />
+                    </div>
+                </div>
+            </section>
+            <div class='H2'>
+                <div>scroll-snap-type:y proximity;</div>
+                <div>scroll-snap-align:center;</div>
+            </div>
+            <section>
+                <div class='scroll-container' style='height:300px; scroll-snap-type:y proximity;'>
+                    <div class='scroll-area' style='scroll-snap-align:center;'>
+                        <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=1' alt='' />
+                    </div>
+                    <div class='scroll-area' style='scroll-snap-align:center;'>
+                        <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=2' alt='' />
+                    </div>
+                    <div class='scroll-area' style='scroll-snap-align:center;'>
+                        <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=3' alt='' />
+                    </div>
+                    <div class='scroll-area' style='scroll-snap-align:center;'>
+                        <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=4' alt='' />
+                    </div>
+                    <div class='scroll-area' style='scroll-snap-align:center;'>
+                        <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=5' alt='' />
+                    </div>
+                    <div class='scroll-area' style='scroll-snap-align:center;'>
+                        <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=6' alt='' />
+                    </div>
+                    <div class='scroll-area' style='scroll-snap-align:center;'>
+                        <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=7' alt='' />
+                    </div>
+                    <div class='scroll-area' style='scroll-snap-align:center;'>
+                        <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=8' alt='' />
+                    </div>
+                    <div class='scroll-area' style='scroll-snap-align:center;'>
+                        <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=9' alt='' />
+                    </div>
+                    <div class='scroll-area' style='scroll-snap-align:center;'>
+                        <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=10' alt='' />
+                    </div>
+                </div>
+            </section>
+            <div class='H2'>
+                <div>scroll-snap-type:y mandatory;</div>
+                <div>scroll-snap-align:center;</div>
+                <div>scroll-padding-top:100px;</div>
+            </div>
+            <section>
+                <div class='scroll-container' style='height:400px; scroll-snap-type:y mandatory; scroll-padding-top:100px;'>
+                    <div class='scroll-area' style='scroll-snap-align:start;'>
+                        <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=1' alt='' />
+                    </div>
+                    <div class='scroll-area' style='scroll-snap-align:start;'>
+                        <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=2' alt='' />
+                    </div>
+                    <div class='scroll-area' style='scroll-snap-align:start;'>
+                        <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=3' alt='' />
+                    </div>
+                    <div class='scroll-area' style='scroll-snap-align:start;'>
+                        <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=4' alt='' />
+                    </div>
+                    <div class='scroll-area' style='scroll-snap-align:start;'>
+                        <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=5' alt='' />
+                    </div>
+                    <div class='scroll-area' style='scroll-snap-align:start;'>
+                        <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=6' alt='' />
+                    </div>
+                    <div class='scroll-area' style='scroll-snap-align:start;'>
+                        <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=7' alt='' />
+                    </div>
+                    <div class='scroll-area' style='scroll-snap-align:start;'>
+                        <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=8' alt='' />
+                    </div>
+                    <div class='scroll-area' style='scroll-snap-align:start;'>
+                        <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=9' alt='' />
+                    </div>
+                    <div class='scroll-area' style='scroll-snap-align:start;'>
+                        <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=10' alt='' />
+                    </div>
+                </div>
+            </section>
+            <div class='H2'>
+                <div>scroll-snap-type:y mandatory;</div>
+                <div>scroll-snap-align:center;</div>
+                <div>scroll-margin-top:100px;</div>
+            </div>
+            <section>
+                <div class='scroll-container' style='height:400px; scroll-snap-type:y mandatory;'>
+                    <div class='scroll-area' style='scroll-snap-align:start; scroll-margin-top:100px;'>
+                        <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=1' alt='' />
+                    </div>
+                    <div class='scroll-area' style='scroll-snap-align:start; scroll-margin-top:100px;'>
+                        <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=2' alt='' />
+                    </div>
+                    <div class='scroll-area' style='scroll-snap-align:start; scroll-margin-top:100px;'>
+                        <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=3' alt='' />
+                    </div>
+                    <div class='scroll-area' style='scroll-snap-align:start; scroll-margin-top:100px;'>
+                        <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=4' alt='' />
+                    </div>
+                    <div class='scroll-area' style='scroll-snap-align:start; scroll-margin-top:100px;'>
+                        <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=5' alt='' />
+                    </div>
+                    <div class='scroll-area' style='scroll-snap-align:start; scroll-margin-top:100px;'>
+                        <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=6' alt='' />
+                    </div>
+                    <div class='scroll-area' style='scroll-snap-align:start; scroll-margin-top:100px;'>
+                        <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=7' alt='' />
+                    </div>
+                    <div class='scroll-area' style='scroll-snap-align:start; scroll-margin-top:100px;'>
+                        <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=8' alt='' />
+                    </div>
+                    <div class='scroll-area' style='scroll-snap-align:start; scroll-margin-top:100px;'>
+                        <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=9' alt='' />
+                    </div>
+                    <div class='scroll-area' style='scroll-snap-align:start; scroll-margin-top:100px;'>
+                        <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=10' alt='' />
+                    </div>
+                </div>
+            </section>
+        </main>
     </div>
-    <section>
-      <div class='scroll-container' style='height:300px; scroll-snap-type:y mandatory;'>
-          <div class='scroll-area' style='scroll-snap-align:center;'>
-            <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=1' alt='' />
-          </div>
-          <div class='scroll-area' style='scroll-snap-align:center;'>
-            <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=2' alt='' />
-          </div>
-          <div class='scroll-area' style='scroll-snap-align:center;'>
-            <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=3' alt='' />
-          </div>
-          <div class='scroll-area' style='scroll-snap-align:center;'>
-            <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=4' alt='' />
-          </div>
-          <div class='scroll-area' style='scroll-snap-align:center;'>
-            <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=5' alt='' />
-          </div>
-          <div class='scroll-area' style='scroll-snap-align:center;'>
-            <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=6' alt='' />
-          </div>
-          <div class='scroll-area' style='scroll-snap-align:center;'>
-            <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=7' alt='' />
-          </div>
-          <div class='scroll-area' style='scroll-snap-align:center;'>
-            <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=8' alt='' />
-          </div>
-          <div class='scroll-area' style='scroll-snap-align:center;'>
-            <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=9' alt='' />
-          </div>
-          <div class='scroll-area' style='scroll-snap-align:center;'>
-            <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=10' alt='' />
-          </div>
-      </div>
-    </section>
-    <div class='H2'>
-      <div>scroll-snap-type:y proximity;</div>
-      <div>scroll-snap-align:center;</div>
-    </div>
-    <section>
-      <div class='scroll-container' style='height:300px; scroll-snap-type:y proximity;'>
-          <div class='scroll-area' style='scroll-snap-align:center;'>
-            <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=1' alt='' />
-          </div>
-          <div class='scroll-area' style='scroll-snap-align:center;'>
-            <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=2' alt='' />
-          </div>
-          <div class='scroll-area' style='scroll-snap-align:center;'>
-            <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=3' alt='' />
-          </div>
-          <div class='scroll-area' style='scroll-snap-align:center;'>
-            <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=4' alt='' />
-          </div>
-          <div class='scroll-area' style='scroll-snap-align:center;'>
-            <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=5' alt='' />
-          </div>
-          <div class='scroll-area' style='scroll-snap-align:center;'>
-            <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=6' alt='' />
-          </div>
-          <div class='scroll-area' style='scroll-snap-align:center;'>
-            <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=7' alt='' />
-          </div>
-          <div class='scroll-area' style='scroll-snap-align:center;'>
-            <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=8' alt='' />
-          </div>
-          <div class='scroll-area' style='scroll-snap-align:center;'>
-            <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=9' alt='' />
-          </div>
-          <div class='scroll-area' style='scroll-snap-align:center;'>
-            <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=10' alt='' />
-          </div>
-      </div>
-    </section>
-    <div class='H2'>
-      <div>scroll-snap-type:y mandatory;</div>
-      <div>scroll-snap-align:center;</div>
-      <div>scroll-padding-top:100px;</div>
-    </div>
-    <section>
-      <div class='scroll-container' style='height:400px; scroll-snap-type:y mandatory; scroll-padding-top:100px;'>
-          <div class='scroll-area' style='scroll-snap-align:start;'>
-            <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=1' alt='' />
-          </div>
-          <div class='scroll-area' style='scroll-snap-align:start;'>
-            <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=2' alt='' />
-          </div>
-          <div class='scroll-area' style='scroll-snap-align:start;'>
-            <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=3' alt='' />
-          </div>
-          <div class='scroll-area' style='scroll-snap-align:start;'>
-            <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=4' alt='' />
-          </div>
-          <div class='scroll-area' style='scroll-snap-align:start;'>
-            <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=5' alt='' />
-          </div>
-          <div class='scroll-area' style='scroll-snap-align:start;'>
-            <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=6' alt='' />
-          </div>
-          <div class='scroll-area' style='scroll-snap-align:start;'>
-            <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=7' alt='' />
-          </div>
-          <div class='scroll-area' style='scroll-snap-align:start;'>
-            <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=8' alt='' />
-          </div>
-          <div class='scroll-area' style='scroll-snap-align:start;'>
-            <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=9' alt='' />
-          </div>
-          <div class='scroll-area' style='scroll-snap-align:start;'>
-            <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=10' alt='' />
-          </div>
-      </div>
-    </section>
-    <div class='H2'>
-      <div>scroll-snap-type:y mandatory;</div>
-      <div>scroll-snap-align:center;</div>
-      <div>scroll-margin-top:100px;</div>
-    </div>
-    <section>
-      <div class='scroll-container' style='height:400px; scroll-snap-type:y mandatory;'>
-          <div class='scroll-area' style='scroll-snap-align:start; scroll-margin-top:100px;'>
-            <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=1' alt='' />
-          </div>
-          <div class='scroll-area' style='scroll-snap-align:start; scroll-margin-top:100px;'>
-            <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=2' alt='' />
-          </div>
-          <div class='scroll-area' style='scroll-snap-align:start; scroll-margin-top:100px;'>
-            <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=3' alt='' />
-          </div>
-          <div class='scroll-area' style='scroll-snap-align:start; scroll-margin-top:100px;'>
-            <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=4' alt='' />
-          </div>
-          <div class='scroll-area' style='scroll-snap-align:start; scroll-margin-top:100px;'>
-            <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=5' alt='' />
-          </div>
-          <div class='scroll-area' style='scroll-snap-align:start; scroll-margin-top:100px;'>
-            <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=6' alt='' />
-          </div>
-          <div class='scroll-area' style='scroll-snap-align:start; scroll-margin-top:100px;'>
-            <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=7' alt='' />
-          </div>
-          <div class='scroll-area' style='scroll-snap-align:start; scroll-margin-top:100px;'>
-            <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=8' alt='' />
-          </div>
-          <div class='scroll-area' style='scroll-snap-align:start; scroll-margin-top:100px;'>
-            <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=9' alt='' />
-          </div>
-          <div class='scroll-area' style='scroll-snap-align:start; scroll-margin-top:100px;'>
-            <img src='https://gifpng.com/360x360/ffd4d4/ff4444?text=10' alt='' />
-          </div>
-      </div>
-    </section>
-  </main>
-</div>
-  </body>
+</body>
+
 </html>
