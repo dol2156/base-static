@@ -646,7 +646,7 @@ strong {
  * 마우스 인터렉션 상태에 따라 아이콘을 변경하는 버튼에 포함되는 믹스인
  */
 /**/
-.Btn_1 {
+.Btn_0 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -655,35 +655,51 @@ strong {
   font-weight: 500;
   color: #767676;
 }
-.Btn_1:hover {
+.Btn_0:hover {
   color: #333;
 }
-.Btn_1 .Hover {
+.Btn_0 .Hover {
   display: none;
 }
-.Btn_1 .Active {
+.Btn_0 .Active {
   display: none;
 }
-.Btn_1 .Default {
+.Btn_0 .Default {
   display: block;
 }
-.Btn_1:hover .Default {
+.Btn_0:hover .Default {
   display: none;
 }
-.Btn_1:hover .Active {
+.Btn_0:hover .Active {
   display: none;
 }
-.Btn_1:hover .Hover {
+.Btn_0:hover .Hover {
   display: block;
 }
-.Btn_1.On .Default, .Btn_1:active .Default {
+.Btn_0.On .Default, .Btn_0:active .Default {
   display: none;
 }
-.Btn_1.On .Hover, .Btn_1:active .Hover {
+.Btn_0.On .Hover, .Btn_0:active .Hover {
   display: none;
 }
-.Btn_1.On .Active, .Btn_1:active .Active {
+.Btn_0.On .Active, .Btn_0:active .Active {
   display: block;
+}
+
+/**/
+.Btn_1 {
+  height: 46px;
+  display: flex;
+  padding: 0px 28px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background: var(--green-green-6, #00c781);
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
 }
 
 /**/

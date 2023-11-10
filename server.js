@@ -1,3 +1,6 @@
+const beautify_js = require('js-beautify');
+const beautify_css = require('js-beautify').css;
+const beautify_html = require('js-beautify').html;
 const express = require('express');
 const livereload = require('connect-livereload');
 const livereloadServer = require('livereload');
@@ -11,7 +14,7 @@ const XLSX = require('xlsx');
 const ip = require('ip');
 const port = 3000; // 변경 가능한 포트 번호
 const 뷰파일폴더이름 = 'views';
-const 변경감지할_확장자 = ['hbs', 'css', 'js', 'svg', 'png', 'jpg', 'json'];
+const 변경감지할_확장자 = ['hbs', 'css', 'js', 'svg', 'png', 'jpg', 'json', 'xlsx'];
 
 // 정적 파일 제공을 위한 미들웨어 설정
 app.use('/assets', express.static('assets'));
@@ -45,9 +48,9 @@ liveReloadServer.server.once('connection', () => {
 
 app.get('*', (req, res) => {
   let requestedPath = req.path;
-  
+
   // .html 삭제
-  requestedPath = requestedPath.replace(/\.html/gi, "");
+  requestedPath = requestedPath.replace(/\.html/gi, '');
 
   // 루트 경로에 대한 요청 처리
   if (requestedPath == '/') requestedPath = '/index';
@@ -71,13 +74,14 @@ app.get('*', (req, res) => {
         console.error(err);
         return;
       }
+      renderedHTML = beautify_html(renderedHTML);
       const savePath = path.join(__dirname, 'dist', viewName + '.html');
       fs.writeFile(savePath, renderedHTML, (err) => {
         if (err) {
           console.error(err);
           return;
         }
-        //console.log(`HTML 파일이 ${savePath}에 저장되었습니다.`);
+        console.log('\x1b[33m%s\x1b[0m', `=============================== Save File : ${getFormattedDateTime()} : ${savePath} `);
       });
       res.send(renderedHTML);
     });
@@ -93,6 +97,10 @@ app.listen(port, () => {
     console.log(`http://${ip.address()}:${port}/_pub_sitemap.html`);
   }, 2000);
 });
+
+function buildHTML(){
+
+}
 
 function getMenuData(viewName) {
   const workbook = XLSX.readFile('MENU_DATA.xlsx');
@@ -131,4 +139,14 @@ function getMenuData(viewName) {
   });
 
   return { pageTitle, data };
+}
+
+function getFormattedDateTime() {
+  const now = new Date();
+  const hours = now.getHours().toString().padStart(2, '0');
+  const minutes = now.getMinutes().toString().padStart(2, '0');
+  const seconds = now.getSeconds().toString().padStart(2, '0');
+
+  const formattedDateTime = hours + ':' + minutes + ':' + seconds;
+  return formattedDateTime;
 }
