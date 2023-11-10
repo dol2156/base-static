@@ -13,13 +13,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
   <div id="AppInfo">
     <a href="/_pub_sitemap.html">
       <div>
-        <div data-only-view="Xs">Xs</div>
-        <div data-only-view="Sm">Sm</div>
-        <div data-only-view="Md">Md</div>
-        <div data-only-view="Lg">Lg</div>
-        <div data-only-view="Xl">Xl</div>
-        <div data-only-view="2Xl">2Xl</div>
-        <div data-only-view="3Xl">3Xl</div>
+        <div class="hidden xs:max-sm:block">Xs</div>
+        <div class="hidden sm:max-md:block">Sm</div>
+        <div class="hidden md:max-lg:block">Md</div>
+        <div class="hidden lg:max-xl:block">Lg</div>
+        <div class="hidden xl:max-2xl:block">Xl</div>
+        <div class="hidden 2xl:max-3xl:block">2Xl</div>
+        <div class="hidden 3xl:block">3Xl</div>
       </div>
       <div>|</div>
       <div class="wid">wid</div>
