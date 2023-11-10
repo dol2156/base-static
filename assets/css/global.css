@@ -1716,6 +1716,13 @@ img[src=""] {
 }
 
 /**/
+.TopBetween {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+
+/**/
 .CenterBetween {
   display: flex;
   align-items: center;
@@ -1746,7 +1753,6 @@ img[src=""] {
   padding-right: var(--contents-side-padding);
 }
 .HBox > .Inner {
-  outline: 1px dashed red;
   max-width: 1217px;
   margin-left: auto;
   margin-right: auto;

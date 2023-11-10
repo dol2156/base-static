@@ -1,5 +1,16 @@
 Handlebars.logger.level = 'debug';
 
+
+Handlebars.render = (render_template_selector, render_data) => {
+  const html_str = '';
+
+  //Compile the template
+  const compiled_template = Handlebars.compile(html_str);
+
+  //Render the data into the template
+  let rendered = compiled_template(render_data);
+}
+
 /**
  * n 회 반복
  * ex)
