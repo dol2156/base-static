@@ -1,0 +1,28 @@
+<aside id="Aside" class='Aside_1'>
+  <div class='Bg'></div>
+  <div class='Body'>
+    <article class='TopRight h-full'>
+      <div class="w-[100px] h-full text-[0]" onclick="closeAsideMenu();">여백</div>
+      <div class='flex-1 bg-gray-300 h-full flex flex-col'>
+        <div class='CenterRight p-[10px] border-b-[1px] border-b-[#161616] bg-white'>
+          <button class='Btn_1' onclick="closeAsideMenu();">CLOSE</button>
+        </div>
+        <div class='flex-1 h-full overflow-auto'>
+          <ul class='p-[10px] space-y-[10px]'>
+            {{#LOOP 30}}
+              <li class=''>
+                <a href='#' target='_blank' class='CenterCenter bg-white h-[46px]'>
+                  LINK
+                  {{number}}
+                </a>
+              </li>
+            {{/LOOP}}
+          </ul>
+        </div>
+        <div class='CenterCenter p-[10px] border-t-[1px] border-t-[#161616] bg-white'>
+          © Copyrights by ㅇㅇㅇ. All Rights Reserved.
+        </div>
+      </div>
+    </article>
+  </div>
+</aside>

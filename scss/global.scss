@@ -91,8 +91,14 @@ img[src=''] {
 /**/
 .TopBetween {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   justify-content: space-between;
+}
+/**/
+.TopRight {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
 }
 /**/
 .CenterBetween {

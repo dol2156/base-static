@@ -62,6 +62,17 @@ ModalControl.init = () => {
 };
 /* // 2023-10-21 :: END :: ModalControl */
 
+/* 2023-11-10 :: START :: AsideMenu Control */
+
+function openAsideMenu() {
+  $(`#Aside`).addClass('On');
+}
+
+function closeAsideMenu() {
+  $(`#Aside`).removeClass('On');
+}
+/* // 2023-11-10 :: END :: AsideMenu Control */
+
 /**
  * 스크롤 동작이 끝나면
  * scroll_end 커스텀 이벤트 발생
