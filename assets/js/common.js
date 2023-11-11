@@ -1,4 +1,22 @@
 /* 2023-09-13 :: START :: window */
+(() => {
+  // URL 객체 생성
+  const urlObj = new URL(window.location.href);
+
+  // URLSearchParams 객체 생성
+  const params = new URLSearchParams(urlObj.search);
+
+  // 파라메터 정보를 배열로 변환 후, Object.fromEntries를 이용해 객체로 변환
+  const paramsObject = Object.fromEntries(params.entries());
+  window.params = paramsObject;
+  const c_label = 'window.params';
+  const c_label_style = 'border:1px solid black; background:skyblue; color:#333; padding:0.25em 0.5em; font-size:12px; font-weight:bold;';
+  const c_value = JSON.stringify(window.params);
+  const c_value_style = 'border:1px solid black; background:#ffffd4; color:#333; padding:0.25em 0.5em; font-size:12px; border-left:none;';
+  console.log(`%c${c_label}%c${c_value}`, c_label_style, c_value_style);
+
+})();
+
 /**
  * 짧은 uid 반환
  * @returns {string}

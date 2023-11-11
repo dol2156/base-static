@@ -53,6 +53,7 @@
   --body-min-wid: 360px; /* 웹사이트 최소 너비 */
   --contents-max-wid: 1920px; /* 컨텐츠 최대 너비 */
   --contents-side-padding: 16px; /* 컨텐츠 좌우 안쪽 여백 */
+  --real-side-padding:0px; /* JS 에서 컨트롤 중 */
   /**/
   --header-hei: 50px;
   --footer-hei: 50px;
@@ -1630,6 +1631,20 @@ strong {
 }
 ._BaseSwiper-PagenationFraction .total {
   color: yellow;
+}
+
+#ContentsRuler {
+  z-index: 999999;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  background-color: #0a7feb;
+  color: white;
+  width: 100%;
+  font-size: 10;
+  text-align: center;
+  opacity: 0.5;
 }
 
 body {

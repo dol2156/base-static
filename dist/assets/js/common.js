@@ -1,4 +1,22 @@
 /* 2023-09-13 :: START :: window */
+(() => {
+  // URL 객체 생성
+  const urlObj = new URL(window.location.href);
+
+  // URLSearchParams 객체 생성
+  const params = new URLSearchParams(urlObj.search);
+
+  // 파라메터 정보를 배열로 변환 후, Object.fromEntries를 이용해 객체로 변환
+  const paramsObject = Object.fromEntries(params.entries());
+  window.params = paramsObject;
+  const c_label = 'window.params';
+  const c_label_style = 'border:1px solid black; background:skyblue; color:#333; padding:0.25em 0.5em; font-size:12px; font-weight:bold;';
+  const c_value = JSON.stringify(window.params);
+  const c_value_style = 'border:1px solid black; background:#ffffd4; color:#333; padding:0.25em 0.5em; font-size:12px; border-left:none;';
+  console.log(`%c${c_label}%c${c_value}`, c_label_style, c_value_style);
+
+})();
+
 /**
  * 짧은 uid 반환
  * @returns {string}
@@ -13,12 +31,23 @@ window.UID = () => {
 /* // 2023-09-13 :: END :: window */
 
 /* 2023-10-24 :: START :: setCssVh */
-const setCssVh = () => {
-  document.documentElement.style.setProperty('--vh-100', `${window.innerHeight}px`);
-  document.documentElement.style.setProperty('--vh-50', `${window.innerHeight / 2}px`);
+const setCssVar = () => {
+  const el_html = document.documentElement;
+  el_html.style.setProperty('--vh-100', `${window.innerHeight}px`);
+  el_html.style.setProperty('--vh-50', `${window.innerHeight / 2}px`);
+
+  const $ruler_inner = $(`#ContentsRuler > .Inner`);
+  if ($ruler_inner.width()) {
+    const real_side_padding = ($(window).width() - $ruler_inner.width()) / 2;
+    console.log(`real_side_padding == `, real_side_padding);
+    el_html.style.setProperty('--real-side-padding', `${real_side_padding}px`);
+  }
 };
-window.addEventListener('resize', setCssVh);
-setCssVh();
+window.addEventListener('resize', setCssVar);
+setCssVar();
+window.addEventListener('DOMContentLoaded', (evt) => {
+  setCssVar();
+});
 /* // 2023-10-24 :: END :: setCssVh */
 
 /* 2023-10-21 :: START :: LayerControl */
