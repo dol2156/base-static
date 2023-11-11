@@ -13,12 +13,23 @@ window.UID = () => {
 /* // 2023-09-13 :: END :: window */
 
 /* 2023-10-24 :: START :: setCssVh */
-const setCssVh = () => {
-  document.documentElement.style.setProperty('--vh-100', `${window.innerHeight}px`);
-  document.documentElement.style.setProperty('--vh-50', `${window.innerHeight / 2}px`);
+const setCssVar = () => {
+  const el_html = document.documentElement;
+  el_html.style.setProperty('--vh-100', `${window.innerHeight}px`);
+  el_html.style.setProperty('--vh-50', `${window.innerHeight / 2}px`);
+
+  const $ruler_inner = $(`#ContentsRuler > .Inner`);
+  if ($ruler_inner.width()) {
+    const real_side_padding = ($(window).width() - $ruler_inner.width()) / 2;
+    console.log(`real_side_padding == `, real_side_padding);
+    el_html.style.setProperty('--real-side-padding', `${real_side_padding}px`);
+  }
 };
-window.addEventListener('resize', setCssVh);
-setCssVh();
+window.addEventListener('resize', setCssVar);
+setCssVar();
+window.addEventListener('DOMContentLoaded', (evt) => {
+  setCssVar();
+});
 /* // 2023-10-24 :: END :: setCssVh */
 
 /* 2023-10-21 :: START :: LayerControl */

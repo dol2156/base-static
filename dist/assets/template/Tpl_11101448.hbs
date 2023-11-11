@@ -1,0 +1,35 @@
+<ul id="Ul-c1b2f111">
+  {{#EACH DATA}}
+    <li class='border-b-[1px] border-b-[#ccc] [&:nth-child(n+7)]:hidden block [.On>&]:block'>
+      <a href='{{obj.LINK}}' target='_blank' class='block py-[16px]'>
+        <div class='TopBetween gap-[0]'>
+          <div class='flex-1'>
+            <div class='text-[#333] text-[16px] font-[700] leading-[22px] line-clamp-[2]'>
+              {{obj.TITLE}}
+            </div>
+            <div class='mt-[8px] text-[#999] text-[14px] font-[400]'>
+              2023.??.??
+            </div>
+          </div>
+          <div class='ml-[16px]'>
+            <img src='https://gifpng.com/24x24' alt='' />
+          </div>
+        </div>
+      </a>
+    </li>
+  {{/EACH}}
+</ul>
+<article class='mt-[40px] CenterCenter'>
+  <div>
+    <button id="Btn-6354378a" class='Btn_2 w-[160px]'>더보기</button>
+    <script>
+      (() => {
+        $(`#Btn-6354378a`).on(`click`, (evt) => {
+          console.log(evt);
+          $(`#Ul-c1b2f111`).addClass('On');
+          $('#Btn-6354378a').hide();
+        });
+      })()
+    </script>
+  </div>
+</article>

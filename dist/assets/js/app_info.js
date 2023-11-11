@@ -22,6 +22,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
         <div class="hidden 3xl:block">3Xl</div>
       </div>
       <div>|</div>
+      <div>
+        <div class="pc:hidden">MO</div>
+        <div class="hidden pc:block">PC</div>
+      </div>
+      <div>|</div>
       <div class="wid">wid</div>
       <div>x</div>
       <div class="hei">hei</div>
