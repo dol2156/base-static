@@ -2107,4 +2107,16 @@ img[src=""] {
   user-select: none;
 }
 
+/**/
+.TabChildList > .TabChild {
+  z-index: 10;
+  position: fixed;
+  top: -200vh;
+  width: 100%;
+}
+.TabChildList > .TabChild.On {
+  position: relative;
+  top: 0vh;
+}
+
 /*# sourceMappingURL=global.css.map */

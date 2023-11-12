@@ -1,8 +1,16 @@
 <div class='TabBar_1'>
-  {{#EACH (ARR '1|2|3')}}
-    <button class='{{ON 0}}'>
-      <img class='hidden [.On>&]:block' src='/assets/icon/new.svg' alt=''/>
-      {{obj}}
+  {{#LOOP 3}}
+    <button class='TabButton {{ON 0}}'>
+      <img class='hidden [.On>&]:block' src='/assets/icon/new.svg' alt='' />
+      {{number}}
     </button>
-  {{/EACH}}
+  {{/LOOP}}
+  <img onerror="initTabChildControl(this, '665c3725')" src=""/>
+</div>
+<div class="TabChildList" data-id="665c3725">
+  {{#LOOP 3}}
+    <div class="TabChild {{ON 0}}">
+      TabChild {{number}}
+    </div>
+  {{/LOOP}}
 </div>

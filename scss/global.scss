@@ -488,3 +488,17 @@ img[src=''] {
   cursor: pointer;
   user-select: none;
 }
+/**/
+.TabChildList {
+  > .TabChild {
+    z-index: 10;
+    position: fixed;
+    top: -200vh;
+    width:100%;
+    
+    &.On{
+      position:relative;
+      top: 0vh;
+    }
+  }
+}

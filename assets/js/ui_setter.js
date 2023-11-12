@@ -396,3 +396,28 @@ class useOutsideClick {
     document.removeEventListener('mouseup', this.handleClickOutside);
   };
 }
+
+/**
+ *
+ * @param trigger
+ * @param tab_child_list_id
+ */
+const initTabChildControl = (trigger, tab_child_list_id) => {
+  if (typeof trigger === 'undefined') return;
+  const el_target = trigger.parentElement;
+  const $target = $(el_target);
+  const $tab_btn = $target.find('.TabButton');
+  $tab_btn.on(`click`, (evt) => {
+    const $ct = $(evt.currentTarget);
+    const $tab_btns = $ct.parent().find('> .TabButton');
+    const idx = $tab_btns.index($ct);
+    $tab_btns.removeClass('On');
+    $tab_btns.eq(idx).addClass('On');
+    
+    const $tab_child_list = $(`.TabChildList[data-id='${tab_child_list_id}']`);
+    const $tab_childs = $tab_child_list.find('> .TabChild');
+    $tab_childs.removeClass('On');
+    $tab_childs.eq(idx).addClass('On');
+    
+  });
+}
