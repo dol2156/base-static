@@ -39,7 +39,6 @@ const setCssVar = () => {
   const $ruler_inner = $(`#ContentsRuler > .Inner`);
   if ($ruler_inner.width()) {
     const real_side_padding = ($(window).width() - $ruler_inner.width()) / 2;
-    console.log(`real_side_padding == `, real_side_padding);
     el_html.style.setProperty('--real-side-padding', `${real_side_padding}px`);
   }
 };

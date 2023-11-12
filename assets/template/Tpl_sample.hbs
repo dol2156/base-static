@@ -1,0 +1,13 @@
+<div class='Tpl_sample p-[10px] bg-amber-200'>
+  <div>assets/template/Tpl_sample.hbs</div>
+  <ul>
+    {{log '🔴 Tpl_sample.hbs : 3 ==> ' this}}
+    {{#EACH this}}
+      <li class='border-b-[1px] border-b-[#161616]'>
+        <div>제목 : {{obj.제목}}</div>
+        <div>설명 : {{obj.설명}}</div>
+        <div>이미지 : <img src="{{obj.이미지}}" alt=""/></div>
+      </li>
+    {{/EACH}}
+  </ul>
+</div>

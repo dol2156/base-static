@@ -1,6 +1,10 @@
 <div id='Page'>
   {{> layout/Header_1-a}}
   <main>
+    <div id="Tpl_sample"></div>
+    <script>
+      Handlebars.xlsxToHTML('Sample', 'Tpl_sample');
+    </script>
     <br/>
     <br/>
     <br/>
@@ -8,7 +12,7 @@
       <div class="Inner">
         <div id="Tpl_11101448"></div>
         <script>
-          Handlebars.renderByJson(`/assets/json/new_list.json`, `Tpl_11101448`);
+          Handlebars.jsonToHTML(`news_list`, `Tpl_11101448`);
         </script>
       </div>
     </section>

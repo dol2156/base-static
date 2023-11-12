@@ -1,63 +1,5 @@
 Handlebars.logger.level = 'debug';
 
-Handlebars.renderByJson = (json_path, tpl_id) => {
-  let render_data = {};
-  
-  $.ajax({
-    url: json_path,
-    method: 'GET',
-    dataType: 'json',
-    cache: false,
-    async: true,
-    timeout: 60 * 1000,
-    success: function (response, status, xhr) {
-      //console.log("AJAX success : " + url);
-      render_data = response;
-
-      $.ajax({
-        url: `/assets/template/${tpl_id}.hbs`,
-        method: 'GET',
-        dataType: 'html',
-        cache: false,
-        async: true,
-        timeout: 60 * 1000,
-        success: function (response, status, xhr) {
-          //console.log("AJAX success : " + url);
-          if(response) render(response);
-        },
-        error: function (jqXHR, textStatus, errorThrown) {
-          console.log('AJAX error : ' + url);
-          console.log('status : ' + jqXHR.status);
-          console.log('textStatus : ' + textStatus);
-        },
-        complete: function (jqXHR, textStatus) {
-          //console.log("AJAX complete : " + url);
-        },
-      });
-      
-    },
-    error: function (jqXHR, textStatus, errorThrown) {
-      console.log('AJAX error : ' + json_path);
-      console.log('status : ' + jqXHR.status);
-      console.log('textStatus : ' + textStatus);
-    },
-    complete: function (jqXHR, textStatus) {
-      //console.log("AJAX complete : " + url);
-    },
-  });
-
-  function render(tpl_str) {
-    //Compile the template
-    const compiled_template = Handlebars.compile(tpl_str);
-
-    //Render the data into the template
-    let rendered = compiled_template(render_data);
-    rendered = `<!-- ${tpl_id} :: START ::  -->` + rendered + `<!-- // ${tpl_id} :: END ::  -->`;
-    
-    $(`#${tpl_id}`).replaceWith(rendered);
-  }
-};
-
 /**
  * n 회 반복
  * ex)
@@ -80,7 +22,6 @@ Handlebars.registerHelper('LOOP', function (n, block) {
  * {{/EACH}}
  */
 Handlebars.registerHelper('EACH', function (data_list, options) {
-  
   let accum = '';
   if (arguments.length > 1 && data_list) {
     data_list.forEach((obj, idx) => {
@@ -356,3 +297,145 @@ Handlebars.registerHelper('AND', function (var_list_str, options) {
     return options.inverse(this);
   }
 });
+
+/**
+ * Handlebars.xlsxToHTML('Sample', 'Tpl_sample');
+ * @param xlsx_file_name
+ * @param template_file_name
+ */
+Handlebars.xlsxToHTML = (xlsx_file_name, template_file_name) => {
+  const xlsx_path = `/assets/xlsx/${xlsx_file_name}.xlsx`;
+  
+  Handlebars.xlsxToJSON(xlsx_path, (res) => {
+    Handlebars.templateToHTML(template_file_name, res);
+  });
+};
+
+/**
+ * Handlebars.jsonToHTML(`news_list`, `Tpl_11101448`);
+ * @param json_file_name
+ * @param template_file_name
+ */
+Handlebars.jsonToHTML = (json_file_name, template_file_name) => {
+  const json_path = `assets/json/${json_file_name}.json`;
+  
+  var url = json_path;
+  
+  $.ajax({
+      url: url,
+      method:"GET",
+      dataType:"json",
+      cache: false,
+      async:true,
+      timeout:60*1000
+      , success : function (response, status, xhr) {
+          //console.log("AJAX success : " + url);
+          Handlebars.templateToHTML(template_file_name, response);
+      }, error : function (jqXHR, textStatus, errorThrown) {
+          console.log("AJAX error : " + url);
+          console.log("status : " + jqXHR.status);
+          console.log("textStatus : " + textStatus);
+      }, complete : function (jqXHR, textStatus) {
+          //console.log("AJAX complete : " + url);
+      }
+  });
+}
+
+/**
+ * 비동기 xlsx 로드 후 JSON 반환
+ * Handlebars.xlsxToJSON('/assets/xlsx/Sample.xlsx', (res) => {
+ *   console.log(`res == `, res);
+ * });
+ * @param fileUrl
+ * @param callback
+ */
+Handlebars.xlsxToJSON = function (fileUrl, callback) {
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', fileUrl, true);
+  xhr.responseType = 'arraybuffer';
+
+  xhr.onload = function (e) {
+    var arraybuffer = xhr.response;
+    var data = new Uint8Array(arraybuffer);
+    var workbook = XLSX.read(data, { type: 'array' });
+    var worksheet = workbook.Sheets[workbook.SheetNames[0]];
+    var json = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+
+    // json 가공
+    // 첫번째 row 를 기준으로 비어있는 값에 null 값을 넣어준다.
+    var first_row_data = json[0];
+    var col_len = first_row_data.length;
+
+    json.forEach((obj, idx) => {
+      let i = 0;
+      while (i < col_len) {
+        if (obj[i]) {
+          // console.log(obj[i]);
+        } else {
+          obj[i] = null;
+        }
+        ++i;
+      }
+    });
+
+    let result_array = [];
+    // index 값 기반을 첫번째 row 의 값 기준 데이터로 변환
+    json.forEach((obj, idx) => {
+      const new_obj = {};
+      if (idx != 0) {
+        // console.log(first_row_data);
+        obj.forEach((obj2, idx2) => {
+          new_obj[first_row_data[idx2]] = obj2;
+          //console.log(obj2);
+        });
+
+        result_array.push(new_obj);
+      }
+    });
+
+    callback(result_array);
+  };
+
+  xhr.send();
+};
+
+/**
+ * 동기 방식 /assets/template 폴더의 템플릿 로드하여 컴파일 후 렌더링
+ * Handlebars.xlsxToJSON(xlsx_path, (res) => {
+ *   Handlebars.templateToHTML(template_file_name, res);
+ * });
+ * @param template_file_name
+ * @param render_data
+ */
+Handlebars.templateToHTML = (template_file_name, render_data) => {
+  const template_path = `/assets/template/${template_file_name}.hbs`;
+  
+  $.ajax({
+    url: template_path,
+    method: 'GET',
+    dataType: 'html',
+    cache: false,
+    async: false,
+    timeout: 60 * 1000,
+    success: function (response, status, xhr) {
+      //console.log("AJAX success : " + url);
+
+      //Compile the template
+      const compiled_template = Handlebars.compile(response);
+
+      //Render the data into the template
+      let rendered = compiled_template(render_data);
+      rendered = `<!-- ${template_file_name} :: START ::  -->` + rendered + `<!-- // ${template_file_name} :: END ::  -->`;
+
+      $(`#${template_file_name}`).replaceWith(rendered);
+    },
+    error: function (jqXHR, textStatus, errorThrown) {
+      console.log('AJAX error : ' + url);
+      console.log('status : ' + jqXHR.status);
+      console.log('textStatus : ' + textStatus);
+    },
+    complete: function (jqXHR, textStatus) {
+      //console.log("AJAX complete : " + url);
+    },
+  });
+};
