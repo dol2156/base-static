@@ -1,3 +1,4 @@
+@import 'var_scss.scss';
 /**
  * 마우스 인터렉션 상태에 따라 아이콘을 변경하는 버튼에 포함되는 믹스인
  */
@@ -67,17 +68,26 @@
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
+  /* $PcMinWid 이상 화면*/
+  @media screen and (min-width: $PcMinWid) {
+    height: 60px;
+    font-size: 20px;
+  }
 }
 /**/
 .Btn_2 {
-  height:46px;
-  padding:0 28px;
+  height: 46px;
+  padding: 0 28px;
   border-radius: 8px;
   background-color: white;
   border: 1px solid var(--gray-gray-9, #333);
   color: #111;
   text-align: center;
-
   font-size: 16px;
   font-weight: 700;
+  /* $PcMinWid 이상 화면*/
+  @media screen and (min-width: $PcMinWid) {
+    height: 60px;
+    font-size: 20px;
+  }
 }

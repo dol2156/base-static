@@ -115,8 +115,8 @@
 /* 모바일 터치시 영역 색상  */
 /*:root{-webkit-tap-highlight-color:transparent;}*/
 /* 스크롤바 */
-/* 1280px 이상 화면*/
-@media screen and (min-width: 1280px) {
+/* $PcMinWid 이상 화면*/
+@media screen and (min-width: 769px) {
   .CustomScrollBar::-webkit-scrollbar {
     width: 4px;
     height: 4px;
@@ -672,6 +672,13 @@ strong {
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
+  /* $PcMinWid 이상 화면*/
+}
+@media screen and (min-width: 769px) {
+  .Btn_1 {
+    height: 60px;
+    font-size: 20px;
+  }
 }
 
 /**/
@@ -685,6 +692,13 @@ strong {
   text-align: center;
   font-size: 16px;
   font-weight: 700;
+  /* $PcMinWid 이상 화면*/
+}
+@media screen and (min-width: 769px) {
+  .Btn_2 {
+    height: 60px;
+    font-size: 20px;
+  }
 }
 
 /**/
@@ -1775,18 +1789,9 @@ img[src=""] {
   padding-right: var(--contents-side-padding);
 }
 .HBox > .Inner {
-  max-width: 1217px;
+  max-width: var(--contents-max-wid);
   margin-left: auto;
   margin-right: auto;
-}
-
-/**/
-img.LoadingBg {
-  background-color: #f5f5f5;
-  background-image: url(/loading/Spin-1s-200px.svg);
-  background-size: 30px;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 /**/

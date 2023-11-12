@@ -1,3 +1,4 @@
+@import 'var_scss.scss';
 html {
   background: linear-gradient(-45deg, #ee7752, #fff980, #23a6d5, #23d5ab);
   background-size: 400% 400%;
@@ -38,10 +39,6 @@ html {
 
   li {
     padding: 5px 10px;
-    
-    & + li {
-      margin-top: 4px;
-    }
   }
 
   > ul {
@@ -49,8 +46,8 @@ html {
     gap: 10px;
     grid-template-columns: repeat(1, minmax(0, 1fr));
 
-    /* 1280px 이상 화면*/
-    @media screen and (min-width: 1280px) {
+    /* $PcMinWid 이상 화면*/
+    @media screen and (min-width: $PcMinWid) {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 

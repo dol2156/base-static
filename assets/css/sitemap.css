@@ -37,16 +37,13 @@ html {
 #Sitemap li {
   padding: 5px 10px;
 }
-#Sitemap li + li {
-  margin-top: 4px;
-}
 #Sitemap > ul {
   display: grid;
   gap: 10px;
   grid-template-columns: repeat(1, minmax(0, 1fr));
-  /* 1280px 이상 화면*/
+  /* $PcMinWid 이상 화면*/
 }
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 769px) {
   #Sitemap > ul {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
