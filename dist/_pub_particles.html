@@ -1,4 +1,4 @@
-<html lang='ko' data-env='production'>
+<html lang='ko' data-env='development'>
 
 <head>
     <meta charset='UTF-8' />
@@ -13,11 +13,12 @@
     <link rel='icon' type='image/png' sizes='512x512' href='/assets/favicon/favicon-512x512.png' />
     <link rel='icon' href='/assets/favicon/favicon.ico' />
     <!-- Core Library -->
+    <script src='/assets/lib/jquery-3.7.1.min.js'></script>
+    <script src="/assets/lib/xlsx.full.min.js"></script>
     <script src='/assets/lib/ua-parser.min.js'></script>
     <link href='/assets/lib/fontawesome-free-6.4.2-web/css/all.css' rel='stylesheet' />
     <script src='/assets/lib/tailwindcss_3.3.3.min.js'></script>
     <script src='/assets/lib/tailwindcss.config.js'></script>
-    <script src='/assets/lib/jquery-3.7.1.min.js'></script>
     <script src='/assets/lib/handlebars.js'></script>
     <script src='/assets/lib/handlebars_helper.js'></script>
     <!-- Custom Setting -->
@@ -43,6 +44,9 @@
 </head>
 
 <body>
+    <div id="ContentsRuler" class="HBox">
+        <div class="RR Inner">컨텐츠 너비 줄자</div>
+    </div>
     <div id='Modal'></div>
     <div id='Page'>
         <main>
@@ -56,7 +60,7 @@
                     margin-right: auto;
                 }
             </style>
-            <div class='H1 Sticky Top'>Particles.js Guide</div>
+            <h1 class='H1 Sticky Top'>Particles.js Guide</h1>
             <section>
                 <div id='particles-js'></div>
             </section>

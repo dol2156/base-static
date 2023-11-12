@@ -1,4 +1,4 @@
-<html lang='ko' data-env='production'>
+<html lang='ko' data-env='development'>
 
 <head>
     <meta charset='UTF-8' />
@@ -13,11 +13,12 @@
     <link rel='icon' type='image/png' sizes='512x512' href='/assets/favicon/favicon-512x512.png' />
     <link rel='icon' href='/assets/favicon/favicon.ico' />
     <!-- Core Library -->
+    <script src='/assets/lib/jquery-3.7.1.min.js'></script>
+    <script src="/assets/lib/xlsx.full.min.js"></script>
     <script src='/assets/lib/ua-parser.min.js'></script>
     <link href='/assets/lib/fontawesome-free-6.4.2-web/css/all.css' rel='stylesheet' />
     <script src='/assets/lib/tailwindcss_3.3.3.min.js'></script>
     <script src='/assets/lib/tailwindcss.config.js'></script>
-    <script src='/assets/lib/jquery-3.7.1.min.js'></script>
     <script src='/assets/lib/handlebars.js'></script>
     <script src='/assets/lib/handlebars_helper.js'></script>
     <!-- Custom Setting -->
@@ -43,13 +44,16 @@
 </head>
 
 <body>
+    <div id="ContentsRuler" class="HBox">
+        <div class="RR Inner">컨텐츠 너비 줄자</div>
+    </div>
     <div id='Modal'></div>
     <div id='Page'>
         <main>
             <link href='/assets/css/_pub.css' rel='stylesheet' />
-            <div class='H1 Sticky Top'>Text Input</div>
+            <h1 class='H1 Sticky Top'>Text Input</h1>
             <section>
-                <div class='H2'>text_input/TextInput_1</div>
+                <h2 class='H2'>text_input/TextInput_1</h2>
                 <div class='SampleList'>
                     <div>
                         <label for='inp-7a4ef7ba' class='FormLabel_1'>Basic</label>
@@ -105,7 +109,7 @@
                 </div>
             </section>
             <section>
-                <div class='H2'>text_input/TextInput_2</div>
+                <h2 class='H2'>text_input/TextInput_2</h2>
                 <div class='SampleList'>
                     <div>
                         <label for='inp-7a4ef7ba' class='FormLabel_1'>Basic</label>
@@ -161,7 +165,7 @@
                 </div>
             </section>
             <section>
-                <div class='H2'>text_input/Textarea_1</div>
+                <h2 class='H2'>text_input/Textarea_1</h2>
                 <textarea class='Textarea_1' placeholder='placeholder'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</textarea>
             </section>
         </main>

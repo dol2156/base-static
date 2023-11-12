@@ -1,4 +1,4 @@
-<html lang='ko' data-env='production'>
+<html lang='ko' data-env='development'>
 
 <head>
     <meta charset='UTF-8' />
@@ -13,11 +13,12 @@
     <link rel='icon' type='image/png' sizes='512x512' href='/assets/favicon/favicon-512x512.png' />
     <link rel='icon' href='/assets/favicon/favicon.ico' />
     <!-- Core Library -->
+    <script src='/assets/lib/jquery-3.7.1.min.js'></script>
+    <script src="/assets/lib/xlsx.full.min.js"></script>
     <script src='/assets/lib/ua-parser.min.js'></script>
     <link href='/assets/lib/fontawesome-free-6.4.2-web/css/all.css' rel='stylesheet' />
     <script src='/assets/lib/tailwindcss_3.3.3.min.js'></script>
     <script src='/assets/lib/tailwindcss.config.js'></script>
-    <script src='/assets/lib/jquery-3.7.1.min.js'></script>
     <script src='/assets/lib/handlebars.js'></script>
     <script src='/assets/lib/handlebars_helper.js'></script>
     <!-- Custom Setting -->
@@ -43,6 +44,9 @@
 </head>
 
 <body>
+    <div id="ContentsRuler" class="HBox">
+        <div class="RR Inner">컨텐츠 너비 줄자</div>
+    </div>
     <div id='Modal'></div>
     <div id='Page'>
 
@@ -57,9 +61,9 @@
             }
         </style>
         <main>
-            <div class='H1'>flatpickr</div>
+            <h1 class='H1'>flatpickr</h1>
             <section>
-                <div class='H2'>Basic</div>
+                <h2 class='H2'>Basic</h2>
                 <input id='inp-d3267227' type='text' />
                 <script>
                     (() => {
@@ -69,7 +73,7 @@
                 </script>
             </section>
             <section>
-                <div class='H2'>DateTime</div>
+                <h2 class='H2'>DateTime</h2>
                 <input id='inp-1e8273f6' type='text' />
                 <script>
                     (() => {
@@ -82,7 +86,7 @@
                 </script>
             </section>
             <section>
-                <div class='H2'>Human-friendly Dates</div>
+                <h2 class='H2'>Human-friendly Dates</h2>
                 <input id='inp-f30fefc3' type='text' />
                 <script>
                     (() => {
@@ -96,8 +100,8 @@
                 </script>
             </section>
             <section>
-                <div class='H2'>minDate and maxDate</div>
-                <div class='H3'>minDate: "2020-01"</div>
+                <h2 class='H2'>minDate and maxDate</h2>
+                <h3 class='H3'>minDate: "2020-01"</h3>
                 <input id='inp-281b306e' type='text' />
                 <script>
                     (() => {
@@ -109,7 +113,7 @@
                 </script>
             </section>
             <section>
-                <div class='H3'>maxDate: "2023-10-30"</div>
+                <h3 class='H3'>maxDate: "2023-10-30"</h3>
                 <input id='inp-3b82801d' type='text' />
                 <script>
                     (() => {
@@ -121,7 +125,7 @@
                 </script>
             </section>
             <section>
-                <div class='H3'>minDate: "today", maxDate: new Date().fp_incr(14)</div>
+                <h3 class='H3'>minDate: "today", maxDate: new Date().fp_incr(14)</h3>
                 <input id='inp-4f911bf1' type='text' />
                 <script>
                     (() => {
@@ -134,8 +138,8 @@
                 </script>
             </section>
             <section>
-                <div class='H2'>Disabling dates</div>
-                <div class='H3'>Disabling specific date</div>
+                <h2 class='H2'>Disabling dates</h2>
+                <h3 class='H3'>Disabling specific date</h3>
                 <input id='inp-ac59b422' type='text' />
                 <script>
                     (() => {
@@ -147,7 +151,7 @@
                 </script>
             </section>
             <section>
-                <div class='H3'>Disabling a date range</div>
+                <h3 class='H3'>Disabling a date range</h3>
                 <input id='inp-a1dda77c' type='text' />
                 <script>
                     (() => {
@@ -167,7 +171,7 @@
                 </script>
             </section>
             <section>
-                <div class='H3'>Disabling dates by a function</div>
+                <h3 class='H3'>Disabling dates by a function</h3>
                 <input id='inp-89400eb6' type='text' />
                 <script>
                     (() => {
@@ -185,8 +189,8 @@
                 </script>
             </section>
             <section>
-                <div class='H2'>Disabling all dates except select few</div>
-                <div class='H3'>Enabling specific dates</div>
+                <h2 class='H2'>Disabling all dates except select few</h2>
+                <h3 class='H3'>Enabling specific dates</h3>
                 <input id='inp-9896141f' type='text' />
                 <script>
                     (() => {
@@ -198,7 +202,7 @@
                 </script>
             </section>
             <section>
-                <div class='H3'>Enabling range(s) of dates</div>
+                <h3 class='H3'>Enabling range(s) of dates</h3>
                 <input id='inp-3bad034d' type='text' />
                 <script>
                     (() => {
@@ -218,7 +222,7 @@
                 </script>
             </section>
             <section>
-                <div class='H3'>Enabling dates by a function</div>
+                <h3 class='H3'>Enabling dates by a function</h3>
                 <input id='inp-6b053fdc' type='text' />
                 <script>
                     (() => {
@@ -235,7 +239,7 @@
                 </script>
             </section>
             <section>
-                <div class='H2'>Selecting multiple dates</div>
+                <h2 class='H2'>Selecting multiple dates</h2>
                 <input id='inp-c2129d34' type='text' />
                 <script>
                     (() => {
@@ -247,7 +251,7 @@
                 </script>
             </section>
             <section>
-                <div class='H3'>Preloading multiple dates</div>
+                <h3 class='H3'>Preloading multiple dates</h3>
                 <input id='inp-8f821bab' type='text' />
                 <script>
                     (() => {
@@ -260,7 +264,7 @@
                 </script>
             </section>
             <section>
-                <div class='H3'>Customizing the Conjunction</div>
+                <h3 class='H3'>Customizing the Conjunction</h3>
                 <input id='inp-df77d710' type='text' />
                 <script>
                     (() => {
@@ -273,7 +277,7 @@
                 </script>
             </section>
             <section>
-                <div class='H2'>Range Calendar</div>
+                <h2 class='H2'>Range Calendar</h2>
                 <input id='inp-26341835' type='text' />
                 <script>
                     (() => {
@@ -285,7 +289,7 @@
                 </script>
             </section>
             <section>
-                <div class='H3'>Preloading range dates</div>
+                <h3 class='H3'>Preloading range dates</h3>
                 <input id='inp-1e992f88' type='text' />
                 <script>
                     (() => {
@@ -299,7 +303,7 @@
                 </script>
             </section>
             <section>
-                <div class='H2'>Time Picker</div>
+                <h2 class='H2'>Time Picker</h2>
                 <input id='inp-9193ca72' type='text' />
                 <script>
                     (() => {
@@ -313,7 +317,7 @@
                 </script>
             </section>
             <section>
-                <div class='H3'>24-hour Time Picker</div>
+                <h3 class='H3'>24-hour Time Picker</h3>
                 <input id='inp-4fe994f9' type='text' />
                 <script>
                     (() => {
@@ -328,7 +332,7 @@
                 </script>
             </section>
             <section>
-                <div class='H3'>Preloading Time</div>
+                <h3 class='H3'>Preloading Time</h3>
                 <input id='inp-06c290be' type='text' />
                 <script>
                     (() => {
@@ -343,7 +347,7 @@
                 </script>
             </section>
             <section>
-                <div class='H2'>DateTimePicker with Limited Time Range</div>
+                <h2 class='H2'>DateTimePicker with Limited Time Range</h2>
                 <input id='inp-888a1da5' type='text' />
                 <script>
                     (() => {
@@ -369,7 +373,7 @@
                 </script>
             </section>
             <section>
-                <div class='H2'>Inline Calendar</div>
+                <h2 class='H2'>Inline Calendar</h2>
                 <input id='inp-cbdb3ce9' type='text' />
                 <script>
                     (() => {
@@ -381,7 +385,7 @@
                 </script>
             </section>
             <section>
-                <div class='H2'>Display Week Numbers</div>
+                <h2 class='H2'>Display Week Numbers</h2>
                 <input id='inp-4dfc92f5' type='text' />
                 <script>
                     (() => {
@@ -393,7 +397,7 @@
                 </script>
             </section>
             <section>
-                <div class='H2'>flatpickr + external elements</div>
+                <h2 class='H2'>flatpickr + external elements</h2>
                 <div id='inp-e30365c0' class='flatpickr'>
                     <article class='CenterLeft'>
                         <input type='text' data-input />
@@ -415,7 +419,7 @@
                 </script>
             </section>
             <section>
-                <div class='H2'>Mobile Support</div>
+                <h2 class='H2'>Mobile Support</h2>
                 <input id='inp-0986dc57' type='text' />
                 <script>
                     (() => {

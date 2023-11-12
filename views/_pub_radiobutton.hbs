@@ -1,10 +1,10 @@
 <div id='Page'>
   <main>
     <link href='/assets/css/_pub.css' rel='stylesheet' />
-    <div class='H1 Sticky Top'>Radio Button</div>
+    <h1 class='H1 Sticky Top'>Radio Button</h1>
     {{#EACH HBS_DATA.radiobutton}}
       <section>
-        <div class='H2'>{{obj.partial}}</div>
+        <h2 class='H2'>{{obj.partial}}</h2>
         {{> (lookup obj 'partial')}}
       </section>
     {{/EACH}}

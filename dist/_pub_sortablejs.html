@@ -1,4 +1,4 @@
-<html lang='ko' data-env='production'>
+<html lang='ko' data-env='development'>
 
 <head>
     <meta charset='UTF-8' />
@@ -13,11 +13,12 @@
     <link rel='icon' type='image/png' sizes='512x512' href='/assets/favicon/favicon-512x512.png' />
     <link rel='icon' href='/assets/favicon/favicon.ico' />
     <!-- Core Library -->
+    <script src='/assets/lib/jquery-3.7.1.min.js'></script>
+    <script src="/assets/lib/xlsx.full.min.js"></script>
     <script src='/assets/lib/ua-parser.min.js'></script>
     <link href='/assets/lib/fontawesome-free-6.4.2-web/css/all.css' rel='stylesheet' />
     <script src='/assets/lib/tailwindcss_3.3.3.min.js'></script>
     <script src='/assets/lib/tailwindcss.config.js'></script>
-    <script src='/assets/lib/jquery-3.7.1.min.js'></script>
     <script src='/assets/lib/handlebars.js'></script>
     <script src='/assets/lib/handlebars_helper.js'></script>
     <!-- Custom Setting -->
@@ -43,6 +44,9 @@
 </head>
 
 <body>
+    <div id="ContentsRuler" class="HBox">
+        <div class="RR Inner">컨텐츠 너비 줄자</div>
+    </div>
     <div id='Modal'></div>
     <div id='Page'>
         <link href='/assets/css/_pub.css' rel='stylesheet' />
@@ -114,10 +118,10 @@
             }
         </style>
         <main>
-            <div class='H1'>SortableJS</div>
-            <div class='H2'>Features</div>
+            <h1 class='H1'>SortableJS</h1>
+            <h2 class='H2'>Features</h2>
             <section>
-                <div class='H3'>Simple list example</div>
+                <h3 class='H3'>Simple list example</h3>
                 <ul id='list-c516b09c' class='SampleList_2'>
                     <li>Item 1</li>
                     <li>Item 2</li>
@@ -135,7 +139,7 @@
                 </script>
             </section>
             <section>
-                <div class='H3'>Shared lists</div>
+                <h3 class='H3'>Shared lists</h3>
                 <article class='CenterBetween'>
                     <div class='flex-1'>
                         <ul id='list-dc8c8168' class='SampleList_2'>
@@ -176,7 +180,7 @@
                 </article>
             </section>
             <section>
-                <div class='H3'>Cloning</div>
+                <h3 class='H3'>Cloning</h3>
                 <article class='CenterBetween'>
                     <div class='flex-1'>
                         <ul id='list-324b3f62' class='SampleList_2'>
@@ -223,7 +227,7 @@
                 </article>
             </section>
             <section>
-                <div class='H3'>Disabling Sorting</div>
+                <h3 class='H3'>Disabling Sorting</h3>
                 <article class='CenterBetween'>
                     <div class='flex-1'>
                         <ul id='list-04469545' class='SampleList_2'>
@@ -271,7 +275,7 @@
                 </article>
             </section>
             <section>
-                <div class='H3'>Handle</div>
+                <h3 class='H3'>Handle</h3>
                 <ul id='list-1f650ca9' class='SampleList_2'>
                     <li>
                         <img class='my-handle' src='/assets/icon/star.svg' alt='' />
@@ -305,7 +309,7 @@
                 </script>
             </section>
             <section>
-                <div class='H3'>Filter</div>
+                <h3 class='H3'>Filter</h3>
                 <ul id='list-3de18208q' class='SampleList_2'>
                     <li>
                         Item
@@ -338,7 +342,7 @@
                 </script>
             </section>
             <section>
-                <div class='H3'>Grid Example</div>
+                <h3 class='H3'>Grid Example</h3>
                 <div id='list-2d58ffb2' class='GridDemo'>
                     <div class='GridSquare'>Item 1</div>
                     <div class='GridSquare'>Item 2</div>

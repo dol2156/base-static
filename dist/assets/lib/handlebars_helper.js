@@ -1,69 +1,6 @@
 Handlebars.logger.level = 'debug';
 
 /**
- *
- * @param json_path
- * @param tpl_id
- */
-Handlebars.renderByJson = (json_path, tpl_id) => {
-  let render_data = {};
-  
-  $.ajax({
-    url: json_path,
-    method: 'GET',
-    dataType: 'json',
-    cache: false,
-    async: true,
-    timeout: 60 * 1000,
-    success: function (response, status, xhr) {
-      //console.log("AJAX success : " + url);
-      render_data = response;
-
-      $.ajax({
-        url: `/assets/template/${tpl_id}.hbs`,
-        method: 'GET',
-        dataType: 'html',
-        cache: false,
-        async: true,
-        timeout: 60 * 1000,
-        success: function (response, status, xhr) {
-          //console.log("AJAX success : " + url);
-          if(response) render(response);
-        },
-        error: function (jqXHR, textStatus, errorThrown) {
-          console.log('AJAX error : ' + url);
-          console.log('status : ' + jqXHR.status);
-          console.log('textStatus : ' + textStatus);
-        },
-        complete: function (jqXHR, textStatus) {
-          //console.log("AJAX complete : " + url);
-        },
-      });
-      
-    },
-    error: function (jqXHR, textStatus, errorThrown) {
-      console.log('AJAX error : ' + json_path);
-      console.log('status : ' + jqXHR.status);
-      console.log('textStatus : ' + textStatus);
-    },
-    complete: function (jqXHR, textStatus) {
-      //console.log("AJAX complete : " + url);
-    },
-  });
-
-  function render(tpl_str) {
-    //Compile the template
-    const compiled_template = Handlebars.compile(tpl_str);
-
-    //Render the data into the template
-    let rendered = compiled_template(render_data);
-    rendered = `<!-- ${tpl_id} :: START ::  -->` + rendered + `<!-- // ${tpl_id} :: END ::  -->`;
-    
-    $(`#${tpl_id}`).replaceWith(rendered);
-  }
-};
-
-/**
  * n 회 반복
  * ex)
  * {{#LOOP 10}}
@@ -85,7 +22,6 @@ Handlebars.registerHelper('LOOP', function (n, block) {
  * {{/EACH}}
  */
 Handlebars.registerHelper('EACH', function (data_list, options) {
-  
   let accum = '';
   if (arguments.length > 1 && data_list) {
     data_list.forEach((obj, idx) => {
@@ -363,7 +299,53 @@ Handlebars.registerHelper('AND', function (var_list_str, options) {
 });
 
 /**
+ * Handlebars.xlsxToHTML('Sample', 'Tpl_sample');
+ * @param xlsx_file_name
+ * @param template_file_name
+ */
+Handlebars.xlsxToHTML = (xlsx_file_name, template_file_name) => {
+  const xlsx_path = `/assets/xlsx/${xlsx_file_name}.xlsx`;
+  
+  Handlebars.xlsxToJSON(xlsx_path, (res) => {
+    Handlebars.templateToHTML(template_file_name, res);
+  });
+};
+
+/**
+ * Handlebars.jsonToHTML(`news_list`, `Tpl_11101448`);
+ * @param json_file_name
+ * @param template_file_name
+ */
+Handlebars.jsonToHTML = (json_file_name, template_file_name) => {
+  const json_path = `assets/json/${json_file_name}.json`;
+  
+  var url = json_path;
+  
+  $.ajax({
+      url: url,
+      method:"GET",
+      dataType:"json",
+      cache: false,
+      async:true,
+      timeout:60*1000
+      , success : function (response, status, xhr) {
+          //console.log("AJAX success : " + url);
+          Handlebars.templateToHTML(template_file_name, response);
+      }, error : function (jqXHR, textStatus, errorThrown) {
+          console.log("AJAX error : " + url);
+          console.log("status : " + jqXHR.status);
+          console.log("textStatus : " + textStatus);
+      }, complete : function (jqXHR, textStatus) {
+          //console.log("AJAX complete : " + url);
+      }
+  });
+}
+
+/**
  * 비동기 xlsx 로드 후 JSON 반환
+ * Handlebars.xlsxToJSON('/assets/xlsx/Sample.xlsx', (res) => {
+ *   console.log(`res == `, res);
+ * });
  * @param fileUrl
  * @param callback
  */
@@ -415,4 +397,45 @@ Handlebars.xlsxToJSON = function (fileUrl, callback) {
   };
 
   xhr.send();
+};
+
+/**
+ * 동기 방식 /assets/template 폴더의 템플릿 로드하여 컴파일 후 렌더링
+ * Handlebars.xlsxToJSON(xlsx_path, (res) => {
+ *   Handlebars.templateToHTML(template_file_name, res);
+ * });
+ * @param template_file_name
+ * @param render_data
+ */
+Handlebars.templateToHTML = (template_file_name, render_data) => {
+  const template_path = `/assets/template/${template_file_name}.hbs`;
+  
+  $.ajax({
+    url: template_path,
+    method: 'GET',
+    dataType: 'html',
+    cache: false,
+    async: false,
+    timeout: 60 * 1000,
+    success: function (response, status, xhr) {
+      //console.log("AJAX success : " + url);
+
+      //Compile the template
+      const compiled_template = Handlebars.compile(response);
+
+      //Render the data into the template
+      let rendered = compiled_template(render_data);
+      rendered = `<!-- ${template_file_name} :: START ::  -->` + rendered + `<!-- // ${template_file_name} :: END ::  -->`;
+
+      $(`#${template_file_name}`).replaceWith(rendered);
+    },
+    error: function (jqXHR, textStatus, errorThrown) {
+      console.log('AJAX error : ' + url);
+      console.log('status : ' + jqXHR.status);
+      console.log('textStatus : ' + textStatus);
+    },
+    complete: function (jqXHR, textStatus) {
+      //console.log("AJAX complete : " + url);
+    },
+  });
 };

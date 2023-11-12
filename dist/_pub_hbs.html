@@ -40,7 +40,7 @@
     <script src='/assets/lib/Sortable.min.js'></script>
     <link href='/assets/lib/flatpickr_v4.6.13.min.css' rel='stylesheet' />
     <script src='/assets/lib/flatpickr_v4.6.13.min.js'></script>
-    <title>FontAwesome</title>
+    <title>HandlebarsJS</title>
 </head>
 
 <body>
@@ -51,11 +51,20 @@
     <div id='Page'>
         <main>
             <link href='/assets/css/_pub.css' rel='stylesheet' />
-            <h1 class='H1 Sticky Top'>Font Awesome</h1>
-            <h2 class="H2"><a class="LinkBtn" href="https://fontawesome.com/search?o=r&m=free" target="_blank">https://fontawesome.com/search?o=r&m=free</a></h2>
+            <h1 class='H1 Sticky Top'>HandlebarsJS</h1>
             <section>
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <i class="fa-solid fa-house fa-spin"></i>
+                <h2 class="H2">xlsxToHTML</h2>
+                <div id='Tpl_sample'></div>
+                <script>
+                    Handlebars.xlsxToHTML('Sample', 'Tpl_sample');
+                </script>
+            </section>
+            <section>
+                <h2 class="H2">jsonToHTML</h2>
+                <div id='Tpl_11101448'></div>
+                <script>
+                    Handlebars.jsonToHTML(`news_list`, `Tpl_11101448`);
+                </script>
             </section>
         </main>
     </div>
