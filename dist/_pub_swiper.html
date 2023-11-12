@@ -56,8 +56,8 @@
                 <h2 class='H2'>swiper/_BannerSwiper</h2>
 
                 <div class='RR relative'>
-                    <div id='_BannerSwiper-' class='swiper _BannerSwiper'>
-                        <div id='_BannerSwiper--Navigation' class='RR _BannerSwiper-Navigation'>
+                    <div id='_BannerSwiper-TEST' class='swiper _BannerSwiper'>
+                        <div id='_BannerSwiper-TEST-Navigation' class='RR _BannerSwiper-Navigation'>
                             <div class='NavBtn PrevBtn'>
                                 <img src='/assets/icon/swiper/prev_btn.svg' alt='' />
                             </div>
@@ -92,24 +92,24 @@
                                 </div>
                             </div>
                         </div>
-                        <div id='_BannerSwiper--PagenationFraction' class='RR _BannerSwiper-PagenationFraction'>
+                        <div id='_BannerSwiper-TEST-PagenationFraction' class='RR _BannerSwiper-PagenationFraction'>
                             <div class='current'></div>
                             <div class='bar'>/</div>
                             <div class='total'></div>
                         </div>
-                        <div id='_BannerSwiper--Pagenation' class='RR _BannerSwiper-Pagenation'></div>
+                        <div id='_BannerSwiper-TEST-Pagenation' class='RR _BannerSwiper-Pagenation'></div>
                     </div>
                     <script>
                         window.addEventListener('DOMContentLoaded', (evt) => {
                             const navigation = {
                                 disabledClass: 'Disabled',
                                 hiddenClass: 'Hidden',
-                                prevEl: '#_BannerSwiper--Navigation > .PrevBtn',
-                                nextEl: '#_BannerSwiper--Navigation > .NextBtn',
+                                prevEl: '#_BannerSwiper-TEST-Navigation > .PrevBtn',
+                                nextEl: '#_BannerSwiper-TEST-Navigation > .NextBtn',
                             };
 
                             const pagination_bullet = {
-                                el: '#_BannerSwiper--Pagenation',
+                                el: '#_BannerSwiper-TEST-Pagenation',
                                 type: 'bullets',
                                 clickable: true,
                                 modifierClass: 'Pagenation-',
@@ -138,14 +138,14 @@
                             };
 
                             const update_current_num = () => {
-                                const el_total = document.querySelector('#_BannerSwiper--PagenationFraction > .total');
+                                const el_total = document.querySelector('#_BannerSwiper-TEST-PagenationFraction > .total');
                                 if (!el_total) return;
 
-                                const slides = document.querySelectorAll('#_BannerSwiper- .swiper-slide');
+                                const slides = document.querySelectorAll('#_BannerSwiper-TEST .swiper-slide');
                                 const real_length = slides.length;
                                 el_total.textContent = real_length;
 
-                                const el_current = document.querySelector('#_BannerSwiper--PagenationFraction > .current');
+                                const el_current = document.querySelector('#_BannerSwiper-TEST-PagenationFraction > .current');
                                 el_current.textContent = swiper.realIndex + 1;
 
                                 const el_swiper = swiper.el;
@@ -153,7 +153,7 @@
                                 el_swiper.setAttribute('data-total-length', real_length);
                             };
 
-                            let swiper = new Swiper('#_BannerSwiper-', swiper_option);
+                            let swiper = new Swiper('#_BannerSwiper-TEST', swiper_option);
 
                             swiper.on('init', function() {
                                 // console.log('init');
@@ -179,8 +179,8 @@
                 <h2 class='H2'>swiper/_BaseSwiper</h2>
 
                 <div class='RR relative'>
-                    <div id='_BaseSwiper-' class='swiper _BaseSwiper'>
-                        <div id='_BaseSwiper--Navigation' class='RR _BaseSwiper-Navigation'>
+                    <div id='_BaseSwiper-TEST' class='swiper _BaseSwiper'>
+                        <div id='_BaseSwiper-TEST-Navigation' class='RR _BaseSwiper-Navigation'>
                             <div class='NavBtn PrevBtn'>
                                 <img src='/assets/icon/swiper/prev_btn.svg' alt='' />
                             </div>
@@ -222,11 +222,11 @@
                         </div>
                     </div>
                     <br />
-                    <div id='_BaseSwiper--Pagenation' class='RR _BaseSwiper-Pagenation'></div>
+                    <div id='_BaseSwiper-TEST-Pagenation' class='RR _BaseSwiper-Pagenation'></div>
                     <br />
-                    <div id='_BaseSwiper--PagenationProgressbar' class='RR _BaseSwiper-PagenationProgressbar'></div>
+                    <div id='_BaseSwiper-TEST-PagenationProgressbar' class='RR _BaseSwiper-PagenationProgressbar'></div>
                     <br />
-                    <div id='_BaseSwiper--PagenationFraction' class='RR _BaseSwiper-PagenationFraction'>
+                    <div id='_BaseSwiper-TEST-PagenationFraction' class='RR _BaseSwiper-PagenationFraction'>
                         <div class='current'></div>
                         <div class='bar'>/</div>
                         <div class='total'></div>
@@ -236,12 +236,12 @@
                             const navigation = {
                                 disabledClass: 'Disabled',
                                 hiddenClass: 'Hidden',
-                                prevEl: '#_BaseSwiper--Navigation > .PrevBtn',
-                                nextEl: '#_BaseSwiper--Navigation > .NextBtn',
+                                prevEl: '#_BaseSwiper-TEST-Navigation > .PrevBtn',
+                                nextEl: '#_BaseSwiper-TEST-Navigation > .NextBtn',
                             };
 
                             const pagination_bullet = {
-                                el: '#_BaseSwiper--Pagenation',
+                                el: '#_BaseSwiper-TEST-Pagenation',
                                 type: 'bullets',
                                 clickable: true,
                                 modifierClass: 'Pagenation-',
@@ -254,7 +254,7 @@
                             };
 
                             const pagination_progress = {
-                                el: '#_BaseSwiper--PagenationProgressbar',
+                                el: '#_BaseSwiper-TEST-PagenationProgressbar',
                                 type: 'progressbar',
                                 modifierClass: 'Pagenation-',
                                 progressbarFillClass: 'FillBar',
@@ -280,18 +280,18 @@
                             };
 
                             const update_current_num = () => {
-                                const el_total = document.querySelector('#_BaseSwiper--PagenationFraction > .total');
+                                const el_total = document.querySelector('#_BaseSwiper-TEST-PagenationFraction > .total');
                                 if (!el_total) return;
 
-                                const slides = document.querySelectorAll('#_BaseSwiper- .swiper-slide');
+                                const slides = document.querySelectorAll('#_BaseSwiper-TEST .swiper-slide');
                                 const real_length = slides.length;
                                 el_total.textContent = real_length;
 
-                                const el_current = document.querySelector('#_BaseSwiper--PagenationFraction > .current');
+                                const el_current = document.querySelector('#_BaseSwiper-TEST-PagenationFraction > .current');
                                 el_current.textContent = swiper.realIndex + 1;
                             };
 
-                            let swiper = new Swiper('#_BaseSwiper-', swiper_option);
+                            let swiper = new Swiper('#_BaseSwiper-TEST', swiper_option);
 
                             swiper.on('init', function() {
                                 // console.log('init');

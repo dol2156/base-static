@@ -6,7 +6,7 @@
     {{#EACH HBS_DATA.swiper}}
       <section>
         <h2 class='H2'>{{obj.partial}}</h2>
-        {{> (lookup obj 'partial')}}
+        {{> (lookup obj 'partial') id='TEST'}}
       </section>
     {{/EACH}}
   </main>

@@ -90,4 +90,12 @@ module.exports = {
       console.error(`${location_info} : ${node_name} 의 값이 지정되어 있지 않습니다.`);
     }
   },
+
+  /**
+   * Object 에 노드 추가
+   * {{VAR this 'NAME' 'ksm'}}
+   */
+  VAR: function (object, node_name, value, options) {
+    object[node_name] = value;
+  },
 };
