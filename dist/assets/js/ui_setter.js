@@ -398,7 +398,7 @@ class useOutsideClick {
 }
 
 /**
- *
+ * 탭버튼 컨트롤
  * @param trigger
  * @param tab_child_list_id
  */
@@ -413,11 +413,44 @@ const initTabChildControl = (trigger, tab_child_list_id) => {
     const idx = $tab_btns.index($ct);
     $tab_btns.removeClass('On');
     $tab_btns.eq(idx).addClass('On');
-    
+
     const $tab_child_list = $(`.TabChildList[data-id='${tab_child_list_id}']`);
     const $tab_childs = $tab_child_list.find('> .TabChild');
     $tab_childs.removeClass('On');
     $tab_childs.eq(idx).addClass('On');
-    
   });
-}
+};
+
+/**
+ * 더보기 리스트 컨트롤
+ * @param trigger
+ */
+const initMoreViewList = (trigger) => {
+  if (typeof trigger === 'undefined') return;
+  const el_target = trigger.parentElement;
+  const $target = $(el_target);
+  let current_cnt;
+  const more_step = parseInt($target.attr('data-current'));
+  updateDisplay();
+
+  const $more_btn = $target.find('.MoreViewBtn');
+  $more_btn.on(`click`, (evt) => {
+    current_cnt = current_cnt + more_step;
+    $target.attr('data-current', current_cnt);
+    updateDisplay();
+  });
+
+  function updateDisplay() {
+    current_cnt = parseInt($target.attr('data-current'));
+    const $li = $target.find('> ul > li');
+    let $prev_li;
+    if ($li.length - 1 >= current_cnt) {
+      const $target_li = $li.eq(current_cnt);
+      $prev_li = $target_li.prevAll();
+      $prev_li.addClass('On');
+    } else {
+      $li.addClass('On');
+      $more_btn.css('visibility', 'hidden');
+    }
+  }
+};

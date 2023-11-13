@@ -51,6 +51,7 @@
   --sal: env(safe-area-inset-left);
   /**/
   --body-min-wid: 360px; /* 웹사이트 최소 너비 */
+  /* $PcMinWid 이상 화면*/
   --contents-max-wid: 1217px; /* 컨텐츠 최대 너비 */
   --contents-side-padding: 16px; /* 컨텐츠 좌우 안쪽 여백 */
   --real-side-padding:0px; /* JS 에서 컨트롤 중 */
@@ -58,6 +59,11 @@
   --header-hei: 50px;
   --footer-hei: 50px;
   --fullpage-footer-hei: 100px;
+}
+@media screen and (min-width: 769px) {
+  :root {
+    --body-min-wid:1024px;
+  }
 }
 
 [data-env=development] {
@@ -1656,7 +1662,7 @@ strong {
   background-color: #0a7feb;
   color: white;
   width: 100%;
-  min-width: var(--contents-max-wid);
+  min-width: var(--body-min-wid);
   font-size: 10;
   text-align: center;
   opacity: 0.5;
@@ -1669,7 +1675,7 @@ body {
 }
 @media screen and (min-width: 769px) {
   body {
-    min-width: var(--contents-max-wid);
+    min-width: var(--body-min-wid);
   }
 }
 body.PreventScroll {
