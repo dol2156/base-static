@@ -450,7 +450,7 @@ const initMoreViewList = (trigger) => {
       $prev_li.addClass('On');
     } else {
       $li.addClass('On');
-      $more_btn.css('visibility', 'hidden');
+      $more_btn.hide();
     }
   }
 };
