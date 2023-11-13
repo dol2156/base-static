@@ -3,6 +3,13 @@
     <link href='/assets/css/_pub.css' rel='stylesheet' />
     <h1 class='H1 Sticky Top'>HandlebarsJS</h1>
     <section>
+      <h2 class="H2">EACH_XLSX</h2>
+      {{#EACH_XLSX 'Sample'}}
+        {{log '🔴 _pub_hbs.hbs : 8 ==> ' this}}
+        <div>{{number}} : {{obj.설명}}</div>
+      {{/EACH_XLSX}}
+    </section>
+    <section>
       <h2 class="H2">Paritals Send Param</h2>
       {{> etc/Sample TITLE='TEST'}}
     </section>

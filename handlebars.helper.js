@@ -1,5 +1,7 @@
 const path = require('path');
 const fs = require('fs');
+const XLSX = require('xlsx');
+
 module.exports = {
   BAR: function () {
     return 'BAR!';
@@ -97,5 +99,25 @@ module.exports = {
    */
   VAR: function (object, node_name, value, options) {
     object[node_name] = value;
+  },
+  
+  /**
+   * xlsx 파일 json 루프
+   */
+  EACH_XLSX: function (xlsx_file_name, options) {
+    const workbook = XLSX.readFile(`./assets/xlsx/${xlsx_file_name}.xlsx`);
+    const worksheet = workbook.Sheets[workbook.SheetNames[0]];
+    const data_list = XLSX.utils.sheet_to_json(worksheet);
+    
+    let accum = '';
+    if (arguments.length > 1 && data_list) {
+      //console.log(data_list);
+      data_list.forEach((obj, idx) => {
+        const obj_result = { obj: obj, index: idx, number: idx + 1, digit: (idx + 1).toString().padStart(2, '0') };
+
+        accum += options.fn(obj_result);
+      });
+    }
+    return accum;
   },
 };
