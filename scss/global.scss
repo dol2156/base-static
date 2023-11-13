@@ -28,7 +28,7 @@
   background-color: #0a7feb;
   color: white;
   width: 100%;
-  min-width:var(--contents-max-wid);
+  min-width: var(--body-min-wid);
   font-size: 10;
   text-align: center;
   opacity: 0.5;
@@ -36,12 +36,12 @@
 body {
   position: relative;
   font-family: 'Pretendard';
-  
+
   /* $PcMinWid 이상 화면*/
-  @media screen and (min-width:$PcMinWid){
-    min-width: var(--contents-max-wid);
+  @media screen and (min-width: $PcMinWid) {
+    min-width: var(--body-min-wid);
   }
-  
+
   &.PreventScroll {
     position: fixed;
     overflow-y: scroll;
@@ -496,10 +496,10 @@ img[src=''] {
     z-index: 10;
     position: fixed;
     top: -200vh;
-    width:100%;
-    
-    &.On{
-      position:relative;
+    width: 100%;
+
+    &.On {
+      position: relative;
       top: 0vh;
     }
   }

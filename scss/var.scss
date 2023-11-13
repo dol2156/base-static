@@ -41,6 +41,10 @@
   --sal: env(safe-area-inset-left);
   /**/
   --body-min-wid: 360px; /* 웹사이트 최소 너비 */
+  /* $PcMinWid 이상 화면*/
+  @media screen and (min-width:$PcMinWid){
+    --body-min-wid:1024px;
+  }
   --contents-max-wid: 1217px; /* 컨텐츠 최대 너비 */
   --contents-side-padding: 16px; /* 컨텐츠 좌우 안쪽 여백 */
   --real-side-padding:0px;/* JS 에서 컨트롤 중 */
