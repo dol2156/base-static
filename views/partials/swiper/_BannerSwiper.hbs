@@ -1,7 +1,6 @@
-{{NULL_CHECK 'id' 'hbs/swiper/_BannerSwiper.hbs'}}
 <div class='RR relative'>
-  <div id='_BannerSwiper-{{id}}' class='swiper _BannerSwiper'>
-    <div id='_BannerSwiper-{{id}}-Navigation' class='RR _BannerSwiper-Navigation'>
+  <div id='_BannerSwiper-6a07df4d' class='swiper _BannerSwiper'>
+    <div id='_BannerSwiper-6a07df4d-Navigation' class='RR _BannerSwiper-Navigation'>
       <div class='NavBtn PrevBtn'>
         <img src='/assets/icon/swiper/prev_btn.svg' alt='' />
       </div>
@@ -18,12 +17,12 @@
         </div>
       {{/LOOP}}
     </div>
-    <div id='_BannerSwiper-{{id}}-PagenationFraction' class='RR _BannerSwiper-PagenationFraction'>
+    <div id='_BannerSwiper-6a07df4d-PagenationFraction' class='RR _BannerSwiper-PagenationFraction'>
       <div class='current'></div>
       <div class='bar'>/</div>
       <div class='total'></div>
     </div>
-    <div id='_BannerSwiper-{{id}}-Pagenation' class='RR _BannerSwiper-Pagenation'></div>
+    <div id='_BannerSwiper-6a07df4d-Pagenation' class='RR _BannerSwiper-Pagenation'></div>
   </div>
   {{!--prettier-ignore--}}
   <script>
@@ -31,12 +30,12 @@
       const navigation = {
         disabledClass: 'Disabled',
         hiddenClass: 'Hidden',
-        prevEl: '#_BannerSwiper-{{id}}-Navigation > .PrevBtn',
-        nextEl: '#_BannerSwiper-{{id}}-Navigation > .NextBtn',
+        prevEl: '#_BannerSwiper-6a07df4d-Navigation > .PrevBtn',
+        nextEl: '#_BannerSwiper-6a07df4d-Navigation > .NextBtn',
       };
       
       const pagination_bullet = {
-        el: '#_BannerSwiper-{{id}}-Pagenation',
+        el: '#_BannerSwiper-6a07df4d-Pagenation',
         type: 'bullets',
         clickable: true,
         modifierClass: 'Pagenation-',
@@ -65,14 +64,14 @@
       };
       
       const update_current_num = () => {
-        const el_total = document.querySelector('#_BannerSwiper-{{id}}-PagenationFraction > .total');
+        const el_total = document.querySelector('#_BannerSwiper-6a07df4d-PagenationFraction > .total');
         if (!el_total) return;
         
-        const slides = document.querySelectorAll('#_BannerSwiper-{{id}} .swiper-slide');
+        const slides = document.querySelectorAll('#_BannerSwiper-6a07df4d .swiper-slide');
         const real_length = slides.length;
         el_total.textContent = real_length;
         
-        const el_current = document.querySelector('#_BannerSwiper-{{id}}-PagenationFraction > .current');
+        const el_current = document.querySelector('#_BannerSwiper-6a07df4d-PagenationFraction > .current');
         el_current.textContent = swiper.realIndex + 1;
         
         const el_swiper = swiper.el;
@@ -80,7 +79,7 @@
         el_swiper.setAttribute('data-total-length', real_length);
       };
       
-      let swiper = new Swiper('#_BannerSwiper-{{id}}', swiper_option);
+      let swiper = new Swiper('#_BannerSwiper-6a07df4d', swiper_option);
       
       swiper.on('init', function () {
         // console.log('init');

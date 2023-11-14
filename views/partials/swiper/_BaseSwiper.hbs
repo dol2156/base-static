@@ -1,7 +1,6 @@
-{{NULL_CHECK 'id' 'hbs/swiper/_BaseSwiper.hbs'}}
 <div class='RR relative'>
-  <div id='_BaseSwiper-{{id}}' class='swiper _BaseSwiper'>
-    <div id='_BaseSwiper-{{id}}-Navigation' class='RR _BaseSwiper-Navigation'>
+  <div id='_BaseSwiper-4c5d10f7' class='swiper _BaseSwiper'>
+    <div id='_BaseSwiper-4c5d10f7-Navigation' class='RR _BaseSwiper-Navigation'>
       <div class='NavBtn PrevBtn'>
         <img src='/assets/icon/swiper/prev_btn.svg' alt='' />
       </div>
@@ -21,11 +20,11 @@
     </div>
   </div>
   <br />
-  <div id='_BaseSwiper-{{id}}-Pagenation' class='RR _BaseSwiper-Pagenation'></div>
+  <div id='_BaseSwiper-4c5d10f7-Pagenation' class='RR _BaseSwiper-Pagenation'></div>
   <br />
-  <div id='_BaseSwiper-{{id}}-PagenationProgressbar' class='RR _BaseSwiper-PagenationProgressbar'></div>
+  <div id='_BaseSwiper-4c5d10f7-PagenationProgressbar' class='RR _BaseSwiper-PagenationProgressbar'></div>
   <br />
-  <div id='_BaseSwiper-{{id}}-PagenationFraction' class='RR _BaseSwiper-PagenationFraction'>
+  <div id='_BaseSwiper-4c5d10f7-PagenationFraction' class='RR _BaseSwiper-PagenationFraction'>
     <div class='current'></div>
     <div class='bar'>/</div>
     <div class='total'></div>
@@ -36,12 +35,12 @@
       const navigation = {
         disabledClass: 'Disabled',
         hiddenClass: 'Hidden',
-        prevEl: '#_BaseSwiper-{{id}}-Navigation > .PrevBtn',
-        nextEl: '#_BaseSwiper-{{id}}-Navigation > .NextBtn',
+        prevEl: '#_BaseSwiper-4c5d10f7-Navigation > .PrevBtn',
+        nextEl: '#_BaseSwiper-4c5d10f7-Navigation > .NextBtn',
       };
       
       const pagination_bullet = {
-        el: '#_BaseSwiper-{{id}}-Pagenation',
+        el: '#_BaseSwiper-4c5d10f7-Pagenation',
         type: 'bullets',
         clickable: true,
         modifierClass: 'Pagenation-',
@@ -54,7 +53,7 @@
       };
       
       const pagination_progress = {
-        el: '#_BaseSwiper-{{id}}-PagenationProgressbar',
+        el: '#_BaseSwiper-4c5d10f7-PagenationProgressbar',
         type: 'progressbar',
         modifierClass: 'Pagenation-',
         progressbarFillClass: 'FillBar',
@@ -80,18 +79,18 @@
       };
       
       const update_current_num = () => {
-        const el_total = document.querySelector('#_BaseSwiper-{{id}}-PagenationFraction > .total');
+        const el_total = document.querySelector('#_BaseSwiper-4c5d10f7-PagenationFraction > .total');
         if (!el_total) return;
         
-        const slides = document.querySelectorAll('#_BaseSwiper-{{id}} .swiper-slide');
+        const slides = document.querySelectorAll('#_BaseSwiper-4c5d10f7 .swiper-slide');
         const real_length = slides.length;
         el_total.textContent = real_length;
         
-        const el_current = document.querySelector('#_BaseSwiper-{{id}}-PagenationFraction > .current');
+        const el_current = document.querySelector('#_BaseSwiper-4c5d10f7-PagenationFraction > .current');
         el_current.textContent = swiper.realIndex + 1;
       };
       
-      let swiper = new Swiper('#_BaseSwiper-{{id}}', swiper_option);
+      let swiper = new Swiper('#_BaseSwiper-4c5d10f7', swiper_option);
       
       swiper.on('init', function () {
         // console.log('init');
