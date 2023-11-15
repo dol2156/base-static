@@ -312,36 +312,6 @@ Handlebars.xlsxToHTML = (xlsx_file_name, template_file_name) => {
 };
 
 /**
- * Handlebars.jsonToHTML(`news_list`, `Tpl_11101448`);
- * @param json_file_name
- * @param template_file_name
- */
-Handlebars.jsonToHTML = (json_file_name, template_file_name) => {
-  const json_path = `assets/json/${json_file_name}.json`;
-  
-  var url = json_path;
-  
-  $.ajax({
-      url: url,
-      method:"GET",
-      dataType:"json",
-      cache: false,
-      async:true,
-      timeout:60*1000
-      , success : function (response, status, xhr) {
-          //console.log("AJAX success : " + url);
-          Handlebars.templateToHTML(template_file_name, response);
-      }, error : function (jqXHR, textStatus, errorThrown) {
-          console.log("AJAX error : " + url);
-          console.log("status : " + jqXHR.status);
-          console.log("textStatus : " + textStatus);
-      }, complete : function (jqXHR, textStatus) {
-          //console.log("AJAX complete : " + url);
-      }
-  });
-}
-
-/**
  * 비동기 xlsx 로드 후 JSON 반환
  * Handlebars.xlsxToJSON('/assets/xlsx/Sample.xlsx', (res) => {
  *   console.log(`res == `, res);
@@ -398,6 +368,45 @@ Handlebars.xlsxToJSON = function (fileUrl, callback) {
 
   xhr.send();
 };
+
+/**
+ *
+ * @param json_file_name
+ * @param callback
+ */
+Handlebars.loadJson = (json_file_name, callback) => {
+  const json_path = `assets/json/${json_file_name}.json`;
+  
+  $.ajax({
+      url: json_path,
+      method:"GET",
+      dataType:"json",
+      cache: false,
+      async:true,
+      timeout:60*1000
+      , success : function (response, status, xhr) {
+          //console.log("AJAX success : " + json_path);
+          if(callback) callback(response);
+      }, error : function (jqXHR, textStatus, errorThrown) {
+          console.log("AJAX error : " + json_path);
+          console.log("status : " + jqXHR.status);
+          console.log("textStatus : " + textStatus);
+      }, complete : function (jqXHR, textStatus) {
+          //console.log("AJAX complete : " + json_path);
+      }
+  });
+}
+
+/**
+ * Handlebars.jsonToHTML(`news_list`, `Tpl_11101448`);
+ * @param json_file_name
+ * @param template_file_name
+ */
+Handlebars.jsonToHTML = (json_file_name, template_file_name, callback) => {
+  Handlebars.loadJson(json_file_name, (res) => {
+    Handlebars.templateToHTML(template_file_name, res);
+  });
+}
 
 /**
  * 동기 방식 /assets/template 폴더의 템플릿 로드하여 컴파일 후 렌더링
