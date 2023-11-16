@@ -1,0 +1,96 @@
+<div class='RR relative'>
+  <div id='Swiper_1-7a4cc389' class='swiper Swiper_1 relative'>
+    <div class='swiper-wrapper'>
+      {{#LOOP 5}}
+        <div class='RR swiper-slide' data-key='{{index}}'>
+          <div>
+            <img class='w-full' src='https://gifpng.com/560x315?text={{number}}' alt='' />
+          </div>
+        </div>
+      {{/LOOP}}
+    </div>
+    <div id='Swiper_1-7a4cc389-Navigation' class='RR Swiper_1-Navigation z-10 absolute top-[0] left-[0] pointer-events-none flex flex-row items-center justify-between gap-[0] w-full h-full bg-[rgba(0,255,0,0.3)]'>
+      <div class='RR NavBtn PrevBtn pointer-events-auto cursor-pointer [&.Disabled]:opacity-0 [&.Disabled]:cursor-default'>
+        <img class='[.NavBtn:hover>&]:hidden' src='/assets/icon/swiper/prev_btn.svg' alt='' />
+        <img class='hidden [.NavBtn:hover>&]:block' src='/assets/icon/swiper/prev_btn_hover.svg' alt='' />
+      </div>
+      <div class='RR NavBtn NextBtn pointer-events-auto cursor-pointer [&.Disabled]:opacity-0 [&.Disabled]:cursor-default'>
+        <img class='[.NavBtn:hover>&]:hidden' src='/assets/icon/swiper/next_btn.svg' alt='' />
+        <img class='hidden [.NavBtn:hover>&]:block' src='/assets/icon/swiper/next_btn_hover.svg' alt='' />
+      </div>
+    </div>
+  </div>
+  <div id='Swiper_1-7a4cc389-Pagenation' class='RR Swiper_1-Pagenation flex flex-row items-center justify-center gap-[10px]'></div>
+  {{!--prettier-ignore--}}
+  <script>
+    window.addEventListener('DOMContentLoaded', (evt) => {
+      const navigation = {
+        disabledClass: 'Disabled',
+        hiddenClass: 'Hidden',
+        prevEl: '#Swiper_1-7a4cc389-Navigation > .PrevBtn',
+        nextEl: '#Swiper_1-7a4cc389-Navigation > .NextBtn',
+      };
+      
+      const pagination_bullet = {
+        el: '#Swiper_1-7a4cc389-Pagenation',
+        type: 'bullets',
+        clickable: true,
+        modifierClass: 'Pagenation-',
+        bulletClass: 'Dot',
+        bulletActiveClass: 'On',
+        renderBullet: function (index, className) {
+          const num = (index + 1).toString().padStart(2, '0');
+          return `
+            <div class="${className} RR relative w-[30px] aspect-square flex flex-row items-center justify-center">
+              <div class="Num text-[#161616] [*.On>&]:text-white cursor-pointer z-10 text-[14px] font-[600]">${num}</div>
+              <div class="Circle bg-[gray] [*.On>&]:bg-[red] cursor-pointer  z-0 absolute top-[0] left-[0] w-full aspect-square rounded-full"></div>
+            </div>`;
+        },
+      };
+      
+      const swiper_option = {
+        slidesPerView: 1, // 슬라이드의 수가 slidesPerView의 값 2배 이상이어야함. slidesPerView, slidesPerGroup 함께 설정 필요.
+        slidesPerGroup: 1,
+        spaceBetween: 10,
+        loop: false,
+        navigation: navigation,
+        pagination: pagination_bullet,
+        // autoplay: {
+        //   delay: 1000,
+        //   disableOnInteraction: false,
+        // },
+        init: false,
+        // grabCursor: true,
+        breakpoints:{
+          769:{
+            slidesPerView:2,
+          }
+        }
+      };
+      
+      let swiper = new Swiper('#Swiper_1-7a4cc389', swiper_option);
+      
+      swiper.on('init', function () {
+        // console.log('init');
+      });
+      
+      swiper.on('slideChange', function () {
+        // console.log('slideChange');
+      });
+      
+      swiper.on('slideChangeTransitionEnd', function () {
+        // console.log('slideChangeTransitionEnd');
+      });
+      
+      swiper.on('reachBeginning', function () {
+        // console.log('reachBeginning');
+      });
+      
+      swiper.on('reachEnd', function () {
+        // console.log('reachEnd');
+      });
+      
+      swiper.init();
+    });
+  </script>
+</div>

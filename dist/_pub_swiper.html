@@ -53,6 +53,263 @@
             <link href='/assets/css/_pub.css' rel='stylesheet' />
             <h1 class='H1 Sticky Top'>Swiper Guide</h1>
             <section>
+                <h2 class='H2'>swiper/Swiper_1</h2>
+                <div class='RR relative'>
+                    <div id='Swiper_1-7a4cc389' class='swiper Swiper_1 relative'>
+                        <div class='swiper-wrapper'>
+                            <div class='RR swiper-slide' data-key='0'>
+                                <div>
+                                    <img class='w-full' src='https://gifpng.com/560x315?text=1' alt='' />
+                                </div>
+                            </div>
+                            <div class='RR swiper-slide' data-key='1'>
+                                <div>
+                                    <img class='w-full' src='https://gifpng.com/560x315?text=2' alt='' />
+                                </div>
+                            </div>
+                            <div class='RR swiper-slide' data-key='2'>
+                                <div>
+                                    <img class='w-full' src='https://gifpng.com/560x315?text=3' alt='' />
+                                </div>
+                            </div>
+                            <div class='RR swiper-slide' data-key='3'>
+                                <div>
+                                    <img class='w-full' src='https://gifpng.com/560x315?text=4' alt='' />
+                                </div>
+                            </div>
+                            <div class='RR swiper-slide' data-key='4'>
+                                <div>
+                                    <img class='w-full' src='https://gifpng.com/560x315?text=5' alt='' />
+                                </div>
+                            </div>
+                        </div>
+                        <div id='Swiper_1-7a4cc389-Navigation' class='RR Swiper_1-Navigation z-10 absolute top-[0] left-[0] pointer-events-none flex flex-row items-center justify-between gap-[0] w-full h-full bg-[rgba(0,255,0,0.3)]'>
+                            <div class='RR NavBtn PrevBtn pointer-events-auto cursor-pointer [&.Disabled]:opacity-0 [&.Disabled]:cursor-default'>
+                                <img class='[.NavBtn:hover>&]:hidden' src='/assets/icon/swiper/prev_btn.svg' alt='' />
+                                <img class='hidden [.NavBtn:hover>&]:block' src='/assets/icon/swiper/prev_btn_hover.svg' alt='' />
+                            </div>
+                            <div class='RR NavBtn NextBtn pointer-events-auto cursor-pointer [&.Disabled]:opacity-0 [&.Disabled]:cursor-default'>
+                                <img class='[.NavBtn:hover>&]:hidden' src='/assets/icon/swiper/next_btn.svg' alt='' />
+                                <img class='hidden [.NavBtn:hover>&]:block' src='/assets/icon/swiper/next_btn_hover.svg' alt='' />
+                            </div>
+                        </div>
+                    </div>
+                    <div id='Swiper_1-7a4cc389-Pagenation' class='RR Swiper_1-Pagenation flex flex-row items-center justify-center gap-[10px]'></div>
+                    <script>
+                        window.addEventListener('DOMContentLoaded', (evt) => {
+                            const navigation = {
+                                disabledClass: 'Disabled',
+                                hiddenClass: 'Hidden',
+                                prevEl: '#Swiper_1-7a4cc389-Navigation > .PrevBtn',
+                                nextEl: '#Swiper_1-7a4cc389-Navigation > .NextBtn',
+                            };
+
+                            const pagination_bullet = {
+                                el: '#Swiper_1-7a4cc389-Pagenation',
+                                type: 'bullets',
+                                clickable: true,
+                                modifierClass: 'Pagenation-',
+                                bulletClass: 'Dot',
+                                bulletActiveClass: 'On',
+                                renderBullet: function(index, className) {
+                                    const num = (index + 1).toString().padStart(2, '0');
+                                    return `
+                    <div class="${className} RR relative w-[30px] aspect-square flex flex-row items-center justify-center">
+                      <div class="Num text-[#161616] [*.On>&]:text-white cursor-pointer z-10 text-[14px] font-[600]">${num}</div>
+                      <div class="Circle bg-[gray] [*.On>&]:bg-[red] cursor-pointer  z-0 absolute top-[0] left-[0] w-full aspect-square rounded-full"></div>
+                    </div>`;
+                                },
+                            };
+
+                            const swiper_option = {
+                                slidesPerView: 1, // 슬라이드의 수가 slidesPerView의 값 2배 이상이어야함. slidesPerView, slidesPerGroup 함께 설정 필요.
+                                slidesPerGroup: 1,
+                                spaceBetween: 10,
+                                loop: false,
+                                navigation: navigation,
+                                pagination: pagination_bullet,
+                                // autoplay: {
+                                //   delay: 1000,
+                                //   disableOnInteraction: false,
+                                // },
+                                init: false,
+                                // grabCursor: true,
+                                breakpoints: {
+                                    769: {
+                                        slidesPerView: 2,
+                                    }
+                                }
+                            };
+
+                            let swiper = new Swiper('#Swiper_1-7a4cc389', swiper_option);
+
+                            swiper.on('init', function() {
+                                // console.log('init');
+                            });
+
+                            swiper.on('slideChange', function() {
+                                // console.log('slideChange');
+                            });
+
+                            swiper.on('slideChangeTransitionEnd', function() {
+                                // console.log('slideChangeTransitionEnd');
+                            });
+
+                            swiper.on('reachBeginning', function() {
+                                // console.log('reachBeginning');
+                            });
+
+                            swiper.on('reachEnd', function() {
+                                // console.log('reachEnd');
+                            });
+
+                            swiper.init();
+                        });
+                    </script>
+                </div>
+            </section>
+            <section>
+                <h2 class='H2'>swiper/Swiper_2</h2>
+                <div class='RR relative'>
+                    <div id='Swiper_2-17390142' class='swiper Swiper_2 relative'>
+                        <div class='swiper-wrapper'>
+                            <div class='RR swiper-slide' data-key='0'>
+                                <div>
+                                    <img class='w-full' src='https://gifpng.com/560x315?text=1' alt='' />
+                                </div>
+                            </div>
+                            <div class='RR swiper-slide' data-key='1'>
+                                <div>
+                                    <img class='w-full' src='https://gifpng.com/560x315?text=2' alt='' />
+                                </div>
+                            </div>
+                            <div class='RR swiper-slide' data-key='2'>
+                                <div>
+                                    <img class='w-full' src='https://gifpng.com/560x315?text=3' alt='' />
+                                </div>
+                            </div>
+                            <div class='RR swiper-slide' data-key='3'>
+                                <div>
+                                    <img class='w-full' src='https://gifpng.com/560x315?text=4' alt='' />
+                                </div>
+                            </div>
+                            <div class='RR swiper-slide' data-key='4'>
+                                <div>
+                                    <img class='w-full' src='https://gifpng.com/560x315?text=5' alt='' />
+                                </div>
+                            </div>
+                            <div class='RR swiper-slide' data-key='5'>
+                                <div>
+                                    <img class='w-full' src='https://gifpng.com/560x315?text=6' alt='' />
+                                </div>
+                            </div>
+                            <div class='RR swiper-slide' data-key='6'>
+                                <div>
+                                    <img class='w-full' src='https://gifpng.com/560x315?text=7' alt='' />
+                                </div>
+                            </div>
+                            <div class='RR swiper-slide' data-key='7'>
+                                <div>
+                                    <img class='w-full' src='https://gifpng.com/560x315?text=8' alt='' />
+                                </div>
+                            </div>
+                            <div class='RR swiper-slide' data-key='8'>
+                                <div>
+                                    <img class='w-full' src='https://gifpng.com/560x315?text=9' alt='' />
+                                </div>
+                            </div>
+                            <div class='RR swiper-slide' data-key='9'>
+                                <div>
+                                    <img class='w-full' src='https://gifpng.com/560x315?text=10' alt='' />
+                                </div>
+                            </div>
+                        </div>
+                        <div id='Swiper_2-17390142-Navigation' class='RR Swiper_2-Navigation z-10 absolute top-[0] left-[0] left-1/2 -translate-x-1/2 pointer-events-none flex flex-row items-center justify-between gap-[0] w-full h-full bg-[rgba(0,255,0,0.3)]'>
+                            <div class='RR NavBtn PrevBtn translate-x-[-50%] pointer-events-auto cursor-pointer [&.Disabled]:opacity-0 [&.Disabled]:cursor-default'>
+                                <img class='[.NavBtn:hover>&]:hidden' src='/assets/icon/swiper/prev_btn.svg' alt='' />
+                                <img class='hidden [.NavBtn:hover>&]:block' src='/assets/icon/swiper/prev_btn_hover.svg' alt='' />
+                            </div>
+                            <div class='RR NavBtn NextBtn translate-x-[50%] pointer-events-auto cursor-pointer [&.Disabled]:opacity-0 [&.Disabled]:cursor-default'>
+                                <img class='[.NavBtn:hover>&]:hidden' src='/assets/icon/swiper/next_btn.svg' alt='' />
+                                <img class='hidden [.NavBtn:hover>&]:block' src='/assets/icon/swiper/next_btn_hover.svg' alt='' />
+                            </div>
+                        </div>
+                    </div>
+                    <div class=""></div>
+                    <div id='Swiper_2-17390142-PagenationProgressbar' class='RR Swiper_2-PagenationProgressbar h-[10px] bg-[gray]'></div>
+                    <script>
+                        window.addEventListener('DOMContentLoaded', (evt) => {
+                            const navigation = {
+                                disabledClass: 'Disabled',
+                                hiddenClass: 'Hidden',
+                                prevEl: '#Swiper_2-17390142-Navigation > .PrevBtn',
+                                nextEl: '#Swiper_2-17390142-Navigation > .NextBtn',
+                            };
+
+                            const pagination_progress = {
+                                el: '#Swiper_2-17390142-PagenationProgressbar',
+                                type: 'progressbar',
+                                modifierClass: 'Pagenation-',
+                                progressbarFillClass: 'FillBar',
+                                renderProgressbar: function(className) {
+                                    return `<div class="${className} h-full bg-[red] origin-left"></div>`;
+                                },
+                            };
+
+                            const swiper_option = {
+                                slidesPerView: 1.5, // 슬라이드의 수가 slidesPerView의 값 2배 이상이어야함. slidesPerView, slidesPerGroup 함께 설정 필요.
+                                slidesPerGroup: 1,
+                                centeredSlides: true,
+                                spaceBetween: 10,
+                                loop: true,
+                                navigation: navigation,
+                                pagination: pagination_progress,
+                                // autoplay: {
+                                //   delay: 1000,
+                                //   disableOnInteraction: false,
+                                // },
+                                init: false,
+                                // grabCursor: true,
+                            };
+
+                            let swiper = new Swiper('#Swiper_2-17390142', swiper_option);
+
+                            swiper.on('init', function() {
+                                // console.log('init');
+                                updateNavWid();
+                            });
+
+                            swiper.on('slideChange', function() {
+                                // console.log('slideChange');
+                            });
+
+                            swiper.on('slideChangeTransitionEnd', function() {
+                                // console.log('slideChangeTransitionEnd');
+                            });
+
+                            swiper.on('reachBeginning', function() {
+                                // console.log('reachBeginning');
+                            });
+
+                            swiper.on('reachEnd', function() {
+                                // console.log('reachEnd');
+                            });
+
+                            swiper.init();
+
+                            $(window).on(`resize`, (evt) => {
+                                updateNavWid();
+                            });
+
+                            function updateNavWid() {
+                                const $active_slide = $(`#Swiper_2-17390142 .swiper-slide-active`);
+                                $(`#Swiper_2-17390142-Navigation`).width($active_slide.width());
+                            }
+                        });
+                    </script>
+                </div>
+            </section>
+            <section>
                 <h2 class='H2'>swiper/_BannerSwiper</h2>
                 <div class='RR relative'>
                     <div id='_BannerSwiper-6a07df4d' class='swiper _BannerSwiper'>
