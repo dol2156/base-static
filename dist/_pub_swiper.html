@@ -310,81 +310,85 @@
                 </div>
             </section>
             <section>
-                <h2 class='H2'>swiper/_BannerSwiper</h2>
-                <div class='RR relative'>
-                    <div id='_BannerSwiper-6a07df4d' class='swiper _BannerSwiper'>
-                        <div id='_BannerSwiper-6a07df4d-Navigation' class='RR _BannerSwiper-Navigation'>
-                            <div class='NavBtn PrevBtn'>
-                                <img src='/assets/icon/swiper/prev_btn.svg' alt='' />
-                            </div>
-                            <div class='NavBtn NextBtn'>
-                                <img src='/assets/icon/swiper/next_btn.svg' alt='' />
-                            </div>
-                        </div>
+                <h2 class='H2'>swiper/Swiper_3</h2>
+                <div class='RR relative w-[360px] mx-auto'>
+                    <div id='Swiper_3-eee8dbab' class='swiper Swiper_3 relative'>
                         <div class='swiper-wrapper'>
                             <div class='RR swiper-slide' data-key='0'>
                                 <div>
-                                    <img style='display:block; width:100%; aspect-ratio:360/200;' src='https://picsum.photos/360/200.jpg?random=0' alt='' />
+                                    <img class='w-full' src='https://gifpng.com/560x315?text=1' alt='' />
                                 </div>
                             </div>
                             <div class='RR swiper-slide' data-key='1'>
                                 <div>
-                                    <img style='display:block; width:100%; aspect-ratio:360/200;' src='https://picsum.photos/360/200.jpg?random=1' alt='' />
+                                    <img class='w-full' src='https://gifpng.com/560x315?text=2' alt='' />
                                 </div>
                             </div>
                             <div class='RR swiper-slide' data-key='2'>
                                 <div>
-                                    <img style='display:block; width:100%; aspect-ratio:360/200;' src='https://picsum.photos/360/200.jpg?random=2' alt='' />
+                                    <img class='w-full' src='https://gifpng.com/560x315?text=3' alt='' />
                                 </div>
                             </div>
                             <div class='RR swiper-slide' data-key='3'>
                                 <div>
-                                    <img style='display:block; width:100%; aspect-ratio:360/200;' src='https://picsum.photos/360/200.jpg?random=3' alt='' />
+                                    <img class='w-full' src='https://gifpng.com/560x315?text=4' alt='' />
                                 </div>
                             </div>
                             <div class='RR swiper-slide' data-key='4'>
                                 <div>
-                                    <img style='display:block; width:100%; aspect-ratio:360/200;' src='https://picsum.photos/360/200.jpg?random=4' alt='' />
+                                    <img class='w-full' src='https://gifpng.com/560x315?text=5' alt='' />
                                 </div>
                             </div>
                         </div>
-                        <div id='_BannerSwiper-6a07df4d-PagenationFraction' class='RR _BannerSwiper-PagenationFraction'>
-                            <div class='current'></div>
-                            <div class='bar'>/</div>
-                            <div class='total'></div>
+                        <div id='Swiper_3-eee8dbab-Navigation' class='RR Swiper_3-Navigation z-10 absolute top-[0] left-[0] pointer-events-none flex flex-row items-center justify-between gap-[0] w-full h-full bg-[rgba(0,255,0,0.3)]'>
+                            <div class='RR NavBtn PrevBtn pointer-events-auto cursor-pointer [&.Disabled]:opacity-0 [&.Disabled]:cursor-default'>
+                                <img class='[.NavBtn:hover>&]:hidden' src='/assets/icon/swiper/prev_btn.svg' alt='' />
+                                <img class='hidden [.NavBtn:hover>&]:block' src='/assets/icon/swiper/prev_btn_hover.svg' alt='' />
+                            </div>
+                            <div class='RR NavBtn NextBtn pointer-events-auto cursor-pointer [&.Disabled]:opacity-0 [&.Disabled]:cursor-default'>
+                                <img class='[.NavBtn:hover>&]:hidden' src='/assets/icon/swiper/next_btn.svg' alt='' />
+                                <img class='hidden [.NavBtn:hover>&]:block' src='/assets/icon/swiper/next_btn_hover.svg' alt='' />
+                            </div>
                         </div>
-                        <div id='_BannerSwiper-6a07df4d-Pagenation' class='RR _BannerSwiper-Pagenation'></div>
                     </div>
+                    <div id='Swiper_3-eee8dbab-Pagenation' class='RR Swiper_3-Pagenation flex flex-row items-center justify-center gap-[10px]'></div>
                     <script>
                         window.addEventListener('DOMContentLoaded', (evt) => {
                             const navigation = {
                                 disabledClass: 'Disabled',
                                 hiddenClass: 'Hidden',
-                                prevEl: '#_BannerSwiper-6a07df4d-Navigation > .PrevBtn',
-                                nextEl: '#_BannerSwiper-6a07df4d-Navigation > .NextBtn',
+                                prevEl: '#Swiper_3-eee8dbab-Navigation > .PrevBtn',
+                                nextEl: '#Swiper_3-eee8dbab-Navigation > .NextBtn',
                             };
 
                             const pagination_bullet = {
-                                el: '#_BannerSwiper-6a07df4d-Pagenation',
-                                type: 'bullets',
-                                clickable: true,
+                                el: '#Swiper_3-eee8dbab-Pagenation',
+                                type: 'fraction',
                                 modifierClass: 'Pagenation-',
-                                bulletClass: 'Dot',
-                                bulletActiveClass: 'On',
-                                renderBullet: function(index, className) {
-                                    const num = (index + 1).toString().padStart(2, '0');
-                                    return `<div class="${className}"> <div class="Circle"></div> </div>`;
+                                formatFractionCurrent: (number) => {
+                                    return number.toString().padStart(2, '0');
                                 },
+                                formatFractionTotal: (number) => {
+                                    return number.toString().padStart(2, '0');
+                                },
+                                renderFraction: function(currentClass, totalClass) {
+                                    return `
+                  <div class="flex flex-row items-center justify-center gap-[10px] text-[#161616] text-[16px] font-[900]">
+                    <span class="${currentClass} text-[red]"></span>
+                    <span class="text-[black]">/</span>
+                    <span class="${totalClass} text-[gray]"></span>
+                  </div>`;
+                                }
                             };
 
                             const swiper_option = {
                                 slidesPerView: 1, // 슬라이드의 수가 slidesPerView의 값 2배 이상이어야함. slidesPerView, slidesPerGroup 함께 설정 필요.
                                 slidesPerGroup: 1,
                                 spaceBetween: 10,
-                                loop: true,
+                                //loop: false,
+                                rewind: true,
                                 navigation: navigation,
                                 pagination: pagination_bullet,
-                                // pagination: pagination_progress,
                                 // autoplay: {
                                 //   delay: 1000,
                                 //   disableOnInteraction: false,
@@ -393,169 +397,14 @@
                                 // grabCursor: true,
                             };
 
-                            const update_current_num = () => {
-                                const el_total = document.querySelector('#_BannerSwiper-6a07df4d-PagenationFraction > .total');
-                                if (!el_total) return;
-
-                                const slides = document.querySelectorAll('#_BannerSwiper-6a07df4d .swiper-slide');
-                                const real_length = slides.length;
-                                el_total.textContent = real_length;
-
-                                const el_current = document.querySelector('#_BannerSwiper-6a07df4d-PagenationFraction > .current');
-                                el_current.textContent = swiper.realIndex + 1;
-
-                                const el_swiper = swiper.el;
-                                el_swiper.setAttribute('data-current-number', swiper.realIndex + 1);
-                                el_swiper.setAttribute('data-total-length', real_length);
-                            };
-
-                            let swiper = new Swiper('#_BannerSwiper-6a07df4d', swiper_option);
+                            let swiper = new Swiper('#Swiper_3-eee8dbab', swiper_option);
 
                             swiper.on('init', function() {
                                 // console.log('init');
-                                update_current_num();
                             });
 
                             swiper.on('slideChange', function() {
                                 // console.log('slideChange');
-                                update_current_num();
-                            });
-
-                            swiper.on('slideChangeTransitionEnd', function() {
-                                // console.log('slideChangeTransitionEnd');
-                            });
-
-                            swiper.init();
-
-                        });
-                    </script>
-                </div>
-            </section>
-            <section>
-                <h2 class='H2'>swiper/_BaseSwiper</h2>
-                <div class='RR relative'>
-                    <div id='_BaseSwiper-4c5d10f7' class='swiper _BaseSwiper'>
-                        <div id='_BaseSwiper-4c5d10f7-Navigation' class='RR _BaseSwiper-Navigation'>
-                            <div class='NavBtn PrevBtn'>
-                                <img src='/assets/icon/swiper/prev_btn.svg' alt='' />
-                            </div>
-                            <div class='NavBtn NextBtn'>
-                                <img src='/assets/icon/swiper/next_btn.svg' alt='' />
-                            </div>
-                        </div>
-                        <div class='swiper-wrapper'>
-                            <div class='RR swiper-slide' data-key='0'>
-                                <div>
-                                    <img style='display:block; width:100%; aspect-ratio:560/315;' src='https://picsum.photos/560/315.jpg?random=0' alt='' />
-                                </div>
-                                <div>1</div>
-                            </div>
-                            <div class='RR swiper-slide' data-key='1'>
-                                <div>
-                                    <img style='display:block; width:100%; aspect-ratio:560/315;' src='https://picsum.photos/560/315.jpg?random=1' alt='' />
-                                </div>
-                                <div>2</div>
-                            </div>
-                            <div class='RR swiper-slide' data-key='2'>
-                                <div>
-                                    <img style='display:block; width:100%; aspect-ratio:560/315;' src='https://picsum.photos/560/315.jpg?random=2' alt='' />
-                                </div>
-                                <div>3</div>
-                            </div>
-                            <div class='RR swiper-slide' data-key='3'>
-                                <div>
-                                    <img style='display:block; width:100%; aspect-ratio:560/315;' src='https://picsum.photos/560/315.jpg?random=3' alt='' />
-                                </div>
-                                <div>4</div>
-                            </div>
-                            <div class='RR swiper-slide' data-key='4'>
-                                <div>
-                                    <img style='display:block; width:100%; aspect-ratio:560/315;' src='https://picsum.photos/560/315.jpg?random=4' alt='' />
-                                </div>
-                                <div>5</div>
-                            </div>
-                        </div>
-                    </div>
-                    <br />
-                    <div id='_BaseSwiper-4c5d10f7-Pagenation' class='RR _BaseSwiper-Pagenation'></div>
-                    <br />
-                    <div id='_BaseSwiper-4c5d10f7-PagenationProgressbar' class='RR _BaseSwiper-PagenationProgressbar'></div>
-                    <br />
-                    <div id='_BaseSwiper-4c5d10f7-PagenationFraction' class='RR _BaseSwiper-PagenationFraction'>
-                        <div class='current'></div>
-                        <div class='bar'>/</div>
-                        <div class='total'></div>
-                    </div>
-                    <script>
-                        window.addEventListener('DOMContentLoaded', (evt) => {
-                            const navigation = {
-                                disabledClass: 'Disabled',
-                                hiddenClass: 'Hidden',
-                                prevEl: '#_BaseSwiper-4c5d10f7-Navigation > .PrevBtn',
-                                nextEl: '#_BaseSwiper-4c5d10f7-Navigation > .NextBtn',
-                            };
-
-                            const pagination_bullet = {
-                                el: '#_BaseSwiper-4c5d10f7-Pagenation',
-                                type: 'bullets',
-                                clickable: true,
-                                modifierClass: 'Pagenation-',
-                                bulletClass: 'Dot',
-                                bulletActiveClass: 'On',
-                                renderBullet: function(index, className) {
-                                    const num = (index + 1).toString().padStart(2, '0');
-                                    return `<div class="${className}"> <div class="Num">${num}</div> <div class="Circle"></div> </div>`;
-                                },
-                            };
-
-                            const pagination_progress = {
-                                el: '#_BaseSwiper-4c5d10f7-PagenationProgressbar',
-                                type: 'progressbar',
-                                modifierClass: 'Pagenation-',
-                                progressbarFillClass: 'FillBar',
-                                renderProgressbar: function(className) {
-                                    return `<div class="${className}"></div>`;
-                                },
-                            };
-
-                            const swiper_option = {
-                                slidesPerView: 3, // 슬라이드의 수가 slidesPerView의 값 2배 이상이어야함. slidesPerView, slidesPerGroup 함께 설정 필요.
-                                slidesPerGroup: 1,
-                                spaceBetween: 10,
-                                loop: false,
-                                navigation: navigation,
-                                pagination: pagination_bullet,
-                                // pagination: pagination_progress,
-                                // autoplay: {
-                                //   delay: 1000,
-                                //   disableOnInteraction: false,
-                                // },
-                                init: false,
-                                // grabCursor: true,
-                            };
-
-                            const update_current_num = () => {
-                                const el_total = document.querySelector('#_BaseSwiper-4c5d10f7-PagenationFraction > .total');
-                                if (!el_total) return;
-
-                                const slides = document.querySelectorAll('#_BaseSwiper-4c5d10f7 .swiper-slide');
-                                const real_length = slides.length;
-                                el_total.textContent = real_length;
-
-                                const el_current = document.querySelector('#_BaseSwiper-4c5d10f7-PagenationFraction > .current');
-                                el_current.textContent = swiper.realIndex + 1;
-                            };
-
-                            let swiper = new Swiper('#_BaseSwiper-4c5d10f7', swiper_option);
-
-                            swiper.on('init', function() {
-                                // console.log('init');
-                                update_current_num();
-                            });
-
-                            swiper.on('slideChange', function() {
-                                // console.log('slideChange');
-                                update_current_num();
                             });
 
                             swiper.on('slideChangeTransitionEnd', function() {
