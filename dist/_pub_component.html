@@ -449,19 +449,22 @@
             </section>
             <section>
                 <h2 class='H2'>component/TabBar_1</h2>
-                <div class='TabBar_1'>
-                    <button class='TabButton On'>
-                        <img class='hidden [.On>&]:block' src='/assets/icon/new.svg' alt='' />
-                        1
-                    </button>
-                    <button class='TabButton '>
-                        <img class='hidden [.On>&]:block' src='/assets/icon/new.svg' alt='' />
-                        2
-                    </button>
-                    <button class='TabButton '>
-                        <img class='hidden [.On>&]:block' src='/assets/icon/new.svg' alt='' />
-                        3
-                    </button>
+                <div class='TabButtonList bg-white flex flex-row items-center justify-center gap-[0] border-b-[1px] border-b-[#ebebeb]'>
+                    <div class="flex-1">
+                        <button class='TabButton On relative w-full h-[50px] flex flex-row items-center justify-center gap-[3px] text-[#303030] [&.On]:text-[#ff3838] text-[16px] font-[600] [&.On]:font-[800]'>
+                            1
+                        </button>
+                    </div>
+                    <div class="flex-1">
+                        <button class='TabButton  relative w-full h-[50px] flex flex-row items-center justify-center gap-[3px] text-[#303030] [&.On]:text-[#ff3838] text-[16px] font-[600] [&.On]:font-[800]'>
+                            2
+                        </button>
+                    </div>
+                    <div class="flex-1">
+                        <button class='TabButton  relative w-full h-[50px] flex flex-row items-center justify-center gap-[3px] text-[#303030] [&.On]:text-[#ff3838] text-[16px] font-[600] [&.On]:font-[800]'>
+                            3
+                        </button>
+                    </div>
                     <img onerror="initTabChildControl(this, '665c3725')" src="" />
                 </div>
                 <div class="TabChildList" data-id="665c3725">

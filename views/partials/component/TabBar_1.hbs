@@ -1,9 +1,10 @@
-<div class='TabBar_1'>
+<div class='TabButtonList bg-white flex flex-row items-center justify-center gap-[0] border-b-[1px] border-b-[#ebebeb]'>
   {{#LOOP 3}}
-    <button class='TabButton {{ON 0}}'>
-      <img class='hidden [.On>&]:block' src='/assets/icon/new.svg' alt='' />
-      {{number}}
-    </button>
+    <div class="flex-1">
+      <button class='TabButton {{ON 0}} relative w-full h-[50px] flex flex-row items-center justify-center gap-[3px] text-[#303030] [&.On]:text-[#ff3838] text-[16px] font-[600] [&.On]:font-[800]'>
+        {{number}}
+      </button>
+    </div>
   {{/LOOP}}
   <img onerror="initTabChildControl(this, '665c3725')" src=""/>
 </div>
