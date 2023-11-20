@@ -1,5 +1,5 @@
 <div class='RR relative'>
-  <div id='Swiper_2-17390142' class='swiper Swiper_2 relative'>
+  <div id='Swiper_17390142' class='swiper relative hidden [&.swiper-initialized]:block'>
     <div class='swiper-wrapper'>
       {{#LOOP 10}}
         <div class='RR swiper-slide' data-key='{{index}}'>
@@ -9,7 +9,7 @@
         </div>
       {{/LOOP}}
     </div>
-    <div id='Swiper_2-17390142-Navigation' class='RR Swiper_2-Navigation z-10 absolute top-[0] left-[0] left-1/2 -translate-x-1/2 pointer-events-none flex flex-row items-center justify-between gap-[0] w-full h-full bg-[rgba(0,255,0,0.3)]'>
+    <div id='Swiper_17390142-Navigation' class='RR z-10 absolute top-[0] left-[0] left-1/2 -translate-x-1/2 pointer-events-none flex flex-row items-center justify-between gap-[0] w-full h-full bg-[rgba(0,255,0,0.3)]'>
       <div class='RR NavBtn PrevBtn translate-x-[-50%] pointer-events-auto cursor-pointer [&.Disabled]:opacity-0 [&.Disabled]:cursor-default'>
         <img class='[.NavBtn:hover>&]:hidden' src='/assets/icon/swiper/prev_btn.svg' alt=''/>
         <img class='hidden [.NavBtn:hover>&]:block' src='/assets/icon/swiper/prev_btn_hover.svg' alt=''/>
@@ -21,19 +21,19 @@
     </div>
   </div>
   <div class=""></div>
-  <div id='Swiper_2-17390142-PagenationProgressbar' class='RR Swiper_2-PagenationProgressbar h-[10px] bg-[gray]'></div>
+  <div id='Swiper_17390142-PagenationProgressbar' class='RR h-[10px] bg-[gray]'></div>
   {{!--prettier-ignore--}}
   <script>
-    window.addEventListener('DOMContentLoaded', (evt) => {
+    const initSwiper_17390142 = (evt) => {
       const navigation = {
         disabledClass: 'Disabled',
         hiddenClass: 'Hidden',
-        prevEl: '#Swiper_2-17390142-Navigation > .PrevBtn',
-        nextEl: '#Swiper_2-17390142-Navigation > .NextBtn',
+        prevEl: '#Swiper_17390142-Navigation > .PrevBtn',
+        nextEl: '#Swiper_17390142-Navigation > .NextBtn',
       };
-      
+
       const pagination_progress = {
-        el: '#Swiper_2-17390142-PagenationProgressbar',
+        el: '#Swiper_17390142-PagenationProgressbar',
         type: 'progressbar',
         modifierClass: 'Pagenation-',
         progressbarFillClass: 'FillBar',
@@ -41,7 +41,7 @@
           return `<div class="${className} h-full bg-[red] origin-left"></div>`;
         },
       };
-      
+
       const swiper_option = {
         slidesPerView: 1.5, // 슬라이드의 수가 slidesPerView의 값 2배 이상이어야함. slidesPerView, slidesPerGroup 함께 설정 필요.
         slidesPerGroup: 1,
@@ -57,30 +57,30 @@
         init: false,
         // grabCursor: true,
       };
-      
-      let swiper = new Swiper('#Swiper_2-17390142', swiper_option);
-      
+
+      let swiper = new Swiper('#Swiper_17390142', swiper_option);
+
       swiper.on('init', function () {
         // console.log('init');
         updateNavWid();
       });
-      
+
       swiper.on('slideChange', function () {
         // console.log('slideChange');
       });
-      
+
       swiper.on('slideChangeTransitionEnd', function () {
         // console.log('slideChangeTransitionEnd');
       });
-      
+
       swiper.on('reachBeginning', function () {
         // console.log('reachBeginning');
       });
-      
+
       swiper.on('reachEnd', function () {
         // console.log('reachEnd');
       });
-      
+
       swiper.init();
 
       $(window).on(`resize`, (evt) => {
@@ -88,9 +88,11 @@
       });
 
       function updateNavWid(){
-        const $active_slide = $(`#Swiper_2-17390142 .swiper-slide-active`);
-        $(`#Swiper_2-17390142-Navigation`).width($active_slide.width());
+        const $active_slide = $(`#Swiper_17390142 .swiper-slide-active`);
+        $(`#Swiper_17390142-Navigation`).width($active_slide.width());
       }
-    });
+    };
+
+    window.addEventListener('DOMContentLoaded', initSwiper_17390142);
   </script>
 </div>

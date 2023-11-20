@@ -1,5 +1,5 @@
 <div class='RR relative w-[360px] mx-auto'>
-  <div id='Swiper_3-eee8dbab' class='swiper Swiper_3 relative'>
+  <div id='Swiper_eee8dbab' class='swiper relative hidden [&.swiper-initialized]:block'>
     <div class='swiper-wrapper'>
       {{#LOOP 5}}
         <div class='RR swiper-slide' data-key='{{index}}'>
@@ -9,7 +9,7 @@
         </div>
       {{/LOOP}}
     </div>
-    <div id='Swiper_3-eee8dbab-Navigation' class='RR Swiper_3-Navigation z-10 absolute top-[0] left-[0] pointer-events-none flex flex-row items-center justify-between gap-[0] w-full h-full bg-[rgba(0,255,0,0.3)]'>
+    <div id='Swiper_eee8dbab-Navigation' class='RR z-10 absolute top-[0] left-[0] pointer-events-none flex flex-row items-center justify-between gap-[0] w-full h-full bg-[rgba(0,255,0,0.3)]'>
       <div class='RR NavBtn PrevBtn pointer-events-auto cursor-pointer [&.Disabled]:opacity-0 [&.Disabled]:cursor-default'>
         <img class='[.NavBtn:hover>&]:hidden' src='/assets/icon/swiper/prev_btn.svg' alt=''/>
         <img class='hidden [.NavBtn:hover>&]:block' src='/assets/icon/swiper/prev_btn_hover.svg' alt=''/>
@@ -20,19 +20,19 @@
       </div>
     </div>
   </div>
-  <div id='Swiper_3-eee8dbab-Pagenation' class='RR Swiper_3-Pagenation flex flex-row items-center justify-center gap-[10px]'></div>
+  <div id='Swiper_eee8dbab-Pagenation' class='RR flex flex-row items-center justify-center gap-[10px]'></div>
   {{!--prettier-ignore--}}
   <script>
-    window.addEventListener('DOMContentLoaded', (evt) => {
+    const initSwiper_eee8dbab = (evt) => {
       const navigation = {
         disabledClass: 'Disabled',
         hiddenClass: 'Hidden',
-        prevEl: '#Swiper_3-eee8dbab-Navigation > .PrevBtn',
-        nextEl: '#Swiper_3-eee8dbab-Navigation > .NextBtn',
+        prevEl: '#Swiper_eee8dbab-Navigation > .PrevBtn',
+        nextEl: '#Swiper_eee8dbab-Navigation > .NextBtn',
       };
-      
+
       const pagination_bullet = {
-        el: '#Swiper_3-eee8dbab-Pagenation',
+        el: '#Swiper_eee8dbab-Pagenation',
         type: 'fraction',
         modifierClass: 'Pagenation-',
         formatFractionCurrent: (number) => {
@@ -50,7 +50,7 @@
           </div>`;
         }
       };
-      
+
       const swiper_option = {
         slidesPerView: 1, // 슬라이드의 수가 slidesPerView의 값 2배 이상이어야함. slidesPerView, slidesPerGroup 함께 설정 필요.
         slidesPerGroup: 1,
@@ -66,30 +66,32 @@
         init: false,
         // grabCursor: true,
       };
-      
-      let swiper = new Swiper('#Swiper_3-eee8dbab', swiper_option);
-      
+
+      let swiper = new Swiper('#Swiper_eee8dbab', swiper_option);
+
       swiper.on('init', function () {
         // console.log('init');
       });
-      
+
       swiper.on('slideChange', function () {
         // console.log('slideChange');
       });
-      
+
       swiper.on('slideChangeTransitionEnd', function () {
         // console.log('slideChangeTransitionEnd');
       });
-      
+
       swiper.on('reachBeginning', function () {
         // console.log('reachBeginning');
       });
-      
+
       swiper.on('reachEnd', function () {
         // console.log('reachEnd');
       });
-      
+
       swiper.init();
-    });
+    };
+
+    window.addEventListener('DOMContentLoaded', initSwiper_eee8dbab);
   </script>
 </div>

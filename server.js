@@ -79,7 +79,7 @@ app.get('*', (req, res) => {
       renderedHTML = beautify_html(renderedHTML);
       
       // env 변경
-      let productionHTML = renderedHTML.replace(/lang='ko' data-env='development'/gi, `lang='ko' data-env='development'`);
+      let productionHTML = renderedHTML.replace(/lang='ko' data-env='development'/gi, `lang='ko' data-env='production'`);
       
       
       const savePath = path.join(__dirname, 'dist', viewName + '.html');

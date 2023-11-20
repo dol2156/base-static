@@ -55,7 +55,7 @@
             <section>
                 <h2 class='H2'>swiper/Swiper_1</h2>
                 <div class='RR relative'>
-                    <div id='Swiper_1-7a4cc389' class='swiper Swiper_1 relative'>
+                    <div id='Swiper_7a4cc389' class='swiper relative hidden [&.swiper-initialized]:block'>
                         <div class='swiper-wrapper'>
                             <div class='RR swiper-slide' data-key='0'>
                                 <div>
@@ -83,7 +83,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div id='Swiper_1-7a4cc389-Navigation' class='RR Swiper_1-Navigation z-10 absolute top-[0] left-[0] pointer-events-none flex flex-row items-center justify-between gap-[0] w-full h-full bg-[rgba(0,255,0,0.3)]'>
+                        <div id='Swiper_7a4cc389-Navigation' class='RR z-10 absolute top-[0] left-[0] pointer-events-none flex flex-row items-center justify-between gap-[0] w-full h-full bg-[rgba(0,255,0,0.3)]'>
                             <div class='RR NavBtn PrevBtn pointer-events-auto cursor-pointer [&.Disabled]:opacity-0 [&.Disabled]:cursor-default'>
                                 <img class='[.NavBtn:hover>&]:hidden' src='/assets/icon/swiper/prev_btn.svg' alt='' />
                                 <img class='hidden [.NavBtn:hover>&]:block' src='/assets/icon/swiper/prev_btn_hover.svg' alt='' />
@@ -94,18 +94,18 @@
                             </div>
                         </div>
                     </div>
-                    <div id='Swiper_1-7a4cc389-Pagenation' class='RR Swiper_1-Pagenation flex flex-row items-center justify-center gap-[10px]'></div>
+                    <div id='Swiper_7a4cc389-Pagenation' class='RR flex flex-row items-center justify-center gap-[10px]'></div>
                     <script>
-                        window.addEventListener('DOMContentLoaded', (evt) => {
+                        const initSwiper_7a4cc389 = (evt) => {
                             const navigation = {
                                 disabledClass: 'Disabled',
                                 hiddenClass: 'Hidden',
-                                prevEl: '#Swiper_1-7a4cc389-Navigation > .PrevBtn',
-                                nextEl: '#Swiper_1-7a4cc389-Navigation > .NextBtn',
+                                prevEl: '#Swiper_7a4cc389-Navigation > .PrevBtn',
+                                nextEl: '#Swiper_7a4cc389-Navigation > .NextBtn',
                             };
 
                             const pagination_bullet = {
-                                el: '#Swiper_1-7a4cc389-Pagenation',
+                                el: '#Swiper_7a4cc389-Pagenation',
                                 type: 'bullets',
                                 clickable: true,
                                 modifierClass: 'Pagenation-',
@@ -122,6 +122,8 @@
                             };
 
                             const swiper_option = {
+                                observer: true,
+                                observeParents: true,
                                 slidesPerView: 1, // 슬라이드의 수가 slidesPerView의 값 2배 이상이어야함. slidesPerView, slidesPerGroup 함께 설정 필요.
                                 slidesPerGroup: 1,
                                 spaceBetween: 10,
@@ -141,7 +143,7 @@
                                 }
                             };
 
-                            let swiper = new Swiper('#Swiper_1-7a4cc389', swiper_option);
+                            let swiper = new Swiper('#Swiper_7a4cc389', swiper_option);
 
                             swiper.on('init', function() {
                                 // console.log('init');
@@ -164,14 +166,16 @@
                             });
 
                             swiper.init();
-                        });
+                        };
+
+                        window.addEventListener('DOMContentLoaded', initSwiper_7a4cc389);
                     </script>
                 </div>
             </section>
             <section>
                 <h2 class='H2'>swiper/Swiper_2</h2>
                 <div class='RR relative'>
-                    <div id='Swiper_2-17390142' class='swiper Swiper_2 relative'>
+                    <div id='Swiper_17390142' class='swiper relative hidden [&.swiper-initialized]:block'>
                         <div class='swiper-wrapper'>
                             <div class='RR swiper-slide' data-key='0'>
                                 <div>
@@ -224,7 +228,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div id='Swiper_2-17390142-Navigation' class='RR Swiper_2-Navigation z-10 absolute top-[0] left-[0] left-1/2 -translate-x-1/2 pointer-events-none flex flex-row items-center justify-between gap-[0] w-full h-full bg-[rgba(0,255,0,0.3)]'>
+                        <div id='Swiper_17390142-Navigation' class='RR z-10 absolute top-[0] left-[0] left-1/2 -translate-x-1/2 pointer-events-none flex flex-row items-center justify-between gap-[0] w-full h-full bg-[rgba(0,255,0,0.3)]'>
                             <div class='RR NavBtn PrevBtn translate-x-[-50%] pointer-events-auto cursor-pointer [&.Disabled]:opacity-0 [&.Disabled]:cursor-default'>
                                 <img class='[.NavBtn:hover>&]:hidden' src='/assets/icon/swiper/prev_btn.svg' alt='' />
                                 <img class='hidden [.NavBtn:hover>&]:block' src='/assets/icon/swiper/prev_btn_hover.svg' alt='' />
@@ -236,18 +240,18 @@
                         </div>
                     </div>
                     <div class=""></div>
-                    <div id='Swiper_2-17390142-PagenationProgressbar' class='RR Swiper_2-PagenationProgressbar h-[10px] bg-[gray]'></div>
+                    <div id='Swiper_17390142-PagenationProgressbar' class='RR h-[10px] bg-[gray]'></div>
                     <script>
-                        window.addEventListener('DOMContentLoaded', (evt) => {
+                        const initSwiper_17390142 = (evt) => {
                             const navigation = {
                                 disabledClass: 'Disabled',
                                 hiddenClass: 'Hidden',
-                                prevEl: '#Swiper_2-17390142-Navigation > .PrevBtn',
-                                nextEl: '#Swiper_2-17390142-Navigation > .NextBtn',
+                                prevEl: '#Swiper_17390142-Navigation > .PrevBtn',
+                                nextEl: '#Swiper_17390142-Navigation > .NextBtn',
                             };
 
                             const pagination_progress = {
-                                el: '#Swiper_2-17390142-PagenationProgressbar',
+                                el: '#Swiper_17390142-PagenationProgressbar',
                                 type: 'progressbar',
                                 modifierClass: 'Pagenation-',
                                 progressbarFillClass: 'FillBar',
@@ -272,7 +276,7 @@
                                 // grabCursor: true,
                             };
 
-                            let swiper = new Swiper('#Swiper_2-17390142', swiper_option);
+                            let swiper = new Swiper('#Swiper_17390142', swiper_option);
 
                             swiper.on('init', function() {
                                 // console.log('init');
@@ -302,17 +306,19 @@
                             });
 
                             function updateNavWid() {
-                                const $active_slide = $(`#Swiper_2-17390142 .swiper-slide-active`);
-                                $(`#Swiper_2-17390142-Navigation`).width($active_slide.width());
+                                const $active_slide = $(`#Swiper_17390142 .swiper-slide-active`);
+                                $(`#Swiper_17390142-Navigation`).width($active_slide.width());
                             }
-                        });
+                        };
+
+                        window.addEventListener('DOMContentLoaded', initSwiper_17390142);
                     </script>
                 </div>
             </section>
             <section>
                 <h2 class='H2'>swiper/Swiper_3</h2>
                 <div class='RR relative w-[360px] mx-auto'>
-                    <div id='Swiper_3-eee8dbab' class='swiper Swiper_3 relative'>
+                    <div id='Swiper_eee8dbab' class='swiper relative hidden [&.swiper-initialized]:block'>
                         <div class='swiper-wrapper'>
                             <div class='RR swiper-slide' data-key='0'>
                                 <div>
@@ -340,7 +346,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div id='Swiper_3-eee8dbab-Navigation' class='RR Swiper_3-Navigation z-10 absolute top-[0] left-[0] pointer-events-none flex flex-row items-center justify-between gap-[0] w-full h-full bg-[rgba(0,255,0,0.3)]'>
+                        <div id='Swiper_eee8dbab-Navigation' class='RR z-10 absolute top-[0] left-[0] pointer-events-none flex flex-row items-center justify-between gap-[0] w-full h-full bg-[rgba(0,255,0,0.3)]'>
                             <div class='RR NavBtn PrevBtn pointer-events-auto cursor-pointer [&.Disabled]:opacity-0 [&.Disabled]:cursor-default'>
                                 <img class='[.NavBtn:hover>&]:hidden' src='/assets/icon/swiper/prev_btn.svg' alt='' />
                                 <img class='hidden [.NavBtn:hover>&]:block' src='/assets/icon/swiper/prev_btn_hover.svg' alt='' />
@@ -351,18 +357,18 @@
                             </div>
                         </div>
                     </div>
-                    <div id='Swiper_3-eee8dbab-Pagenation' class='RR Swiper_3-Pagenation flex flex-row items-center justify-center gap-[10px]'></div>
+                    <div id='Swiper_eee8dbab-Pagenation' class='RR flex flex-row items-center justify-center gap-[10px]'></div>
                     <script>
-                        window.addEventListener('DOMContentLoaded', (evt) => {
+                        const initSwiper_eee8dbab = (evt) => {
                             const navigation = {
                                 disabledClass: 'Disabled',
                                 hiddenClass: 'Hidden',
-                                prevEl: '#Swiper_3-eee8dbab-Navigation > .PrevBtn',
-                                nextEl: '#Swiper_3-eee8dbab-Navigation > .NextBtn',
+                                prevEl: '#Swiper_eee8dbab-Navigation > .PrevBtn',
+                                nextEl: '#Swiper_eee8dbab-Navigation > .NextBtn',
                             };
 
                             const pagination_bullet = {
-                                el: '#Swiper_3-eee8dbab-Pagenation',
+                                el: '#Swiper_eee8dbab-Pagenation',
                                 type: 'fraction',
                                 modifierClass: 'Pagenation-',
                                 formatFractionCurrent: (number) => {
@@ -397,7 +403,7 @@
                                 // grabCursor: true,
                             };
 
-                            let swiper = new Swiper('#Swiper_3-eee8dbab', swiper_option);
+                            let swiper = new Swiper('#Swiper_eee8dbab', swiper_option);
 
                             swiper.on('init', function() {
                                 // console.log('init');
@@ -420,7 +426,9 @@
                             });
 
                             swiper.init();
-                        });
+                        };
+
+                        window.addEventListener('DOMContentLoaded', initSwiper_eee8dbab);
                     </script>
                 </div>
             </section>
