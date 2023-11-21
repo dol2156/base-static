@@ -32,9 +32,29 @@
   text-align: center;
   opacity: 0.5;
 }
+html,
+body,
+input,
+select,
+textarea {
+  font-family:
+    'SUIT Variable',
+    'Montserrat',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial,
+    'Noto Sans',
+    sans-serif,
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol',
+    'Noto Color Emoji';
+}
 body {
   position: relative;
-  font-family: 'Pretendard';
 
   /* $PcMinWid 이상 화면*/
   @media screen and (min-width: $PcMinWid) {
