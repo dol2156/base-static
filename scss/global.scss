@@ -25,12 +25,15 @@
   transform: translateY(-50%);
   left: 0;
   background-color: #0a7feb;
-  color: white;
+  color: black;
   width: 100%;
   //min-width: var(--body-min-wid);
   font-size: 10;
   text-align: center;
-  opacity: 0.5;
+  opacity: 0.3;
+  .Inner{
+    background-color:yellow;
+  }
 }
 html,
 body,

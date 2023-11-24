@@ -7,11 +7,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
     #AppInfo > a{ display:flex; align-items:center; justify-content:center; gap:4px; }
     #AppInfo > a{ color:yellow; font-size:12px; font-weight:400; }
     #AppInfo > a{ background-color:rgba(0,0,0,.7); cursor:pointer; white-space:nowrap; padding:4px; }
-    #AppInfo > a{ transform:translateX(-50%) translateY(-100%); }
-    [data-wheel-direction='down'] #AppInfo > a{ transform: translateX(-50%) translateY(0%); }
   </style>
   <div id="AppInfo">
-    <a href="/_pub_sitemap.html">
+    <a href="/_pub_sitemap.html" class="translate-x-[-50%] translate-y-[-100%] [[data-scroll-top='0']_&]:translate-y-[0]">
       <div>
         <div class="hidden xs:max-sm:block">Xs</div>
         <div class="hidden sm:max-md:block">Sm</div>

@@ -1,7 +1,7 @@
 <div class='RR relative'>
   <div id='Swiper_17390142' class='swiper relative hidden [&.swiper-initialized]:block'>
     <div class='swiper-wrapper'>
-      {{#LOOP 10}}
+      {{#LOOP 5}}
         <div class='RR swiper-slide' data-key='{{index}}'>
           <div>
             <img class='w-full' src='https://gifpng.com/560x315?text={{number}}' alt=''/>
@@ -20,7 +20,7 @@
       </div>
     </div>
   </div>
-  <div class=""></div>
+  <div class=''></div>
   <div id='Swiper_17390142-PagenationProgressbar' class='RR h-[10px] bg-[gray]'></div>
   {{!--prettier-ignore--}}
   <script>
@@ -48,6 +48,7 @@
         centeredSlides: true,
         spaceBetween: 10,
         loop: true,
+        loopAdditionalSlides: 1,
         navigation: navigation,
         pagination: pagination_progress,
         // autoplay: {
@@ -87,7 +88,7 @@
         updateNavWid();
       });
 
-      function updateNavWid(){
+      function updateNavWid() {
         const $active_slide = $(`#Swiper_17390142 .swiper-slide-active`);
         $(`#Swiper_17390142-Navigation`).width($active_slide.width());
       }
