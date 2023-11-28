@@ -105,3 +105,9 @@ body {
 strong {
   font-weight: 700;
 }
+.hide_scroll {
+  -ms-overflow-style: none;
+}
+.hide_scroll::-webkit-scrollbar {
+  display: none;
+}

@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /**/
-@import '/assets/font/Pretendard.css';
+@import '/assets/font/SUIT-Variable.css';
 :root[lang=ko] {
   word-break: keep-all;
 }
@@ -200,6 +200,14 @@ body {
 
 strong {
   font-weight: 700;
+}
+
+.hide_scroll {
+  -ms-overflow-style: none;
+}
+
+.hide_scroll::-webkit-scrollbar {
+  display: none;
 }
 
 .TopActionBar_1 {
@@ -1447,6 +1455,7 @@ strong {
 }
 
 #ContentsRuler {
+  pointer-events: none;
   z-index: 999999;
   position: fixed;
   top: 50%;

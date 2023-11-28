@@ -5,7 +5,7 @@
     <meta id='viewport' name='viewport' content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no' />
     <script src='/assets/js/viewport.js'></script>
     <!-- Font preload -->
-    <link rel="preload" href="/assets/font/PretendardVariable.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/assets/font/SUIT-Variable.woff2" as="font" type="font/woff2" crossorigin />
     <!-- Icon -->
     <link rel='icon' href='data:,' />
     <link rel='apple-touch-icon' sizes='180x180' href='/assets/favicon/apple-touch-icon.png' />
@@ -16,6 +16,7 @@
     <link rel='icon' href='/assets/favicon/favicon.ico' />
     <!-- Core Library -->
     <script src='/assets/lib/jquery-3.7.1.min.js'></script>
+    <script src="/assets/lib/jquery.easing.min.js"></script>
     <script src="/assets/lib/xlsx.full.min.js"></script>
     <script src='/assets/lib/ua-parser.min.js'></script>
     <link href='/assets/lib/fontawesome-free-6.4.2-web/css/all.css' rel='stylesheet' />
@@ -130,6 +131,7 @@
                                 slidesPerGroup: 1,
                                 spaceBetween: 10,
                                 loop: false,
+                                // loopAdditionalSlides: 1,
                                 navigation: navigation,
                                 pagination: pagination_bullet,
                                 // autoplay: {
@@ -157,14 +159,6 @@
 
                             swiper.on('slideChangeTransitionEnd', function() {
                                 // console.log('slideChangeTransitionEnd');
-                            });
-
-                            swiper.on('reachBeginning', function() {
-                                // console.log('reachBeginning');
-                            });
-
-                            swiper.on('reachEnd', function() {
-                                // console.log('reachEnd');
                             });
 
                             swiper.init();
@@ -243,7 +237,7 @@
                                 centeredSlides: true,
                                 spaceBetween: 10,
                                 loop: true,
-                                loopAdditionalSlides: 1,
+                                // loopAdditionalSlides: 1,
                                 navigation: navigation,
                                 pagination: pagination_progress,
                                 // autoplay: {
@@ -370,6 +364,7 @@
                                 slidesPerGroup: 1,
                                 spaceBetween: 10,
                                 //loop: false,
+                                // loopAdditionalSlides: 1,
                                 rewind: true,
                                 navigation: navigation,
                                 pagination: pagination_bullet,
@@ -407,6 +402,134 @@
                         };
 
                         window.addEventListener('DOMContentLoaded', initSwiper_eee8dbab);
+                    </script>
+                </div>
+            </section>
+            <section>
+                <h2 class='H2'>swiper/Swiper_4</h2>
+                <div class='RR relative'>
+                    <div id='Swiper_94d4a4f2' class='swiper relative hidden [&.swiper-initialized]:block'>
+                        <div class='swiper-wrapper'>
+                            <div class='RR swiper-slide' data-key='0'>
+                                <div>
+                                    <img class='w-full' src='https://gifpng.com/218x230?text=1' alt='' />
+                                </div>
+                            </div>
+                            <div class='RR swiper-slide' data-key='1'>
+                                <div>
+                                    <img class='w-full' src='https://gifpng.com/218x230?text=2' alt='' />
+                                </div>
+                            </div>
+                            <div class='RR swiper-slide' data-key='2'>
+                                <div>
+                                    <img class='w-full' src='https://gifpng.com/218x230?text=3' alt='' />
+                                </div>
+                            </div>
+                            <div class='RR swiper-slide' data-key='3'>
+                                <div>
+                                    <img class='w-full' src='https://gifpng.com/218x230?text=4' alt='' />
+                                </div>
+                            </div>
+                            <div class='RR swiper-slide' data-key='4'>
+                                <div>
+                                    <img class='w-full' src='https://gifpng.com/218x230?text=5' alt='' />
+                                </div>
+                            </div>
+                            <div class='RR swiper-slide' data-key='5'>
+                                <div>
+                                    <img class='w-full' src='https://gifpng.com/218x230?text=6' alt='' />
+                                </div>
+                            </div>
+                            <div class='RR swiper-slide' data-key='6'>
+                                <div>
+                                    <img class='w-full' src='https://gifpng.com/218x230?text=7' alt='' />
+                                </div>
+                            </div>
+                            <div class='RR swiper-slide' data-key='7'>
+                                <div>
+                                    <img class='w-full' src='https://gifpng.com/218x230?text=8' alt='' />
+                                </div>
+                            </div>
+                            <div class='RR swiper-slide' data-key='8'>
+                                <div>
+                                    <img class='w-full' src='https://gifpng.com/218x230?text=9' alt='' />
+                                </div>
+                            </div>
+                            <div class='RR swiper-slide' data-key='9'>
+                                <div>
+                                    <img class='w-full' src='https://gifpng.com/218x230?text=10' alt='' />
+                                </div>
+                            </div>
+                        </div>
+                        <div id='Swiper_94d4a4f2-Navigation' class='RR z-10 absolute top-[0] left-[0] pointer-events-none flex flex-row items-center justify-between gap-[0] w-full h-full bg-[rgba(0,255,0,0.3)]'>
+                            <div class='RR NavBtn PrevBtn pointer-events-auto cursor-pointer [&.Disabled]:opacity-0 [&.Disabled]:cursor-default h-full bg-[linear-gradient(90deg,_#F1F1F1_39.14%,_rgba(241,_241,_241,_0.00)_113.16%)]'>
+                                <div class="flex flex-row items-center justify-center gap-[0] h-full">
+                                    <img class='[.NavBtn:hover_&]:hidden' src='/assets/icon/swiper/prev_btn.svg' alt='' />
+                                    <img class='hidden [.NavBtn:hover_&]:block' src='/assets/icon/swiper/prev_btn_hover.svg' alt='' />
+                                </div>
+                            </div>
+                            <div class='rotate-180'></div>
+                            <div class='RR NavBtn NextBtn pointer-events-auto cursor-pointer [&.Disabled]:opacity-0 [&.Disabled]:cursor-default h-full bg-[linear-gradient(270deg,_#F1F1F1_39.14%,_rgba(241,_241,_241,_0.00)_113.16%)]'>
+                                <div class='flex flex-row items-center justify-center gap-[0] h-full'>
+                                    <img class='[.NavBtn:hover_&]:hidden' src='/assets/icon/swiper/next_btn.svg' alt='' />
+                                    <img class='hidden [.NavBtn:hover_&]:block' src='/assets/icon/swiper/next_btn_hover.svg' alt='' />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id='Swiper_94d4a4f2-Pagenation' class='RR flex flex-row items-center justify-center gap-[10px]'></div>
+                    <script>
+                        const initSwiper_94d4a4f2 = (evt) => {
+                            const navigation = {
+                                disabledClass: 'Disabled',
+                                hiddenClass: 'Hidden',
+                                prevEl: '#Swiper_94d4a4f2-Navigation > .PrevBtn',
+                                nextEl: '#Swiper_94d4a4f2-Navigation > .NextBtn',
+                            };
+
+                            const swiper_option = {
+                                observer: true,
+                                observeParents: true,
+                                slidesPerView: 1.2, // 슬라이드의 수가 slidesPerView의 값 2배 이상이어야함. slidesPerView, slidesPerGroup 함께 설정 필요.
+                                slidesPerGroup: 1,
+                                spaceBetween: 16,
+                                slidesOffsetBefore: 40,
+                                slidesOffsetAfter: 40,
+                                loop: false,
+                                // loopAdditionalSlides: 1,
+                                navigation: navigation,
+                                // autoplay: {
+                                //   delay: 1000,
+                                //   disableOnInteraction: false,
+                                // },
+                                init: false,
+                                // grabCursor: true,
+                                breakpoints: {
+                                    769: {
+                                        slidesPerView: 5,
+                                        spaceBetween: 32,
+                                    }
+                                }
+                            };
+
+                            let swiper = new Swiper('#Swiper_94d4a4f2', swiper_option);
+
+                            swiper.on('init', function() {
+                                // console.log('init');
+                            });
+
+                            swiper.on('slideChange', function() {
+                                // console.log('slideChange');
+                            });
+
+                            swiper.on('slideChangeTransitionEnd', function() {
+                                // console.log('slideChangeTransitionEnd');
+                            });
+
+                            swiper.init();
+                        };
+
+                        window.addEventListener('DOMContentLoaded', initSwiper_94d4a4f2);
                     </script>
                 </div>
             </section>

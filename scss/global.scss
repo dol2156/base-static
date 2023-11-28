@@ -15,10 +15,11 @@
 @use 'lib';
 @import 'var_scss.scss';
 /**/
-//@import '/assets/font/SUIT-Variable.css';
+@import '/assets/font/SUIT-Variable.css';
 //@import '/assets/font/Montserrat.css';
-@import '/assets/font/Pretendard.css';
+//@import '/assets/font/Pretendard.css';
 #ContentsRuler {
+  pointer-events:none;
   z-index: 999999;
   position: fixed;
   top: 50%;

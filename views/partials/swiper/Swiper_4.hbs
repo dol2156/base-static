@@ -1,0 +1,83 @@
+<div class='RR relative'>
+  <div id='Swiper_94d4a4f2' class='swiper relative hidden [&.swiper-initialized]:block'>
+    <div class='swiper-wrapper'>
+      {{#LOOP 10}}
+        <div class='RR swiper-slide' data-key='{{index}}'>
+          <div>
+            <img class='w-full' src='https://gifpng.com/218x230?text={{number}}' alt=''/>
+          </div>
+        </div>
+      {{/LOOP}}
+    </div>
+    <div id='Swiper_94d4a4f2-Navigation' class='RR z-10 absolute top-[0] left-[0] pointer-events-none flex flex-row items-center justify-between gap-[0] w-full h-full bg-[rgba(0,255,0,0.3)]'>
+      <div class='RR NavBtn PrevBtn pointer-events-auto cursor-pointer [&.Disabled]:opacity-0 [&.Disabled]:cursor-default h-full bg-[linear-gradient(90deg,_#F1F1F1_39.14%,_rgba(241,_241,_241,_0.00)_113.16%)]'>
+        <div class="flex flex-row items-center justify-center gap-[0] h-full">
+          <img class='[.NavBtn:hover_&]:hidden' src='/assets/icon/swiper/prev_btn.svg' alt=''/>
+          <img class='hidden [.NavBtn:hover_&]:block' src='/assets/icon/swiper/prev_btn_hover.svg' alt=''/>
+        </div>
+      </div>
+      <div class='rotate-180'></div>
+      <div class='RR NavBtn NextBtn pointer-events-auto cursor-pointer [&.Disabled]:opacity-0 [&.Disabled]:cursor-default h-full bg-[linear-gradient(270deg,_#F1F1F1_39.14%,_rgba(241,_241,_241,_0.00)_113.16%)]'>
+        <div class='flex flex-row items-center justify-center gap-[0] h-full'>
+          <img class='[.NavBtn:hover_&]:hidden' src='/assets/icon/swiper/next_btn.svg' alt=''/>
+          <img class='hidden [.NavBtn:hover_&]:block' src='/assets/icon/swiper/next_btn_hover.svg' alt=''/>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id='Swiper_94d4a4f2-Pagenation' class='RR flex flex-row items-center justify-center gap-[10px]'></div>
+  {{!--prettier-ignore--}}
+  <script>
+    const initSwiper_94d4a4f2 = (evt) => {
+      const navigation = {
+        disabledClass: 'Disabled',
+        hiddenClass: 'Hidden',
+        prevEl: '#Swiper_94d4a4f2-Navigation > .PrevBtn',
+        nextEl: '#Swiper_94d4a4f2-Navigation > .NextBtn',
+      };
+
+      const swiper_option = {
+        observer: true,
+        observeParents: true,
+        slidesPerView: 1.2, // 슬라이드의 수가 slidesPerView의 값 2배 이상이어야함. slidesPerView, slidesPerGroup 함께 설정 필요.
+        slidesPerGroup: 1,
+        spaceBetween: 16,
+        slidesOffsetBefore: 40,
+        slidesOffsetAfter: 40,
+        loop: false,
+        // loopAdditionalSlides: 1,
+        navigation: navigation,
+        // autoplay: {
+        //   delay: 1000,
+        //   disableOnInteraction: false,
+        // },
+        init: false,
+        // grabCursor: true,
+        breakpoints: {
+          769: {
+            slidesPerView: 5,
+            spaceBetween: 32,
+          }
+        }
+      };
+
+      let swiper = new Swiper('#Swiper_94d4a4f2', swiper_option);
+
+      swiper.on('init', function () {
+        // console.log('init');
+      });
+
+      swiper.on('slideChange', function () {
+        // console.log('slideChange');
+      });
+
+      swiper.on('slideChangeTransitionEnd', function () {
+        // console.log('slideChangeTransitionEnd');
+      });
+
+      swiper.init();
+    };
+
+    window.addEventListener('DOMContentLoaded', initSwiper_94d4a4f2);
+  </script>
+</div>
