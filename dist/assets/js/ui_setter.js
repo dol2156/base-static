@@ -454,3 +454,35 @@ const initMoreViewList = (trigger) => {
     }
   }
 };
+
+/**
+ *
+ * @param trigger
+ */
+const initNumberAniBox = (trigger) => {
+  if (typeof trigger === 'undefined') return;
+  const el_target = trigger.parentElement;
+  const $target = $(el_target);
+
+  const startNumber = 0;
+  const endNumber = parseInt($target.text());
+  const duration = 1 * 1000;
+
+  // https://api.jquery.com/animate/
+  $target.animate(
+    {
+      count: endNumber,
+    },
+    {
+      easing: 'linear',
+      duration: duration,
+      step: (now) => {
+        now = Math.floor(now);
+        $target.text(now);
+      },
+      complete: () => {
+        //console.log('complete');
+      },
+    },
+  );
+};

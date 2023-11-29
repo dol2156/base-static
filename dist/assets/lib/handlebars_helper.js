@@ -405,6 +405,7 @@ Handlebars.loadJson = (json_file_name, callback) => {
 Handlebars.jsonToHTML = (json_file_name, template_file_name, callback) => {
   Handlebars.loadJson(json_file_name, (res) => {
     Handlebars.templateToHTML(template_file_name, res);
+    if(callback) callback(res);
   });
 }
 
