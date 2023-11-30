@@ -1,0 +1,51 @@
+<div class='RR relative'>
+  <div id='Swiper_71a82ee0' class='swiper relative hidden [&.swiper-initialized]:block'>
+    <div class='swiper-wrapper ease-linear'>
+      {{#LOOP 30}}
+        <div class='RR swiper-slide w-[240px]' data-key='{{index}}'>
+          <div>
+            <img class='w-full' src='https://gifpng.com/300x140?text={{number}}' alt='' />
+          </div>
+        </div>
+      {{/LOOP}}
+    </div>
+  </div>
+  {{!--prettier-ignore--}}
+  <script>
+    const initSwiper_71a82ee0 = (evt) => {
+      const swiper_option = {
+        observer:true,
+        observeParents:true,
+        slidesPerView: 'auto', // 슬라이드의 수가 slidesPerView의 값 2배 이상이어야함. slidesPerView, slidesPerGroup 함께 설정 필요.
+        spaceBetween: 60,
+        loop: true,
+        speed:5000,
+        loopAdditionalSlides: 1,
+        autoplay: {
+          delay: 0,
+          disableOnInteraction: false,
+        },
+        init: false,
+        // grabCursor: true,
+      };
+
+      let swiper = new Swiper('#Swiper_71a82ee0', swiper_option);
+
+      swiper.on('init', function () {
+        // console.log('init');
+      });
+
+      swiper.on('slideChange', function () {
+        // console.log('slideChange');
+      });
+
+      swiper.on('slideChangeTransitionEnd', function () {
+        // console.log('slideChangeTransitionEnd');
+      });
+
+      swiper.init();
+    };
+
+    window.addEventListener('DOMContentLoaded', initSwiper_71a82ee0);
+  </script>
+</div>

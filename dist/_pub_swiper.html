@@ -51,6 +51,17 @@
         <div class="RR Inner">컨텐츠 너비 줄자</div>
     </div>
     <div id='Modal'></div>
+    <div id="LoadingSpinner"></div>
+    <div id='BottomRightUtil'>
+        <div class='flex flex-col gap-[10px]'>
+            <button class='ScrollTopBtn bg-[#5D45FF] w-[40px] aspect-square rounded-full text-white text-[12px] font-[800]' onclick='PageScrollControl.Top()'>
+                TOP
+            </button>
+            <button class='ScrollTopBtn bg-[#5D45FF] w-[40px] aspect-square rounded-full text-white text-[12px] font-[800]' onclick='PageScrollControl.Bottom()'>
+                BTM
+            </button>
+        </div>
+    </div>
     <div id='Page'>
         <main>
             <link href='/assets/css/_pub.css' rel='stylesheet' />
@@ -107,7 +118,7 @@
                                 nextEl: '#Swiper_7a4cc389-Navigation > .NextBtn',
                             };
 
-                            const pagination_bullet = {
+                            const pagination = {
                                 el: '#Swiper_7a4cc389-Pagenation',
                                 type: 'bullets',
                                 clickable: true,
@@ -133,7 +144,7 @@
                                 loop: false,
                                 // loopAdditionalSlides: 1,
                                 navigation: navigation,
-                                pagination: pagination_bullet,
+                                pagination: pagination,
                                 // autoplay: {
                                 //   delay: 1000,
                                 //   disableOnInteraction: false,
@@ -530,6 +541,202 @@
                         };
 
                         window.addEventListener('DOMContentLoaded', initSwiper_94d4a4f2);
+                    </script>
+                </div>
+            </section>
+            <section>
+                <h2 class='H2'>swiper/Swiper_5</h2>
+                <div class='RR relative'>
+                    <div id='Swiper_71a82ee0' class='swiper relative hidden [&.swiper-initialized]:block'>
+                        <div class='swiper-wrapper ease-linear'>
+                            <div class='RR swiper-slide w-[240px]' data-key='0'>
+                                <div>
+                                    <img class='w-full' src='https://gifpng.com/300x140?text=1' alt='' />
+                                </div>
+                            </div>
+                            <div class='RR swiper-slide w-[240px]' data-key='1'>
+                                <div>
+                                    <img class='w-full' src='https://gifpng.com/300x140?text=2' alt='' />
+                                </div>
+                            </div>
+                            <div class='RR swiper-slide w-[240px]' data-key='2'>
+                                <div>
+                                    <img class='w-full' src='https://gifpng.com/300x140?text=3' alt='' />
+                                </div>
+                            </div>
+                            <div class='RR swiper-slide w-[240px]' data-key='3'>
+                                <div>
+                                    <img class='w-full' src='https://gifpng.com/300x140?text=4' alt='' />
+                                </div>
+                            </div>
+                            <div class='RR swiper-slide w-[240px]' data-key='4'>
+                                <div>
+                                    <img class='w-full' src='https://gifpng.com/300x140?text=5' alt='' />
+                                </div>
+                            </div>
+                            <div class='RR swiper-slide w-[240px]' data-key='5'>
+                                <div>
+                                    <img class='w-full' src='https://gifpng.com/300x140?text=6' alt='' />
+                                </div>
+                            </div>
+                            <div class='RR swiper-slide w-[240px]' data-key='6'>
+                                <div>
+                                    <img class='w-full' src='https://gifpng.com/300x140?text=7' alt='' />
+                                </div>
+                            </div>
+                            <div class='RR swiper-slide w-[240px]' data-key='7'>
+                                <div>
+                                    <img class='w-full' src='https://gifpng.com/300x140?text=8' alt='' />
+                                </div>
+                            </div>
+                            <div class='RR swiper-slide w-[240px]' data-key='8'>
+                                <div>
+                                    <img class='w-full' src='https://gifpng.com/300x140?text=9' alt='' />
+                                </div>
+                            </div>
+                            <div class='RR swiper-slide w-[240px]' data-key='9'>
+                                <div>
+                                    <img class='w-full' src='https://gifpng.com/300x140?text=10' alt='' />
+                                </div>
+                            </div>
+                            <div class='RR swiper-slide w-[240px]' data-key='10'>
+                                <div>
+                                    <img class='w-full' src='https://gifpng.com/300x140?text=11' alt='' />
+                                </div>
+                            </div>
+                            <div class='RR swiper-slide w-[240px]' data-key='11'>
+                                <div>
+                                    <img class='w-full' src='https://gifpng.com/300x140?text=12' alt='' />
+                                </div>
+                            </div>
+                            <div class='RR swiper-slide w-[240px]' data-key='12'>
+                                <div>
+                                    <img class='w-full' src='https://gifpng.com/300x140?text=13' alt='' />
+                                </div>
+                            </div>
+                            <div class='RR swiper-slide w-[240px]' data-key='13'>
+                                <div>
+                                    <img class='w-full' src='https://gifpng.com/300x140?text=14' alt='' />
+                                </div>
+                            </div>
+                            <div class='RR swiper-slide w-[240px]' data-key='14'>
+                                <div>
+                                    <img class='w-full' src='https://gifpng.com/300x140?text=15' alt='' />
+                                </div>
+                            </div>
+                            <div class='RR swiper-slide w-[240px]' data-key='15'>
+                                <div>
+                                    <img class='w-full' src='https://gifpng.com/300x140?text=16' alt='' />
+                                </div>
+                            </div>
+                            <div class='RR swiper-slide w-[240px]' data-key='16'>
+                                <div>
+                                    <img class='w-full' src='https://gifpng.com/300x140?text=17' alt='' />
+                                </div>
+                            </div>
+                            <div class='RR swiper-slide w-[240px]' data-key='17'>
+                                <div>
+                                    <img class='w-full' src='https://gifpng.com/300x140?text=18' alt='' />
+                                </div>
+                            </div>
+                            <div class='RR swiper-slide w-[240px]' data-key='18'>
+                                <div>
+                                    <img class='w-full' src='https://gifpng.com/300x140?text=19' alt='' />
+                                </div>
+                            </div>
+                            <div class='RR swiper-slide w-[240px]' data-key='19'>
+                                <div>
+                                    <img class='w-full' src='https://gifpng.com/300x140?text=20' alt='' />
+                                </div>
+                            </div>
+                            <div class='RR swiper-slide w-[240px]' data-key='20'>
+                                <div>
+                                    <img class='w-full' src='https://gifpng.com/300x140?text=21' alt='' />
+                                </div>
+                            </div>
+                            <div class='RR swiper-slide w-[240px]' data-key='21'>
+                                <div>
+                                    <img class='w-full' src='https://gifpng.com/300x140?text=22' alt='' />
+                                </div>
+                            </div>
+                            <div class='RR swiper-slide w-[240px]' data-key='22'>
+                                <div>
+                                    <img class='w-full' src='https://gifpng.com/300x140?text=23' alt='' />
+                                </div>
+                            </div>
+                            <div class='RR swiper-slide w-[240px]' data-key='23'>
+                                <div>
+                                    <img class='w-full' src='https://gifpng.com/300x140?text=24' alt='' />
+                                </div>
+                            </div>
+                            <div class='RR swiper-slide w-[240px]' data-key='24'>
+                                <div>
+                                    <img class='w-full' src='https://gifpng.com/300x140?text=25' alt='' />
+                                </div>
+                            </div>
+                            <div class='RR swiper-slide w-[240px]' data-key='25'>
+                                <div>
+                                    <img class='w-full' src='https://gifpng.com/300x140?text=26' alt='' />
+                                </div>
+                            </div>
+                            <div class='RR swiper-slide w-[240px]' data-key='26'>
+                                <div>
+                                    <img class='w-full' src='https://gifpng.com/300x140?text=27' alt='' />
+                                </div>
+                            </div>
+                            <div class='RR swiper-slide w-[240px]' data-key='27'>
+                                <div>
+                                    <img class='w-full' src='https://gifpng.com/300x140?text=28' alt='' />
+                                </div>
+                            </div>
+                            <div class='RR swiper-slide w-[240px]' data-key='28'>
+                                <div>
+                                    <img class='w-full' src='https://gifpng.com/300x140?text=29' alt='' />
+                                </div>
+                            </div>
+                            <div class='RR swiper-slide w-[240px]' data-key='29'>
+                                <div>
+                                    <img class='w-full' src='https://gifpng.com/300x140?text=30' alt='' />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <script>
+                        const initSwiper_71a82ee0 = (evt) => {
+                            const swiper_option = {
+                                observer: true,
+                                observeParents: true,
+                                slidesPerView: 'auto', // 슬라이드의 수가 slidesPerView의 값 2배 이상이어야함. slidesPerView, slidesPerGroup 함께 설정 필요.
+                                spaceBetween: 60,
+                                loop: true,
+                                speed: 5000,
+                                loopAdditionalSlides: 1,
+                                autoplay: {
+                                    delay: 0,
+                                    disableOnInteraction: false,
+                                },
+                                init: false,
+                                // grabCursor: true,
+                            };
+
+                            let swiper = new Swiper('#Swiper_71a82ee0', swiper_option);
+
+                            swiper.on('init', function() {
+                                // console.log('init');
+                            });
+
+                            swiper.on('slideChange', function() {
+                                // console.log('slideChange');
+                            });
+
+                            swiper.on('slideChangeTransitionEnd', function() {
+                                // console.log('slideChangeTransitionEnd');
+                            });
+
+                            swiper.init();
+                        };
+
+                        window.addEventListener('DOMContentLoaded', initSwiper_71a82ee0);
                     </script>
                 </div>
             </section>
