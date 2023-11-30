@@ -1,15 +1,20 @@
-<div class='TopActionBar_1 h-[56px] pc:h-[88px]'>
+<div class='TopActionBar_1 h-[var(--header-hei)]'>
   <section class='HBox h-full'>
     <div class='Inner h-full'>
-      <article class='CenterBetween h-full'>
+      <article class='RRR CenterBetween h-full'>
         <div>
           <a href='/' class='block RR'>
-            <img src='https://gifpng.com/140x18' alt='' />
+            <img class='w-[72px] pc:w-[100px]' src='https://gifpng.com/100x46' alt='' />
           </a>
         </div>
         <div>
-          <article class='CenterCenter' style='gap: 10px'>
-            <button class='RR' onclick="openAsideMenu();">
+          <article class='hidden pc:flex CenterRight gap-[16px]'>
+            <a href='#' class='Btn_1 w-[149px]'>로그인</a>
+            <a href='#' class='Btn_1 w-[149px]'>회원가입</a>
+            <a href='#' class='Btn_2 w-[149px]'>솔루션 START</a>
+          </article>
+          <article class='pc:hidden CenterCenter' style='gap: 10px'>
+            <button class='RR' onclick='openAsideMenu();'>
               <img src='/assets/icon/menu_btn.svg' alt='' />
             </button>
           </article>

@@ -56,13 +56,19 @@
   --contents-side-padding: 16px; /* 컨텐츠 좌우 안쪽 여백 */
   --real-side-padding:0px; /* JS 에서 컨트롤 중 */
   /**/
-  --header-hei: 50px;
+  --header-hei: 64px;
   --footer-hei: 50px;
   --fullpage-footer-hei: 100px;
+  /* $PcMinWid 이상 화면*/
 }
 @media screen and (min-width: 769px) {
   :root {
     --body-min-wid:1024px;
+  }
+}
+@media screen and (min-width: 769px) {
+  :root {
+    --header-hei: 90px;
   }
 }
 
@@ -666,47 +672,34 @@ strong {
 
 /**/
 .Btn_1 {
-  height: 46px;
+  height: 52px;
   display: flex;
-  padding: 0px 28px;
+  padding: 0 1.25em;
   justify-content: center;
   align-items: center;
-  border-radius: 8px;
-  background: var(--green-green-6, #00c781);
+  border-radius: 12px;
+  background: #26262C;
+  color: #C6C5D0;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  /* $PcMinWid 이상 화면*/
+}
+/**/
+.Btn_2 {
+  height: 52px;
+  display: flex;
+  padding: 0 1.25em;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  background: #5D45FF;
   color: #fff;
   text-align: center;
   font-size: 16px;
-  font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   /* $PcMinWid 이상 화면*/
 }
-@media screen and (min-width: 769px) {
-  .Btn_1 {
-    height: 60px;
-    font-size: 20px;
-  }
-}
-
-/**/
-.Btn_2 {
-  height: 46px;
-  padding: 0 28px;
-  border-radius: 8px;
-  background-color: white;
-  border: 1px solid var(--gray-gray-9, #333);
-  color: #111;
-  text-align: center;
-  font-size: 16px;
-  font-weight: 700;
-  /* $PcMinWid 이상 화면*/
-}
-@media screen and (min-width: 769px) {
-  .Btn_2 {
-    height: 60px;
-    font-size: 20px;
-  }
-}
-
 /**/
 .Checkbox_1 {
   aspect-ratio: 1;

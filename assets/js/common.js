@@ -257,7 +257,6 @@ function updateStickyBox() {
  */
 function initBottomRightUtil(){
   let st;
-  console.log('initBottomRightUtil');
   // scroll_end
   window.addEventListener('scroll', (evt) => {
     clearTimeout(st);
