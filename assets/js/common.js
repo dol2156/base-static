@@ -14,7 +14,6 @@
   const c_value = JSON.stringify(window.params);
   const c_value_style = 'border:1px solid black; background:#ffffd4; color:#333; padding:0.25em 0.5em; font-size:12px; border-left:none;';
   console.log(`%c${c_label}%c${c_value}`, c_label_style, c_value_style);
-
 })();
 
 /**
@@ -58,8 +57,7 @@ const LayerControl = {};
  * @constructor
  */
 LayerControl.On = (layer_id, callback) => {
-  const el_modal = document.querySelector(`#Modal`);
-  el_modal.classList.add(`On`);
+  ModalControl.On();
 
   const el_layer_id = document.querySelector(layer_id);
   el_layer_id.classList.add(`On`);
@@ -70,8 +68,7 @@ LayerControl.On = (layer_id, callback) => {
  * @constructor
  */
 LayerControl.Off = () => {
-  const el_modal = document.querySelector(`#Modal`);
-  el_modal.classList.remove(`On`);
+  ModalControl.Off();
 
   const el_layer_list = document.querySelectorAll(`.LayerPopup`);
   el_layer_list.forEach((el_layer, idx) => {
@@ -88,7 +85,41 @@ ModalControl.init = () => {
     LayerControl.Off();
   });
 };
+
+ModalControl.On = () => {
+  const el_modal = document.querySelector(`#Modal`);
+  el_modal.classList.add(`On`);
+};
+
+ModalControl.Off = () => {
+  const el_modal = document.querySelector(`#Modal`);
+  el_modal.classList.remove(`On`);
+};
 /* // 2023-10-21 :: END :: ModalControl */
+
+/* 2023-11-30 :: START :: LoadingSpinnerControl */
+const LoadingSpinnerControl = {};
+LoadingSpinnerControl.On = () => {
+  ModalControl.On();
+  
+  const $loading = document.querySelector(`#LoadingSpinner`);
+  $loading.classList.add('On');
+};
+LoadingSpinnerControl.Off = () => {
+  const $loading = document.querySelector(`#LoadingSpinner`);
+  $loading.classList.remove('On');
+  
+  ModalControl.Off();
+};
+// window.addEventListener('DOMContentLoaded', (evt) => {
+//   LoadingSpinnerControl.On();
+//   setTimeout(() => {
+//     LoadingSpinnerControl.Off();
+//   },3000);
+// });
+/* // 2023-11-30 :: END :: LoadingSpinnerControl */
+
+
 
 /* 2023-11-10 :: START :: AsideMenu Control */
 
