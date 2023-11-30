@@ -51,6 +51,15 @@
         <div class="RR Inner">컨텐츠 너비 줄자</div>
     </div>
     <div id='Modal'></div>
+    <div id="LoadingSpinner"></div>
+    <div id="BottomRightUtil" class="flex flex-col gap-[10px]">
+        <button class="ScrollTopBtn bg-[#5D45FF] w-[40px] aspect-square rounded-full text-white text-[12px] font-[800]" onclick="PageScrollControl.Top()">
+            TOP
+        </button>
+        <button class="ScrollTopBtn bg-[#5D45FF] w-[40px] aspect-square rounded-full text-white text-[12px] font-[800]">
+            BTM
+        </button>
+    </div>
     <div id='Page'>
         <header class='Header_1-a Sticky Top'>
             <section>
@@ -279,10 +288,7 @@
         <main>
             <section class="HBox">
                 <div class="Inner">
-                    <div id="Tpl_11101448"></div>
-                    <script>
-                        Handlebars.jsonToHTML(`news_list`, `Tpl_11101448`);
-                    </script>
+                    views/index.hbs
                 </div>
             </section>
             <br />

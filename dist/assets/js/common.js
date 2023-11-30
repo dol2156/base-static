@@ -101,14 +101,14 @@ ModalControl.Off = () => {
 const LoadingSpinnerControl = {};
 LoadingSpinnerControl.On = () => {
   ModalControl.On();
-  
+
   const $loading = document.querySelector(`#LoadingSpinner`);
   $loading.classList.add('On');
 };
 LoadingSpinnerControl.Off = () => {
   const $loading = document.querySelector(`#LoadingSpinner`);
   $loading.classList.remove('On');
-  
+
   ModalControl.Off();
 };
 // window.addEventListener('DOMContentLoaded', (evt) => {
@@ -119,7 +119,23 @@ LoadingSpinnerControl.Off = () => {
 // });
 /* // 2023-11-30 :: END :: LoadingSpinnerControl */
 
+/* 2023-11-30 :: START :: PageScrollControl */
+const PageScrollControl = {};
 
+PageScrollControl.Top = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
+};
+
+PageScrollControl.Bottom = () => {
+  window.scrollTo({
+    top: document.body.scrollHeight,
+    behavior: 'smooth',
+  });
+};
+/* // 2023-11-30 :: END :: PageScrollControl */
 
 /* 2023-11-10 :: START :: AsideMenu Control */
 
@@ -236,6 +252,25 @@ function updateStickyBox() {
   }
 }
 
+/**
+ * 우측하단 유틸 Visible 컨트롤
+ */
+function initBottomRightUtil(){
+  let st;
+  console.log('initBottomRightUtil');
+  // scroll_end
+  window.addEventListener('scroll', (evt) => {
+    clearTimeout(st);
+    $(`#BottomRightUtil`).addClass('On');
+  });
+  
+   window.addEventListener('scroll_end', (evt) => {
+    st = setTimeout(() => {
+      $(`#BottomRightUtil`).removeClass('On');
+    },3000);
+  });
+}
+
 const UpdateDisplay = () => {
   updateFixedShell();
   updateStickyBox();
@@ -270,6 +305,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
   UpdateDisplay();
 
   initAos();
+  initBottomRightUtil();
 });
 
 window.addEventListener('resize', (evt) => {
