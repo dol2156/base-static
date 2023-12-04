@@ -100,7 +100,7 @@ module.exports = {
   VAR: function (object, node_name, value, options) {
     object[node_name] = value;
   },
-  
+
   /**
    * xlsx 파일 json 루프
    */
@@ -108,7 +108,7 @@ module.exports = {
     const workbook = XLSX.readFile(`./assets/xlsx/${xlsx_file_name}.xlsx`);
     const worksheet = workbook.Sheets[workbook.SheetNames[0]];
     const data_list = XLSX.utils.sheet_to_json(worksheet);
-    
+
     let accum = '';
     if (arguments.length > 1 && data_list) {
       //console.log(data_list);
@@ -119,5 +119,27 @@ module.exports = {
       });
     }
     return accum;
+  },
+
+  /**
+   * 조건문 받아서 Boolean 반환
+   * {{#if (IF this '==' true)}}
+   *   <div>TRUE</div>
+   * {{else}}
+   *   <div>FALSE</div>
+   * {{/if}}
+   */
+  IF: function (v1, condition, v2, options) {
+    if (
+      eval(`v1
+      ${condition}
+      v2`)
+    ) {
+      // return options.fn(this);
+      return true;
+    } else {
+      // return options.inverse(this);
+      return false;
+    }
   },
 };

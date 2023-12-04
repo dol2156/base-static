@@ -185,6 +185,7 @@ const initAutoCompleteBox = (id) => {
   });
 
   updateDisplay();
+
   function updateDisplay() {
     if (el_ac.value.length > 0) {
       el_acb.classList.add('HasValue');
@@ -217,6 +218,7 @@ const initWheelDownHScrollWrap = (trigger) => {
   });
 
   updateDisplay();
+
   function updateDisplay() {
     const { scrollWidth, clientWidth, clientHeight } = el_inner;
     const wrapHeight = scrollWidth + clientHeight - clientWidth;
@@ -312,6 +314,7 @@ const initSelectBox = (trigger) => {
   });
 
   updateDisplay();
+
   function updateDisplay() {
     const selected_value = $select_box.val();
 
@@ -358,6 +361,7 @@ const initDropdown = (trigger) => {
   });
 
   updateDisplay();
+
   function updateDisplay() {
     const $opt_btn = $body.find('.OptionBtn.Selected');
     if ($opt_btn.length < 1) return;
@@ -489,4 +493,22 @@ const initNumberAniBox = (trigger) => {
 
 const toggleDashboardMenu = () => {
   $(`#Page > main`).toggleClass('LeftSideMenuClose');
-}
+};
+
+/**
+ *
+ * @param trigger
+ */
+const initLeftSideMenu = (trigger) => {
+  if (typeof trigger === 'undefined') return;
+  const el_target = trigger.parentElement;
+  const $menu_list = $(el_target);
+  const $a_arr = $menu_list.find(`a`);
+  
+  $a_arr.on(`click`, (evt) => {
+    evt.preventDefault();
+    const $ct = $(evt.currentTarget);
+    const href = $ct.attr('href');
+    console.log(`href == `, href);
+  });
+};
