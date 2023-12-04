@@ -492,6 +492,7 @@ const initNumberAniBox = (trigger) => {
 };
 
 const toggleDashboardMenu = () => {
+  $(`#Page > main`).toggleClass('LeftMenuOpenFixed');
   $(`#Page > main`).toggleClass('LeftSideMenuClose');
 };
 
@@ -504,7 +505,16 @@ const initLeftSideMenu = (trigger) => {
   const el_target = trigger.parentElement;
   const $menu_list = $(el_target);
   const $a_arr = $menu_list.find(`a`);
-  
+
+  $menu_list.on(`mouseenter`, (evt) => {
+    $(`#Page > main`).removeClass('LeftSideMenuClose');
+  });
+
+  $menu_list.on(`mouseleave`, (evt) => {
+    if ($(`#Page > main`).hasClass('LeftMenuOpenFixed')) return;
+    $(`#Page > main`).addClass('LeftSideMenuClose');
+  });
+
   $a_arr.on(`click`, (evt) => {
     evt.preventDefault();
     const $ct = $(evt.currentTarget);

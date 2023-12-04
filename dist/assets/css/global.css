@@ -62,6 +62,7 @@
   /* $PcMinWid 이상 화면*/
   /**/
   --dashboard-header-hei: 70px;
+  --dashboard-leftside-wid:290px;
 }
 @media screen and (min-width: 769px) {
   :root {
@@ -1452,7 +1453,7 @@ strong {
   width: 100%;
   font-size: 10;
   text-align: center;
-  opacity: 0.3;
+  opacity: 0.1;
 }
 #ContentsRuler .Inner {
   background-color: yellow;

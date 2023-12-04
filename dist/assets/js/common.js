@@ -146,6 +146,7 @@ function openAsideMenu() {
 function closeAsideMenu() {
   $(`#Aside`).removeClass('On');
 }
+
 /* // 2023-11-10 :: END :: AsideMenu Control */
 
 /**
@@ -255,18 +256,27 @@ function updateStickyBox() {
 /**
  * 우측하단 유틸 Visible 컨트롤
  */
-function initBottomRightUtil(){
+function initBottomRightUtil() {
   let st;
   // scroll_end
   window.addEventListener('scroll', (evt) => {
     clearTimeout(st);
     $(`#BottomRightUtil`).addClass('On');
   });
-  
-   window.addEventListener('scroll_end', (evt) => {
+
+  window.addEventListener('scroll_end', (evt) => {
     st = setTimeout(() => {
       $(`#BottomRightUtil`).removeClass('On');
-    },3000);
+    }, 3000);
+  });
+}
+
+/**
+ * https://github.com/Grsmto/simplebar/tree/master/packages/simplebar
+ */
+function initSimpleBar() {
+  $('.SimpleBar').each(function (i) {
+    new SimpleBar(this);
   });
 }
 
@@ -305,6 +315,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
   initAos();
   initBottomRightUtil();
+  initSimpleBar();
 });
 
 window.addEventListener('resize', (evt) => {

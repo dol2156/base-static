@@ -1,23 +1,40 @@
-<div class="LeftSideMenu_1 w-[240px] [main.LeftSideMenuClose_&]:w-[var(--dashboard-header-hei)] bg-[#1a2942] text-[#70809a] h-full duration-300 ease-out will-change-auto">
-  <a href="/" class="RR CenterCenter h-[var(--dashboard-header-hei)]">
-    <img class="[main.LeftSideMenuClose_&]:hidden" src="https://gifpng.com/114x18" alt=""/>
-    <img class="hidden [main.LeftSideMenuClose_&]:block" src="https://gifpng.com/32x22" alt=""/>
-  </a>
-  <div class="LeftSideMenuList">
+<div class="RR LeftSideMenu_1 OpenFixed w-[var(--dashboard-leftside-wid)] [main.LeftSideMenuClose_&]:w-[72px] overflow-hidden text-[#70809a] h-full duration-300 ease-out will-change-auto [&_*]:duration-300 [&_*]:ease-out [&_*]:will-change-auto">
+  <div class="bg-amber-300 h-[var(--dashboard-header-hei)] px-[24px] border-b-[1px] border-b-[#e5e9f2]">
+    <article class="CenterLeft h-full">
+      <button class='RR CenterCenter' onclick="toggleDashboardMenu()">
+        <img src="/assets/icon/menu_btn.svg" alt=""/>
+      </button>
+      <a href="/" class="RR CenterCenter [main.LeftSideMenuClose_&]:opacity-0 ml-[12px]">
+        <img src="https://gifpng.com/130x36" alt=""/>
+      </a>
+    </article>
+  </div>
+  <div class="LeftSideMenuList SimpleBar [&_.simplebar-scrollbar:before]:bg-[#8094ae] w-[var(--dashboard-leftside-wid)] h-[calc(var(--vh-100)-var(--dashboard-header-hei))] bg-[#1a2942] overflow-auto">
     <ul>
-      {{#LOOP 10}}
+      {{#LOOP 100}}
         <li>
-          <a href="#" class="RRR flex flex-row justify-between p-[10px_24px] text-[#6e82a5] hover:text-[#7f8dff] text-[14px] font-[700]">
-            <div class="flex-1 flex flex-row items-center justify-center gap-[12px] min-w-0 break-words">
+          <a href="#" class="flex flex-row justify-between p-[10px_24px] text-[#6e82a5] hover:text-[#7f8dff] text-[14px] font-[700]">
+            <div class="flex-1 flex flex-row items-center gap-[12px] min-w-0 break-words">
               <img src="https://gifpng.com/24x24" alt=""/>
-              <div class="flex-1">Menu Name {{number}}</div>
+              <div class="flex-1 [main.LeftSideMenuClose_&]:opacity-0">Menu Name {{number}}</div>
             </div>
             {{#if (IF number '==' 2)}}
-              <div class="flex flex-row items-center justify-center gap-[0]">
+              <div class="[main.LeftSideMenuClose_&]:opacity-0 flex flex-row items-center justify-center gap-[0]">
                 <img class="w-[13px]" src="/assets/icon/right_arrow.svg" alt=""/>
               </div>
             {{/if}}
           </a>
+          {{#if (IF number '==' 2)}}
+            <ul class="[main.LeftSideMenuClose_&]:hidden">
+              {{#LOOP 3}}
+                <li>
+                  <a href="#" class="pl-[calc(24px+24px+12px)] py-[6px]">
+                    2Depth Menu Name {{number}}
+                  </a>
+                </li>
+              {{/LOOP}}
+            </ul>
+          {{/if}}
         </li>
       {{/LOOP}}
     </ul>
