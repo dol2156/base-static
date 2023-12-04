@@ -109,8 +109,12 @@
                         </div>
                     </div>
                     <div id='Swiper_7a4cc389-Pagenation' class='RR flex flex-row items-center justify-center gap-[10px]'></div>
+                    <div id='Swiper_7a4cc389-Bullet' class='RR flex flex-row items-center justify-center gap-[10px]'></div>
+                    <div id='Swiper_7a4cc389-Progressbar' class='RR h-[10px] bg-[gray]'></div>
+                    <div id='Swiper_7a4cc389-Fraction' class='RR flex flex-row items-center justify-center gap-[10px]'></div>
                     <script>
                         const initSwiper_7a4cc389 = (evt) => {
+                            const loop = false;
                             const navigation = {
                                 disabledClass: 'Disabled',
                                 hiddenClass: 'Hidden',
@@ -128,9 +132,8 @@
                                 renderBullet: function(index, className) {
                                     const num = (index + 1).toString().padStart(2, '0');
                                     return `
-                    <div class="${className} RR relative w-[30px] aspect-square flex flex-row items-center justify-center">
-                      <div class="Num text-[#161616] [*.On>&]:text-white cursor-pointer z-10 text-[14px] font-[600]">${num}</div>
-                      <div class="Circle bg-[gray] [*.On>&]:bg-[red] cursor-pointer  z-0 absolute top-[0] left-[0] w-full aspect-square rounded-full"></div>
+                    <div class="${className} relative w-[10px] aspect-square flex flex-row items-center justify-center">
+                      <div class="bg-[gray] [*.On>&]:bg-[red] cursor-pointer  z-0 absolute top-[0] left-[0] w-full aspect-square rounded-full"></div>
                     </div>`;
                                 },
                             };
@@ -141,7 +144,7 @@
                                 slidesPerView: 1, // 슬라이드의 수가 slidesPerView의 값 2배 이상이어야함. slidesPerView, slidesPerGroup 함께 설정 필요.
                                 slidesPerGroup: 1,
                                 spaceBetween: 10,
-                                loop: false,
+                                loop: loop,
                                 // loopAdditionalSlides: 1,
                                 navigation: navigation,
                                 pagination: pagination,
@@ -153,15 +156,73 @@
                                 // grabCursor: true,
                                 breakpoints: {
                                     769: {
-                                        slidesPerView: 2,
+                                        slidesPerView: 1
                                     }
                                 }
                             };
 
                             let swiper = new Swiper('#Swiper_7a4cc389', swiper_option);
 
+                            let bulletSwiper = new Swiper('#Swiper_7a4cc389', {
+                                loop: loop,
+                                pagination: {
+                                    el: '#Swiper_7a4cc389-Bullet',
+                                    type: 'bullets',
+                                    clickable: true,
+                                    modifierClass: 'Pagenation-',
+                                    bulletClass: 'Dot',
+                                    bulletActiveClass: 'On',
+                                    renderBullet: function(index, className) {
+                                        console.log(swiper);
+                                        const num = (index + 1).toString().padStart(2, '0');
+                                        return `
+                    <div class="${className} RR relative w-[30px] aspect-square flex flex-row items-center justify-center">
+                      <div class="text-[#161616] [*.On>&]:text-white cursor-pointer z-10 text-[14px] font-[600]">${num}</div>
+                      <div class="bg-[gray] [*.On>&]:bg-[red] cursor-pointer  z-0 absolute top-[0] left-[0] w-full aspect-square rounded-full"></div>
+                    </div>`;
+                                    },
+                                }
+                            });
+
+                            let progressSwiper = new Swiper('#Swiper_7a4cc389', {
+                                loop: loop,
+                                pagination: {
+                                    el: '#Swiper_7a4cc389-Progressbar',
+                                    type: 'progressbar',
+                                    modifierClass: 'Pagenation-',
+                                    progressbarFillClass: 'FillBar',
+                                    renderProgressbar: function(className) {
+                                        return `<div class="${className} h-full bg-[red] origin-left"></div>`;
+                                    },
+                                }
+                            });
+
+                            let fractionSwiper = new Swiper('#Swiper_7a4cc389', {
+                                loop: loop,
+                                pagination: {
+                                    el: '#Swiper_7a4cc389-Fraction',
+                                    type: 'fraction',
+                                    modifierClass: 'Pagenation-',
+                                    formatFractionCurrent: (number) => {
+                                        return number.toString().padStart(2, '0');
+                                    },
+                                    formatFractionTotal: (number) => {
+                                        return number.toString().padStart(2, '0');
+                                    },
+                                    renderFraction: function(currentClass, totalClass) {
+                                        return `
+                  <div class="flex flex-row items-center justify-center gap-[10px] text-[#161616] text-[16px] font-[900]">
+                    <span class="${currentClass} text-[red]"></span>
+                    <span class="text-[black]">/</span>
+                    <span class="${totalClass} text-[gray]"></span>
+                  </div>`;
+                                    }
+                                }
+                            });
+
                             swiper.on('init', function() {
                                 // console.log('init');
+                                swiper.controller.control = [bulletSwiper, progressSwiper, fractionSwiper];
                             });
 
                             swiper.on('slideChange', function() {
@@ -340,7 +401,7 @@
                             </div>
                         </div>
                     </div>
-                    <div id='Swiper_eee8dbab-Pagenation' class='RR flex flex-row items-center justify-center gap-[10px]'></div>
+                    <div id='Swiper_eee8dbab-Fraction' class='RR flex flex-row items-center justify-center gap-[10px]'></div>
                     <script>
                         const initSwiper_eee8dbab = (evt) => {
                             const navigation = {
@@ -351,7 +412,7 @@
                             };
 
                             const pagination = {
-                                el: '#Swiper_eee8dbab-Pagenation',
+                                el: '#Swiper_eee8dbab-Fraction',
                                 type: 'fraction',
                                 modifierClass: 'Pagenation-',
                                 formatFractionCurrent: (number) => {
@@ -714,6 +775,7 @@
                                 autoplay: {
                                     delay: 0,
                                     disableOnInteraction: false,
+                                    reverseDirection: true,
                                 },
                                 init: false,
                                 // grabCursor: true,
