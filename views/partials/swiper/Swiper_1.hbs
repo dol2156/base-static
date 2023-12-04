@@ -1,5 +1,7 @@
 <div class='RR relative'>
   <div id='Swiper_7a4cc389' class='swiper relative hidden [&.swiper-initialized]:block'>
+    <div class="[.isBeginning_&]:hidden z-[5] absolute top-[0] left-[0] w-[100px] h-full bg-[linear-gradient(to_right,rgba(255,50,50,1)_0%,rgba(125,185,232,0)_100%)]"></div>
+    <div class="[.isEnd_&]:hidden z-[5] absolute top-[0] right-[0] w-[100px] h-full bg-[linear-gradient(to_left,rgba(255,50,50,1)_0%,rgba(125,185,232,0)_100%)]"></div>
     <div class='swiper-wrapper'>
       {{#LOOP 5}}
         <div class='RR swiper-slide' data-key='{{index}}'>
@@ -77,6 +79,9 @@
       let swiper = new Swiper('#Swiper_7a4cc389', swiper_option);
 
       let bulletSwiper = new Swiper('#Swiper_7a4cc389', {
+        controller: {
+          control: [swiper]
+        },
         loop: loop,
         pagination: {
           el: '#Swiper_7a4cc389-Bullet',
@@ -86,7 +91,6 @@
           bulletClass: 'Dot',
           bulletActiveClass: 'On',
           renderBullet: function (index, className) {
-            console.log(swiper);
             const num = (index + 1).toString().padStart(2, '0');
             return `
             <div class="${className} RR relative w-[30px] aspect-square flex flex-row items-center justify-center">
@@ -136,10 +140,12 @@
       swiper.on('init', function () {
         // console.log('init');
         swiper.controller.control = [bulletSwiper, progressSwiper, fractionSwiper];
+        updateSwiper();
       });
 
       swiper.on('slideChange', function () {
         // console.log('slideChange');
+        updateSwiper();
       });
 
       swiper.on('slideChangeTransitionEnd', function () {
@@ -147,6 +153,16 @@
       });
 
       swiper.init();
+
+      function updateSwiper() {
+        // console.log(`swiper == `, swiper);
+        const {isBeginning, isEnd} = swiper;
+        if (isBeginning) $(`#Swiper_7a4cc389`).addClass('isBeginning');
+        else $(`#Swiper_7a4cc389`).removeClass('isBeginning');
+
+        if (isEnd) $(`#Swiper_7a4cc389`).addClass('isEnd');
+        else $(`#Swiper_7a4cc389`).removeClass('isEnd');
+      }
     };
 
     window.addEventListener('DOMContentLoaded', initSwiper_7a4cc389);
