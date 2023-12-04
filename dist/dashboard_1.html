@@ -43,7 +43,7 @@
     <script src='/assets/lib/Sortable.min.js'></script>
     <link href='/assets/lib/flatpickr_v4.6.13.min.css' rel='stylesheet' />
     <script src='/assets/lib/flatpickr_v4.6.13.min.js'></script>
-    <title>로그인</title>
+    <title>대쉬보드 메인</title>
 </head>
 
 <body>
@@ -63,50 +63,45 @@
         </div>
     </div>
     <div id='Page'>
-        <main>
-            <section class="h-[var(--vh-100)]">
-                <div class='flex min-h-full flex-col justify-center px-6 py-12 lg:px-8'>
-                    <div class='sm:mx-auto sm:w-full sm:max-w-sm'>
-                        <img class='mx-auto h-10 w-auto' src='https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600' alt='Your Company' />
-                        <h2 class='mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900'>Sign in to your account</h2>
-                    </div>
-
-                    <div class='mt-10 sm:mx-auto sm:w-full sm:max-w-sm'>
-                        <form class='space-y-6' action='#' method='POST'>
-                            <div>
-                                <label for='email' class='block text-sm font-medium leading-6 text-gray-900'>아이디</label>
-                                <div class='mt-2'>
-                                    <input id='email' name='email' type='email' autocomplete='email' required class='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6' />
+        <main class="RRR flex flex-row">
+            <div>
+                <div class="LeftSideMenu_1 w-[240px] [main.LeftSideMenuClose_&]:w-[var(--dashboard-header-hei)] bg-[#1a2942] text-[#70809a] h-full duration-300 ease-out will-change-auto">
+                    <a href="/" class="RR CenterCenter h-[var(--dashboard-header-hei)]">
+                        <img class="[main.LeftSideMenuClose_&]:hidden" src="https://gifpng.com/114x18" alt="" />
+                        <img class="hidden [main.LeftSideMenuClose_&]:block" src="https://gifpng.com/32x22" alt="" />
+                    </a>
+                </div>
+            </div>
+            <div class="flex-1">
+                <article class="flex flex-col h-full">
+                    <div>
+                        <header class='NavBar_1 border-b-[1px] border-b-[#e5e9f2] p-[0_22px] bg-white h-[var(--dashboard-header-hei)]'>
+                            <article class="CenterBetween h-full">
+                                <div>
+                                    <button class='RR CenterCenter' onclick="toggleDashboardMenu()">
+                                        <img src="/assets/icon/menu_btn.svg" alt="" />
+                                    </button>
                                 </div>
-                            </div>
-
-                            <div>
-                                <div class='flex items-center justify-between'>
-                                    <label for='password' class='block text-sm font-medium leading-6 text-gray-900'>비밀번호</label>
-                                    <div class='text-sm'>
-                                        <a href='#' class='font-semibold text-indigo-600 hover:text-indigo-500'>아이디, 비밀번호를 잊으셨나요?</a>
+                                <div>
+                                    <div>
+                                        <img src="https://gifpng.com/50x50" alt="" />
                                     </div>
                                 </div>
-                                <div class='mt-2'>
-                                    <input id='password' name='password' type='password' autocomplete='current-password' required class='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6' />
-                                </div>
-                            </div>
-
-                            <div>
-                                <button type='submit' class='flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'>
-                                    로그인
-                                </button>
-                            </div>
-                            <div>
-                                <button type='submit' class='flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'>
-                                    로그인
-                                </button>
-                            </div>
-                        </form>
+                            </article>
+                        </header>
                     </div>
-                </div>
-
-            </section>
+                    <div class="flex-1">
+                        Contents
+                    </div>
+                    <div>
+                        <div class="Footer_3 p-[20px_22px] bg-white border-t-[1px] border-t-[#e5e9f2]">
+                            <div class="text-[#8094ae] text-[14px] font-[400]">
+                                © Copyright all rights reserved
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
         </main>
     </div>
 </body>

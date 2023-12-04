@@ -486,3 +486,7 @@ const initNumberAniBox = (trigger) => {
     },
   );
 };
+
+const toggleDashboardMenu = () => {
+  $(`#Page > main`).toggleClass('LeftSideMenuClose');
+}

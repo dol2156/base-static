@@ -54,16 +54,18 @@
   /* $PcMinWid 이상 화면*/
   --contents-max-wid: 1216px; /* 컨텐츠 최대 너비 */
   --contents-side-padding: 16px; /* 컨텐츠 좌우 안쪽 여백 */
-  --real-side-padding:0px; /* JS 에서 컨트롤 중 */
+  --real-side-padding: 0px; /* JS 에서 컨트롤 중 */
   /**/
   --header-hei: 64px;
   --footer-hei: 50px;
   --fullpage-footer-hei: 100px;
   /* $PcMinWid 이상 화면*/
+  /**/
+  --dashboard-header-hei: 70px;
 }
 @media screen and (min-width: 769px) {
   :root {
-    --body-min-wid:1024px;
+    --body-min-wid: 1024px;
   }
 }
 @media screen and (min-width: 769px) {
