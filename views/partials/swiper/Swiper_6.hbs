@@ -1,0 +1,80 @@
+<div class='RR relative'>
+  <div id='Swiper_ac68c42b' class='swiper relative hidden [&.swiper-initialized]:block'>
+    <div class='swiper-wrapper'>
+      {{#LOOP 30}}
+        <div class='RR swiper-slide' data-key='{{index}}'>
+          <div>
+            <img class='w-full' src='https://gifpng.com/300x450?text={{number}}' alt=''/>
+          </div>
+        </div>
+      {{/LOOP}}
+    </div>
+    <div id='Swiper_ac68c42b-Navigation' class='RR z-10 absolute top-[0] left-[0] pointer-events-none flex flex-row items-center justify-between gap-[0] w-full h-full bg-[rgba(0,255,0,0.3)]'>
+      <div class='RR NavBtn PrevBtn pointer-events-auto cursor-pointer [&.Disabled]:opacity-0 [&.Disabled]:cursor-default h-full'>
+        <div class="flex flex-row items-center justify-center gap-[0] h-full">
+          <img class='[.NavBtn:hover_&]:hidden' src='/assets/icon/swiper/prev_btn.svg' alt=''/>
+          <img class='hidden [.NavBtn:hover_&]:block' src='/assets/icon/swiper/prev_btn_hover.svg' alt=''/>
+        </div>
+      </div>
+      <div class='rotate-180'></div>
+      <div class='RR NavBtn NextBtn pointer-events-auto cursor-pointer [&.Disabled]:opacity-0 [&.Disabled]:cursor-default h-full'>
+        <div class='flex flex-row items-center justify-center gap-[0] h-full'>
+          <img class='[.NavBtn:hover_&]:hidden' src='/assets/icon/swiper/next_btn.svg' alt=''/>
+          <img class='hidden [.NavBtn:hover_&]:block' src='/assets/icon/swiper/next_btn_hover.svg' alt=''/>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id='Swiper_ac68c42b-Pagenation' class='RR flex flex-row items-center justify-center gap-[10px]'></div>
+  {{!--prettier-ignore--}}
+  <script>
+    const initSwiper_ac68c42b = (evt) => {
+      const navigation = {
+        disabledClass: 'Disabled',
+        hiddenClass: 'Hidden',
+        prevEl: '#Swiper_ac68c42b-Navigation > .PrevBtn',
+        nextEl: '#Swiper_ac68c42b-Navigation > .NextBtn',
+      };
+
+      const swiper_option = {
+        observer: true,
+        observeParents: true,
+        slidesPerView: 5, // 슬라이드의 수가 slidesPerView의 값 2배 이상이어야함. slidesPerView, slidesPerGroup 함께 설정 필요.
+        slidesPerGroup: 1,
+        spaceBetween: 16,
+        loop: false,
+        // loopAdditionalSlides: 1,
+        navigation: navigation,
+        // autoplay: {
+        //   delay: 1000,
+        //   disableOnInteraction: false,
+        // },
+        init: false,
+        // grabCursor: true,
+        // https://swiperjs.com/swiper-api#prop-swiper-freeMode
+        freeMode: {
+          enabled: true,
+          sticky: true,
+        },
+      };
+
+      let swiper = new Swiper('#Swiper_ac68c42b', swiper_option);
+
+      swiper.on('init', function () {
+        // console.log('init');
+      });
+
+      swiper.on('slideChange', function () {
+        // console.log('slideChange');
+      });
+
+      swiper.on('slideChangeTransitionEnd', function () {
+        // console.log('slideChangeTransitionEnd');
+      });
+
+      swiper.init();
+    };
+
+    window.addEventListener('DOMContentLoaded', initSwiper_ac68c42b);
+  </script>
+</div>
