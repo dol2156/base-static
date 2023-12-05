@@ -10,3 +10,23 @@
     {{/EACH}}
   </main>
 </div>
+<script>
+  $(function(){
+      $(`.SampleList button`).each(function(i){
+        const $this = $(this);
+        const hei = $this.height();
+        const fs = $this.css('font-size');
+        const color = $this.css('color');
+        const round = $this.css('border-radius');
+
+        const str = `
+          <span class="border-solid border-[1px] border-[#333] p-[5px] bg-white text-[red]">height:${hei}px</span>
+          <span class="border-solid border-[1px] border-[#333] p-[5px] bg-white text-[green]">color:${color}</span>
+          <span class="border-solid border-[1px] border-[#333] p-[5px] bg-white text-[blue]">font-size:${fs}</span>
+          <span class="border-solid border-[1px] border-[#333] p-[5px] bg-white text-[black]">border-radius:${round}</span>
+        `;
+
+        $this.after(`<div class="text-center text-[16px] font-[700] CenterCenter gap-[10px]">${str}</div>`);
+      });
+  });
+</script>
