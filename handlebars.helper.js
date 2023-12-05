@@ -1,5 +1,6 @@
 const path = require('path');
 const fs = require('fs');
+const FileUtil = require('./file_util.js');
 const XLSX = require('xlsx');
 
 module.exports = {
@@ -142,4 +143,9 @@ module.exports = {
       return false;
     }
   },
+  
+  SVG : function (svg_path, options){
+    const str = FileUtil.readFile(`.${svg_path}`);
+    return str;
+  }
 };

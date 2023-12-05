@@ -275,9 +275,16 @@ function initBottomRightUtil() {
  * https://github.com/Grsmto/simplebar/tree/master/packages/simplebar
  */
 function initSimpleBar() {
+  let simplebar;
   $('.SimpleBar').each(function (i) {
-    new SimpleBar(this);
+    simplebar = new SimpleBar(this, {
+      autoHide : false,
+    });
   });
+  
+  // $(window).on(`resize`, (evt) => {
+  //   simplebar.recalculate();
+  // });
 }
 
 const UpdateDisplay = () => {

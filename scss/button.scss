@@ -49,7 +49,10 @@
 
   color: #767676;
   &:hover {
-    color: #333;
+    color: red;
+  }
+  &:active {
+    color: blue;
   }
 
   @include imgChangeAbleBtnByState;

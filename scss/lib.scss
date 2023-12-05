@@ -1,7 +1,7 @@
 @import 'var_scss.scss';
 /**/
 .plyr__control--overlaid {
-  outline:1px dashed red;
+  outline: 1px dashed red;
   border-radius: 0;
   background-image: url(https://gifpng.com/50x50/ffd4d4/ff4444) !important;
   background-color: transparent !important;
@@ -10,4 +10,10 @@
 }
 .plyr__control--overlaid > * {
   display: none;
+}
+/**/
+.simplebar-scrollbar {
+  &:before {
+    opacity: 0.2!important;
+  }
 }

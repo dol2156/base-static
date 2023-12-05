@@ -643,7 +643,10 @@ strong {
   color: #767676;
 }
 .Btn_0:hover {
-  color: #333;
+  color: red;
+}
+.Btn_0:active {
+  color: blue;
 }
 .Btn_0 .Hover {
   display: none;
@@ -1440,6 +1443,11 @@ strong {
 
 .plyr__control--overlaid > * {
   display: none;
+}
+
+/**/
+.simplebar-scrollbar:before {
+  opacity: 0.2 !important;
 }
 
 #ContentsRuler {
