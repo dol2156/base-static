@@ -1,5 +1,5 @@
 <div class="LeftSideMenu_1 w-[var(--dashboard-leftside-wid)] [.LeftSideMenuClose_&]:w-[72px] overflow-hidden text-[#70809a] h-full">
-  <div class="LeftSideMenuList SimpleBar White w-[var(--dashboard-leftside-wid)] h-[calc(var(--vh-100)-var(--dashboard-header-hei))] bg-[#1a2942] overflow-auto">
+  <div class="LeftSideMenuList SimpleBar White h-[calc(var(--vh-100)-var(--dashboard-header-hei))] bg-[#1a2942] overflow-auto">
     <div class="[.LeftSideMenuClose_&]:hidden">
       <div class="p-[10px_24px]">Main</div>
       <ul>
@@ -8,7 +8,7 @@
             <a href="#" class="flex flex-row justify-between p-[10px_24px] hover:text-[#3bc0c3] text-[14px] font-[700]">
               <div class="flex-1 flex flex-row items-center gap-[12px] min-w-0 break-words">
                 <div class="w-[24px]">
-                  {{{SVG '/assets/icon/currentColor.svg'}}}
+                  {{{SVG obj.아이콘}}}
                 </div>
                 <div class="flex-1">{{obj.메뉴명}}</div>
               </div>
@@ -42,7 +42,7 @@
             <a href="#" class="flex flex-row justify-between p-[10px_24px] hover:text-[#3bc0c3] text-[14px] font-[700]">
               <div class="flex-1 flex flex-row items-center gap-[12px] min-w-0 break-words">
                 <div class="w-[24px]">
-                  {{{SVG '/assets/icon/currentColor.svg'}}}
+                  {{{SVG obj.아이콘}}}
                 </div>
                 <div class="flex-1">{{obj.메뉴명}}</div>
               </div>
@@ -71,7 +71,15 @@
       </ul>
     </div>
     <div>
-      {{{SVG '/assets/icon/currentColor.svg'}}}
+      <ul>
+        {{#EACH_JSON 'LeftSideMenuData'}}
+          <li>
+            <a href="#" class="CenterCenter p-[10px_14px] hover:text-[#3bc0c3]">
+              {{{SVG obj.아이콘}}}
+            </a>
+          </li>
+        {{/EACH_JSON}}
+      </ul>
     </div>
   </div>
   <img onerror="initLeftSideMenuVisible(this)" src=""/>
