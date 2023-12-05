@@ -1,7 +1,7 @@
 <a
   {{#if obj.PAGE_KEY}}
     class="PageLink"
-    href="/{{obj.PAGE_KEY}}.html"
+    href="/{{obj.PAGE_KEY}}.html?layout={{obj.LAYOUT}}"
   {{else if obj.EXTERNAL_LINK}}
     class="ExternalLink"
     href="{{obj.EXTERNAL_LINK}}"
