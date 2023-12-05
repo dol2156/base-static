@@ -24,6 +24,7 @@ app.set('views', path.join(__dirname, 뷰파일폴더이름));
 app.engine(
   'hbs',
   exphbs.create({
+    defaultLayout: 'main',
     extname: 'hbs',
     helpers: hbsHelpers,
   }).engine,
@@ -47,6 +48,8 @@ liveReloadServer.server.once('connection', () => {
 });
 
 app.get('*', (req, res) => {
+  const { layout } = req.query;
+
   let requestedPath = req.path;
 
   // .html 삭제
@@ -68,20 +71,20 @@ app.get('*', (req, res) => {
     renderData.PAGE_TITLE = menuData.pageTitle;
     renderData.MENU_DATA = menuData.data;
     renderData.HBS_DATA = hbsData;
+    if(layout) renderData.layout = layout;
 
     res.render(viewName, renderData, (err, renderedHTML) => {
       if (err) {
         console.error(err);
         return;
       }
-      
+
       // 정렬
       renderedHTML = beautify_html(renderedHTML);
-      
+
       // env 변경
       let productionHTML = renderedHTML.replace(/lang='ko' data-env='development'/gi, `lang='ko' data-env='production'`);
-      
-      
+
       const savePath = path.join(__dirname, 'dist', viewName + '.html');
       fs.writeFile(savePath, productionHTML, (err) => {
         if (err) {
