@@ -332,3 +332,7 @@ window.addEventListener('resize', (evt) => {
 window.addEventListener('scroll', (evt) => {
   UpdateDisplay();
 });
+
+window.onload = () => {
+  $(`html`).removeClass('Loading');
+}

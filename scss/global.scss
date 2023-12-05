@@ -18,6 +18,8 @@
 @import '/assets/font/SUIT-Variable.css';
 //@import '/assets/font/Montserrat.css';
 //@import '/assets/font/Pretendard.css';
+html.Loading{ opacity:0; }
+/**/
 #ContentsRuler {
   pointer-events: none;
   z-index: 999999;
