@@ -1446,8 +1446,11 @@ strong {
 }
 
 /**/
-.simplebar-scrollbar:before {
+.SimpleBar .simplebar-scrollbar:before {
   opacity: 0.2 !important;
+}
+.SimpleBar.White .simplebar-scrollbar:before {
+  background-color: white;
 }
 
 #ContentsRuler {

@@ -1,0 +1,51 @@
+[
+  {
+    "메뉴명": "Dashboard",
+    "아이콘": "/assets/icon/currentColor.svg",
+    "자식": []
+  },
+  {
+    "메뉴명": "Pages",
+    "아이콘": "/assets/icon/currentColor.svg",
+    "자식": [
+      {
+        "메뉴명": "Starter Page"
+      },
+      {
+        "메뉴명": "Contact List"
+      },
+      {
+        "메뉴명": "Profile"
+      },
+      {
+        "메뉴명": "Timeline"
+      },
+      {
+        "메뉴명": "Invoice"
+      }
+    ]
+  },
+  {
+    "메뉴명": "Authentication",
+    "아이콘": "/assets/icon/currentColor.svg",
+    "자식": [
+      {
+        "메뉴명": "Login"
+      },
+      {
+        "메뉴명": "Register"
+      },
+      {
+        "메뉴명": "Logout"
+      },
+      {
+        "메뉴명": "Forgot Password"
+      }
+    ]
+  },
+  {
+    "메뉴명": "Layouts",
+    "아이콘": "/assets/icon/currentColor.svg",
+    "자식": []
+  }
+]

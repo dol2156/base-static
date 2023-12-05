@@ -79,9 +79,16 @@
         <header class='NavBar_1 border-b-[1px] border-b-[#e5e9f2] px-[22px] bg-white h-[var(--dashboard-header-hei)]'>
             <article class="CenterBetween h-full">
                 <div>
-                    <button class='RR CenterCenter' onclick="toggleDashboardMenu()">
-                        <img src="/assets/icon/menu_btn.svg" alt="" />
-                    </button>
+                    <div class="bg-amber-300 h-[var(--dashboard-header-hei)] px-[24px] border-b-[1px] border-b-[#e5e9f2]">
+                        <article class="CenterLeft h-full">
+                            <button class='RR CenterCenter' onclick="toggleDashboardMenu()">
+                                <img src="/assets/icon/menu_btn.svg" alt="" />
+                            </button>
+                            <a href="/" class="RR CenterCenter [main.LeftSideMenuClose_&]:opacity-0 ml-[12px]">
+                                <img src="https://gifpng.com/130x36" alt="" />
+                            </a>
+                        </article>
+                    </div>
                 </div>
                 <div>
                     <div>
@@ -93,7 +100,124 @@
         <main class="flex-1 min-h-0">
             <div class="RRR flex flex-row gap-[0] h-full">
                 <div>
-                    LEFT
+                    <div class="RR LeftSideMenu_1 w-[var(--dashboard-leftside-wid)] [main.LeftSideMenuClose_&]:w-[72px] overflow-hidden text-[#70809a] h-full">
+                        <div class="LeftSideMenuList SimpleBar White w-[var(--dashboard-leftside-wid)] h-[calc(var(--vh-100)-var(--dashboard-header-hei))] bg-[#1a2942] overflow-auto">
+                            <ul class="[main.LeftSideMenuClose_&]:hidden">
+                                <li class="">
+                                    <a href="#" class="flex flex-row justify-between p-[10px_24px] hover:text-[#3bc0c3] text-[14px] font-[700]">
+                                        <div class="flex-1 flex flex-row items-center gap-[12px] min-w-0 break-words">
+                                            <div class="w-[24px]">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill="currentColor" d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.834 9.686l-4.166.575 3.032 2.914-.74 4.139 3.708-1.982 3.708 1.983-.74-4.139 3.032-2.915-4.166-.575-1.834-3.784-1.834 3.784z" />
+                                                </svg>
+                                            </div>
+                                            <div class="flex-1">Dashboard</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="HasChild">
+                                    <a href="#" class="flex flex-row justify-between p-[10px_24px] hover:text-[#3bc0c3] text-[14px] font-[700]">
+                                        <div class="flex-1 flex flex-row items-center gap-[12px] min-w-0 break-words">
+                                            <div class="w-[24px]">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill="currentColor" d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.834 9.686l-4.166.575 3.032 2.914-.74 4.139 3.708-1.982 3.708 1.983-.74-4.139 3.032-2.915-4.166-.575-1.834-3.784-1.834 3.784z" />
+                                                </svg>
+                                            </div>
+                                            <div class="flex-1">Pages</div>
+                                        </div>
+                                        <div class="flex flex-row items-center justify-center gap-[0]">
+                                            <div class="w-[13px] [li.HasChild.On_&]:rotate-90">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                                    <path fill="currentColor" d="M7.33 24l-2.83-2.829 9.339-9.175-9.339-9.167 2.83-2.829 12.17 11.996z" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <ul class="ChildList hidden [li.HasChild.On_&]:block">
+                                        <li>
+                                            <a href="#" class="block pl-[calc(24px+24px+12px)] py-[6px] hover:text-[#3bc0c3] text-[14px] font-[400]">
+                                                Starter Page
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="block pl-[calc(24px+24px+12px)] py-[6px] hover:text-[#3bc0c3] text-[14px] font-[400]">
+                                                Contact List
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="block pl-[calc(24px+24px+12px)] py-[6px] hover:text-[#3bc0c3] text-[14px] font-[400]">
+                                                Profile
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="block pl-[calc(24px+24px+12px)] py-[6px] hover:text-[#3bc0c3] text-[14px] font-[400]">
+                                                Timeline
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="block pl-[calc(24px+24px+12px)] py-[6px] hover:text-[#3bc0c3] text-[14px] font-[400]">
+                                                Invoice
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="HasChild">
+                                    <a href="#" class="flex flex-row justify-between p-[10px_24px] hover:text-[#3bc0c3] text-[14px] font-[700]">
+                                        <div class="flex-1 flex flex-row items-center gap-[12px] min-w-0 break-words">
+                                            <div class="w-[24px]">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill="currentColor" d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.834 9.686l-4.166.575 3.032 2.914-.74 4.139 3.708-1.982 3.708 1.983-.74-4.139 3.032-2.915-4.166-.575-1.834-3.784-1.834 3.784z" />
+                                                </svg>
+                                            </div>
+                                            <div class="flex-1">Authentication</div>
+                                        </div>
+                                        <div class="flex flex-row items-center justify-center gap-[0]">
+                                            <div class="w-[13px] [li.HasChild.On_&]:rotate-90">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                                    <path fill="currentColor" d="M7.33 24l-2.83-2.829 9.339-9.175-9.339-9.167 2.83-2.829 12.17 11.996z" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <ul class="ChildList hidden [li.HasChild.On_&]:block">
+                                        <li>
+                                            <a href="#" class="block pl-[calc(24px+24px+12px)] py-[6px] hover:text-[#3bc0c3] text-[14px] font-[400]">
+                                                Login
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="block pl-[calc(24px+24px+12px)] py-[6px] hover:text-[#3bc0c3] text-[14px] font-[400]">
+                                                Register
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="block pl-[calc(24px+24px+12px)] py-[6px] hover:text-[#3bc0c3] text-[14px] font-[400]">
+                                                Logout
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="block pl-[calc(24px+24px+12px)] py-[6px] hover:text-[#3bc0c3] text-[14px] font-[400]">
+                                                Forgot Password
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="">
+                                    <a href="#" class="flex flex-row justify-between p-[10px_24px] hover:text-[#3bc0c3] text-[14px] font-[700]">
+                                        <div class="flex-1 flex flex-row items-center gap-[12px] min-w-0 break-words">
+                                            <div class="w-[24px]">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill="currentColor" d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.834 9.686l-4.166.575 3.032 2.914-.74 4.139 3.708-1.982 3.708 1.983-.74-4.139 3.032-2.915-4.166-.575-1.834-3.784-1.834 3.784z" />
+                                                </svg>
+                                            </div>
+                                            <div class="flex-1">Layouts</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <img onerror="initLeftSideMenu(this)" src="" />
+                            </ul>
+                        </div>
+                    </div>
                 </div>
                 <div class="flex-1 min-w-0 h-full">
                     <div class="Simplebar w-full h-full overflow-auto">

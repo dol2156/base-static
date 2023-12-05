@@ -103,6 +103,25 @@ module.exports = {
   },
 
   /**
+   * json 파일 json 루프
+   */
+  EACH_JSON: function (json_file_name, options) {
+    const str = FileUtil.readFile(`./assets/json/${json_file_name}.json`);
+    const data_list = JSON.parse(str);
+
+    let accum = '';
+    if (arguments.length > 1 && data_list) {
+      //console.log(data_list);
+      data_list.forEach((obj, idx) => {
+        const obj_result = { obj: obj, index: idx, number: idx + 1, digit: (idx + 1).toString().padStart(2, '0') };
+
+        accum += options.fn(obj_result);
+      });
+    }
+    return accum;
+  },
+  
+  /**
    * xlsx 파일 json 루프
    */
   EACH_XLSX: function (xlsx_file_name, options) {

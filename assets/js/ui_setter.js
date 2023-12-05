@@ -503,12 +503,14 @@ const initLeftSideMenu = (trigger) => {
   if (typeof trigger === 'undefined') return;
   const el_target = trigger.parentElement;
   const $menu_list = $(el_target);
-  const $a_arr = $menu_list.find(`a`);
+  const $has_child_li = $menu_list.find('> li.HasChild');
+  const $a_arr = $has_child_li.find(`> a`);
 
   $a_arr.on(`click`, (evt) => {
     evt.preventDefault();
     const $ct = $(evt.currentTarget);
     const href = $ct.attr('href');
-    console.log(`href == `, href);
+    const $li = $ct.closest('li');
+    $li.toggleClass('On');
   });
 };

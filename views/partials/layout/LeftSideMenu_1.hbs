@@ -1,43 +1,37 @@
-<div class="RR LeftSideMenu_1 OpenFixed w-[var(--dashboard-leftside-wid)] [main.LeftSideMenuClose_&]:w-[72px] overflow-hidden text-[#70809a] h-full">
-  <div class="bg-amber-300 h-[var(--dashboard-header-hei)] px-[24px] border-b-[1px] border-b-[#e5e9f2]">
-    <article class="CenterLeft h-full">
-      <button class='RR CenterCenter' onclick="toggleDashboardMenu()">
-        <img src="/assets/icon/menu_btn.svg" alt=""/>
-      </button>
-      <a href="/" class="RR CenterCenter [main.LeftSideMenuClose_&]:opacity-0 ml-[12px]">
-        <img src="https://gifpng.com/130x36" alt=""/>
-      </a>
-    </article>
-  </div>
-  <div class="LeftSideMenuList SimpleBar [&_.simplebar-scrollbar:before]:bg-[#8094ae] w-[var(--dashboard-leftside-wid)] h-[calc(var(--vh-100)-var(--dashboard-header-hei))] bg-[#1a2942] overflow-auto">
+<div class="RR LeftSideMenu_1 w-[var(--dashboard-leftside-wid)] [main.LeftSideMenuClose_&]:w-[72px] overflow-hidden text-[#70809a] h-full">
+  <div class="LeftSideMenuList SimpleBar White w-[var(--dashboard-leftside-wid)] h-[calc(var(--vh-100)-var(--dashboard-header-hei))] bg-[#1a2942] overflow-auto">
     <ul class="[main.LeftSideMenuClose_&]:hidden">
-      {{#LOOP 30}}
-        <li>
-          <a href="#" class="flex flex-row justify-between p-[10px_24px] text-[#6e82a5] hover:text-[#7f8dff] text-[14px] font-[700]">
+      {{#EACH_JSON 'LeftSideMenuData'}}
+        <li class="{{#if obj.자식}}HasChild{{/if}}">
+          <a href="#" class="flex flex-row justify-between p-[10px_24px] hover:text-[#3bc0c3] text-[14px] font-[700]">
             <div class="flex-1 flex flex-row items-center gap-[12px] min-w-0 break-words">
-              <img src="https://gifpng.com/24x24" alt=""/>
-              <div class="flex-1">Menu Name {{number}}</div>
+              <div class="w-[24px]">
+                {{{SVG '/assets/icon/currentColor.svg'}}}
+              </div>
+              <div class="flex-1">{{obj.메뉴명}}</div>
             </div>
-            {{#if (IF number '==' 2)}}
+            {{#if obj.자식}}
               <div class="flex flex-row items-center justify-center gap-[0]">
-                <img class="w-[13px]" src="/assets/icon/right_arrow.svg" alt=""/>
+                <div class="w-[13px] [li.HasChild.On_&]:rotate-90">
+                  {{{SVG '/assets/icon/arrow_right.svg'}}}
+                </div>
               </div>
             {{/if}}
           </a>
-          {{#if (IF number '==' 2)}}
-            <ul>
-              {{#LOOP 3}}
+          {{#if obj.자식}}
+            <ul class="ChildList hidden [li.HasChild.On_&]:block">
+              {{#EACH obj.자식}}
                 <li>
-                  <a href="#" class="pl-[calc(24px+24px+12px)] py-[6px]">
-                    2Depth Menu Name {{number}}
+                  <a href="#" class="block pl-[calc(24px+24px+12px)] py-[6px] hover:text-[#3bc0c3] text-[14px] font-[400]">
+                    {{obj.메뉴명}}
                   </a>
                 </li>
-              {{/LOOP}}
+              {{/EACH}}
             </ul>
           {{/if}}
         </li>
-      {{/LOOP}}
+      {{/EACH_JSON}}
+      <img onerror="initLeftSideMenu(this)" src=""/>
     </ul>
-    <img onerror="initLeftSideMenu(this)" src=""/>
   </div>
 </div>
