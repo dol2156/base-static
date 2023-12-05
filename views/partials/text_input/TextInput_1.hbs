@@ -1,36 +1,36 @@
 <div class='SampleList'>
   <div>
-    <label for='inp-7a4ef7ba' class='FormLabel_1'>Basic</label>
+    <label class='FormLabel_1'>Basic</label>
     <div class='TextInput_1 w-full'>
-      <input id='inp-7a4ef7ba' placeholder='placeholder' />
+      <input placeholder='placeholder' />
       <img onerror='initInputUi(this)' src='' alt='' />
     </div>
   </div>
   <div>
-    <label for='inp-2fccfe83' class='FormLabel_1'>.Success</label>
+    <label class='FormLabel_1'>.Success</label>
     <div class='TextInput_1 Success w-full'>
-      <input id='inp-2fccfe83' placeholder='placeholder' value='Success Value' />
+      <input placeholder='placeholder' value='Success Value' />
       <img onerror='initInputUi(this)' src='' alt='' />
     </div>
   </div>
   <div>
-    <label for='inp-195aff67' class='FormLabel_1'>.Error</label>
+    <label class='FormLabel_1'>.Error</label>
     <div class='TextInput_1 Error w-full'>
-      <input id='inp-195aff67' placeholder='placeholder' value='Error Value' />
+      <input placeholder='placeholder' value='Error Value' />
       <img onerror='initInputUi(this)' src='' alt='' />
     </div>
   </div>
   <div>
-    <label for='inp-d1511a20' class='FormLabel_1'>.ReadOnly [readonly]</label>
+    <label class='FormLabel_1'>.ReadOnly [readonly]</label>
     <div class='TextInput_1 ReadOnly w-full'>
-      <input id='inp-d1511a20' placeholder='placeholder' value='ReadOnly Value' readonly onclick='this.select();' />
+      <input placeholder='placeholder' value='ReadOnly Value' readonly onclick='this.select();' />
       <img onerror='initInputUi(this)' src='' alt='' />
     </div>
   </div>
   <div>
-    <label for='inp-56175af6' class='FormLabel_1'>Reset Button</label>
+    <label class='FormLabel_1'>Reset Button</label>
     <div class='TextInput_1 w-full'>
-      <input id='inp-56175af6' placeholder='placeholder' />
+      <input placeholder='placeholder' />
       <button class='ResetBtn'>
         <img src='/assets/icon/input_delete.svg' alt='' />
       </button>
@@ -38,14 +38,28 @@
     </div>
   </div>
   <div>
-    <label for='inp-56175af6' class='FormLabel_1'>Search Button</label>
+    <label class='FormLabel_1'>Search Button</label>
     <div class='TextInput_1 w-full'>
-      <input id='inp-56175af6' placeholder='placeholder' />
+      <input placeholder='placeholder' />
       <button class='ResetBtn'>
         <img src='/assets/icon/input_delete.svg' alt='' />
       </button>
-      <button class='Search'>
+      <button class='SearchBtn'>
         <img src='/assets/icon/input_search.svg' alt='' />
+      </button>
+      <img onerror='initInputUi(this)' src='' alt='' />
+    </div>
+  </div>
+  <div>
+    <label class='FormLabel_1'>EyeBtn Button</label>
+    <div class='TextInput_1 w-full'>
+      <input type='password' placeholder='placeholder' />
+      <button class='ResetBtn'>
+        <img src='/assets/icon/input_delete.svg' alt='' />
+      </button>
+      <button class='EyeBtn'>
+        <img class="[input[type='text']~button>&]:hidden" src='/assets/icon/eye.svg' alt='' />
+        <img class="[input[type='password']~button>&]:hidden" src='/assets/icon/eye_on.svg' alt='' />
       </button>
       <img onerror='initInputUi(this)' src='' alt='' />
     </div>

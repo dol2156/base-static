@@ -34,6 +34,15 @@ const initInputUi = (trigger) => {
     });
   }
 
+  // EyeBtn Control
+  const el_eye_btn = el_target.querySelector(`.EyeBtn`);
+  if (el_eye_btn) {
+    el_eye_btn.addEventListener('click', (evt) => {
+      if (el_inp.type == 'password') el_inp.type = 'text';
+      else el_inp.type = 'password';
+    });
+  }
+
   /**
    *
    */

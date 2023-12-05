@@ -1,5 +1,18 @@
 @import 'var_scss.scss';
 /**/
+.FormMsg {
+  margin-top:12px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 14px;
+  &.Type1 {
+    color: #9af;
+  }
+  &.Type2 {
+    color: #f3436d;
+  }
+}
+/**/
 .FormLabel_1 {
   cursor: pointer;
   font-size: 12px;
@@ -16,7 +29,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  gap: 0px;
+  gap: 5px;
   padding: 0px 1em;
   outline: none;
   background-color: white;
@@ -38,11 +51,12 @@
   > button {
     font-size: inherit;
     aspect-ratio: 9/16;
+    min-width:24px;
     height: 100%;
     > img {
       margin-left: auto;
       margin-right: auto;
-      width: 90%;
+      //width: 90%;
     }
   }
 
@@ -91,7 +105,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  gap: 0px;
+  gap: 5px;
   padding: 0px 1em;
   outline: none;
   background-color: white;
@@ -113,11 +127,11 @@
   > button {
     font-size: inherit;
     aspect-ratio: 9/16;
+    min-width:24px;
     height: 100%;
     > img {
       margin-left: auto;
       margin-right: auto;
-      width: 90%;
     }
   }
 

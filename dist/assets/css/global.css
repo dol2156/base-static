@@ -353,6 +353,20 @@ strong {
 }
 
 /**/
+.FormMsg {
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 14px;
+}
+.FormMsg.Type1 {
+  color: #9af;
+}
+.FormMsg.Type2 {
+  color: #f3436d;
+}
+
+/**/
 .FormLabel_1 {
   cursor: pointer;
   font-size: 12px;
@@ -369,7 +383,7 @@ strong {
   position: relative;
   display: flex;
   align-items: center;
-  gap: 0px;
+  gap: 5px;
   padding: 0px 1em;
   outline: none;
   background-color: white;
@@ -390,12 +404,12 @@ strong {
 .TextInput_1 > button {
   font-size: inherit;
   aspect-ratio: 9/16;
+  min-width: 24px;
   height: 100%;
 }
 .TextInput_1 > button > img {
   margin-left: auto;
   margin-right: auto;
-  width: 90%;
 }
 .TextInput_1 .ResetBtn {
   visibility: hidden;
@@ -435,7 +449,7 @@ strong {
   position: relative;
   display: flex;
   align-items: center;
-  gap: 0px;
+  gap: 5px;
   padding: 0px 1em;
   outline: none;
   background-color: white;
@@ -456,12 +470,12 @@ strong {
 .TextInput_2 > button {
   font-size: inherit;
   aspect-ratio: 9/16;
+  min-width: 24px;
   height: 100%;
 }
 .TextInput_2 > button > img {
   margin-left: auto;
   margin-right: auto;
-  width: 90%;
 }
 .TextInput_2 .ResetBtn {
   visibility: hidden;
@@ -1650,8 +1664,8 @@ img[src=""] {
   outline: 1px dashed red;
   z-index: 200;
   position: fixed;
-  bottom: 120px;
-  right: var(--real-side-padding);
+  bottom: 88px;
+  right: 60;
   pointer-events: none;
   opacity: 0;
   transition: all 300ms cubic-bezier(0.33, 1, 0.68, 1);

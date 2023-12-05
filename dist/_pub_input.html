@@ -1,11 +1,11 @@
-<html lang='ko' data-env='production'>
+<html lang='ko' data-env='production' class="Loading">
 
 <head>
     <meta charset='UTF-8' />
     <meta id='viewport' name='viewport' content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no' />
     <script src='/assets/js/viewport.js'></script>
     <!-- Font preload -->
-    <link rel="preload" href="/assets/font/SUIT-Variable.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel='preload' href='/assets/font/SUIT-Variable.woff2' as='font' type='font/woff2' crossorigin />
     <!-- Icon -->
     <link rel='icon' href='data:,' />
     <link rel='apple-touch-icon' sizes='180x180' href='/assets/favicon/apple-touch-icon.png' />
@@ -16,8 +16,8 @@
     <link rel='icon' href='/assets/favicon/favicon.ico' />
     <!-- Core Library -->
     <script src='/assets/lib/jquery-3.7.1.min.js'></script>
-    <script src="/assets/lib/jquery.easing.min.js"></script>
-    <script src="/assets/lib/xlsx.full.min.js"></script>
+    <script src='/assets/lib/jquery.easing.min.js'></script>
+    <script src='/assets/lib/xlsx.full.min.js'></script>
     <script src='/assets/lib/ua-parser.min.js'></script>
     <link href='/assets/lib/fontawesome-free-6.4.2-web/css/all.css' rel='stylesheet' />
     <script src='/assets/lib/tailwindcss_3.3.3.min.js'></script>
@@ -31,6 +31,8 @@
     <script src='/assets/js/common.js'></script>
     <script src='/assets/js/ui_setter.js'></script>
     <!-- UI Library -->
+    <link href='/assets/lib/simplebar.css' rel='stylesheet' />
+    <script src='/assets/lib/simplebar.min.js'></script>
     <link href='/assets/lib/swiper-bundle.min.css' rel='stylesheet' />
     <script src='/assets/lib/swiper-bundle.min.js'></script>
     <link href='/assets/lib/autoComplete/css/autoComplete.css' rel='stylesheet' />
@@ -52,10 +54,32 @@
     </div>
     <div id='Modal'></div>
     <div id="LoadingSpinner"></div>
+    <div id='BottomRightUtil'>
+        <div class='flex flex-col gap-[10px]'>
+            <button class='ScrollTopBtn bg-[#5D45FF] w-[40px] aspect-square rounded-full text-white text-[12px] font-[800]' onclick='PageScrollControl.Top()'>
+                TOP
+            </button>
+            <button class='ScrollTopBtn bg-[#5D45FF] w-[40px] aspect-square rounded-full text-white text-[12px] font-[800]' onclick='PageScrollControl.Bottom()'>
+                BTM
+            </button>
+        </div>
+    </div>
     <div id='Page'>
         <main>
             <link href='/assets/css/_pub.css' rel='stylesheet' />
             <h1 class='H1 Sticky Top'>Text Input</h1>
+            <section>
+                <h2 class='H2'>text_input/FormMsg</h2>
+                <div class='FormMsg'>
+                    인증번호가 발송되었습니다. 이메일을 확인해주세요.
+                </div>
+                <div class='FormMsg Type1'>
+                    인증번호가 발송되었습니다. 이메일을 확인해주세요.
+                </div>
+                <div class='FormMsg Type2'>
+                    인증번호가 발송되었습니다. 이메일을 확인해주세요.
+                </div>
+            </section>
             <section>
                 <h2 class='H2'>text_input/TextInput_1</h2>
                 <div class='SampleList'>
@@ -98,14 +122,28 @@
                         </div>
                     </div>
                     <div>
-                        <label for='inp-56175af6' class='FormLabel_1'>Search Button</label>
+                        <label for='inp-062289c2' class='FormLabel_1'>Search Button</label>
                         <div class='TextInput_1 w-full'>
-                            <input id='inp-56175af6' placeholder='placeholder' />
+                            <input id='inp-062289c2' placeholder='placeholder' />
                             <button class='ResetBtn'>
                                 <img src='/assets/icon/input_delete.svg' alt='' />
                             </button>
-                            <button class='Search'>
+                            <button class='SearchBtn'>
                                 <img src='/assets/icon/input_search.svg' alt='' />
+                            </button>
+                            <img onerror='initInputUi(this)' src='' alt='' />
+                        </div>
+                    </div>
+                    <div>
+                        <label for='inp-dfe86813' class='FormLabel_1'>EyeBtn Button</label>
+                        <div class='TextInput_1 w-full'>
+                            <input id='inp-dfe86813' type="password" placeholder='placeholder' />
+                            <button class='ResetBtn'>
+                                <img src='/assets/icon/input_delete.svg' alt='' />
+                            </button>
+                            <button class='EyeBtn'>
+                                <img class="[input[type='text']~button>&]:hidden" src='/assets/icon/eye.svg' alt='' />
+                                <img class="[input[type='password']~button>&]:hidden" src='/assets/icon/eye_on.svg' alt='' />
                             </button>
                             <img onerror='initInputUi(this)' src='' alt='' />
                         </div>
@@ -116,37 +154,37 @@
                 <h2 class='H2'>text_input/TextInput_2</h2>
                 <div class='SampleList'>
                     <div>
-                        <label for='inp-7a4ef7ba' class='FormLabel_1'>Basic</label>
+                        <label for='inp-cee8a4ee' class='FormLabel_1'>Basic</label>
                         <div class='TextInput_2 w-full'>
-                            <input id='inp-7a4ef7ba' placeholder='placeholder' />
+                            <input id='inp-cee8a4ee' placeholder='placeholder' />
                             <img onerror='initInputUi(this)' src='' alt='' />
                         </div>
                     </div>
                     <div>
-                        <label for='inp-2fccfe83' class='FormLabel_1'>.Success</label>
+                        <label for='inp-594bf28e' class='FormLabel_1'>.Success</label>
                         <div class='TextInput_2 Success w-full'>
-                            <input id='inp-2fccfe83' placeholder='placeholder' value='Success Value' />
+                            <input id='inp-594bf28e' placeholder='placeholder' value='Success Value' />
                             <img onerror='initInputUi(this)' src='' alt='' />
                         </div>
                     </div>
                     <div>
-                        <label for='inp-195aff67' class='FormLabel_1'>.Error</label>
+                        <label for='inp-f14a7375' class='FormLabel_1'>.Error</label>
                         <div class='TextInput_2 Error w-full'>
-                            <input id='inp-195aff67' placeholder='placeholder' value='Error Value' />
+                            <input id='inp-f14a7375' placeholder='placeholder' value='Error Value' />
                             <img onerror='initInputUi(this)' src='' alt='' />
                         </div>
                     </div>
                     <div>
-                        <label for='inp-d1511a20' class='FormLabel_1'>.ReadOnly [readonly]</label>
+                        <label for='inp-6ca63b2e' class='FormLabel_1'>.ReadOnly [readonly]</label>
                         <div class='TextInput_2 ReadOnly w-full'>
-                            <input id='inp-d1511a20' placeholder='placeholder' value='ReadOnly Value' readonly onclick='this.select();' />
+                            <input id='inp-6ca63b2e' placeholder='placeholder' value='ReadOnly Value' readonly onclick='this.select();' />
                             <img onerror='initInputUi(this)' src='' alt='' />
                         </div>
                     </div>
                     <div>
-                        <label for='inp-56175af6' class='FormLabel_1'>Reset Button</label>
+                        <label for='inp-004fd789' class='FormLabel_1'>Reset Button</label>
                         <div class='TextInput_2 w-full'>
-                            <input id='inp-56175af6' placeholder='placeholder' />
+                            <input id='inp-004fd789' placeholder='placeholder' />
                             <button class='ResetBtn'>
                                 <img src='/assets/icon/input_delete.svg' alt='' />
                             </button>
@@ -154,14 +192,28 @@
                         </div>
                     </div>
                     <div>
-                        <label for='inp-56175af6' class='FormLabel_1'>Search Button</label>
+                        <label for='inp-08f8acaa' class='FormLabel_1'>Search Button</label>
                         <div class='TextInput_2 w-full'>
-                            <input id='inp-56175af6' placeholder='placeholder' />
+                            <input id='inp-08f8acaa' placeholder='placeholder' />
                             <button class='ResetBtn'>
                                 <img src='/assets/icon/input_delete.svg' alt='' />
                             </button>
                             <button class='Search'>
                                 <img src='/assets/icon/input_search.svg' alt='' />
+                            </button>
+                            <img onerror='initInputUi(this)' src='' alt='' />
+                        </div>
+                    </div>
+                    <div>
+                        <label for='inp-99553333' class='FormLabel_1'>EyeBtn Button</label>
+                        <div class='TextInput_2 w-full'>
+                            <input id='inp-99553333' type="password" placeholder='placeholder' />
+                            <button class='ResetBtn'>
+                                <img src='/assets/icon/input_delete.svg' alt='' />
+                            </button>
+                            <button class='EyeBtn'>
+                                <img class="[input[type='text']~button>&]:hidden" src='/assets/icon/eye.svg' alt='' />
+                                <img class="[input[type='password']~button>&]:hidden" src='/assets/icon/eye_on.svg' alt='' />
                             </button>
                             <img onerror='initInputUi(this)' src='' alt='' />
                         </div>
