@@ -1,0 +1,197 @@
+[
+  {
+    "메뉴명": "Base UI",
+    "아이콘": "/assets/icon/currentColor.svg",
+    "자식": [
+      {
+        "메뉴명": "Accordions"
+      },
+      {
+        "메뉴명": "Alerts"
+      },
+      {
+        "메뉴명": "Avatars"
+      },
+      {
+        "메뉴명": "Buttons"
+      },
+      {
+        "메뉴명": "Badges"
+      },
+      {
+        "메뉴명": "Accordions"
+      },
+      {
+        "메뉴명": "Alerts"
+      },
+      {
+        "메뉴명": "Avatars"
+      },
+      {
+        "메뉴명": "Buttons"
+      },
+      {
+        "메뉴명": "Badges"
+      },
+      {
+        "메뉴명": "Accordions"
+      },
+      {
+        "메뉴명": "Alerts"
+      },
+      {
+        "메뉴명": "Avatars"
+      },
+      {
+        "메뉴명": "Buttons"
+      },
+      {
+        "메뉴명": "Badges"
+      }
+    ]
+  },
+  {
+    "메뉴명": "Extended UI",
+    "아이콘": "/assets/icon/currentColor.svg",
+    "자식": [
+      {
+        "메뉴명": "Starter Page"
+      },
+      {
+        "메뉴명": "Contact List"
+      },
+      {
+        "메뉴명": "Profile"
+      },
+      {
+        "메뉴명": "Timeline"
+      },
+      {
+        "메뉴명": "Invoice"
+      }
+    ]
+  },
+  {
+    "메뉴명": "Icons",
+    "아이콘": "/assets/icon/currentColor.svg",
+    "자식": [
+      {
+        "메뉴명": "Login"
+      },
+      {
+        "메뉴명": "Register"
+      },
+      {
+        "메뉴명": "Logout"
+      },
+      {
+        "메뉴명": "Forgot Password"
+      }
+    ]
+  },
+  {
+    "메뉴명": "Forms",
+    "아이콘": "/assets/icon/currentColor.svg",
+    "자식": []
+  },
+  {
+    "메뉴명": "TEST_1",
+    "아이콘": "/assets/icon/currentColor.svg",
+    "자식": []
+  },
+  {
+    "메뉴명": "TEST_2",
+    "아이콘": "/assets/icon/currentColor.svg",
+    "자식": []
+  },
+  {
+    "메뉴명": "TEST_3",
+    "아이콘": "/assets/icon/currentColor.svg",
+    "자식": []
+  },
+  {
+    "메뉴명": "TEST_4",
+    "아이콘": "/assets/icon/currentColor.svg",
+    "자식": []
+  },
+  {
+    "메뉴명": "TEST_5",
+    "아이콘": "/assets/icon/currentColor.svg",
+    "자식": []
+  },
+  {
+    "메뉴명": "TEST_6",
+    "아이콘": "/assets/icon/currentColor.svg",
+    "자식": []
+  },
+  {
+    "메뉴명": "TEST_7",
+    "아이콘": "/assets/icon/currentColor.svg",
+    "자식": []
+  },
+  {
+    "메뉴명": "TEST_8",
+    "아이콘": "/assets/icon/currentColor.svg",
+    "자식": []
+  },
+  {
+    "메뉴명": "TEST_9",
+    "아이콘": "/assets/icon/currentColor.svg",
+    "자식": []
+  },
+  {
+    "메뉴명": "TEST_10",
+    "아이콘": "/assets/icon/currentColor.svg",
+    "자식": []
+  },
+  {
+    "메뉴명": "TEST_11",
+    "아이콘": "/assets/icon/currentColor.svg",
+    "자식": []
+  },{
+    "메뉴명": "TEST_12",
+    "아이콘": "/assets/icon/currentColor.svg",
+    "자식": []
+  },
+  {
+    "메뉴명": "TEST_13",
+    "아이콘": "/assets/icon/currentColor.svg",
+    "자식": []
+  },
+  {
+    "메뉴명": "TEST_14",
+    "아이콘": "/assets/icon/currentColor.svg",
+    "자식": []
+  },
+  {
+    "메뉴명": "TEST_15",
+    "아이콘": "/assets/icon/currentColor.svg",
+    "자식": []
+  },
+  {
+    "메뉴명": "TEST_16",
+    "아이콘": "/assets/icon/currentColor.svg",
+    "자식": []
+  },
+  {
+    "메뉴명": "TEST_17",
+    "아이콘": "/assets/icon/currentColor.svg",
+    "자식": []
+  },
+  {
+    "메뉴명": "TEST_18",
+    "아이콘": "/assets/icon/currentColor.svg",
+    "자식": []
+  },
+  {
+    "메뉴명": "TEST_19",
+    "아이콘": "/assets/icon/currentColor.svg",
+    "자식": []
+  },
+  {
+    "메뉴명": "TEST_20",
+    "아이콘": "/assets/icon/currentColor.svg",
+    "자식": []
+  }
+  
+]
