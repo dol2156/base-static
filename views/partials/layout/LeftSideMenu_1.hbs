@@ -1,72 +1,78 @@
-<div class="RR LeftSideMenu_1 w-[var(--dashboard-leftside-wid)] [main.LeftSideMenuClose_&]:w-[72px] overflow-hidden text-[#70809a] h-full">
+<div class="LeftSideMenu_1 w-[var(--dashboard-leftside-wid)] [.LeftSideMenuClose_&]:w-[72px] overflow-hidden text-[#70809a] h-full">
   <div class="LeftSideMenuList SimpleBar White w-[var(--dashboard-leftside-wid)] h-[calc(var(--vh-100)-var(--dashboard-header-hei))] bg-[#1a2942] overflow-auto">
-    <div class="p-[10px_24px]">Main</div>
-    <ul class="[main.LeftSideMenuClose_&]:hidden">
-      {{#EACH_JSON 'LeftSideMenuData'}}
-        <li class="{{#if obj.자식}}HasChild{{/if}}">
-          <a href="#" class="flex flex-row justify-between p-[10px_24px] hover:text-[#3bc0c3] text-[14px] font-[700]">
-            <div class="flex-1 flex flex-row items-center gap-[12px] min-w-0 break-words">
-              <div class="w-[24px]">
-                {{{SVG '/assets/icon/currentColor.svg'}}}
-              </div>
-              <div class="flex-1">{{obj.메뉴명}}</div>
-            </div>
-            {{#if obj.자식}}
-              <div class="flex flex-row items-center justify-center gap-[0]">
-                <div class="w-[13px] [li.HasChild.On_&]:rotate-90">
-                  {{{SVG '/assets/icon/arrow_right.svg'}}}
+    <div class="[.LeftSideMenuClose_&]:hidden">
+      <div class="p-[10px_24px]">Main</div>
+      <ul>
+        {{#EACH_JSON 'LeftSideMenuData'}}
+          <li class="{{#if obj.자식}}HasChild{{/if}}">
+            <a href="#" class="flex flex-row justify-between p-[10px_24px] hover:text-[#3bc0c3] text-[14px] font-[700]">
+              <div class="flex-1 flex flex-row items-center gap-[12px] min-w-0 break-words">
+                <div class="w-[24px]">
+                  {{{SVG '/assets/icon/currentColor.svg'}}}
                 </div>
+                <div class="flex-1">{{obj.메뉴명}}</div>
               </div>
-            {{/if}}
-          </a>
-          {{#if obj.자식}}
-            <ul class="ChildList hidden [li.HasChild.On_&]:block">
-              {{#EACH obj.자식}}
-                <li>
-                  <a href="#" class="block pl-[calc(24px+24px+12px)] py-[6px] hover:text-[#3bc0c3] text-[14px] font-[400]">
-                    {{obj.메뉴명}}
-                  </a>
-                </li>
-              {{/EACH}}
-            </ul>
-          {{/if}}
-        </li>
-      {{/EACH_JSON}}
-      <img onerror="initLeftSideMenu(this)" src=""/>
-    </ul>
-    <div class="p-[10px_24px]">Components</div>
-    <ul class="[main.LeftSideMenuClose_&]:hidden">
-      {{#EACH_JSON 'LeftSideMenuData_2'}}
-        <li class="{{#if obj.자식}}HasChild{{/if}}">
-          <a href="#" class="flex flex-row justify-between p-[10px_24px] hover:text-[#3bc0c3] text-[14px] font-[700]">
-            <div class="flex-1 flex flex-row items-center gap-[12px] min-w-0 break-words">
-              <div class="w-[24px]">
-                {{{SVG '/assets/icon/currentColor.svg'}}}
-              </div>
-              <div class="flex-1">{{obj.메뉴명}}</div>
-            </div>
-            {{#if obj.자식}}
-              <div class="flex flex-row items-center justify-center gap-[0]">
-                <div class="w-[13px] [li.HasChild.On_&]:rotate-90">
-                  {{{SVG '/assets/icon/arrow_right.svg'}}}
+              {{#if obj.자식}}
+                <div class="flex flex-row items-center justify-center gap-[0]">
+                  <div class="w-[13px] [li.HasChild.On_&]:rotate-90">
+                    {{{SVG '/assets/icon/arrow_right.svg'}}}
+                  </div>
                 </div>
-              </div>
+              {{/if}}
+            </a>
+            {{#if obj.자식}}
+              <ul class="ChildList hidden [li.HasChild.On_&]:block">
+                {{#EACH obj.자식}}
+                  <li>
+                    <a href="#" class="block pl-[calc(24px+24px+12px)] py-[6px] hover:text-[#3bc0c3] text-[14px] font-[400]">
+                      {{obj.메뉴명}}
+                    </a>
+                  </li>
+                {{/EACH}}
+              </ul>
             {{/if}}
-          </a>
-          {{#if obj.자식}}
-            <ul class="ChildList hidden [li.HasChild.On_&]:block">
-              {{#EACH obj.자식}}
-                <li>
-                  <a href="#" class="block pl-[calc(24px+24px+12px)] py-[6px] hover:text-[#3bc0c3] text-[14px] font-[400]">
-                    {{obj.메뉴명}}
-                  </a>
-                </li>
-              {{/EACH}}
-            </ul>
-          {{/if}}
-        </li>
-      {{/EACH_JSON}}
-      <img onerror="initLeftSideMenu(this)" src=""/>
-    </ul>
+          </li>
+        {{/EACH_JSON}}
+        <img onerror="initLeftSideMenu(this)" src=""/>
+      </ul>
+      <div class="p-[10px_24px]">Components</div>
+      <ul>
+        {{#EACH_JSON 'LeftSideMenuData_2'}}
+          <li class="{{#if obj.자식}}HasChild{{/if}}">
+            <a href="#" class="flex flex-row justify-between p-[10px_24px] hover:text-[#3bc0c3] text-[14px] font-[700]">
+              <div class="flex-1 flex flex-row items-center gap-[12px] min-w-0 break-words">
+                <div class="w-[24px]">
+                  {{{SVG '/assets/icon/currentColor.svg'}}}
+                </div>
+                <div class="flex-1">{{obj.메뉴명}}</div>
+              </div>
+              {{#if obj.자식}}
+                <div class="flex flex-row items-center justify-center gap-[0]">
+                  <div class="w-[13px] [li.HasChild.On_&]:rotate-90">
+                    {{{SVG '/assets/icon/arrow_right.svg'}}}
+                  </div>
+                </div>
+              {{/if}}
+            </a>
+            {{#if obj.자식}}
+              <ul class="ChildList hidden [li.HasChild.On_&]:block">
+                {{#EACH obj.자식}}
+                  <li>
+                    <a href="#" class="block pl-[calc(24px+24px+12px)] py-[6px] hover:text-[#3bc0c3] text-[14px] font-[400]">
+                      {{obj.메뉴명}}
+                    </a>
+                  </li>
+                {{/EACH}}
+              </ul>
+            {{/if}}
+          </li>
+        {{/EACH_JSON}}
+        <img onerror="initLeftSideMenu(this)" src=""/>
+      </ul>
+    </div>
+    <div>
+      {{{SVG '/assets/icon/currentColor.svg'}}}
+    </div>
   </div>
+  <img onerror="initLeftSideMenuVisible(this)" src=""/>
 </div>

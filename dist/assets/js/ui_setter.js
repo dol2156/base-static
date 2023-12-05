@@ -492,7 +492,16 @@ const initNumberAniBox = (trigger) => {
 };
 
 const toggleDashboardMenu = () => {
-  $(`#Page > main`).toggleClass('LeftSideMenuClose');
+  $(`#Page`).toggleClass('LeftSideMenuClose');
+  window.localStorage.setItem('LeftSideMenuClose', $(`#Page`).hasClass('LeftSideMenuClose'));
+};
+
+/**
+ *
+ */
+const initLeftSideMenuVisible = () => {
+  const is_close = window.localStorage.getItem('LeftSideMenuClose');
+  if (is_close == 'true') $(`#Page`).addClass('LeftSideMenuClose');
 };
 
 /**
