@@ -18,21 +18,25 @@
 @import '/assets/font/SUIT-Variable.css';
 //@import '/assets/font/Montserrat.css';
 //@import '/assets/font/Pretendard.css';
-html.Loading{ opacity:0; }
+html.Loading {
+  opacity: 0;
+}
 /**/
 #ContentsRuler {
+  display:none;
   pointer-events: none;
   z-index: 999999;
   position: fixed;
-  bottom: 0;
+  top: 50%;
+  transform: translateY(-50%);
   left: 0;
   background-color: #0a7feb;
   color: black;
   width: 100%;
   //min-width: var(--body-min-wid);
-  font-size: 10;
+  font-size: 16;
   text-align: center;
-  opacity: 0.1;
+  opacity: 0.5;
   .Inner {
     background-color: yellow;
   }

@@ -1,34 +1,31 @@
 window.addEventListener('DOMContentLoaded', (event) => {
   const html = `
-  <style>
-    #AppInfo{ display:none; }
-    [data-env="development"] #AppInfo{ display:block; }
-    #AppInfo > a{ z-index:9999; position:fixed; top:0px; left:50%; }
-    #AppInfo > a{ display:flex; align-items:center; justify-content:center; gap:4px; }
-    #AppInfo > a{ color:yellow; font-size:12px; font-weight:400; }
-    #AppInfo > a{ background-color:rgba(0,0,0,.7); cursor:pointer; white-space:nowrap; padding:4px; }
-  </style>
-  <div id="AppInfo">
-    <a href="/_pub_sitemap.html" class="translate-x-[-50%] translate-y-[-100%] [[data-scroll-top='0']_&]:translate-y-[0]">
-      <div>
-        <div class="hidden xs:max-sm:block">Xs</div>
-        <div class="hidden sm:max-md:block">Sm</div>
-        <div class="hidden md:max-lg:block">Md</div>
-        <div class="hidden lg:max-xl:block">Lg</div>
-        <div class="hidden xl:max-2xl:block">Xl</div>
-        <div class="hidden 2xl:max-3xl:block">2Xl</div>
-        <div class="hidden 3xl:block">3Xl</div>
-      </div>
-      <div>|</div>
-      <div>
-        <div class="pc:hidden">MO</div>
-        <div class="hidden pc:block">PC</div>
-      </div>
-      <div>|</div>
-      <div class="wid">wid</div>
-      <div>x</div>
-      <div class="hei">hei</div>
-    </a>
+  <div id="AppInfo" class="hidden [[data-env='development'][data-scroll-top='0']_&]:flex z-[9999] fixed top-[0] left-1/2 -translate-x-1/2 bg-[rgba(0,0,0,.7)] p-[5px] text-[yellow] text-[12px] font-[400] whitespace-nowrap flex-row items-center justify-center gap-[10px]">
+    <div>
+      <a href="/_pub_sitemap.html" class="flex flex-row items-center justify-center gap-[5px]">
+        <div>
+          <div class="hidden xs:max-sm:block">Xs</div>
+          <div class="hidden sm:max-md:block">Sm</div>
+          <div class="hidden md:max-lg:block">Md</div>
+          <div class="hidden lg:max-xl:block">Lg</div>
+          <div class="hidden xl:max-2xl:block">Xl</div>
+          <div class="hidden 2xl:max-3xl:block">2Xl</div>
+          <div class="hidden 3xl:block">3Xl</div>
+        </div>
+        <div>&diamond;</div>
+        <div>
+          <div class="pc:hidden">MO</div>
+          <div class="hidden pc:block">PC</div>
+        </div>
+        <div>&diamond;</div>
+        <div class="wid">wid</div>
+        <div>x</div>
+        <div class="hei">hei</div>
+      </a>
+    </div>
+    <div>
+      <button onclick="$('#ContentsRuler').toggle()">Ruler</button>
+    </div>
   </div>
   `;
   document.body.insertAdjacentHTML('afterbegin', html);
