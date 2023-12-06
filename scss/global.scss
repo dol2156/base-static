@@ -28,6 +28,7 @@ html.Loading {
   z-index: 999999;
   position: fixed;
   top: var(--mouse-y);
+  transform:translateY(-50%);
   left: 0;
   background-color: #0a7feb;
   color: black;
