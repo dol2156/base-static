@@ -30,18 +30,29 @@ window.UID = () => {
 /* // 2023-09-13 :: END :: window */
 
 /* 2023-10-24 :: START :: setCssVh */
-const setCssVar = () => {
+const setCssVar = (evt) => {
   const el_html = document.documentElement;
   el_html.style.setProperty('--vh-100', `${window.innerHeight}px`);
   el_html.style.setProperty('--vh-50', `${window.innerHeight / 2}px`);
 
   const $ruler_inner = $(`#ContentsRuler > .Inner`);
   if ($ruler_inner.width()) {
-    const real_side_padding = ($(window).width() - $ruler_inner.width()) / 2;
-    $ruler_inner.text(`${$ruler_inner.width()}px`);
+    const ruler_wid = $ruler_inner.width();
+    const real_side_padding = ($(window).width() - ruler_wid) / 2;
+    $ruler_inner.text(`${real_side_padding}px + ${ruler_wid}px + ${real_side_padding}px`);
     el_html.style.setProperty('--real-side-padding', `${real_side_padding}px`);
   }
+
+  if (evt && evt.type == 'mousemove') {
+    var mouseX = event.clientX; // 마우스의 X 좌표
+    var mouseY = event.clientY; // 마우스의 Y 좌표
+
+    el_html.style.setProperty('--mouse-x', `${mouseX}px`);
+    el_html.style.setProperty('--mouse-y', `${mouseY}px`);
+  }
 };
+
+document.addEventListener('mousemove', setCssVar);
 window.addEventListener('resize', setCssVar);
 setCssVar();
 window.addEventListener('DOMContentLoaded', (evt) => {
@@ -279,10 +290,10 @@ function initSimpleBar() {
   let simplebar;
   $('.SimpleBar').each(function (i) {
     simplebar = new SimpleBar(this, {
-      autoHide : false,
+      autoHide: false,
     });
   });
-  
+
   // $(window).on(`resize`, (evt) => {
   //   simplebar.recalculate();
   // });
@@ -336,4 +347,4 @@ window.addEventListener('scroll', (evt) => {
 
 window.onload = () => {
   $(`html`).removeClass('Loading');
-}
+};

@@ -1477,8 +1477,7 @@ html.Loading {
   pointer-events: none;
   z-index: 999999;
   position: fixed;
-  top: 50%;
-  transform: translateY(-50%);
+  top: var(--mouse-y);
   left: 0;
   background-color: #0a7feb;
   color: black;
