@@ -380,6 +380,11 @@ const initDropdown = (trigger) => {
     $head.text(text);
     $input.val(value);
 
+    if(value){
+      $target.attr('data-value', value);
+    }else{
+      $target.removeAttr('data-value');
+    }
     $target.removeClass('On');
   }
 };
