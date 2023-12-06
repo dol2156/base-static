@@ -2,31 +2,59 @@
   <main>
     <link href='/assets/css/_pub.css' rel='stylesheet'/>
     <h1 class='H1 Sticky Top'>Button</h1>
-    {{#EACH HBS_DATA.button}}
-      <section>
-        <h2 class='H2'>{{obj.partial}}</h2>
-        {{> (lookup obj 'partial')}}
-      </section>
-    {{/EACH}}
+    <section class='HBox mt-[50px]'>
+      <div class='Inner'>
+        <h2 class="H2">Button List</h2>
+        <table class='BtnSampleTable'>
+          <thead>
+          <tr>
+            <th>
+              Xl:60px
+            </th>
+            <th>
+              Lg:52px
+            </th>
+            <th>
+              Md:48px
+            </th>
+            <th>
+              Sm:40px
+            </th>
+            <th>
+              [disabled]
+            </th>
+          </tr>
+          </thead>
+          <tbody>
+          {{#LOOP 10}}
+            <tr>
+              {{#EACH (ARR 'Xl|Lg||SM')}}
+                <td>
+                  <button class='Button_{{../number}} w-full {{obj}}'>
+                    <img class='Default' src='/assets/icon/warn.svg' alt=''/>
+                    <img class='Hover' src='/assets/icon/warn_hover.svg' alt=''/>
+                    <img class='Active' src='/assets/icon/wran_active.svg' alt=''/>
+                    <div>Button_{{../number}} {{obj}}</div>
+                    <div class="w-[20px]">
+                      {{{SVG '/assets/icon/currentColor.svg'}}}
+                    </div>
+                  </button>
+                </td>
+              {{/EACH}}
+              <td>
+                <button class='Button_{{number}} w-full' disabled>Button_{{number}} [disabled]</button>
+              </td>
+            </tr>
+          {{/LOOP}}
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section class="HBox">
+      <div class="Inner">
+        <h2 class="H2">ETC Buttons</h2>
+        <button class="Btn_0">Btn_0</button>
+      </div>
+    </section>
   </main>
 </div>
-<script>
-  $(function(){
-      $(`.SampleList button`).each(function(i){
-        const $this = $(this);
-        const hei = $this.height();
-        const fs = $this.css('font-size');
-        const color = $this.css('color');
-        const round = $this.css('border-radius');
-
-        const str = `
-          <span class="border-solid border-[1px] border-[#333] p-[5px] bg-white text-[red]">height:${hei}px</span>
-          <span class="border-solid border-[1px] border-[#333] p-[5px] bg-white text-[green]">color:${color}</span>
-          <span class="border-solid border-[1px] border-[#333] p-[5px] bg-white text-[blue]">font-size:${fs}</span>
-          <span class="border-solid border-[1px] border-[#333] p-[5px] bg-white text-[black]">border-radius:${round}</span>
-        `;
-
-        $this.after(`<div class="text-center text-[16px] font-[700] CenterCenter gap-[10px]">${str}</div>`);
-      });
-  });
-</script>

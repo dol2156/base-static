@@ -10,4 +10,26 @@ main > section .FixedShell {
   position: relative !important;
 }
 
+.BtnSampleTable {
+  background-color: white;
+  table-layout: fixed;
+  border-collapse: collapse;
+  width: 100%;
+}
+.BtnSampleTable th {
+  background-color: #666;
+  color: white;
+  font-weight: 800;
+}
+.BtnSampleTable th,
+.BtnSampleTable td {
+  border: 1px solid #333;
+  padding: 10px;
+  vertical-align: top;
+}
+.BtnSampleTable th button + button,
+.BtnSampleTable td button + button {
+  margin-top: 10px;
+}
+
 /*# sourceMappingURL=_pub.css.map */

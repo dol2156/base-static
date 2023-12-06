@@ -651,20 +651,182 @@ strong {
  * 마우스 인터렉션 상태에 따라 아이콘을 변경하는 버튼에 포함되는 믹스인
  */
 /**/
+.Button_1 {
+  /*fixed*/
+  display: flex;
+  padding: 0 1.25em;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-style: solid;
+  gap: 5px;
+  /*dynamic*/
+  height: 48px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  border-width: 1px;
+  /* $PcMinWid 이상 화면*/
+  border-color: #0d6efd;
+  background-color: #ffffff;
+  color: #0d6efd;
+}
+.Button_1 .Hover {
+  display: none;
+}
+.Button_1 .Active {
+  display: none;
+}
+.Button_1 .Default {
+  display: block;
+}
+.Button_1:hover .Default {
+  display: none;
+}
+.Button_1:hover .Active {
+  display: none;
+}
+.Button_1:hover .Hover {
+  display: block;
+}
+.Button_1.On .Default, .Button_1:active .Default {
+  display: none;
+}
+.Button_1.On .Hover, .Button_1:active .Hover {
+  display: none;
+}
+.Button_1.On .Active, .Button_1:active .Active {
+  display: block;
+}
+.Button_1.Sm {
+  height: 40px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.Button_1.Lg {
+  height: 52px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.Button_1.Xl {
+  height: 60px;
+  border-radius: 14px;
+  font-size: 18px;
+  font-weight: 600;
+}
+.Button_1:hover {
+  border-color: #0d6efd;
+  background-color: #0b5ed7;
+  color: #ffffff;
+}
+.Button_1:disabled {
+  border-color: #999999;
+  background-color: #ddd;
+  color: #999999;
+}
+
+/**/
+.Button_2 {
+  /*fixed*/
+  display: flex;
+  padding: 0 1.25em;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-style: solid;
+  gap: 5px;
+  /*dynamic*/
+  height: 48px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  border-width: 1px;
+  /* $PcMinWid 이상 화면*/
+  border-color: #dc3545;
+  background-color: #ffffff;
+  color: #dc3545;
+}
+.Button_2 .Hover {
+  display: none;
+}
+.Button_2 .Active {
+  display: none;
+}
+.Button_2 .Default {
+  display: block;
+}
+.Button_2:hover .Default {
+  display: none;
+}
+.Button_2:hover .Active {
+  display: none;
+}
+.Button_2:hover .Hover {
+  display: block;
+}
+.Button_2.On .Default, .Button_2:active .Default {
+  display: none;
+}
+.Button_2.On .Hover, .Button_2:active .Hover {
+  display: none;
+}
+.Button_2.On .Active, .Button_2:active .Active {
+  display: block;
+}
+.Button_2.Sm {
+  height: 40px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.Button_2.Lg {
+  height: 52px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.Button_2.Xl {
+  height: 60px;
+  border-radius: 14px;
+  font-size: 18px;
+  font-weight: 600;
+}
+.Button_2:hover {
+  border-color: #dc3545;
+  background-color: #b02a37;
+  color: #ffffff;
+}
+.Button_2:disabled {
+  border-color: #999999;
+  background-color: #ddd;
+  color: #999999;
+}
+
+/**/
 .Btn_0 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 2px;
-  font-size: 14px;
-  font-weight: 500;
-  color: #767676;
+  padding: 0 1.25em;
+  gap: 5px;
+  font-size: 16px;
+  font-weight: 800;
+  border: 4px solid red;
+  border-color: #333;
+  background-color: #999;
+  color: #fff;
 }
 .Btn_0:hover {
-  color: red;
+  border-color: #333;
+  background-color: #fff;
+  color: #333;
 }
 .Btn_0:active {
-  color: blue;
+  border-color: red;
+  background-color: blue;
+  color: green;
 }
 .Btn_0 .Hover {
   display: none;
@@ -694,36 +856,6 @@ strong {
   display: block;
 }
 
-/**/
-.Btn_1 {
-  height: 52px;
-  display: flex;
-  padding: 0 1.25em;
-  justify-content: center;
-  align-items: center;
-  border-radius: 12px;
-  background: #26262C;
-  color: #C6C5D0;
-  text-align: center;
-  font-size: 16px;
-  font-weight: 600;
-  /* $PcMinWid 이상 화면*/
-}
-/**/
-.Btn_2 {
-  height: 52px;
-  display: flex;
-  padding: 0 1.25em;
-  justify-content: center;
-  align-items: center;
-  border-radius: 12px;
-  background: #5D45FF;
-  color: #fff;
-  text-align: center;
-  font-size: 16px;
-  font-weight: 600;
-  /* $PcMinWid 이상 화면*/
-}
 /**/
 .Checkbox_1 {
   aspect-ratio: 1;

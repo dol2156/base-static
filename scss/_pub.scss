@@ -8,3 +8,25 @@ main > section {
 main > section .FixedShell {
   position: relative !important;
 }
+.BtnSampleTable {
+  background-color: white;
+  table-layout: fixed;
+  border-collapse: collapse;
+  width: 100%;
+
+  th {
+    background-color: #666;
+    color: white;
+    font-weight: 800;
+  }
+  th,
+  td {
+    border: 1px solid #333;
+    padding: 10px;
+    vertical-align: top;
+
+    button + button {
+      margin-top: 10px;
+    }
+  }
+}

@@ -68,66 +68,612 @@
         <main>
             <link href='/assets/css/_pub.css' rel='stylesheet' />
             <h1 class='H1 Sticky Top'>Button</h1>
-            <section>
-                <h2 class='H2'>button/Btn_0</h2>
-                <div class="SampleList">
-                    <button class='Btn_0'>
-                        <div>인기순</div>
-                        <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path fill="currentColor" d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.834 9.686l-4.166.575 3.032 2.914-.74 4.139 3.708-1.982 3.708 1.983-.74-4.139 3.032-2.915-4.166-.575-1.834-3.784-1.834 3.784z" />
-                        </svg>
-                    </button>
-                    <button class='Btn_0'>
-                        <div>인기순</div>
-                        <img src='/assets/icon/star.svg' alt='' />
-                    </button>
-                    <button class='Btn_0'>
-                        랭킹기준
-                        <img class='Default Hover' src='/assets/icon/warn.svg' alt='' />
-                        <img class='Active' src='/assets/icon/wran_active.svg' alt='' />
-                    </button>
-                    <button class='Btn_0'>
-                        랭킹기준
-                        <img class='Default' src='/assets/icon/warn.svg' alt='' />
-                        <img class='Hover' src='/assets/icon/warn_hover.svg' alt='' />
-                        <img class='Active' src='/assets/icon/wran_active.svg' alt='' />
-                    </button>
+            <section class='HBox mt-[50px]'>
+                <div class='Inner'>
+                    <h2 class="H2">Button List</h2>
+                    <table class='BtnSampleTable'>
+                        <thead>
+                            <tr>
+                                <th>
+                                    Xl:60px
+                                </th>
+                                <th>
+                                    Lg:52px
+                                </th>
+                                <th>
+                                    Md:48px
+                                </th>
+                                <th>
+                                    Sm:40px
+                                </th>
+                                <th>
+                                    [disabled]
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <button class='Button_1 w-full Xl'>
+                                        <img class='Default' src='/assets/icon/warn.svg' alt='' />
+                                        <img class='Hover' src='/assets/icon/warn_hover.svg' alt='' />
+                                        <img class='Active' src='/assets/icon/wran_active.svg' alt='' />
+                                        <div>Button_1 Xl</div>
+                                        <div class="w-[20px]">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill="currentColor" d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.834 9.686l-4.166.575 3.032 2.914-.74 4.139 3.708-1.982 3.708 1.983-.74-4.139 3.032-2.915-4.166-.575-1.834-3.784-1.834 3.784z" />
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class='Button_1 w-full Lg'>
+                                        <img class='Default' src='/assets/icon/warn.svg' alt='' />
+                                        <img class='Hover' src='/assets/icon/warn_hover.svg' alt='' />
+                                        <img class='Active' src='/assets/icon/wran_active.svg' alt='' />
+                                        <div>Button_1 Lg</div>
+                                        <div class="w-[20px]">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill="currentColor" d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.834 9.686l-4.166.575 3.032 2.914-.74 4.139 3.708-1.982 3.708 1.983-.74-4.139 3.032-2.915-4.166-.575-1.834-3.784-1.834 3.784z" />
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class='Button_1 w-full '>
+                                        <img class='Default' src='/assets/icon/warn.svg' alt='' />
+                                        <img class='Hover' src='/assets/icon/warn_hover.svg' alt='' />
+                                        <img class='Active' src='/assets/icon/wran_active.svg' alt='' />
+                                        <div>Button_1 </div>
+                                        <div class="w-[20px]">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill="currentColor" d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.834 9.686l-4.166.575 3.032 2.914-.74 4.139 3.708-1.982 3.708 1.983-.74-4.139 3.032-2.915-4.166-.575-1.834-3.784-1.834 3.784z" />
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class='Button_1 w-full SM'>
+                                        <img class='Default' src='/assets/icon/warn.svg' alt='' />
+                                        <img class='Hover' src='/assets/icon/warn_hover.svg' alt='' />
+                                        <img class='Active' src='/assets/icon/wran_active.svg' alt='' />
+                                        <div>Button_1 SM</div>
+                                        <div class="w-[20px]">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill="currentColor" d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.834 9.686l-4.166.575 3.032 2.914-.74 4.139 3.708-1.982 3.708 1.983-.74-4.139 3.032-2.915-4.166-.575-1.834-3.784-1.834 3.784z" />
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class='Button_1 w-full' disabled>Button_1 [disabled]</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button class='Button_2 w-full Xl'>
+                                        <img class='Default' src='/assets/icon/warn.svg' alt='' />
+                                        <img class='Hover' src='/assets/icon/warn_hover.svg' alt='' />
+                                        <img class='Active' src='/assets/icon/wran_active.svg' alt='' />
+                                        <div>Button_2 Xl</div>
+                                        <div class="w-[20px]">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill="currentColor" d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.834 9.686l-4.166.575 3.032 2.914-.74 4.139 3.708-1.982 3.708 1.983-.74-4.139 3.032-2.915-4.166-.575-1.834-3.784-1.834 3.784z" />
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class='Button_2 w-full Lg'>
+                                        <img class='Default' src='/assets/icon/warn.svg' alt='' />
+                                        <img class='Hover' src='/assets/icon/warn_hover.svg' alt='' />
+                                        <img class='Active' src='/assets/icon/wran_active.svg' alt='' />
+                                        <div>Button_2 Lg</div>
+                                        <div class="w-[20px]">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill="currentColor" d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.834 9.686l-4.166.575 3.032 2.914-.74 4.139 3.708-1.982 3.708 1.983-.74-4.139 3.032-2.915-4.166-.575-1.834-3.784-1.834 3.784z" />
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class='Button_2 w-full '>
+                                        <img class='Default' src='/assets/icon/warn.svg' alt='' />
+                                        <img class='Hover' src='/assets/icon/warn_hover.svg' alt='' />
+                                        <img class='Active' src='/assets/icon/wran_active.svg' alt='' />
+                                        <div>Button_2 </div>
+                                        <div class="w-[20px]">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill="currentColor" d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.834 9.686l-4.166.575 3.032 2.914-.74 4.139 3.708-1.982 3.708 1.983-.74-4.139 3.032-2.915-4.166-.575-1.834-3.784-1.834 3.784z" />
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class='Button_2 w-full SM'>
+                                        <img class='Default' src='/assets/icon/warn.svg' alt='' />
+                                        <img class='Hover' src='/assets/icon/warn_hover.svg' alt='' />
+                                        <img class='Active' src='/assets/icon/wran_active.svg' alt='' />
+                                        <div>Button_2 SM</div>
+                                        <div class="w-[20px]">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill="currentColor" d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.834 9.686l-4.166.575 3.032 2.914-.74 4.139 3.708-1.982 3.708 1.983-.74-4.139 3.032-2.915-4.166-.575-1.834-3.784-1.834 3.784z" />
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class='Button_2 w-full' disabled>Button_2 [disabled]</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button class='Button_3 w-full Xl'>
+                                        <img class='Default' src='/assets/icon/warn.svg' alt='' />
+                                        <img class='Hover' src='/assets/icon/warn_hover.svg' alt='' />
+                                        <img class='Active' src='/assets/icon/wran_active.svg' alt='' />
+                                        <div>Button_3 Xl</div>
+                                        <div class="w-[20px]">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill="currentColor" d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.834 9.686l-4.166.575 3.032 2.914-.74 4.139 3.708-1.982 3.708 1.983-.74-4.139 3.032-2.915-4.166-.575-1.834-3.784-1.834 3.784z" />
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class='Button_3 w-full Lg'>
+                                        <img class='Default' src='/assets/icon/warn.svg' alt='' />
+                                        <img class='Hover' src='/assets/icon/warn_hover.svg' alt='' />
+                                        <img class='Active' src='/assets/icon/wran_active.svg' alt='' />
+                                        <div>Button_3 Lg</div>
+                                        <div class="w-[20px]">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill="currentColor" d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.834 9.686l-4.166.575 3.032 2.914-.74 4.139 3.708-1.982 3.708 1.983-.74-4.139 3.032-2.915-4.166-.575-1.834-3.784-1.834 3.784z" />
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class='Button_3 w-full '>
+                                        <img class='Default' src='/assets/icon/warn.svg' alt='' />
+                                        <img class='Hover' src='/assets/icon/warn_hover.svg' alt='' />
+                                        <img class='Active' src='/assets/icon/wran_active.svg' alt='' />
+                                        <div>Button_3 </div>
+                                        <div class="w-[20px]">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill="currentColor" d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.834 9.686l-4.166.575 3.032 2.914-.74 4.139 3.708-1.982 3.708 1.983-.74-4.139 3.032-2.915-4.166-.575-1.834-3.784-1.834 3.784z" />
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class='Button_3 w-full SM'>
+                                        <img class='Default' src='/assets/icon/warn.svg' alt='' />
+                                        <img class='Hover' src='/assets/icon/warn_hover.svg' alt='' />
+                                        <img class='Active' src='/assets/icon/wran_active.svg' alt='' />
+                                        <div>Button_3 SM</div>
+                                        <div class="w-[20px]">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill="currentColor" d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.834 9.686l-4.166.575 3.032 2.914-.74 4.139 3.708-1.982 3.708 1.983-.74-4.139 3.032-2.915-4.166-.575-1.834-3.784-1.834 3.784z" />
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class='Button_3 w-full' disabled>Button_3 [disabled]</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button class='Button_4 w-full Xl'>
+                                        <img class='Default' src='/assets/icon/warn.svg' alt='' />
+                                        <img class='Hover' src='/assets/icon/warn_hover.svg' alt='' />
+                                        <img class='Active' src='/assets/icon/wran_active.svg' alt='' />
+                                        <div>Button_4 Xl</div>
+                                        <div class="w-[20px]">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill="currentColor" d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.834 9.686l-4.166.575 3.032 2.914-.74 4.139 3.708-1.982 3.708 1.983-.74-4.139 3.032-2.915-4.166-.575-1.834-3.784-1.834 3.784z" />
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class='Button_4 w-full Lg'>
+                                        <img class='Default' src='/assets/icon/warn.svg' alt='' />
+                                        <img class='Hover' src='/assets/icon/warn_hover.svg' alt='' />
+                                        <img class='Active' src='/assets/icon/wran_active.svg' alt='' />
+                                        <div>Button_4 Lg</div>
+                                        <div class="w-[20px]">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill="currentColor" d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.834 9.686l-4.166.575 3.032 2.914-.74 4.139 3.708-1.982 3.708 1.983-.74-4.139 3.032-2.915-4.166-.575-1.834-3.784-1.834 3.784z" />
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class='Button_4 w-full '>
+                                        <img class='Default' src='/assets/icon/warn.svg' alt='' />
+                                        <img class='Hover' src='/assets/icon/warn_hover.svg' alt='' />
+                                        <img class='Active' src='/assets/icon/wran_active.svg' alt='' />
+                                        <div>Button_4 </div>
+                                        <div class="w-[20px]">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill="currentColor" d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.834 9.686l-4.166.575 3.032 2.914-.74 4.139 3.708-1.982 3.708 1.983-.74-4.139 3.032-2.915-4.166-.575-1.834-3.784-1.834 3.784z" />
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class='Button_4 w-full SM'>
+                                        <img class='Default' src='/assets/icon/warn.svg' alt='' />
+                                        <img class='Hover' src='/assets/icon/warn_hover.svg' alt='' />
+                                        <img class='Active' src='/assets/icon/wran_active.svg' alt='' />
+                                        <div>Button_4 SM</div>
+                                        <div class="w-[20px]">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill="currentColor" d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.834 9.686l-4.166.575 3.032 2.914-.74 4.139 3.708-1.982 3.708 1.983-.74-4.139 3.032-2.915-4.166-.575-1.834-3.784-1.834 3.784z" />
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class='Button_4 w-full' disabled>Button_4 [disabled]</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button class='Button_5 w-full Xl'>
+                                        <img class='Default' src='/assets/icon/warn.svg' alt='' />
+                                        <img class='Hover' src='/assets/icon/warn_hover.svg' alt='' />
+                                        <img class='Active' src='/assets/icon/wran_active.svg' alt='' />
+                                        <div>Button_5 Xl</div>
+                                        <div class="w-[20px]">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill="currentColor" d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.834 9.686l-4.166.575 3.032 2.914-.74 4.139 3.708-1.982 3.708 1.983-.74-4.139 3.032-2.915-4.166-.575-1.834-3.784-1.834 3.784z" />
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class='Button_5 w-full Lg'>
+                                        <img class='Default' src='/assets/icon/warn.svg' alt='' />
+                                        <img class='Hover' src='/assets/icon/warn_hover.svg' alt='' />
+                                        <img class='Active' src='/assets/icon/wran_active.svg' alt='' />
+                                        <div>Button_5 Lg</div>
+                                        <div class="w-[20px]">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill="currentColor" d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.834 9.686l-4.166.575 3.032 2.914-.74 4.139 3.708-1.982 3.708 1.983-.74-4.139 3.032-2.915-4.166-.575-1.834-3.784-1.834 3.784z" />
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class='Button_5 w-full '>
+                                        <img class='Default' src='/assets/icon/warn.svg' alt='' />
+                                        <img class='Hover' src='/assets/icon/warn_hover.svg' alt='' />
+                                        <img class='Active' src='/assets/icon/wran_active.svg' alt='' />
+                                        <div>Button_5 </div>
+                                        <div class="w-[20px]">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill="currentColor" d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.834 9.686l-4.166.575 3.032 2.914-.74 4.139 3.708-1.982 3.708 1.983-.74-4.139 3.032-2.915-4.166-.575-1.834-3.784-1.834 3.784z" />
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class='Button_5 w-full SM'>
+                                        <img class='Default' src='/assets/icon/warn.svg' alt='' />
+                                        <img class='Hover' src='/assets/icon/warn_hover.svg' alt='' />
+                                        <img class='Active' src='/assets/icon/wran_active.svg' alt='' />
+                                        <div>Button_5 SM</div>
+                                        <div class="w-[20px]">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill="currentColor" d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.834 9.686l-4.166.575 3.032 2.914-.74 4.139 3.708-1.982 3.708 1.983-.74-4.139 3.032-2.915-4.166-.575-1.834-3.784-1.834 3.784z" />
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class='Button_5 w-full' disabled>Button_5 [disabled]</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button class='Button_6 w-full Xl'>
+                                        <img class='Default' src='/assets/icon/warn.svg' alt='' />
+                                        <img class='Hover' src='/assets/icon/warn_hover.svg' alt='' />
+                                        <img class='Active' src='/assets/icon/wran_active.svg' alt='' />
+                                        <div>Button_6 Xl</div>
+                                        <div class="w-[20px]">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill="currentColor" d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.834 9.686l-4.166.575 3.032 2.914-.74 4.139 3.708-1.982 3.708 1.983-.74-4.139 3.032-2.915-4.166-.575-1.834-3.784-1.834 3.784z" />
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class='Button_6 w-full Lg'>
+                                        <img class='Default' src='/assets/icon/warn.svg' alt='' />
+                                        <img class='Hover' src='/assets/icon/warn_hover.svg' alt='' />
+                                        <img class='Active' src='/assets/icon/wran_active.svg' alt='' />
+                                        <div>Button_6 Lg</div>
+                                        <div class="w-[20px]">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill="currentColor" d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.834 9.686l-4.166.575 3.032 2.914-.74 4.139 3.708-1.982 3.708 1.983-.74-4.139 3.032-2.915-4.166-.575-1.834-3.784-1.834 3.784z" />
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class='Button_6 w-full '>
+                                        <img class='Default' src='/assets/icon/warn.svg' alt='' />
+                                        <img class='Hover' src='/assets/icon/warn_hover.svg' alt='' />
+                                        <img class='Active' src='/assets/icon/wran_active.svg' alt='' />
+                                        <div>Button_6 </div>
+                                        <div class="w-[20px]">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill="currentColor" d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.834 9.686l-4.166.575 3.032 2.914-.74 4.139 3.708-1.982 3.708 1.983-.74-4.139 3.032-2.915-4.166-.575-1.834-3.784-1.834 3.784z" />
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class='Button_6 w-full SM'>
+                                        <img class='Default' src='/assets/icon/warn.svg' alt='' />
+                                        <img class='Hover' src='/assets/icon/warn_hover.svg' alt='' />
+                                        <img class='Active' src='/assets/icon/wran_active.svg' alt='' />
+                                        <div>Button_6 SM</div>
+                                        <div class="w-[20px]">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill="currentColor" d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.834 9.686l-4.166.575 3.032 2.914-.74 4.139 3.708-1.982 3.708 1.983-.74-4.139 3.032-2.915-4.166-.575-1.834-3.784-1.834 3.784z" />
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class='Button_6 w-full' disabled>Button_6 [disabled]</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button class='Button_7 w-full Xl'>
+                                        <img class='Default' src='/assets/icon/warn.svg' alt='' />
+                                        <img class='Hover' src='/assets/icon/warn_hover.svg' alt='' />
+                                        <img class='Active' src='/assets/icon/wran_active.svg' alt='' />
+                                        <div>Button_7 Xl</div>
+                                        <div class="w-[20px]">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill="currentColor" d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.834 9.686l-4.166.575 3.032 2.914-.74 4.139 3.708-1.982 3.708 1.983-.74-4.139 3.032-2.915-4.166-.575-1.834-3.784-1.834 3.784z" />
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class='Button_7 w-full Lg'>
+                                        <img class='Default' src='/assets/icon/warn.svg' alt='' />
+                                        <img class='Hover' src='/assets/icon/warn_hover.svg' alt='' />
+                                        <img class='Active' src='/assets/icon/wran_active.svg' alt='' />
+                                        <div>Button_7 Lg</div>
+                                        <div class="w-[20px]">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill="currentColor" d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.834 9.686l-4.166.575 3.032 2.914-.74 4.139 3.708-1.982 3.708 1.983-.74-4.139 3.032-2.915-4.166-.575-1.834-3.784-1.834 3.784z" />
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class='Button_7 w-full '>
+                                        <img class='Default' src='/assets/icon/warn.svg' alt='' />
+                                        <img class='Hover' src='/assets/icon/warn_hover.svg' alt='' />
+                                        <img class='Active' src='/assets/icon/wran_active.svg' alt='' />
+                                        <div>Button_7 </div>
+                                        <div class="w-[20px]">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill="currentColor" d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.834 9.686l-4.166.575 3.032 2.914-.74 4.139 3.708-1.982 3.708 1.983-.74-4.139 3.032-2.915-4.166-.575-1.834-3.784-1.834 3.784z" />
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class='Button_7 w-full SM'>
+                                        <img class='Default' src='/assets/icon/warn.svg' alt='' />
+                                        <img class='Hover' src='/assets/icon/warn_hover.svg' alt='' />
+                                        <img class='Active' src='/assets/icon/wran_active.svg' alt='' />
+                                        <div>Button_7 SM</div>
+                                        <div class="w-[20px]">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill="currentColor" d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.834 9.686l-4.166.575 3.032 2.914-.74 4.139 3.708-1.982 3.708 1.983-.74-4.139 3.032-2.915-4.166-.575-1.834-3.784-1.834 3.784z" />
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class='Button_7 w-full' disabled>Button_7 [disabled]</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button class='Button_8 w-full Xl'>
+                                        <img class='Default' src='/assets/icon/warn.svg' alt='' />
+                                        <img class='Hover' src='/assets/icon/warn_hover.svg' alt='' />
+                                        <img class='Active' src='/assets/icon/wran_active.svg' alt='' />
+                                        <div>Button_8 Xl</div>
+                                        <div class="w-[20px]">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill="currentColor" d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.834 9.686l-4.166.575 3.032 2.914-.74 4.139 3.708-1.982 3.708 1.983-.74-4.139 3.032-2.915-4.166-.575-1.834-3.784-1.834 3.784z" />
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class='Button_8 w-full Lg'>
+                                        <img class='Default' src='/assets/icon/warn.svg' alt='' />
+                                        <img class='Hover' src='/assets/icon/warn_hover.svg' alt='' />
+                                        <img class='Active' src='/assets/icon/wran_active.svg' alt='' />
+                                        <div>Button_8 Lg</div>
+                                        <div class="w-[20px]">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill="currentColor" d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.834 9.686l-4.166.575 3.032 2.914-.74 4.139 3.708-1.982 3.708 1.983-.74-4.139 3.032-2.915-4.166-.575-1.834-3.784-1.834 3.784z" />
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class='Button_8 w-full '>
+                                        <img class='Default' src='/assets/icon/warn.svg' alt='' />
+                                        <img class='Hover' src='/assets/icon/warn_hover.svg' alt='' />
+                                        <img class='Active' src='/assets/icon/wran_active.svg' alt='' />
+                                        <div>Button_8 </div>
+                                        <div class="w-[20px]">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill="currentColor" d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.834 9.686l-4.166.575 3.032 2.914-.74 4.139 3.708-1.982 3.708 1.983-.74-4.139 3.032-2.915-4.166-.575-1.834-3.784-1.834 3.784z" />
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class='Button_8 w-full SM'>
+                                        <img class='Default' src='/assets/icon/warn.svg' alt='' />
+                                        <img class='Hover' src='/assets/icon/warn_hover.svg' alt='' />
+                                        <img class='Active' src='/assets/icon/wran_active.svg' alt='' />
+                                        <div>Button_8 SM</div>
+                                        <div class="w-[20px]">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill="currentColor" d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.834 9.686l-4.166.575 3.032 2.914-.74 4.139 3.708-1.982 3.708 1.983-.74-4.139 3.032-2.915-4.166-.575-1.834-3.784-1.834 3.784z" />
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class='Button_8 w-full' disabled>Button_8 [disabled]</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button class='Button_9 w-full Xl'>
+                                        <img class='Default' src='/assets/icon/warn.svg' alt='' />
+                                        <img class='Hover' src='/assets/icon/warn_hover.svg' alt='' />
+                                        <img class='Active' src='/assets/icon/wran_active.svg' alt='' />
+                                        <div>Button_9 Xl</div>
+                                        <div class="w-[20px]">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill="currentColor" d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.834 9.686l-4.166.575 3.032 2.914-.74 4.139 3.708-1.982 3.708 1.983-.74-4.139 3.032-2.915-4.166-.575-1.834-3.784-1.834 3.784z" />
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class='Button_9 w-full Lg'>
+                                        <img class='Default' src='/assets/icon/warn.svg' alt='' />
+                                        <img class='Hover' src='/assets/icon/warn_hover.svg' alt='' />
+                                        <img class='Active' src='/assets/icon/wran_active.svg' alt='' />
+                                        <div>Button_9 Lg</div>
+                                        <div class="w-[20px]">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill="currentColor" d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.834 9.686l-4.166.575 3.032 2.914-.74 4.139 3.708-1.982 3.708 1.983-.74-4.139 3.032-2.915-4.166-.575-1.834-3.784-1.834 3.784z" />
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class='Button_9 w-full '>
+                                        <img class='Default' src='/assets/icon/warn.svg' alt='' />
+                                        <img class='Hover' src='/assets/icon/warn_hover.svg' alt='' />
+                                        <img class='Active' src='/assets/icon/wran_active.svg' alt='' />
+                                        <div>Button_9 </div>
+                                        <div class="w-[20px]">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill="currentColor" d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.834 9.686l-4.166.575 3.032 2.914-.74 4.139 3.708-1.982 3.708 1.983-.74-4.139 3.032-2.915-4.166-.575-1.834-3.784-1.834 3.784z" />
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class='Button_9 w-full SM'>
+                                        <img class='Default' src='/assets/icon/warn.svg' alt='' />
+                                        <img class='Hover' src='/assets/icon/warn_hover.svg' alt='' />
+                                        <img class='Active' src='/assets/icon/wran_active.svg' alt='' />
+                                        <div>Button_9 SM</div>
+                                        <div class="w-[20px]">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill="currentColor" d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.834 9.686l-4.166.575 3.032 2.914-.74 4.139 3.708-1.982 3.708 1.983-.74-4.139 3.032-2.915-4.166-.575-1.834-3.784-1.834 3.784z" />
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class='Button_9 w-full' disabled>Button_9 [disabled]</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button class='Button_10 w-full Xl'>
+                                        <img class='Default' src='/assets/icon/warn.svg' alt='' />
+                                        <img class='Hover' src='/assets/icon/warn_hover.svg' alt='' />
+                                        <img class='Active' src='/assets/icon/wran_active.svg' alt='' />
+                                        <div>Button_10 Xl</div>
+                                        <div class="w-[20px]">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill="currentColor" d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.834 9.686l-4.166.575 3.032 2.914-.74 4.139 3.708-1.982 3.708 1.983-.74-4.139 3.032-2.915-4.166-.575-1.834-3.784-1.834 3.784z" />
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class='Button_10 w-full Lg'>
+                                        <img class='Default' src='/assets/icon/warn.svg' alt='' />
+                                        <img class='Hover' src='/assets/icon/warn_hover.svg' alt='' />
+                                        <img class='Active' src='/assets/icon/wran_active.svg' alt='' />
+                                        <div>Button_10 Lg</div>
+                                        <div class="w-[20px]">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill="currentColor" d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.834 9.686l-4.166.575 3.032 2.914-.74 4.139 3.708-1.982 3.708 1.983-.74-4.139 3.032-2.915-4.166-.575-1.834-3.784-1.834 3.784z" />
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class='Button_10 w-full '>
+                                        <img class='Default' src='/assets/icon/warn.svg' alt='' />
+                                        <img class='Hover' src='/assets/icon/warn_hover.svg' alt='' />
+                                        <img class='Active' src='/assets/icon/wran_active.svg' alt='' />
+                                        <div>Button_10 </div>
+                                        <div class="w-[20px]">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill="currentColor" d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.834 9.686l-4.166.575 3.032 2.914-.74 4.139 3.708-1.982 3.708 1.983-.74-4.139 3.032-2.915-4.166-.575-1.834-3.784-1.834 3.784z" />
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class='Button_10 w-full SM'>
+                                        <img class='Default' src='/assets/icon/warn.svg' alt='' />
+                                        <img class='Hover' src='/assets/icon/warn_hover.svg' alt='' />
+                                        <img class='Active' src='/assets/icon/wran_active.svg' alt='' />
+                                        <div>Button_10 SM</div>
+                                        <div class="w-[20px]">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill="currentColor" d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.834 9.686l-4.166.575 3.032 2.914-.74 4.139 3.708-1.982 3.708 1.983-.74-4.139 3.032-2.915-4.166-.575-1.834-3.784-1.834 3.784z" />
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class='Button_10 w-full' disabled>Button_10 [disabled]</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </section>
-            <section>
-                <h2 class='H2'>button/Btn_1</h2>
-                <div class="SampleList">
-                    <button class="Btn_1">BUILD</button>
-                </div>
-            </section>
-            <section>
-                <h2 class='H2'>button/Btn_2</h2>
-                <div class="SampleList">
-                    <button class='Btn_2'>더보기</button>
+            <section class="HBox">
+                <div class="Inner">
+                    <h2 class="H2">ETC Buttons</h2>
+                    <button class="Btn_0">Btn_0</button>
                 </div>
             </section>
         </main>
     </div>
-    <script>
-        $(function() {
-            $(`.SampleList button`).each(function(i) {
-                const $this = $(this);
-                const hei = $this.height();
-                const fs = $this.css('font-size');
-                const color = $this.css('color');
-                const round = $this.css('border-radius');
-
-                const str = `
-          <span class="border-solid border-[1px] border-[#333] p-[5px] bg-white text-[red]">height:${hei}px</span>
-          <span class="border-solid border-[1px] border-[#333] p-[5px] bg-white text-[green]">color:${color}</span>
-          <span class="border-solid border-[1px] border-[#333] p-[5px] bg-white text-[blue]">font-size:${fs}</span>
-          <span class="border-solid border-[1px] border-[#333] p-[5px] bg-white text-[black]">border-radius:${round}</span>
-        `;
-
-                $this.after(`<div class="text-center text-[16px] font-[700] CenterCenter gap-[10px]">${str}</div>`);
-            });
-        });
-    </script>
 </body>
 
 </html>

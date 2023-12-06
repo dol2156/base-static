@@ -38,56 +38,97 @@
     }
   }
 }
+
+@mixin ButtonSizeVariation {
+  /*fixed*/
+  display: flex;
+  padding: 0 1.25em;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-style: solid;
+  gap: 5px;
+
+  /*dynamic*/
+  height: 48px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  border-width: 1px;
+
+  &.Sm {
+    height: 40px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  &.Lg {
+    height: 52px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  &.Xl {
+    height: 60px;
+    border-radius: 14px;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  /* $PcMinWid 이상 화면*/
+  @media screen and (min-width: $PcMinWid) {
+  }
+}
+
+@mixin ButtonThemeSet($border_color: inherit, $bg: inherit, $color: inherit) {
+  border-color: $border_color;
+  background-color: $bg;
+  color: $color;
+}
+/**/
+.Button_1 {
+  @include imgChangeAbleBtnByState;
+  @include ButtonSizeVariation;
+  @include ButtonThemeSet(#0d6efd, #ffffff, #0d6efd);
+  &:hover {
+    @include ButtonThemeSet(#0d6efd, #0b5ed7, #ffffff);
+  }
+  &:disabled {
+    @include ButtonThemeSet(#999999, #ddd, #999999);
+  }
+}
+/**/
+.Button_2 {
+  @include imgChangeAbleBtnByState;
+  @include ButtonSizeVariation;
+  @include ButtonThemeSet(#dc3545, #ffffff, #dc3545);
+  &:hover {
+    @include ButtonThemeSet(#dc3545, #b02a37, #ffffff);
+  }
+  &:disabled {
+    @include ButtonThemeSet(#999999, #ddd, #999999);
+  }
+}
 /**/
 .Btn_0 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 2px;
-  font-size: 14px;
-  font-weight: 500;
-
-  color: #767676;
+  padding: 0 1.25em;
+  gap: 5px;
+  font-size: 16px;
+  font-weight: 800;
+  border:4px solid red;
+  
+  @include ButtonThemeSet(#333, #999, #fff);
+  
   &:hover {
-    color: red;
+    @include ButtonThemeSet(#333, #fff, #333);
   }
   &:active {
-    color: blue;
+    @include ButtonThemeSet(red, blue, green);
   }
-
   @include imgChangeAbleBtnByState;
-}
-/**/
-.Btn_1 {
-  height: 52px;
-  display: flex;
-  padding: 0 1.25em;
-  justify-content: center;
-  align-items: center;
-  border-radius: 12px;
-  background: #26262C;
-  color: #C6C5D0;
-  text-align: center;
-  font-size: 16px;
-  font-weight: 600;
-  /* $PcMinWid 이상 화면*/
-  @media screen and (min-width: $PcMinWid) {
-  }
-}
-/**/
-.Btn_2 {
-  height: 52px;
-  display: flex;
-  padding: 0 1.25em;
-  justify-content: center;
-  align-items: center;
-  border-radius: 12px;
-  background: #5D45FF;
-  color: #fff;
-  text-align: center;
-  font-size: 16px;
-  font-weight: 600;
-  /* $PcMinWid 이상 화면*/
-  @media screen and (min-width: $PcMinWid) {
-  }
 }

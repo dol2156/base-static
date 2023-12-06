@@ -24,7 +24,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
       </a>
     </div>
     <div>
-      <button onclick="$('#ContentsRuler').toggleClass('On')" class="bg-[yellow] text-black px-[5px] rounded-[5px]">Ruler</button>
+      <button onclick="$('#ContentsRuler').toggleClass('On')" class="bg-[linear-gradient(45deg,_#b8cbb8_0%,_#b8cbb8_0%,_#b465da_0%,_#cf6cc9_33%,_#ee609c_66%,_#ee609c_100%)] text-white font-[800] px-[5px] rounded-[5px]">Ruler</button>
     </div>
   </div>
   `;
