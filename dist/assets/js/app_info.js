@@ -24,7 +24,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
       </a>
     </div>
     <div>
-      <button onclick="$('#ContentsRuler').toggle()">Ruler</button>
+      <button onclick="$('#ContentsRuler').toggleClass('On')" class="bg-[yellow] text-black px-[5px] rounded-[5px]">Ruler</button>
     </div>
   </div>
   `;

@@ -35,11 +35,13 @@ const setCssVar = (evt) => {
   el_html.style.setProperty('--vh-100', `${window.innerHeight}px`);
   el_html.style.setProperty('--vh-50', `${window.innerHeight / 2}px`);
 
-  const $ruler_inner = $(`#ContentsRuler > .Inner`);
+  const $ruler = $(`#ContentsRuler`);
+  const $ruler_inner = $ruler.find(`> .Inner`);
   if ($ruler_inner.width()) {
-    const ruler_wid = $ruler_inner.width();
-    const real_side_padding = ($(window).width() - ruler_wid) / 2;
-    $ruler_inner.text(`${real_side_padding}px + ${ruler_wid}px + ${real_side_padding}px`);
+    const ruler_inner_wid = $ruler_inner.width();
+    console.log($ruler.outerWidth(), ruler_inner_wid);
+    const real_side_padding = ($ruler.outerWidth() - ruler_inner_wid) / 2;
+    $ruler_inner.text(`${real_side_padding}px + ${ruler_inner_wid}px + ${real_side_padding}px`);
     el_html.style.setProperty('--real-side-padding', `${real_side_padding}px`);
   }
 
