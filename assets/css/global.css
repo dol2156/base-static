@@ -661,7 +661,7 @@ strong {
   border-style: solid;
   gap: 5px;
   /*dynamic*/
-  height: 48px;
+  height: 40px;
   border-radius: 12px;
   font-size: 16px;
   font-weight: 600;
@@ -699,22 +699,50 @@ strong {
   display: block;
 }
 .Button_1.Sm {
-  height: 40px;
+  height: 32px;
   border-radius: 10px;
   font-size: 14px;
   font-weight: 500;
 }
 .Button_1.Lg {
-  height: 52px;
+  height: 44px;
   border-radius: 12px;
   font-size: 16px;
   font-weight: 600;
 }
 .Button_1.Xl {
-  height: 60px;
+  height: 52px;
   border-radius: 14px;
   font-size: 18px;
   font-weight: 600;
+}
+@media screen and (min-width: 769px) {
+  .Button_1 {
+    /*dynamic*/
+    height: 48px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    border-width: 1px;
+  }
+  .Button_1.Sm {
+    height: 40px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .Button_1.Lg {
+    height: 52px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .Button_1.Xl {
+    height: 60px;
+    border-radius: 14px;
+    font-size: 18px;
+    font-weight: 600;
+  }
 }
 .Button_1:hover {
   border-color: #0d6efd;
@@ -738,7 +766,7 @@ strong {
   border-style: solid;
   gap: 5px;
   /*dynamic*/
-  height: 48px;
+  height: 40px;
   border-radius: 12px;
   font-size: 16px;
   font-weight: 600;
@@ -776,22 +804,50 @@ strong {
   display: block;
 }
 .Button_2.Sm {
-  height: 40px;
+  height: 32px;
   border-radius: 10px;
   font-size: 14px;
   font-weight: 500;
 }
 .Button_2.Lg {
-  height: 52px;
+  height: 44px;
   border-radius: 12px;
   font-size: 16px;
   font-weight: 600;
 }
 .Button_2.Xl {
-  height: 60px;
+  height: 52px;
   border-radius: 14px;
   font-size: 18px;
   font-weight: 600;
+}
+@media screen and (min-width: 769px) {
+  .Button_2 {
+    /*dynamic*/
+    height: 48px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    border-width: 1px;
+  }
+  .Button_2.Sm {
+    height: 40px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .Button_2.Lg {
+    height: 52px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .Button_2.Xl {
+    height: 60px;
+    border-radius: 14px;
+    font-size: 18px;
+    font-weight: 600;
+  }
 }
 .Button_2:hover {
   border-color: #dc3545;
