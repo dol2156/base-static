@@ -1,0 +1,29 @@
+<div class='PagingSet_1'>
+  <div class='Area Left'>
+    <div class='NavBtnBox'>
+      <a href='#'>
+        {{{SVG '/assets/icon/paging_first.svg'}}}
+      </a>
+      <a href='#'>
+        {{{SVG '/assets/icon/paging_prev.svg'}}}
+      </a>
+    </div>
+  </div>
+  <div class='Area Center'>
+    <div class='NumBtnBox'>
+      {{#LOOP 10}}
+        <a href='#' target='_blank'>{{number}}</a>
+      {{/LOOP}}
+    </div>
+  </div>
+  <div class='Area Right'>
+    <div class='NavBtnBox'>
+      <a href='#'>
+        {{{SVG '/assets/icon/paging_next.svg'}}}
+      </a>
+      <a href='#'>
+        {{{SVG '/assets/icon/paging_last.svg'}}}
+      </a>
+    </div>
+  </div>
+</div>

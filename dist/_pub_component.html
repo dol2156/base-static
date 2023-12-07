@@ -1,11 +1,11 @@
-<html lang='ko' data-env='production'>
+<html lang='ko' data-env='production' class="Loading">
 
 <head>
     <meta charset='UTF-8' />
     <meta id='viewport' name='viewport' content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no' />
     <script src='/assets/js/viewport.js'></script>
     <!-- Font preload -->
-    <link rel="preload" href="/assets/font/SUIT-Variable.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel='preload' href='/assets/font/SUIT-Variable.woff2' as='font' type='font/woff2' crossorigin />
     <!-- Icon -->
     <link rel='icon' href='data:,' />
     <link rel='apple-touch-icon' sizes='180x180' href='/assets/favicon/apple-touch-icon.png' />
@@ -16,8 +16,8 @@
     <link rel='icon' href='/assets/favicon/favicon.ico' />
     <!-- Core Library -->
     <script src='/assets/lib/jquery-3.7.1.min.js'></script>
-    <script src="/assets/lib/jquery.easing.min.js"></script>
-    <script src="/assets/lib/xlsx.full.min.js"></script>
+    <script src='/assets/lib/jquery.easing.min.js'></script>
+    <script src='/assets/lib/xlsx.full.min.js'></script>
     <script src='/assets/lib/ua-parser.min.js'></script>
     <link href='/assets/lib/fontawesome-free-6.4.2-web/css/all.css' rel='stylesheet' />
     <script src='/assets/lib/tailwindcss_3.3.3.min.js'></script>
@@ -31,6 +31,8 @@
     <script src='/assets/js/common.js'></script>
     <script src='/assets/js/ui_setter.js'></script>
     <!-- UI Library -->
+    <link href='/assets/lib/simplebar.css' rel='stylesheet' />
+    <script src='/assets/lib/simplebar.min.js'></script>
     <link href='/assets/lib/swiper-bundle.min.css' rel='stylesheet' />
     <script src='/assets/lib/swiper-bundle.min.js'></script>
     <link href='/assets/lib/autoComplete/css/autoComplete.css' rel='stylesheet' />
@@ -414,7 +416,7 @@
                             <div>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
                         </li>
                     </ul>
-                    <button class="MoreViewBtn Btn_1 w-full">More</button>
+                    <button class="MoreViewBtn Button_1 w-full">More</button>
                     <img onerror="initMoreViewList(this)" src="" />
                 </div>
             </section>
@@ -451,6 +453,53 @@
                             <input class='ToggleUi Style1' type='checkbox' />
                         </div>
                     </article>
+                </div>
+            </section>
+            <section>
+                <h2 class='H2'>component/PagingSet_1</h2>
+                <div class='PagingSet_1'>
+                    <div class='Area Left'>
+                        <div class='NavBtnBox'>
+                            <a href='#'>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <path fill="currentColor" d="M9 12l15-9v18l-15-9zm-9 0l13 8v-3.268l-7.888-4.732 7.888-4.732v-3.268l-13 8z" />
+                                </svg>
+                            </a>
+                            <a href='#'>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <path fill="currentColor" d="M4 2v20h-2v-20h2zm18 0l-16 10 16 10v-20z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class='Area Center'>
+                        <div class='NumBtnBox'>
+                            <a href='#' target='_blank'>1</a>
+                            <a href='#' target='_blank'>2</a>
+                            <a href='#' target='_blank'>3</a>
+                            <a href='#' target='_blank'>4</a>
+                            <a href='#' target='_blank'>5</a>
+                            <a href='#' target='_blank'>6</a>
+                            <a href='#' target='_blank'>7</a>
+                            <a href='#' target='_blank'>8</a>
+                            <a href='#' target='_blank'>9</a>
+                            <a href='#' target='_blank'>10</a>
+                        </div>
+                    </div>
+                    <div class='Area Right'>
+                        <div class='NavBtnBox'>
+                            <a href='#'>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <path fill="currentColor" d="M20 22v-20h2v20h-2zm-18 0l16-10-16-10v20z" />
+                                </svg>
+                            </a>
+                            <a href='#'>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <path fill="currentColor" d="M0 21v-18l15 9-15 9zm11-17v3.268l7.888 4.732-7.888 4.732v3.268l13-8-13-8z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </section>
             <section>

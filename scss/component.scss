@@ -560,3 +560,61 @@
     }
   }
 }
+/**/
+.PagingSet_1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+  .NavBtnBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    > a {
+      outline:1px dashed red;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0px;
+      padding: 4px;
+      box-sizing: border-box;
+      color: #333;
+      &:hover {
+        color: white;
+        background-color: #5d45ff;
+      }
+
+      > svg {
+        width: 100%;
+      }
+    }
+  }
+
+  .NumBtnBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    > a {
+      outline:1px dashed blue;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0px;
+      padding: 4px;
+      box-sizing: border-box;
+      color: #333;
+      &:hover {
+        color: white;
+        background-color: #5d45ff;
+      }
+    }
+  }
+}
