@@ -1,4 +1,4 @@
-<div class='RR relative'>
+<div class='RR relative w-[560px] mx-auto'>
   <div id='Swiper_7a4cc389' class='swiper relative hidden [&.swiper-initialized]:block'>
     <div class="[.isBeginning_&]:hidden z-[5] absolute top-[0] left-[0] w-[100px] h-full bg-[linear-gradient(to_right,rgba(255,50,50,1)_0%,rgba(125,185,232,0)_100%)]"></div>
     <div class="[.isEnd_&]:hidden z-[5] absolute top-[0] right-[0] w-[100px] h-full bg-[linear-gradient(to_left,rgba(255,50,50,1)_0%,rgba(125,185,232,0)_100%)]"></div>
@@ -23,9 +23,6 @@
     </div>
   </div>
   <div id='Swiper_7a4cc389-Pagenation' class='RR flex flex-row items-center justify-center gap-[10px]'></div>
-  <div id='Swiper_7a4cc389-Bullet' class='RR flex flex-row items-center justify-center gap-[10px]'></div>
-  <div id='Swiper_7a4cc389-Progressbar' class='RR h-[10px] bg-[gray]'></div>
-  <div id='Swiper_7a4cc389-Fraction' class='RR flex flex-row items-center justify-center gap-[10px]'></div>
   {{!--prettier-ignore--}}
   <script>
     const initSwiper_7a4cc389 = (evt) => {
@@ -78,68 +75,8 @@
 
       let swiper = new Swiper('#Swiper_7a4cc389', swiper_option);
 
-      let bulletSwiper = new Swiper('#Swiper_7a4cc389', {
-        controller: {
-          control: [swiper]
-        },
-        loop: loop,
-        pagination: {
-          el: '#Swiper_7a4cc389-Bullet',
-          type: 'bullets',
-          clickable: true,
-          modifierClass: 'Pagenation-',
-          bulletClass: 'Dot',
-          bulletActiveClass: 'On',
-          renderBullet: function (index, className) {
-            const num = (index + 1).toString().padStart(2, '0');
-            return `
-            <div class="${className} RR relative w-[30px] aspect-square flex flex-row items-center justify-center">
-              <div class="text-[#161616] [*.On>&]:text-white cursor-pointer z-10 text-[14px] font-[600]">${num}</div>
-              <div class="bg-[gray] [*.On>&]:bg-[red] cursor-pointer  z-0 absolute top-[0] left-[0] w-full aspect-square rounded-full"></div>
-            </div>`;
-          },
-        }
-      });
-
-      let progressSwiper = new Swiper('#Swiper_7a4cc389', {
-        loop: loop,
-        pagination: {
-          el: '#Swiper_7a4cc389-Progressbar',
-          type: 'progressbar',
-          modifierClass: 'Pagenation-',
-          progressbarFillClass: 'FillBar',
-          renderProgressbar: function (className) {
-            return `<div class="${className} h-full bg-[red] origin-left"></div>`;
-          },
-        }
-      });
-
-      let fractionSwiper = new Swiper('#Swiper_7a4cc389', {
-        loop: loop,
-        pagination: {
-          el: '#Swiper_7a4cc389-Fraction',
-          type: 'fraction',
-          modifierClass: 'Pagenation-',
-          formatFractionCurrent: (number) => {
-            return number.toString().padStart(2, '0');
-          },
-          formatFractionTotal: (number) => {
-            return number.toString().padStart(2, '0');
-          },
-          renderFraction: function (currentClass, totalClass) {
-            return `
-          <div class="flex flex-row items-center justify-center gap-[10px] text-[#161616] text-[16px] font-[900]">
-            <span class="${currentClass} text-[red]"></span>
-            <span class="text-[black]">/</span>
-            <span class="${totalClass} text-[gray]"></span>
-          </div>`;
-          }
-        }
-      });
-
       swiper.on('init', function () {
         // console.log('init');
-        swiper.controller.control = [bulletSwiper, progressSwiper, fractionSwiper];
         updateSwiper();
       });
 
