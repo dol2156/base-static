@@ -1,3 +1,8 @@
+{{!--prettier-ignore--}}
+<style>
+  .ButtonList{ margin-bottom:50px; background-color:white; padding:10px; border:1px solid black; font-size:0; }
+  .ButtonList button{ width:200px; margin-right:10px; margin-bottom:10px; display:inline-flex; }
+</style>
 <div id='Page'>
   <main>
     <link href='/assets/css/_pub.css' rel='stylesheet'/>
@@ -5,49 +10,22 @@
     <section class='HBox mt-[50px]'>
       <div class='Inner overflow-auto'>
         <h2 class="H2">Button List</h2>
-        <table class='BtnSampleTable !w-[--contents-max-wid]'>
-          <thead>
-          <tr>
-            <th>
-              Xl:60px
-            </th>
-            <th>
-              Lg:52px
-            </th>
-            <th>
-              Md:48px
-            </th>
-            <th>
-              Sm:40px
-            </th>
-            <th>
-              [disabled]
-            </th>
-          </tr>
-          </thead>
-          <tbody>
-          {{#LOOP 10}}
-            <tr>
-              {{#EACH (ARR 'Xl|Lg||SM')}}
-                <td>
-                  <button class='Button_{{../number}} w-full {{obj}}'>
-                    <img class='Default' src='/assets/icon/warn.svg' alt=''/>
-                    <img class='Hover' src='/assets/icon/warn_hover.svg' alt=''/>
-                    <img class='Active' src='/assets/icon/wran_active.svg' alt=''/>
-                    <div>Button_{{../number}} {{obj}}</div>
-                    <div class="w-[20px]">
-                      {{{SVG '/assets/icon/currentColor.svg'}}}
-                    </div>
-                  </button>
-                </td>
-              {{/EACH}}
-              <td>
-                <button class='Button_{{number}} w-full' disabled>Button_{{number}} [disabled]</button>
-              </td>
-            </tr>
-          {{/LOOP}}
-          </tbody>
-        </table>
+        {{#LOOP 10}}
+          <h3 class="H3">Button_{{number}}</h3>
+          <article class="ButtonList">
+            {{#EACH (ARR 'Xl|Lg||SM')}}
+              <button class='Button_{{../number}} w-full {{obj}}'>
+                <img class='Default' src='/assets/icon/warn.svg' alt=''/>
+                <img class='Hover' src='/assets/icon/warn_hover.svg' alt=''/>
+                <img class='Active' src='/assets/icon/wran_active.svg' alt=''/>
+                <div>Button_{{../number}} {{obj}}</div>
+                <div class="w-[20px]">
+                  {{{SVG '/assets/icon/currentColor.svg'}}}
+                </div>
+              </button>
+            {{/EACH}}
+          </article>
+        {{/LOOP}}
       </div>
     </section>
     <section class="HBox">
