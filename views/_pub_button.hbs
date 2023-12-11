@@ -1,8 +1,3 @@
-{{!--prettier-ignore--}}
-<style>
-  .ButtonList{ margin-bottom:50px; background-color:white; padding:10px; border:1px solid black; font-size:0; }
-  .ButtonList button{ width:200px; margin-right:10px; margin-bottom:10px; display:inline-flex; }
-</style>
 <div id='Page'>
   <main>
     <link href='/assets/css/_pub.css' rel='stylesheet'/>
@@ -12,7 +7,7 @@
         <h2 class="H2">Button List</h2>
         {{#LOOP 10}}
           <h3 class="H3">Button_{{number}}</h3>
-          <article class="ButtonList">
+          <article class="max-pc:flex max-pc:flex-col pc:grid pc:grid-cols-[repeat(auto-fit,minmax(0,1fr))] gap-[10px] pc:items-center pc:justify-center bg-white p-[10px] border-solid border-[1px] border-[#000]">
             {{#EACH (ARR 'Xl|Lg||SM')}}
               <button class='Button_{{../number}} w-full {{obj}}'>
                 <img class='Default' src='/assets/icon/warn.svg' alt=''/>
