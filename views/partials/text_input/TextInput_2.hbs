@@ -1,10 +1,16 @@
-<div class='SampleList'>
+<div class='SampleList p-[10px]'>
   <div>
     <label class='FormLabel_1'>Basic</label>
-    <div class='TextInput_2 w-full'>
-      <input placeholder='placeholder' />
-      <img onerror='initInputUi(this)' src='' alt='' />
-    </div>
+    <article class='flex flex-col pc:grid pc:grid-cols-[repeat(auto-fit,minmax(0,1fr))] pc:items-center pc:justify-center gap-[10px] bg-white border-solid border-[1px] border-[#000] p-[10px]'>
+      {{#EACH (ARR 'Xl|Lg||SM')}}
+        <div class='flex-1'>
+          <div class='TextInput_2 w-full {{obj}}'>
+            <input placeholder='placeholder {{obj}}' />
+            <img onerror='initInputUi(this)' src='' alt='' />
+          </div>
+        </div>
+      {{/EACH}}
+    </article>
   </div>
   <div>
     <label class='FormLabel_1'>.Success</label>

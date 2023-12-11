@@ -1,7 +1,7 @@
 @import 'var_scss.scss';
 /**/
 .FormMsg {
-  margin-top:12px;
+  margin-top: 12px;
   font-size: 14px;
   font-weight: 400;
   line-height: 14px;
@@ -19,21 +19,55 @@
   font-weight: 600;
   color: #333;
 }
+
 /**/
 .TextInput_1 {
-  border-radius: 0.5em;
-  height: 36px;
-  font-size: 12px;
-  font-weight: 400;
-
+  /*fixed*/
   position: relative;
   display: flex;
   align-items: center;
   gap: 5px;
-  padding: 0px 1em;
   outline: none;
+
+  /*dynamic*/
+  height: 40px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+
+  &.Sm {
+    height: 32px;
+  }
+
+  &.Lg {
+    height: 44px;
+  }
+
+  &.Xl {
+    height: 52px;
+  }
+
+  /* $PcMinWid 이상 화면*/
+  @media screen and (min-width: $PcMinWid) {
+    /*dynamic*/
+    height: 48px;
+
+    &.Sm {
+      height: 40px;
+    }
+
+    &.Lg {
+      height: 52px;
+    }
+
+    &.Xl {
+      height: 60px;
+    }
+  }
+
   background-color: white;
   border: 1px solid var(--form-border-color);
+  padding: 0 1em;
 
   > input {
     display: block;
@@ -51,7 +85,7 @@
   > button {
     font-size: inherit;
     aspect-ratio: 9/16;
-    min-width:24px;
+    min-width: 24px;
     height: 100%;
     > img {
       margin-left: auto;
@@ -98,9 +132,47 @@
 }
 /**/
 .TextInput_2 {
-  height: 36px;
-  font-size: 12px;
-  font-weight: 400;
+  /*fixed*/
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  outline: none;
+
+  /*dynamic*/
+  height: 40px;
+  font-size: 14px;
+  font-weight: 500;
+
+  &.Sm {
+    height: 32px;
+  }
+
+  &.Lg {
+    height: 44px;
+  }
+
+  &.Xl {
+    height: 52px;
+  }
+
+  /* $PcMinWid 이상 화면*/
+  @media screen and (min-width: $PcMinWid) {
+    /*dynamic*/
+    height: 48px;
+
+    &.Sm {
+      height: 40px;
+    }
+
+    &.Lg {
+      height: 52px;
+    }
+
+    &.Xl {
+      height: 60px;
+    }
+  }
 
   position: relative;
   display: flex;
@@ -127,7 +199,7 @@
   > button {
     font-size: inherit;
     aspect-ratio: 9/16;
-    min-width:24px;
+    min-width: 24px;
     height: 100%;
     > img {
       margin-left: auto;

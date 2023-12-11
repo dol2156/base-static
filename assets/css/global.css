@@ -376,18 +376,45 @@ strong {
 
 /**/
 .TextInput_1 {
-  border-radius: 0.5em;
-  height: 36px;
-  font-size: 12px;
-  font-weight: 400;
+  /*fixed*/
   position: relative;
   display: flex;
   align-items: center;
   gap: 5px;
-  padding: 0px 1em;
   outline: none;
+  /*dynamic*/
+  height: 40px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  /* $PcMinWid 이상 화면*/
   background-color: white;
   border: 1px solid var(--form-border-color);
+  padding: 0 1em;
+}
+.TextInput_1.Sm {
+  height: 32px;
+}
+.TextInput_1.Lg {
+  height: 44px;
+}
+.TextInput_1.Xl {
+  height: 52px;
+}
+@media screen and (min-width: 769px) {
+  .TextInput_1 {
+    /*dynamic*/
+    height: 48px;
+  }
+  .TextInput_1.Sm {
+    height: 40px;
+  }
+  .TextInput_1.Lg {
+    height: 52px;
+  }
+  .TextInput_1.Xl {
+    height: 60px;
+  }
 }
 .TextInput_1 > input {
   display: block;
@@ -443,9 +470,17 @@ strong {
 
 /**/
 .TextInput_2 {
-  height: 36px;
-  font-size: 12px;
-  font-weight: 400;
+  /*fixed*/
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  outline: none;
+  /*dynamic*/
+  height: 40px;
+  font-size: 14px;
+  font-weight: 500;
+  /* $PcMinWid 이상 화면*/
   position: relative;
   display: flex;
   align-items: center;
@@ -454,6 +489,30 @@ strong {
   outline: none;
   background-color: white;
   border-bottom: 1px solid var(--form-border-color);
+}
+.TextInput_2.Sm {
+  height: 32px;
+}
+.TextInput_2.Lg {
+  height: 44px;
+}
+.TextInput_2.Xl {
+  height: 52px;
+}
+@media screen and (min-width: 769px) {
+  .TextInput_2 {
+    /*dynamic*/
+    height: 48px;
+  }
+  .TextInput_2.Sm {
+    height: 40px;
+  }
+  .TextInput_2.Lg {
+    height: 52px;
+  }
+  .TextInput_2.Xl {
+    height: 60px;
+  }
 }
 .TextInput_2 > input {
   display: block;
