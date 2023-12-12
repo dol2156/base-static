@@ -6,12 +6,35 @@
   background-repeat: no-repeat;
   background-size: contain;
 }
+@mixin chkSizeVariation {
+  width: 18px;
+  &.Sm {
+    width: 12px;
+  }
+  &.Lg {
+    width: 24px;
+  }
+  &.Xl {
+    width: 30px;
+  }
+  /* $PcMinWid 이상 화면*/
+  @media screen and (min-width: $PcMinWid) {
+    width: 24px;
+    &.Sm {
+      width: 18px;
+    }
+    &.Lg {
+      width: 30px;
+    }
+    &.Xl {
+      width: 36px;
+    }
+  }
+}
 /**/
 .Checkbox_1 {
   @include mixinCheckBoxPublic;
-
-  min-width: 18px;
-
+  @include chkSizeVariation;
   background-image: url(/assets/icon/basic/chk_1.svg);
   &:checked {
     background-image: url(/assets/icon/basic/chk_1_on.svg);
@@ -22,26 +45,11 @@
   &[disabled] {
     background-image: url(/assets/icon/basic/chk_1_disabled.svg);
   }
-
-  &.Style2 {
-    background-image: url(/assets/icon/basic/chk_2.svg);
-    &:checked {
-      background-image: url(/assets/icon/basic/chk_2_on.svg);
-      + .LabalUi {
-        color: #ff3838;
-      }
-    }
-    &[disabled] {
-      background-image: url(/assets/icon/basic/chk_2_disabled.svg);
-    }
-  }
 }
 /**/
 .Checkbox_2 {
   @include mixinCheckBoxPublic;
-
-  min-width: 18px;
-
+  @include chkSizeVariation;
   background-image: url(/assets/icon/basic/chk_2.svg);
   &:checked {
     background-image: url(/assets/icon/basic/chk_2_on.svg);
@@ -63,7 +71,6 @@
   background-size: contain;
   transition: background-image 300ms cubic-bezier(0.33, 1, 0.68, 1);
   will-change: auto;
-
   background-image: url(/assets/icon/basic/toggle_1.svg);
   &:checked {
     background-image: url(/assets/icon/basic/toggle_1_on.svg);

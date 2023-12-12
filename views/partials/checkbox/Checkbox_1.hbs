@@ -1,23 +1,22 @@
 <div class='SampleList'>
-  <div class='CenterLeft bg-white'>
-    <input class='Checkbox_1' type='checkbox' />
+  <label class='FormLabel_1'>Basic</label>
+  <div class='bg-white p-[10px] border-solid border-[1px] border-[#000] flex flex-col pc:grid pc:grid-cols-[repeat(auto-fit,minmax(0,1fr))] pc:gap-[10px] pc:items-center pc:justify-center'>
+    {{#EACH (ARR 'Xl|Lg|Md|SM')}}
+      <div>
+        <div>{{obj}}</div>
+        <input class='Checkbox_1 {{obj}}' type='checkbox' />
+      </div>
+    {{/EACH}}
   </div>
+  <label class='FormLabel_1'>[disabled]</label>
   <div class='CenterLeft bg-white'>
     <input class='Checkbox_1' type='checkbox' disabled />
   </div>
-  <div class='CenterLeft bg-white'>
-    <input class='Checkbox_1 w-[24px]' type='checkbox' />
-  </div>
+  <label class='FormLabel_1'>+ Text</label>
   <div class='CenterLeft bg-white'>
     <label class='FormLabelBox'>
       <input class='Checkbox_1' type='checkbox' />
       <div class='text-[#161616] text-[12px] font-[400]'>로그인 상태 유지</div>
-    </label>
-  </div>
-  <div class='CenterLeft bg-white'>
-    <label class='FormLabelBox'>
-      <input class='Checkbox_1 w-[24px]' type='checkbox' />
-      <div class='text-[#161616] text-[14px] font-[400]'>로그인 상태 유지</div>
     </label>
   </div>
 </div>

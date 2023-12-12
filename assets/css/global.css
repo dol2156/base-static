@@ -978,8 +978,32 @@ strong {
   cursor: pointer;
   background-repeat: no-repeat;
   background-size: contain;
-  min-width: 18px;
+  width: 18px;
+  /* $PcMinWid 이상 화면*/
   background-image: url(/assets/icon/basic/chk_1.svg);
+}
+.Checkbox_1.Sm {
+  width: 12px;
+}
+.Checkbox_1.Lg {
+  width: 24px;
+}
+.Checkbox_1.Xl {
+  width: 30px;
+}
+@media screen and (min-width: 769px) {
+  .Checkbox_1 {
+    width: 24px;
+  }
+  .Checkbox_1.Sm {
+    width: 18px;
+  }
+  .Checkbox_1.Lg {
+    width: 30px;
+  }
+  .Checkbox_1.Xl {
+    width: 36px;
+  }
 }
 .Checkbox_1:checked {
   background-image: url(/assets/icon/basic/chk_1_on.svg);
@@ -990,18 +1014,6 @@ strong {
 .Checkbox_1[disabled] {
   background-image: url(/assets/icon/basic/chk_1_disabled.svg);
 }
-.Checkbox_1.Style2 {
-  background-image: url(/assets/icon/basic/chk_2.svg);
-}
-.Checkbox_1.Style2:checked {
-  background-image: url(/assets/icon/basic/chk_2_on.svg);
-}
-.Checkbox_1.Style2:checked + .LabalUi {
-  color: #ff3838;
-}
-.Checkbox_1.Style2[disabled] {
-  background-image: url(/assets/icon/basic/chk_2_disabled.svg);
-}
 
 /**/
 .Checkbox_2 {
@@ -1010,8 +1022,32 @@ strong {
   cursor: pointer;
   background-repeat: no-repeat;
   background-size: contain;
-  min-width: 18px;
+  width: 18px;
+  /* $PcMinWid 이상 화면*/
   background-image: url(/assets/icon/basic/chk_2.svg);
+}
+.Checkbox_2.Sm {
+  width: 12px;
+}
+.Checkbox_2.Lg {
+  width: 24px;
+}
+.Checkbox_2.Xl {
+  width: 30px;
+}
+@media screen and (min-width: 769px) {
+  .Checkbox_2 {
+    width: 24px;
+  }
+  .Checkbox_2.Sm {
+    width: 18px;
+  }
+  .Checkbox_2.Lg {
+    width: 30px;
+  }
+  .Checkbox_2.Xl {
+    width: 36px;
+  }
 }
 .Checkbox_2:checked {
   background-image: url(/assets/icon/basic/chk_2_on.svg);
