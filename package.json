@@ -9,7 +9,7 @@
     "wh": "node watch_hbs.js",
     "sync": "syncdir ./assets ./dist/assets --quiet -w",
     "scss_build": "sass -w ./scss:./assets/css",
-    "add_prefix": "postcss --replace assets/css/sitemap.css",
+    "add_prefix": "postcss assets/css/**/*.css --dir assets/css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
