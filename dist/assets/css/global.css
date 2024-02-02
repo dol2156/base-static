@@ -971,6 +971,50 @@ strong {
   display: block;
 }
 
+.Confirm_1 {
+  background-color: white;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  padding-top: 32px;
+  color: #303030;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+}
+.Confirm_1 .Body {
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-bottom: 32px;
+}
+.Confirm_1 .Foot {
+  border-top: 1px solid #f4f4f4;
+}
+
+/**/
+.SelectOption_1 {
+  background-color: white;
+  border-radius: 15px;
+  font-size: 16px;
+  font-weight: 500;
+}
+.SelectOption_1 .Body {
+  text-align: center;
+}
+.SelectOption_1 .Body > .Title {
+  padding: 19px 0;
+  color: #000000;
+  font-size: 16px;
+  font-weight: 500;
+}
+.SelectOption_1 .Body > .Button {
+  width: 100%;
+  padding: 14px 0;
+  color: #0a7feb;
+  font-size: 16px;
+  font-weight: 400;
+  border-top: 1px solid #938e8e;
+}
+
 /**/
 .Checkbox_1 {
   aspect-ratio: 1;
@@ -1094,59 +1138,6 @@ strong {
   background-image: url(/assets/icon/basic/rdo_1_disabled.svg);
 }
 
-.ToolTip_1 {
-  text-align: left;
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid #e1e1e1;
-  background: #ffffff;
-  box-shadow: 2px 4px 6px 0px rgba(0, 0, 0, 0.1);
-}
-
-.Confirm_1 {
-  background-color: white;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-  padding-top: 32px;
-  color: #303030;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 18px;
-}
-.Confirm_1 .Body {
-  padding-left: 24px;
-  padding-right: 24px;
-  padding-bottom: 32px;
-}
-.Confirm_1 .Foot {
-  border-top: 1px solid #f4f4f4;
-}
-
-/**/
-.SelectOption_1 {
-  background-color: white;
-  border-radius: 15px;
-  font-size: 16px;
-  font-weight: 500;
-}
-.SelectOption_1 .Body {
-  text-align: center;
-}
-.SelectOption_1 .Body > .Title {
-  padding: 19px 0;
-  color: #000000;
-  font-size: 16px;
-  font-weight: 500;
-}
-.SelectOption_1 .Body > .Button {
-  width: 100%;
-  padding: 14px 0;
-  color: #0a7feb;
-  font-size: 16px;
-  font-weight: 400;
-  border-top: 1px solid #938e8e;
-}
-
 .BottomSheet_1 {
   position: relative;
   border-top-left-radius: 30px;
@@ -1213,6 +1204,15 @@ strong {
 }
 .BottomSheetSelectBtnList > button.On {
   color: #303030;
+}
+
+.ToolTip_1 {
+  text-align: left;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #e1e1e1;
+  background: #ffffff;
+  box-shadow: 2px 4px 6px 0px rgba(0, 0, 0, 0.1);
 }
 
 /**/
@@ -1784,28 +1784,6 @@ strong {
 .PagingSet_1 .NumBtnBox > a:hover {
   color: white;
   background-color: #5d45ff;
-}
-
-/**/
-.plyr__control--overlaid {
-  outline: 1px dashed red;
-  border-radius: 0;
-  background-image: url(https://gifpng.com/50x50/ffd4d4/ff4444) !important;
-  background-color: transparent !important;
-  width: 50px !important;
-  height: 50px;
-}
-
-.plyr__control--overlaid > * {
-  display: none;
-}
-
-/**/
-.SimpleBar .simplebar-scrollbar:before {
-  opacity: 0.2 !important;
-}
-.SimpleBar.White .simplebar-scrollbar:before {
-  background-color: white;
 }
 
 html.Loading {

@@ -46,7 +46,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
     infoDeviceOS();
     infoWhellDirection();
     infoOnTouch();
-    infoWhellDirection();
     infoScrollDirection();
     infoReadyState();
     infoPath();

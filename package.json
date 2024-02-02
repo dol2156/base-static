@@ -4,14 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "concurrently \"npm run chd\" \"npm run wh\" \"npm run scss:_pub\" \"npm run scss:sitemap\" \"npm run scss:global\" \"npm run sync\" \"node server.js\"",
-    "dev2": "concurrently \"npm run cp\" \"npm run chd\" \"npm run csd\" \"npm run wh\" \"npm run scss:sitemap\" \"npm run scss:global\" \"npm run sync\" \"npm run builder\" \"npm run fs\"",
+    "dev": "concurrently \"npm run chd\" \"npm run wh\" \"npm run scss_build\" \"npm run sync\" \"node server.js\"",
     "chd": "node create_hbs_data.js",
     "wh": "node watch_hbs.js",
     "sync": "syncdir ./assets ./dist/assets --quiet -w",
-    "scss:_pub": "sass -w scss/_pub.scss assets/css/_pub.css",
-    "scss:sitemap": "sass -w scss/sitemap.scss assets/css/sitemap.css",
-    "scss:global": "sass -w scss/global.scss assets/css/global.css",
+    "scss_build": "sass -w ./scss:./assets/css",
+    "add_prefix": "postcss --replace assets/css/sitemap.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
