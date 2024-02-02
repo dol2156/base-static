@@ -26,11 +26,13 @@
   "homepage": "https://github.com/ksm-friends/base-include#readme",
   "devDependencies": {
     "address": "^1.2.2",
+    "autoprefixer": "^10.4.17",
     "chokidar": "^3.5.3",
     "concurrently": "^8.2.0",
     "five-server": "^0.3.1",
     "js-beautify": "^1.14.9",
     "lodash": "^4.17.21",
+    "postcss-cli": "^11.0.0",
     "prettier": "^3.0.1",
     "sass": "^1.64.0",
     "sync-directory": "^6.0.4",
