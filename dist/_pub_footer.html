@@ -1,9 +1,11 @@
-<html lang='ko' data-env='development'>
+<html class="Loading" lang='ko' data-env='production' data-layout='main'>
 
 <head>
     <meta charset='UTF-8' />
     <meta id='viewport' name='viewport' content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no' />
     <script src='/assets/js/viewport.js'></script>
+    <!-- Font preload -->
+    <link rel='preload' href='/assets/font/SUIT-Variable.woff2' as='font' type='font/woff2' crossorigin />
     <!-- Icon -->
     <link rel='icon' href='data:,' />
     <link rel='apple-touch-icon' sizes='180x180' href='/assets/favicon/apple-touch-icon.png' />
@@ -14,7 +16,8 @@
     <link rel='icon' href='/assets/favicon/favicon.ico' />
     <!-- Core Library -->
     <script src='/assets/lib/jquery-3.7.1.min.js'></script>
-    <script src="/assets/lib/xlsx.full.min.js"></script>
+    <script src='/assets/lib/jquery.easing.min.js'></script>
+    <script src='/assets/lib/xlsx.full.min.js'></script>
     <script src='/assets/lib/ua-parser.min.js'></script>
     <link href='/assets/lib/fontawesome-free-6.4.2-web/css/all.css' rel='stylesheet' />
     <script src='/assets/lib/tailwindcss_3.3.3.min.js'></script>
@@ -28,6 +31,8 @@
     <script src='/assets/js/common.js'></script>
     <script src='/assets/js/ui_setter.js'></script>
     <!-- UI Library -->
+    <link href='/assets/lib/simplebar.css' rel='stylesheet' />
+    <script src='/assets/lib/simplebar.min.js'></script>
     <link href='/assets/lib/swiper-bundle.min.css' rel='stylesheet' />
     <script src='/assets/lib/swiper-bundle.min.js'></script>
     <link href='/assets/lib/autoComplete/css/autoComplete.css' rel='stylesheet' />
@@ -48,6 +53,17 @@
         <div class="RR Inner">컨텐츠 너비 줄자</div>
     </div>
     <div id='Modal'></div>
+    <div id="LoadingSpinner"></div>
+    <div id='BottomRightUtil'>
+        <div class='flex flex-col gap-[10px]'>
+            <button class='ScrollTopBtn bg-[#5D45FF] w-[40px] aspect-square rounded-full text-white text-[12px] font-[800]' onclick='PageScrollControl.Top()'>
+                TOP
+            </button>
+            <button class='ScrollTopBtn bg-[#5D45FF] w-[40px] aspect-square rounded-full text-white text-[12px] font-[800]' onclick='PageScrollControl.Bottom()'>
+                BTM
+            </button>
+        </div>
+    </div>
     <div id='Page'>
         <main>
             <link href='/assets/css/pub.css' rel='stylesheet' />
@@ -57,11 +73,11 @@
                 <div class='FixedBox'>
                     <div class='FixedShell Bottom'>
                         <div class='BottomBtnBox_1'>
-                            <button class='Btn_2'>
-                                <div>Btn_2</div>
+                            <button class='Button_2'>
+                                <div>Button_2</div>
                             </button>
-                            <button class='Btn_2'>
-                                <div>Btn_2</div>
+                            <button class='Button_2'>
+                                <div>Button_2</div>
                             </button>
                         </div>
                     </div>
